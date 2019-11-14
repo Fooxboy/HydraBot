@@ -72,7 +72,7 @@ namespace HydraBot.BotApi
                 rep.AnswerMessage = answerMessage;
                 db.SaveChanges();
             }
-                
+                return true;
         }
     }
 }

@@ -22,6 +22,9 @@ namespace HydraBot.Commands
 
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
+            var userAnswer = _api.Users.GetUser(msg);
+            if (userAnswer.Access < 4) return;
+
             var array = msg.Text.Split(' ');
 
             long id;
@@ -41,7 +44,7 @@ namespace HydraBot.Commands
             var answer = msg.Text.Replace("arep", "").Replace("ответитьрепорт", "").Replace($"{report.Id}", "");
             _api.Reports.SetReportInfo(report.Id, msg.ChatId, answer);
             sender.Text($"🚩 Ответ на репорт с ID:{report.Id}:\n {answer}", chatId);
-            sender.Text("$✔ Ваш ответ отправлен.", msg.ChatId);
+            sender.Text("✔ Ваш ответ отправлен.", msg.ChatId);
             
 
             //throw new NotImplementedException();

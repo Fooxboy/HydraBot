@@ -47,7 +47,9 @@ namespace HydraBot
             IApi api = new Api(_bot.GetLogger());
 
             //Установка команд.
-            _bot.SetCommands(new StartCommand(api), new HomeCommand(api), new ReportCommand(api));
+            _bot.SetCommands(new StartCommand(api), new HomeCommand(api),
+                new ReportCommand(api), new ReportsCommand(api), 
+                new AnswerReportCommand(api));
 
             //Установка сервисов.
             _bot.SetServices(new ReportService());
