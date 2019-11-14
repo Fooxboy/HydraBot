@@ -27,6 +27,9 @@ namespace HydraBot.Commands
         {
             var user = _api.Users.GetUser(msg);
 
+
+
+
             //проверяем: отправлял ли пользователь уже репорты
             if(ReportService.Times.Any(t=> t.Id == user.Id))
             {
