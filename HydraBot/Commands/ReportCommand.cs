@@ -31,13 +31,14 @@ namespace HydraBot.Commands
             if(ReportService.Times.Any(t=> t.Id == user.Id))
             {
                 var time = ReportService.Times.Single(t => t.Id == user.Id);
-                sender.Text($"❌ Вы уже отправляли репорт. Подождите {time.Time} минут.", msg.ChatId);
-                return;
+                if(time.Time < 0)
+                {
+                    sender.Text($"❌ Вы уже отправляли репорт. Подождите {time.Time} минут.", msg.ChatId);
+                    return;
+                }
             }
 
             var result = _api.Reports.AddReport(msg.Text.Replace("репорт", "").Replace("report", ""), user.Id);
-
-
             var kb = new KeyboardBuilder(bot);
             kb.AddButton(ButtonsHelper.ToHomeButton());
             if(result) sender.Text("✔ Ваш репор был отправлен администрации!", msg.ChatId, kb.Build());

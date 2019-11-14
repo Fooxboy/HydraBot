@@ -24,19 +24,8 @@ namespace HydraBot.Services
             while(IsRunning)
             {
                 Thread.Sleep(60000);
-                var removeObj = false;
-                ReportsTimeModel obj = null;
-                foreach(var time in Times)
-                {
-                    time.Time -= 1;
-                    if (time.Time <= 0)
-                    {
-                        removeObj = true;
+                foreach(var time in Times) if (!(time.Time == 0)) time.Time -= 1;
 
-                    }
-                }
-                if (removeObj) Times.Remove(obj);
-                
 
                 //TODO: оптимизация.
                 //if (Times.Count == 0) IsRunning = false;
