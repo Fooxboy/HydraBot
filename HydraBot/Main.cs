@@ -11,6 +11,8 @@ namespace HydraBot
 {
     public class Main
     {
+
+        public static IApi Api { get; set; }
         private readonly long _groupId;
         private readonly string _tokenVk;
         private readonly string _tokenTg;
@@ -45,11 +47,12 @@ namespace HydraBot
 
             //Создание API бота
             IApi api = new Api(_bot.GetLogger());
+            Main.Api = api;
 
             //Установка команд.
             _bot.SetCommands(new StartCommand(api), new HomeCommand(api),
                 new ReportCommand(api), new ReportsCommand(api), 
-                new AnswerReportCommand(api));
+                new AnswerReportCommand(api), new SetNickCommand());
 
             //Установка сервисов.
             _bot.SetServices(new ReportService());

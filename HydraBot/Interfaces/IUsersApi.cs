@@ -51,5 +51,6 @@ namespace HydraBot.Interfaces
         /// <returns></returns>
         bool CheckUser(Message msg);
         User GetUserFromId(long id);
+        bool SetNickname(User user, string nickname);
     }
 }

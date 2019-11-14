@@ -108,5 +108,24 @@ namespace HydraBot.BotApi
             var user = GetUser(msg);
             return RemoveUser(user);
         }
+
+        public bool SetNickname(User user, string nickname)
+        {
+            try
+            {
+                using (var db = new Database())
+                {
+                    var us = db.Users.Single(u => u.Id == user.Id);
+                    us.Name = nickname;
+                    db.SaveChanges();
+                }
+
+                return true;
+            }catch(Exception e)
+            {
+                _logger.Error($"Произошла ошибка при смене никнейма: \n {e}");
+                return false;
+            }
+        }
     }
 }
