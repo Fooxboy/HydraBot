@@ -1,6 +1,7 @@
 ﻿using Fooxboy.NucleusBot;
 using Fooxboy.NucleusBot.Interfaces;
 using Fooxboy.NucleusBot.Models;
+using HydraBot.Helpers;
 using HydraBot.Interfaces;
 using HydraBot.Models;
 using System;
@@ -25,6 +26,7 @@ namespace HydraBot.Commands
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
             User user = _api.Users.GetUser(msg);
+            UsersCommandHelper.GetHelper().Add("", user.Id);
             var text = $"Тестирование.\n Информация о текущем пользователе: \n" +
                 $"Id:{user.Id}" +
                 $"\n Name: {user.Name}" +

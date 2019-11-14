@@ -18,6 +18,8 @@ namespace HydraBot.Commands
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
             var user = Main.Api.Users.GetUser(msg);
+            UsersCommandHelper.GetHelper().Add("", user.Id);
+
             var nickname = msg.Text.Replace("nick", "").Replace("ник", "").Replace("никнейм", "");
             
             var text = string.Empty;

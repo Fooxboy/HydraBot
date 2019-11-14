@@ -1,6 +1,7 @@
 ﻿using Fooxboy.NucleusBot.Enums;
 using Fooxboy.NucleusBot.Interfaces;
 using Fooxboy.NucleusBot.Models;
+using HydraBot.Helpers;
 using HydraBot.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,8 @@ namespace HydraBot.Commands
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
             var userAnswer = _api.Users.GetUser(msg);
+            UsersCommandHelper.GetHelper().Add("", userAnswer.Id);
+
             if (userAnswer.Access < 4) return;
             var text = "🚩 Неотвеченные репорты: \n";
             var reports = _api.Reports.GetReports();

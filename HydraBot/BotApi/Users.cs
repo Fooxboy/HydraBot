@@ -21,6 +21,31 @@ namespace HydraBot.BotApi
             _logger = logger;
             _helper = new UsersHelper();
         }
+
+        public long AddMoney(long userId, long money)
+        {
+            using(var db = new Database())
+            {
+                var user = db.Users.Single(u => u.Id == userId);
+                user.Money += money;
+                db.SaveChanges();
+
+                return user.Money;
+            }
+        }
+
+        public long AddMoneyToBank(long userId, long money)
+        {
+            using (var db = new Database())
+            {
+                var user = db.Users.Single(u => u.Id == userId);
+                user.MoneyInBank += money;
+                db.SaveChanges();
+
+                return user.MoneyInBank;
+            }
+        }
+
         public bool AddUser(User user)
         {
             try
@@ -82,6 +107,30 @@ namespace HydraBot.BotApi
             {
                 var user = db.Users.Single(u => u.VkId == vkId);
                 return user;
+            }
+        }
+
+        public long RemoveMoney(long userId, long money)
+        {
+            using (var db = new Database())
+            {
+                var user = db.Users.Single(u => u.Id == userId);
+                user.Money -= money;
+                db.SaveChanges();
+
+                return user.Money;
+            }
+        }
+
+        public long RemoveMoneyToBank(long userId, long money)
+        {
+            using (var db = new Database())
+            {
+                var user = db.Users.Single(u => u.Id == userId);
+                user.MoneyInBank -= money;
+                db.SaveChanges();
+
+                return user.MoneyInBank;
             }
         }
 

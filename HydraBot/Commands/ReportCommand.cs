@@ -26,9 +26,10 @@ namespace HydraBot.Commands
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
             var user = _api.Users.GetUser(msg);
+            UsersCommandHelper.GetHelper().Add("", user.Id);
 
             //проверяем: отправлял ли пользователь уже репорты
-            if(ReportService.Times.Any(t=> t.Id == user.Id))
+            if (ReportService.Times.Any(t=> t.Id == user.Id))
             {
                 var time = ReportService.Times.Single(t => t.Id == user.Id);
                 if(time.Time < 0)

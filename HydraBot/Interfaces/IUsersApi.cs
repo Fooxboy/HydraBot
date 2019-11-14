@@ -1,5 +1,6 @@
 ﻿using Fooxboy.NucleusBot.Models;
 using HydraBot.Models;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -52,5 +53,9 @@ namespace HydraBot.Interfaces
         bool CheckUser(Message msg);
         User GetUserFromId(long id);
         bool SetNickname(User user, string nickname);
+        long AddMoneyToBank(long userId, long money);
+        long RemoveMoneyToBank(long userId, long money);
+        long AddMoney(long userId, long money);
+        long RemoveMoney(long userId, long money)
     }
 }

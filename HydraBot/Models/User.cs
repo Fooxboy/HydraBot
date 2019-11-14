@@ -49,5 +49,14 @@ namespace HydraBot.Models
         /// Префикс пользователя.
         /// </summary>
         public string Prefix { get; set; }
+
+        /// <summary>
+        /// Наличные деньги
+        /// </summary>
+        public long Money { get; set; }
+        /// <summary>
+        /// Деньги в банке
+        /// </summary>
+        public long MoneyInBank { get; set; }
     }
 }

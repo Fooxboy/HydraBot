@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Fooxboy.NucleusBot;
 using Fooxboy.NucleusBot.Enums;
 using Fooxboy.NucleusBot.Models;
 using HydraBot.Commands;
 using HydraBot.Interfaces;
+using HydraBot.Models;
 using HydraBot.Services;
 
 namespace HydraBot
@@ -13,6 +15,7 @@ namespace HydraBot
     {
 
         public static IApi Api { get; set; }
+        
         private readonly long _groupId;
         private readonly string _tokenVk;
         private readonly string _tokenTg;
