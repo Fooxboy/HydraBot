@@ -26,6 +26,7 @@ namespace HydraBot.Commands
             var kb = new KeyboardBuilder(bot);
             kb.AddButton("💸 Снять", "withdrawmoney", color: KeyboardButtonColor.Positive);
             kb.AddButton("💹 Положить", "putrawmoney", color: KeyboardButtonColor.Primary);
+            kb.AddLine();
             kb.AddButton(ButtonsHelper.ToHomeButton());
 
             sender.Text(text, msg.ChatId, kb.Build());

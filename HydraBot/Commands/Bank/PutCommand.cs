@@ -26,9 +26,17 @@ namespace HydraBot.Commands.Bank
             sender.Text(text, msg.ChatId, kb.Build());
         }
 
-        public static void PutMoney(User user)
+        public static string PutMoney(User user, long count)
         {
-            
+            if (user.Money < count) return $"❌ У Вас недостаточно наличных, чтобы положить их на банковский счет. \n" +
+                    $"💵 У Вас наличных: {user.Money}";
+
+            var cash = Main.Api.Users.RemoveMoney(user.Id, count);
+            var inBank = Main.Api.Users.AddMoneyToBank(user.Id, count);
+
+            return $"✔ Вы положили деньги на банковский счет!" +
+                $"\n 💳 На счету: {inBank} руб." +
+                $"\n 💵 Наличных: {cash} руб.";
         }
 
         public void Init(IBot bot, ILoggerService logger)

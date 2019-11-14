@@ -1,5 +1,7 @@
-﻿using Fooxboy.NucleusBot.Interfaces;
+﻿using Fooxboy.NucleusBot;
+using Fooxboy.NucleusBot.Interfaces;
 using Fooxboy.NucleusBot.Models;
+using HydraBot.Commands.Bank;
 using HydraBot.Helpers;
 using System;
 using System.Collections.Generic;
@@ -18,19 +20,42 @@ namespace HydraBot.Commands
             var user = Main.Api.Users.GetUser(msg);
             var command = UsersCommandHelper.GetHelper().Get(user.Id);
 
+            var text = string.Empty;
             if(command == "")
             {
                 if (msg.ChatId > 2000000000) return;
                 sender.Text("Неизвестная команда", msg.ChatId);
             }else if(command == "putrawmoney")
             {
-                //todo: put
+                
+                long count;
+                try
+                {
+                    count = long.Parse(msg.Text);
+                    text = PutCommand.PutMoney(user, count);
+                }
+                catch (Exception e)
+                {
+                    text = "❌ Вы ввели неверное число. Попробуйте ещё раз.";
+                }
             }else if(command == "withdrawmoney")
             {
-                //todo: withdraw
+                long count;
+                try
+                {
+                    count = long.Parse(msg.Text);
+                    text = WithdrawCommand.Withdraw(user, count);
+                }
+                catch (Exception e)
+                {
+                    text = "❌ Вы ввели неверное число. Попробуйте ещё раз.";
+                }
             }
+
+            var kb = new KeyboardBuilder(bot);
+            kb.AddButton(ButtonsHelper.ToHomeButton());
+            sender.Text(text, msg.ChatId, kb.Build());
             
-            //throw new NotImplementedException();
         }
 
         public void Init(IBot bot, ILoggerService logger)

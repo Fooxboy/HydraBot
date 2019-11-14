@@ -56,6 +56,6 @@ namespace HydraBot.Interfaces
         long AddMoneyToBank(long userId, long money);
         long RemoveMoneyToBank(long userId, long money);
         long AddMoney(long userId, long money);
-        long RemoveMoney(long userId, long money)
+        long RemoveMoney(long userId, long money);
     }
 }

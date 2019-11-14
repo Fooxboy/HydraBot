@@ -5,6 +5,7 @@ using Fooxboy.NucleusBot;
 using Fooxboy.NucleusBot.Enums;
 using Fooxboy.NucleusBot.Models;
 using HydraBot.Commands;
+using HydraBot.Commands.Bank;
 using HydraBot.Interfaces;
 using HydraBot.Models;
 using HydraBot.Services;
@@ -55,7 +56,8 @@ namespace HydraBot
             //Установка команд.
             _bot.SetCommands(new StartCommand(api), new HomeCommand(api),
                 new ReportCommand(api), new ReportsCommand(api), 
-                new AnswerReportCommand(api), new SetNickCommand());
+                new AnswerReportCommand(api), new SetNickCommand(), 
+                new BankCommand(), new WithdrawCommand(), new PutCommand());
 
             //Установка сервисов.
             _bot.SetServices(new ReportService());

@@ -2,6 +2,7 @@
 using Fooxboy.NucleusBot.Interfaces;
 using Fooxboy.NucleusBot.Models;
 using HydraBot.Helpers;
+using HydraBot.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -24,6 +25,19 @@ namespace HydraBot.Commands.Bank
             kb.AddButton("Отмена", "bank", color: KeyboardButtonColor.Negative);
             sender.Text(text, msg.ChatId, kb.Build());
 
+        }
+
+        public static string Withdraw(User user, long count)
+        {
+            if (user.MoneyInBank < count) return $"❌ У Вас недостаточно средств на счету для снятия. \n" +
+                    $"💳 Баланс Вашего счета: {user.MoneyInBank}";
+
+            var inBank =  Main.Api.Users.RemoveMoneyToBank(user.Id, count);
+            var cash =  Main.Api.Users.AddMoney(user.Id, count);
+
+            return $"✔ Вы сняли с банковского счета деньги!" +
+                $"\n 💳 На счету: {inBank} руб." +
+                $"\n 💵 Наличных: {cash} руб.";
         }
 
         public void Init(IBot bot, ILoggerService logger)

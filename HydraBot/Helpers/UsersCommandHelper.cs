@@ -10,7 +10,10 @@ namespace HydraBot.Helpers
     {
         public List<UserCommand> UsersCommand { get; set; }
 
-        private UsersCommandHelper() { }
+        private UsersCommandHelper()
+        {
+            UsersCommand = new List<UserCommand>();
+        }
         private static UsersCommandHelper _helper;
 
         public static UsersCommandHelper GetHelper()
