@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29326.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HydraBot", "HydraBot\HydraBot.csproj", "{9D36908A-E9CE-4095-A968-7850852268C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HydraBot.ConsoleShell", "HydraBot.ConsoleShell\HydraBot.ConsoleShell.csproj", "{4C5E1D76-C5D9-4BC0-9DF8-25E0A65A78B5}"
+EndProject
+
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9D36908A-E9CE-4095-A968-7850852268C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D36908A-E9CE-4095-A968-7850852268C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D36908A-E9CE-4095-A968-7850852268C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D36908A-E9CE-4095-A968-7850852268C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C5E1D76-C5D9-4BC0-9DF8-25E0A65A78B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C5E1D76-C5D9-4BC0-9DF8-25E0A65A78B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C5E1D76-C5D9-4BC0-9DF8-25E0A65A78B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C5E1D76-C5D9-4BC0-9DF8-25E0A65A78B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5674CE6-5AEA-4F64-8649-637A6AB23D01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5674CE6-5AEA-4F64-8649-637A6AB23D01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5674CE6-5AEA-4F64-8649-637A6AB23D01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5674CE6-5AEA-4F64-8649-637A6AB23D01}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {787B1420-2AC1-49D6-A921-489C0A5814AF}
+	EndGlobalSection
+EndGlobal
