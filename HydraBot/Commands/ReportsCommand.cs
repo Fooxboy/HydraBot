@@ -21,7 +21,8 @@ namespace HydraBot.Commands
 
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
-
+            var userAnswer = _api.Users.GetUser(msg);
+            if (userAnswer.Access < 4) return;
             var text = "🚩 Неотвеченные репорты: \n";
             var reports = _api.Reports.GetReports();
             foreach(var report in reports)

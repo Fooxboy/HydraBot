@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using VkNet;
 
 namespace HydraBot.Commands
 {
@@ -40,8 +41,7 @@ namespace HydraBot.Commands
             user.Access = 0;
             user.IsBanned = false;
             user.Level = 0;
-            user.Prefix = "";
-            user.Name = "Имя пользователя.";
+            user.Prefix = "Игрок";
             user.Score = 0;
             user.TimeBan = 0;
             if (msg.Platform == MessengerPlatform.Vkontakte)
@@ -49,9 +49,18 @@ namespace HydraBot.Commands
                 //устанавливаем id ВКонтакте в зависимости от того куда написал пользователь. В беседу или в лс.
                 if (msg.ChatId < 2000000000) user.VkId = msg.ChatId;
                 else user.VkId = msg.MessageVK.FromId.Value;
+
+                //устанавливаем никнейм
+                var vkapi = new VkApi();
+                var userName = vkapi.Users.Get(new List<long>() { msg.MessageVK.FromId.Value })[0].FirstName;
+                user.Name = userName;
             }
             //устанавливаем id Телеграмма.
-            else user.TgId = msg.MessageTG.From.Id;
+            else
+            {
+                user.TgId = msg.MessageTG.From.Id;
+                user.Name = msg.MessageTG.From.FirstName;
+            }
 
             //добавляем пользователя в бд.
             _api.Users.AddUser(user);
