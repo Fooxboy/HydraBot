@@ -13,5 +13,7 @@ namespace HydraBot.Interfaces
 
         bool AddReport(string message, long id);
         bool AddReport(Report rep);
+        Report GetReportFromId(long reportId);
+        bool SetReportInfo(long reportId, long adminId, string answerMessage);
     }
 }

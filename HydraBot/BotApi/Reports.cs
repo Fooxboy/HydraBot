@@ -43,6 +43,7 @@ namespace HydraBot.BotApi
                 {
                     rep.Id = db.Reports.Count() + 1;
                     db.Reports.Add(rep);
+                    db.SaveChanges();
                 }
                 return true;
             }catch(Exception e)
@@ -50,6 +51,28 @@ namespace HydraBot.BotApi
                 return false;
             }
             
+        }
+
+        public Report GetReportFromId(long reportId)
+        {
+            using(var db = new Database())
+            {
+                var rep =db.Reports.Single(r => r.Id == reportId);
+                return rep;
+            }
+        }
+
+        public bool SetReportInfo(long reportId, long adminId, string answerMessage)
+        {
+            using(var db = new Database())
+            {
+                var rep = db.Reports.Single(r => r.Id == reportId);
+                rep.ModeratorId = adminId;
+                rep.IsAnswered = true;
+                rep.AnswerMessage = answerMessage;
+                db.SaveChanges();
+            }
+                
         }
     }
 }

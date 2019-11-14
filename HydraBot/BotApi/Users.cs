@@ -58,6 +58,15 @@ namespace HydraBot.BotApi
             return user;
         }
 
+        public User GetUserFromId(long id)
+        {
+            using(var db = new Database())
+            {
+                var user = db.Users.Single(u => u.Id == id);
+                return user;
+            }
+        }
+
         public User GetUserFromIdTg(long tgId)
         {
             using (var db = new Database())

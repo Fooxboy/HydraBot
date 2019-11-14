@@ -27,9 +27,6 @@ namespace HydraBot.Commands
         {
             var user = _api.Users.GetUser(msg);
 
-
-
-
             //проверяем: отправлял ли пользователь уже репорты
             if(ReportService.Times.Any(t=> t.Id == user.Id))
             {
@@ -38,12 +35,13 @@ namespace HydraBot.Commands
                 return;
             }
 
-          
+            var result = _api.Reports.AddReport(msg.Text.Replace("репорт", "").Replace("report", ""), user.Id);
 
 
             var kb = new KeyboardBuilder(bot);
             kb.AddButton(ButtonsHelper.ToHomeButton());
-            sender.Text("✔ Ваше сообщение было отправлено администрации!", msg.ChatId, kb.Build());
+            if(result) sender.Text("✔ Ваш репор был отправлен администрации!", msg.ChatId, kb.Build());
+            else sender.Text("✔ Ваше сообщение не было отправлено администрации из-за технической ошибки.", msg.ChatId, kb.Build());
             ReportService.AddToTimer(user.Id);
         }
 
