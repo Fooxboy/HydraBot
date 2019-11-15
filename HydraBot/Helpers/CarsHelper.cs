@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace HydraBot.Helpers
@@ -28,6 +29,8 @@ namespace HydraBot.Helpers
             var model = JsonConvert.DeserializeObject<CarsJsonModel>(json).cars;
             Cars = model;
         }
+
+        public Car GetCarFromId(long id)=> Cars.Single(c => c.Id == id);
 
     }
 }

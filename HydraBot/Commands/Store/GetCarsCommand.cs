@@ -49,17 +49,18 @@ namespace HydraBot.Commands.Store
                             try
                             {
                                 var car = cars[i + (offset * 10)];
-                                text += $"\n ▪ [{i + (offset * 10)}] {car.Manufacturer} {car.Model}" +
+                                text += $"\n ▪ [{car.Id}] {car.Manufacturer} {car.Model}" +
                                 $"\n ▪ {car.Power} лс., {car.Weight} кг." +
                                 $"\n💰 Цена: {car.Price} руб.\n";
                                 kb.AddButton($"🚗 {i + (offset * 10)}", "infocar", new List<string>() { car.Id.ToString()});
-
+                                if (i == 4 || i == 8) kb.AddLine();
                             }catch
                             {
                                 break;
                             }
                         }
 
+                        kb.AddLine();
                         if(offset >0) kb.AddButton("◀", "getcars", new List<string>() { manufacture, $"{offset - 1}" });
                         kb.AddButton("↩ Назад", "autostore");
                         if (countCars > (offset * 10)) kb.AddButton("▶", "getcars", new List<string>() { manufacture, $"{offset + 1}" });
@@ -74,12 +75,15 @@ namespace HydraBot.Commands.Store
                                 text += $"\n ▪ [{i}] {car.Manufacturer} {car.Model}" +
                                 $"\n ▪ {car.Power} лс., {car.Weight} кг." +
                                 $"\n💰 Цена: {car.Price} руб.\n";
+                                kb.AddButton($"🚗 {i}", "infocar", new List<string>() { car.Id.ToString() });
+                                if (i == 4 || i == 8) kb.AddLine();
                             }
                             catch
                             {
                                 break;
                             }
                         }
+                        kb.AddLine();
 
                         kb.AddButton("↩ Назад", "autostore");
                         if (cars.Count > 10) kb.AddButton("▶", "getcars", new List<string>() { manufacture, $"1" });
