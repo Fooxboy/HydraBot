@@ -11,6 +11,8 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using VkNet;
+using VkNet.Exception;
+using VkNet.Model;
 
 namespace HydraBot.Commands
 {
@@ -25,7 +27,7 @@ namespace HydraBot.Commands
 
         public string[] Aliases => new[] { "/start", "начать", "привет", "старт"};
 
-        public void Execute(Message msg, IMessageSenderService sender, IBot bot)
+        public void Execute(Fooxboy.NucleusBot.Models.Message msg, IMessageSenderService sender, IBot bot)
         {
             //проверка на регистрацию.
             if (_api.Users.CheckUser(msg))
@@ -37,7 +39,7 @@ namespace HydraBot.Commands
             }
 
             //регистрация нового юзера.
-            var user = new User();
+            var user = new HydraBot.Models.User();
             
             user.Access = 0;
             user.IsBanned = false;
@@ -53,6 +55,10 @@ namespace HydraBot.Commands
 
                 //устанавливаем никнейм
                 var vkapi = new VkApi();
+                vkapi.Authorize(new ApiAuthParams()
+                {
+                    AccessToken = Main.Token
+                });
                 var userName = vkapi.Users.Get(new List<long>() { msg.MessageVK.FromId.Value })[0].FirstName;
                 user.Name = userName;
             }
@@ -66,7 +72,7 @@ namespace HydraBot.Commands
             //добавляем пользователя в бд.
             var id = _api.Users.AddUser(user);
 
-            var garage = new Garage() { Cars = new List<Car>(), Name = "Чехол", ParkingPlaces = 1, UserId = id};
+            var garage = new Garage() { Cars = "", Name = "Чехол", ParkingPlaces = 1, UserId = id};
             Main.Api.Garages.RegisterGarage(garage);
 
             var kb = new KeyboardBuilder(bot);

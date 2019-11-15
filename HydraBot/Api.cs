@@ -16,6 +16,7 @@ namespace HydraBot
         {
             Users = new Users(logger);
             Reports = new Reports();
+            Garages = new Garages();
         }
         /// <summary>
         /// Работа с пользователями.

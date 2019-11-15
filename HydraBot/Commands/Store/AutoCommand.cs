@@ -101,6 +101,20 @@ namespace HydraBot.Commands.Store
                     kb.AddButton("▶", "autostore", new List<string> { "1" }, color: KeyboardButtonColor.Positive);
 
                 }
+            }else
+            {
+                kb.AddButton("Aston Martin", "getcars", new List<string> { "Aston Martin", "0" });
+                kb.AddButton("Audi", "getcars", new List<string> { "Audi", "0" });
+                kb.AddButton("BMW", "getcars", new List<string> { "BMW", "0" });
+                kb.AddButton("Bugatti", "getcars", new List<string> { "Bugatti", "0" });
+                kb.AddLine();
+                kb.AddButton("Cadillac", "getcars", new List<string> { "Cadillac", "0" });
+                kb.AddButton("Chevrolet", "getcars", new List<string> { "Chevrolet", "0" });
+                kb.AddButton("Dodge", "getcars", new List<string> { "Dodge", "0" });
+                kb.AddButton("Ferrari", "getcars", new List<string> { "Ferrari", "0" });
+                kb.AddLine();
+                kb.AddButton("🏪 Магазин", "store");
+                kb.AddButton("▶", "autostore", new List<string> { "1" }, color: KeyboardButtonColor.Positive);
             }
             sender.Text("🏎 Выберите производителя автомобиля на клавиатуре.", msg.ChatId, kb.Build());
         }

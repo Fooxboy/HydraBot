@@ -49,12 +49,13 @@ namespace HydraBot.Commands.Store
                             try
                             {
                                 var car = cars[i + (offset * 10)];
-                                text += $"\n ▪ [{car.Id}] {car.Manufacturer} {car.Model}" +
+                                text += $"\n ▪ [{i + (offset * 10)}] {car.Manufacturer} {car.Model}" +
                                 $"\n ▪ {car.Power} лс., {car.Weight} кг." +
                                 $"\n💰 Цена: {car.Price} руб.\n";
                                 kb.AddButton($"🚗 {i + (offset * 10)}", "infocar", new List<string>() { car.Id.ToString()});
-                                if (i == 4 || i == 8) kb.AddLine();
-                            }catch
+                                if ((i == 3&& (countCars >4 || countCars > 14 || countCars >24) ) || (i == 7&& (countCars > 8 || countCars > 18 || countCars > 28))) 
+                                    kb.AddLine();
+                            }catch(Exception e)
                             {
                                 break;
                             }
@@ -63,7 +64,8 @@ namespace HydraBot.Commands.Store
                         kb.AddLine();
                         if(offset >0) kb.AddButton("◀", "getcars", new List<string>() { manufacture, $"{offset - 1}" });
                         kb.AddButton("↩ Назад", "autostore");
-                        if (countCars > (offset * 10)) kb.AddButton("▶", "getcars", new List<string>() { manufacture, $"{offset + 1}" });
+                        if (countCars > ((offset+1) * 10)) 
+                            kb.AddButton("▶", "getcars", new List<string>() { manufacture, $"{offset + 1}" });
 
                     }catch(Exception e)
                     {

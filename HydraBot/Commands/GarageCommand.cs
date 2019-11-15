@@ -1,5 +1,6 @@
 ﻿using Fooxboy.NucleusBot.Interfaces;
 using Fooxboy.NucleusBot.Models;
+using HydraBot.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -21,12 +22,15 @@ namespace HydraBot.Commands
                 $"\n 🚗 Автомобили в гараже:" +
                 $"\n";
 
-            if (garage.Cars.Count == 0) text += "\n 🏎 У Вас нет автомобилей.";
-            foreach(var car in garage.Cars)
+            var cars = CarsHelper.GetHelper().ConvertStringToCars(garage.Cars);
+            if (cars.Count == 0) text += "\n 🏎 У Вас нет автомобилей.";
+            foreach(var car in cars)
             {
                 text += $"\n 🚘 {car.Manufacturer} {car.Model}" +
                     $"\n ⚡ {car.Power} л.с || ⚖ {car.Weight} кг. \n";
             }
+
+            sender.Text(text, msg.ChatId);
             //throw new NotImplementedException();
         }
 

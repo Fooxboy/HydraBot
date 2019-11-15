@@ -17,6 +17,7 @@ namespace HydraBot
     {
 
         public static IApi Api { get; set; }
+        public static string Token { get; set; }
         
         private readonly long _groupId;
         private readonly string _tokenVk;
@@ -33,6 +34,7 @@ namespace HydraBot
             _groupId = groupVkId;
             _tokenVk = groupVkToken;
             _tokenTg = botTelegramToken;
+            Token = _tokenVk;
         }
 
         /// <summary>

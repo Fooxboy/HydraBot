@@ -32,5 +32,30 @@ namespace HydraBot.Helpers
 
         public Car GetCarFromId(long id)=> Cars.Single(c => c.Id == id);
 
+        public List<Car> GetCarsFromId(List<long> ids)
+        {
+            var l = new List<Car>();
+            foreach(var id in ids) l.Add(GetCarFromId(id));
+            return l;
+        }
+
+        public List<Car> ConvertStringToCars(string ids)
+        {
+            var l = new List<Car>();
+            var array = ids.Split(";");
+            foreach(var element in array)
+            {
+                if (element == "") break;
+                l.Add(GetCarFromId(long.Parse(element)));
+            }
+
+            return l;
+        }
+
+        public string AddCarToString(string ids, long carId)
+        {
+            return ids + $"{carId};";
+        } 
+
     }
 }

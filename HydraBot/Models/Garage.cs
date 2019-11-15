@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace HydraBot.Models
@@ -10,7 +11,8 @@ namespace HydraBot.Models
         [Key]
         public long UserId { get; set; }
         public long ParkingPlaces { get; set; }
-        public List<Car> Cars { get; set; }
+        public string Cars { get; set; }
+        
         public string Name { get; set; }
     }
 }

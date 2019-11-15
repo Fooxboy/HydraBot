@@ -40,12 +40,9 @@ namespace HydraBot.Commands
 
 
             var kb = new KeyboardBuilder(bot);
-            kb.AddButton("test button 1", "cmd1", color: KeyboardButtonColor.Default);
-            kb.AddButton("test button 2", "am1", color: KeyboardButtonColor.Positive);
-            kb.AddButton("test button 1", "cmd1", color: KeyboardButtonColor.Default);
-            kb.AddButton("test button 2", "am1", color: KeyboardButtonColor.Positive);
-            kb.AddLine();
-            kb.AddButton("test button 3", "a", color: KeyboardButtonColor.Primary);
+            kb.AddButton("💰 Банк", "bank");
+            kb.AddButton("🏪 Магазин", "store");
+            kb.AddButton("🔧 Гараж", "garage");
 
             sender.Text(text, msg.ChatId, kb.Build());
         }
