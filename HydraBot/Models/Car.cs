@@ -16,4 +16,9 @@ namespace HydraBot.Models
         public long Weight { get; set; }
         public long Price { get; set; }
     }
+
+    public class CarsJsonModel
+    {
+        public List<Car> cars { get; set; }
+    }
 }

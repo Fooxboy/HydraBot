@@ -25,7 +25,7 @@ namespace HydraBot.Helpers
         {
             logger.Info("[CARS] Инициализация автомобилей...");
             var json = File.ReadAllText("CarsManifest.json");
-            var model = JsonConvert.DeserializeObject<List<Car>>(json);
+            var model = JsonConvert.DeserializeObject<CarsJsonModel>(json).cars;
             Cars = model;
         }
 
