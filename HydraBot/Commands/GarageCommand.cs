@@ -21,6 +21,7 @@ namespace HydraBot.Commands
                 $"\n 🚗 Автомобили в гараже:" +
                 $"\n";
 
+            if (garage.Cars.Count == 0) text += "\n 🏎 У Вас нет автомобилей.";
             foreach(var car in garage.Cars)
             {
                 text += $"\n 🚘 {car.Manufacturer} {car.Model}" +
@@ -31,7 +32,7 @@ namespace HydraBot.Commands
 
         public void Init(IBot bot, ILoggerService logger)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }
