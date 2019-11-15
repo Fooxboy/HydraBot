@@ -97,7 +97,6 @@ namespace HydraBot.Commands.Store
                     kb.AddButton("Dodge", "getcars", new List<string> { "Dodge" });
                     kb.AddButton("Ferrari", "getcars", new List<string> { "Ferrari" });
                     kb.AddLine();
-                    //kb.AddButton("◀", "autostore", color: KeyboardButtonColor.Negative);
                     kb.AddButton("🏪 Магазин", "store");
                     kb.AddButton("▶", "autostore", new List<string> { "1" }, color: KeyboardButtonColor.Positive);
 
