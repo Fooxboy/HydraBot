@@ -1,4 +1,5 @@
-﻿using Fooxboy.NucleusBot.Interfaces;
+﻿using Fooxboy.NucleusBot;
+using Fooxboy.NucleusBot.Interfaces;
 using Fooxboy.NucleusBot.Models;
 using HydraBot.Helpers;
 using System;
@@ -17,20 +18,32 @@ namespace HydraBot.Commands
         {
             var garage = Main.Api.Garages.GetGarage(msg);
 
-            var text = $"🚗 Ваш гараж: {garage.Name}" +
-                $"\n ▪ Парковочных мест: {garage.ParkingPlaces}" +
-                $"\n 🚗 Автомобили в гараже:" +
-                $"\n";
-
             var cars = CarsHelper.GetHelper().ConvertStringToCars(garage.Cars);
+
+            var kb = new KeyboardBuilder(bot);
+
+            var text = $"🔧 Ваш гараж: {garage.Name}" +
+                $"\n 🆓 Свободных парковочных мест: {garage.ParkingPlaces - cars.Count}" +
+                $"\n 🚕 Ваши автомобили: \n";
+
+            
             if (cars.Count == 0) text += "\n 🏎 У Вас нет автомобилей.";
+            var counter = 0;
             foreach(var car in cars)
             {
-                text += $"\n 🚘 {car.Manufacturer} {car.Model}" +
-                    $"\n ⚡ {car.Power} л.с || ⚖ {car.Weight} кг. \n";
+                counter++;
+                text += $"\n 🚘 [{car.Id}] {car.Manufacturer} {car.Model} | ⚡ {car.Power} л.с. | ⚖ {car.Weight} \n";
+                kb.AddButton($"🏎 {car.Id}", "actioncar", new List<string>() { car.Id.ToString() });
+                if(counter == 4)
+                {
+                    kb.AddLine();
+                    counter = 0;
+                }
             }
 
-            sender.Text(text, msg.ChatId);
+            text += "❓ Для дополнительных действий выберите автомобиль на клавиатуре";
+            kb.AddButton(ButtonsHelper.ToHomeButton());
+            sender.Text(text, msg.ChatId, kb.Build());
             //throw new NotImplementedException();
         }
 

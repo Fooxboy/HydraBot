@@ -13,9 +13,15 @@ namespace HydraBot.BotApi
         public Garage GetGarage(Message msg)
         {
             var user = Main.Api.Users.GetUser(msg);
+            return GetGarage(user.Id);
+            
+        }
+
+        public Garage GetGarage(long userId)
+        {
             using(var db = new Database())
             {
-                var garage = db.Garages.Single(g => g.UserId == user.Id);
+                var garage = db.Garages.Single(g => g.UserId == userId);
                 return garage;
             }
         }
@@ -26,6 +32,17 @@ namespace HydraBot.BotApi
             {
                 db.Garages.Add(garage);
                 db.SaveChanges();
+            }
+        }
+
+        public string SetCars(long userId, string cars)
+        {
+            using(var db = new Database())
+            {
+                var gar = db.Garages.Single(g => g.UserId == userId);
+                gar.Cars = cars;
+                db.SaveChanges();
+                return gar.Cars;
             }
         }
     }

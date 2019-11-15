@@ -9,6 +9,8 @@ namespace HydraBot.Interfaces
     public interface IGarageApi
     {
         Garage GetGarage(Message msg);
+        Garage GetGarage(long userId);
+        string SetCars(long userId, string cars);
         void RegisterGarage(Garage garage);
 
     }
