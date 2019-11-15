@@ -38,6 +38,7 @@ namespace HydraBot.Commands
 
             //регистрация нового юзера.
             var user = new User();
+            
             user.Access = 0;
             user.IsBanned = false;
             user.Level = 0;
@@ -63,7 +64,10 @@ namespace HydraBot.Commands
             }
 
             //добавляем пользователя в бд.
-            _api.Users.AddUser(user);
+            var id = _api.Users.AddUser(user);
+
+            var garage = new Garage() { Cars = new List<Car>(), Name = "Чехол", ParkingPlaces = 1, UserId = id};
+            Main.Api.Garages.RegisterGarage(garage);
 
             var kb = new KeyboardBuilder(bot);
             kb.AddButton(ButtonsHelper.ToHomeButton());

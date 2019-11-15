@@ -44,7 +44,7 @@ namespace HydraBot.Interfaces
         /// </summary>
         /// <param name="user">Пользователь</param>
         /// <returns></returns>
-        bool AddUser(User user);
+        long AddUser(User user);
         /// <summary>
         /// Проверка регистрации.
         /// </summary>

@@ -13,7 +13,13 @@ namespace HydraBot.Interfaces
         /// Работа с пользователями.
         /// </summary>
         IUsersApi Users { get; set; }
-
+        /// <summary>
+        /// Репорты
+        /// </summary>
         IReportsApi Reports { get; set; }
+        /// <summary>
+        /// Гаражи
+        /// </summary>
+        IGarageApi Garages { get; set; }
     }
 }

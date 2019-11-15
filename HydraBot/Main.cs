@@ -57,7 +57,7 @@ namespace HydraBot
             _bot.SetCommands(new StartCommand(api), new HomeCommand(api),
                 new ReportCommand(api), new ReportsCommand(api), 
                 new AnswerReportCommand(api), new SetNickCommand(), 
-                new BankCommand(), new WithdrawCommand(), new PutCommand());
+                new BankCommand(), new WithdrawCommand(), new PutCommand(), new BonusCommand());
 
             //Установка сервисов.
             _bot.SetServices(new ReportService(), new BonusService());

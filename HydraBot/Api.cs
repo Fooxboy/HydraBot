@@ -23,5 +23,6 @@ namespace HydraBot
         public IUsersApi Users { get; set; }
 
         public IReportsApi Reports { get; set; }
+        public IGarageApi Garages { get; set; }
     }
 }

@@ -25,6 +25,7 @@ namespace HydraBot.Commands
             {
                 if (msg.ChatId > 2000000000) return;
                 sender.Text("Неизвестная команда", msg.ChatId);
+                return;
             }else if(command == "putrawmoney")
             {
                 

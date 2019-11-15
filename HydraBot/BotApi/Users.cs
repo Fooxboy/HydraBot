@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace HydraBot.BotApi
 {
@@ -46,24 +47,26 @@ namespace HydraBot.BotApi
             }
         }
 
-        public bool AddUser(User user)
+        public long AddUser(User user)
         {
             try
             {
+                long userId;
                 //подключение к бд
                 using (var db = new Database())
                 {
                     user.Id = db.Users.Count() + 1;
+                    userId = user.Id;
                     db.Users.Add(user);
                     db.SaveChanges();
                 }
                
                 _logger.Info($"Добавлен новый пользователь: Имя - {user.Name} | Id - {user.Id}| VkId - {user.VkId}| TgId - {user.TgId}");
-                return true;
+                return userId;
             }catch(Exception e)
             {
                 _logger.Error($"Произошла ошибка при добавлении нового пользователя: \n {e}");
-                return false;
+                return 0;
             }
            
         }

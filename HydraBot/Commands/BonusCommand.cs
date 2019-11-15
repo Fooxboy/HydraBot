@@ -79,7 +79,7 @@ namespace HydraBot.Commands
 
             var kb = new KeyboardBuilder(bot);
             kb.AddButton(ButtonsHelper.ToHomeButton());
-            sender.Text(text, msg.ChatId, kb.Build);
+            sender.Text(text, msg.ChatId, kb.Build());
         }
 
         public void Init(IBot bot, ILoggerService logger)
