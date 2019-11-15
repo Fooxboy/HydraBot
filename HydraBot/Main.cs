@@ -60,7 +60,7 @@ namespace HydraBot
                 new BankCommand(), new WithdrawCommand(), new PutCommand());
 
             //Установка сервисов.
-            _bot.SetServices(new ReportService());
+            _bot.SetServices(new ReportService(), new BonusService());
 
             //запуск бота
             Task.Run(()=> _bot.Start());

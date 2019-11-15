@@ -59,6 +59,7 @@ namespace HydraBot.Models
         /// </summary>
         public long MoneyInBank { get; set; }
         public long BonusDay { get; set; }
+        public long TimeBonus { get; set; }
         public bool IsAvailbleBonus { get; set; }
     }
 }

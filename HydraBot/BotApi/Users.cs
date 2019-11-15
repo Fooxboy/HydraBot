@@ -158,6 +158,28 @@ namespace HydraBot.BotApi
             return RemoveUser(user);
         }
 
+        public long SetDayBonus(long userId, long count)
+        {
+            using(var db = new Database())
+            {
+                var user = db.Users.Single(u => u.Id == userId);
+                user.BonusDay = count;
+                db.SaveChanges();
+                return user.BonusDay;
+            }
+        }
+
+        public bool SetIsAvalibleBonus(long userId, bool value)
+        {
+            using(var db = new Database())
+            {
+                var user = db.Users.Single(u => u.Id == userId);
+                user.IsAvailbleBonus = value;
+                db.SaveChanges();
+                return user.IsAvailbleBonus;
+            }
+        }
+
         public bool SetNickname(User user, string nickname)
         {
             try
@@ -174,6 +196,17 @@ namespace HydraBot.BotApi
             {
                 _logger.Error($"Произошла ошибка при смене никнейма: \n {e}");
                 return false;
+            }
+        }
+
+        public long SetTimeBonus(long userId, long count)
+        {
+            using(var db = new Database())
+            {
+                var user = db.Users.Single(u => u.Id == userId);
+                user.TimeBonus = count;
+                db.SaveChanges();
+                return user.TimeBonus;
             }
         }
     }
