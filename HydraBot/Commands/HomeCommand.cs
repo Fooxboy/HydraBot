@@ -19,38 +19,30 @@ namespace HydraBot.Commands
         {
             _api = api;
         }
-        public string Command => "home";
+        public string Command => "menu";
 
-        public string[] Aliases => new[] {"домой", "дом", "главная", "/home" };
+        public string[] Aliases => new[] {"меню", "/menu" };
 
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
             User user = _api.Users.GetUser(msg);
             UsersCommandHelper.GetHelper().Add("", user.Id);
-            var text = $"Тестирование.\n Информация о текущем пользователе: \n" +
-                $"Id:{user.Id}" +
-                $"\n Name: {user.Name}" +
-                $"\n Забанен ли: {user.IsBanned}" +
-                $"\n Время бана: {user.TimeBan} с." +
-                $"\n Права доступа: {user.Access}" +
-                $"\n Префикс: {user.Prefix}" +
-                $"\n Уровень и опыт: {user.Level}|{user.Score}" +
-                $"\n Telegram Id: {user.TgId}" +
-                $"\n VKontakte Id: {user.VkId}";
+            var text = "❓ Выберите раздел на клавиатуре";
 
 
             var kb = new KeyboardBuilder(bot);
             kb.AddButton("💰 Банк", "bank");
             kb.AddButton("🏪 Магазин", "store");
             kb.AddButton("🔧 Гараж", "garage");
+            kb.AddLine();
+
+            kb.AddButton("🎈 Профиль", "profile");
 
             sender.Text(text, msg.ChatId, kb.Build());
         }
 
         public void Init(IBot bot, ILoggerService logger)
         {
-            //logger.Info("Команда Home загрузается...");
-            //throw new NotImplementedException();
         }
     }
 }

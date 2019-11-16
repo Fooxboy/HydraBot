@@ -14,12 +14,12 @@ namespace HydraBot.Helpers
         {
             var button = new NucleusKeyboardButton()
             {
-                Caption = "🏠 Домой",
+                Caption = "📋 В меню",
                 RequestContact = false,
                 RequestLocation = false,
                 Color = KeyboardButtonColor.Primary,
                 Type = KeyboardButtonActionType.Text,
-                Payload = new PayloadBuilder("home").BuildToModel(),
+                Payload = new PayloadBuilder("menu").BuildToModel(),
                 Hash = null,
                 AppID = 0,
                 OwnerID = 0

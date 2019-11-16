@@ -43,7 +43,7 @@ namespace HydraBot.Commands
             
             user.Access = 0;
             user.IsBanned = false;
-            user.Level = 0;
+            user.Level = 1;
             user.Prefix = "Игрок";
             user.Score = 0;
             user.TimeBan = 0;
