@@ -55,7 +55,7 @@ namespace HydraBot.Commands.Store
                                 kb.AddButton($"🚗 {i + (offset * 10)}", "infocar", new List<string>() { car.Id.ToString()});
                                 if ((i == 3&& (countCars >4 || countCars > 14 || countCars >24) ) || (i == 7&& (countCars > 8 || countCars > 18 || countCars > 28))) 
                                     kb.AddLine();
-                            }catch(Exception e)
+                            }catch
                             {
                                 break;
                             }
@@ -67,7 +67,7 @@ namespace HydraBot.Commands.Store
                         if (countCars > ((offset+1) * 10)) 
                             kb.AddButton("▶", "getcars", new List<string>() { manufacture, $"{offset + 1}" });
 
-                    }catch(Exception e)
+                    }catch
                     {
                         for (var i = 0; i < 10; i++)
                         {

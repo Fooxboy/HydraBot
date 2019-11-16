@@ -46,7 +46,7 @@ namespace HydraBot.BotApi
                     db.SaveChanges();
                 }
                 return true;
-            }catch(Exception e)
+            }catch
             {
                 return false;
             }

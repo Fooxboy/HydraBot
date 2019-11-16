@@ -72,7 +72,7 @@ namespace HydraBot.Commands
             //добавляем пользователя в бд.
             var id = _api.Users.AddUser(user);
 
-            var garage = new Garage() { Cars = "", Name = "Чехол", ParkingPlaces = 1, UserId = id};
+            var garage = new Models.Garage() { Cars = "", Name = "Чехол", ParkingPlaces = 1, UserId = id};
             Main.Api.Garages.RegisterGarage(garage);
 
             var kb = new KeyboardBuilder(bot);

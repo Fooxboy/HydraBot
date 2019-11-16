@@ -3,6 +3,7 @@ using HydraBot.Interfaces;
 using HydraBot.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 
@@ -10,6 +11,17 @@ namespace HydraBot.BotApi
 {
     public class Garages : IGarageApi
     {
+        public long AddFuel(long userId, long fuel)
+        {
+            using(var db = new Database())
+            {
+                var gar = db.Garages.Single(g => g.UserId == userId);
+                gar.Fuel += fuel;
+                db.SaveChanges();
+                return gar.Fuel;
+            }
+        }
+
         public Garage GetGarage(Message msg)
         {
             var user = Main.Api.Users.GetUser(msg);

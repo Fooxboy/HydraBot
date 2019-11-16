@@ -35,7 +35,7 @@ namespace HydraBot.Commands
                     count = long.Parse(msg.Text);
                     text = PutCommand.PutMoney(user, count);
                 }
-                catch (Exception e)
+                catch
                 {
                     text = "❌ Вы ввели неверное число. Попробуйте ещё раз.";
                 }
@@ -47,7 +47,7 @@ namespace HydraBot.Commands
                     count = long.Parse(msg.Text);
                     text = WithdrawCommand.Withdraw(user, count);
                 }
-                catch (Exception e)
+                catch
                 {
                     text = "❌ Вы ввели неверное число. Попробуйте ещё раз.";
                 }

@@ -31,7 +31,7 @@ namespace HydraBot.Commands
             try
             {
                 id = long.Parse( array[1]);
-            }catch (Exception e)
+            }catch
             {
                 sender.Text("❌ Вы не указали Id репорта или указали его не верно", msg.ChatId);
                 return;

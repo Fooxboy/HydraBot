@@ -12,6 +12,7 @@ namespace HydraBot.Interfaces
         Garage GetGarage(long userId);
         string SetCars(long userId, string cars);
         void RegisterGarage(Garage garage);
+        long AddFuel(long userId, long fuel);
 
     }
 }
