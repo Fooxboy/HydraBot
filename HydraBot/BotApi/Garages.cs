@@ -58,6 +58,16 @@ namespace HydraBot.BotApi
             }
         }
 
+        public void SetPhone(long userId, bool value)
+        {
+            using(var db = new Database())
+            {
+                var gar = db.Garages.Single(g => g.UserId == userId);
+                gar.IsPhone = value;
+                db.SaveChanges();
+            }
+        }
+
         public Garage UpgrateGarage(long userId, string name, long countPlaces, long idmodel)
         {
             using(var db = new Database())
