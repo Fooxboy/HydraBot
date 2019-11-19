@@ -19,7 +19,9 @@ namespace HydraBot.Commands
             var text = "❓ Выберите раздел на клавиатуре";
             var kb = new KeyboardBuilder(bot);
             kb.AddButton("🚗 Автомобили", "autostore");
-            kb.AddButton("🏡 Недвижимость", "homestore");
+            kb.AddButton("🔧 Гаражи", "garagestore");
+            kb.AddButton("🏢 Бизнесы", "businessstore");
+            kb.AddLine();
             kb.AddButton("♻ Разное", "otherstore");
             kb.AddLine();
             kb.AddButton(ButtonsHelper.ToHomeButton());

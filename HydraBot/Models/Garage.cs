@@ -10,6 +10,7 @@ namespace HydraBot.Models
     {
         [Key]
         public long UserId { get; set; }
+        public long GarageModelId { get; set; } 
         public long ParkingPlaces { get; set; }
         public string Cars { get; set; }
         public long SelectCar { get; set; }
