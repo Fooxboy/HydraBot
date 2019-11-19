@@ -11,7 +11,7 @@ namespace HydraBot.Commands.Store
     {
         public string Command => "buyitem";
 
-        public string[] Aliases => throw new NotImplementedException();
+        public string[] Aliases => new string[] { };
 
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {

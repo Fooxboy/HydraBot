@@ -28,6 +28,7 @@ namespace HydraBot.Helpers
             var json = File.ReadAllText("CarsManifest.json");
             var model = JsonConvert.DeserializeObject<CarsJsonModel>(json).cars;
             Cars = model;
+            logger.Info($"[CARS] Загружено {model.Count} автомобилей.");
         }
 
         public Car GetCarFromId(long id)=> Cars.Single(c => c.Id == id);
