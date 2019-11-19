@@ -17,9 +17,15 @@ namespace HydraBot.Commands.Garage
 
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
+            var api = Main.Api;
             var car = CarsHelper.GetHelper().GetCarFromId(long.Parse(msg.Payload.Arguments[0]));
             var text = $"❓ Выберите действие с автомобилем {car.Manufacturer} {car.Model}";
             var kb = new KeyboardBuilder(bot);
+            kb.AddButton("💵 Продать", "sell", new List<string>() {car.Id.ToString()});
+            var garage = api.Garages.GetGarage(msg);
+            if(garage.SelectCar != car.Id) kb.AddButton("🏎 Выбрать для гонок", "selectcar", new List<string>() { car.Id.ToString() });
+            kb.AddButton("↩ Назад", "garage");
+            sender.Text(text, msg.ChatId, kb.Build());
         }
 
         public void Init(IBot bot, ILoggerService logger)
