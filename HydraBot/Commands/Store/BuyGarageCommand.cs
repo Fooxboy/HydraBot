@@ -31,16 +31,15 @@ namespace HydraBot.Commands.Store
             if (user.Money < garageModel.Price)
             {
                 text = $"❌ У Вас недостаточно наличных, чтобы купить этот гараж. \n 💵 Ваш баланс: {user.Money} рублей.";
-                return;
+            }else
+            {
+                api.Users.RemoveMoney(user.Id, garageModel.Price);
+                api.Garages.UpgrateGarage(user.Id, garageModel.Name, garageModel.CountPlaces, garageModel.Id);
+                text = "✔ Вы купили новый гараж!";
             }
 
             kb.AddButton("↩ Назад", "garagestore");
             kb.AddButton("🔧 Перейти в гараж", "garage");
-            api.Users.RemoveMoney(user.Id, garageModel.Price);
-
-            api.Garages.UpgrateGarage(user.Id, garageModel.Name, garageModel.CountPlaces, garageModel.Id);
-
-            text = "✔ Вы купили новый гараж!";
             sender.Text(text, msg.ChatId, kb.Build());
 
         }

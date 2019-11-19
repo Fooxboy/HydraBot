@@ -32,7 +32,7 @@ namespace HydraBot.Commands.Store
             if (isActive || garage.GarageModelId >= garageModel.Id) text += "\n ✔ У Вас куплен этот гараж";
 
             var kb = new KeyboardBuilder(bot);
-            if (isActive || garage.GarageModelId >= garageModel.Id) kb.AddButton("💵 Купить", "buygarage", new List<string> { garageModel.Id.ToString() }, color: KeyboardButtonColor.Positive);
+            if (!(isActive || garage.GarageModelId >= garageModel.Id)) kb.AddButton("💵 Купить", "buygarage", new List<string> { garageModel.Id.ToString() }, color: KeyboardButtonColor.Positive);
 
             kb.AddButton("↩ Назад", "garagestore");
 

@@ -57,5 +57,18 @@ namespace HydraBot.BotApi
                 return gar.Cars;
             }
         }
+
+        public Garage UpgrateGarage(long userId, string name, long countPlaces, long idmodel)
+        {
+            using(var db = new Database())
+            {
+                var garage = db.Garages.Single(g => g.UserId == userId);
+                garage.Name = name;
+                garage.ParkingPlaces = countPlaces;
+                garage.GarageModelId = idmodel;
+                db.SaveChanges();
+                return garage;
+            }
+        }
     }
 }

@@ -23,11 +23,13 @@ namespace HydraBot.Commands.Store
 
             foreach (var garage in helper.Garages)
             {
-                text += $"🔧 [{garage.Id}] {garage.Name} | 🚘 Мест: {garage.CountPlaces} | 💵 Цена: {garage.Price}";
+                text += $"\n 🔧 [{garage.Id}] {garage.Name} | 🚘 Мест: {garage.CountPlaces} | 💵 Цена: {garage.Price}";
                 kb.AddButton($"🔧 {garage.Id}", "infogarage", new List<string>() { garage.Id.ToString()});
                 if (garage.Id == 3 || garage.Id == 7) kb.AddLine();
             }
 
+            kb.AddLine();
+            kb.AddButton("↩ Назад", "store");
             sender.Text(text, msg.ChatId, kb.Build());
         }
 

@@ -66,7 +66,7 @@ namespace HydraBot
                 new StoreCommand(), new GetCarsCommand(), new InfoCarCommand(),
                 new BuyCarCommand(), new FuelCommand(), new ProfileCommand(), 
                 new GasStationCommand(), new Commands.Store.GarageCommand(), new InfoGarageCommand(),
-                new BuyGarageCommand();
+                new BuyGarageCommand());
 
             //Установка сервисов.
             _bot.SetServices(new ReportService(), new BonusService());
