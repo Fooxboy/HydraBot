@@ -47,6 +47,9 @@ namespace HydraBot.Commands
             user.Prefix = "Игрок";
             user.Score = 0;
             user.TimeBan = 0;
+            user.BonusDay = 1;
+            user.IsAvailbleBonus = true;
+            user.TimeBonus = 0;
             if (msg.Platform == MessengerPlatform.Vkontakte)
             {
                 //устанавливаем id ВКонтакте в зависимости от того куда написал пользователь. В беседу или в лс.
