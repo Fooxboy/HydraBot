@@ -3,6 +3,7 @@ using Fooxboy.NucleusBot.Interfaces;
 using Fooxboy.NucleusBot.Models;
 using HydraBot.Commands.Bank;
 using HydraBot.Helpers;
+using Microsoft.EntityFrameworkCore.Update.Internal;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -48,6 +49,16 @@ namespace HydraBot.Commands
                     text = WithdrawCommand.Withdraw(user, count);
                 }
                 catch
+                {
+                    text = "❌ Вы ввели неверное число. Попробуйте ещё раз.";
+                }
+            }else if(command == "exchangedonate")
+            {
+                long count;
+                try
+                {
+                    count = long.Parse(msg.Text);
+                }catch
                 {
                     text = "❌ Вы ввели неверное число. Попробуйте ещё раз.";
                 }

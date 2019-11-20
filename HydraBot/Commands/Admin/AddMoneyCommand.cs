@@ -16,6 +16,13 @@ namespace HydraBot.Commands.Admin
         {
             long userId;
             var api = Main.Api;
+            var userSend = api.Users.GetUser(msg);
+            if(userSend.Access < 6)
+            {
+                sender.Text("❌ Вам недоступна эта команда!", msg.ChatId);
+                return;
+            }
+
             try
             {
                 userId = long.Parse(msg.Text.Split(" ")[1]);

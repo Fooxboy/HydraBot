@@ -25,9 +25,14 @@ namespace HydraBot.Commands
                 $"\n ❓ Выберите действие на клавиатуре.";
 
             var kb = new KeyboardBuilder(bot);
-            kb.AddButton("💸 Снять", "withdrawmoney", color: KeyboardButtonColor.Positive);
-            kb.AddButton("💹 Положить", "putrawmoney", color: KeyboardButtonColor.Primary);
+            kb.AddButton("💸 Снять с банковского счета", "withdrawmoney", color: KeyboardButtonColor.Positive);
+            kb.AddButton("💹 Положить на банковский счет", "putrawmoney", color: KeyboardButtonColor.Primary);
             kb.AddLine();
+            if (user.DonateMoney > 0)
+            {
+                kb.AddButton("💲 Обменять донат рубли", "exchangedonate", color: KeyboardButtonColor.Positive);
+                kb.AddLine();
+            }
             kb.AddButton(ButtonsHelper.ToHomeButton());
 
             sender.Text(text, msg.ChatId, kb.Build());
