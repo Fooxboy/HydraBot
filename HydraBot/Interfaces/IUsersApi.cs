@@ -51,6 +51,7 @@ namespace HydraBot.Interfaces
         /// <param name="msg"></param>
         /// <returns></returns>
         bool CheckUser(Message msg);
+        bool CheckUser(long userId);
         User GetUserFromId(long id);
         bool SetNickname(User user, string nickname);
         long AddMoneyToBank(long userId, long money);

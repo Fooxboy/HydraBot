@@ -2,14 +2,16 @@
 using HydraBot.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HydraBot.Migrations
 {
     [DbContext(typeof(Database))]
-    partial class DatabaseModelSnapshot : ModelSnapshot
+    [Migration("20191120070534_AddPhone")]
+    partial class AddPhone
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -84,9 +86,6 @@ namespace HydraBot.Migrations
 
                     b.Property<long>("BonusDay")
                         .HasColumnType("INTEGER");
-
-                    b.Property<string>("BusinessIds")
-                        .HasColumnType("TEXT");
 
                     b.Property<bool>("IsAvailbleBonus")
                         .HasColumnType("INTEGER");

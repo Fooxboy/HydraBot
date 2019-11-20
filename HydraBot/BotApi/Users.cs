@@ -80,6 +80,15 @@ namespace HydraBot.BotApi
             }
         }
 
+        public bool CheckUser(long userId)
+        {
+            using(var db = new Database())
+            {
+                return db.Users.Any(u => u.Id == userId);
+            }
+            //throw new NotImplementedException();
+        }
+
         public User GetUser(Message msg)
         {
             var user = _helper.CheckIsIdVk(msg) ? GetUserFromIdVk(_helper.GetUserIdVk(msg)) : GetUserFromIdTg(msg.MessageTG.From.Id);
