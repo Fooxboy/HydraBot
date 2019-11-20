@@ -57,6 +57,8 @@ namespace HydraBot.Interfaces
         long AddMoneyToBank(long userId, long money);
         long RemoveMoneyToBank(long userId, long money);
         long AddMoney(long userId, long money);
+        long AddDonateMoney(long userId, long count);
+        long RemoveDonateMoney(long userId, long count);
         long RemoveMoney(long userId, long money);
         long SetDayBonus(long userId, long count);
         bool SetIsAvalibleBonus(long userId, bool value);

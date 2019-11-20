@@ -72,5 +72,7 @@ namespace HydraBot.Models
         public bool IsAvailbleBonus { get; set; }
         //Id бизнесов
         public string BusinessIds { get; set; }
+
+        public long DonateMoney { get; set; }
     }
 }

@@ -24,6 +24,7 @@ namespace HydraBot.Commands
                 $"\n 🐾 ID: {user.Id}" +
                 $"\n ▶ Префикс: {user.Prefix}" +
                 $"\n 💵 Наличных: {user.Money}" +
+                 $"{(user.DonateMoney == 0 ? "" : $"\n 💰 Донат рубли: { user.DonateMoney} руб.")}" +
                 $"\n 💳 На банковском счету: {user.MoneyInBank}" +
                 $"\n ⭐ Уровень: {user.Level} ({user.Score} из {user.Level * 150})";
 

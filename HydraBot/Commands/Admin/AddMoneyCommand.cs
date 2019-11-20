@@ -43,9 +43,9 @@ namespace HydraBot.Commands.Admin
             }
 
 
-            api.Users.AddMoney(userId, countMoney);
+            api.Users.AddDonateMoney(userId, countMoney);
             sender.Text("✔ Баланс пользователя пополнен", msg.ChatId);
-            sender.Text($"💵 Ваш баланс пополнил администратор на {countMoney}", userId);
+            sender.Text($"💵 Ваш баланс донат рублей пополнил администратор на {countMoney} руб.", userId);
         }
 
         public void Init(IBot bot, ILoggerService logger)

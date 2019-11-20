@@ -10,6 +10,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using VkNet.Exception;
 
 namespace HydraBot.BotApi
 {
@@ -21,6 +22,17 @@ namespace HydraBot.BotApi
         {
             _logger = logger;
             _helper = new UsersHelper();
+        }
+
+        public long AddDonateMoney(long userId, long count)
+        {
+            using(var db = new Database())
+            {
+                var user = db.Users.Single(u => u.Id == userId);
+                user.DonateMoney += count;
+                db.SaveChanges();
+                return user.DonateMoney;
+            }
         }
 
         public long AddMoney(long userId, long money)
@@ -119,6 +131,16 @@ namespace HydraBot.BotApi
             {
                 var user = db.Users.Single(u => u.VkId == vkId);
                 return user;
+            }
+        }
+
+        public long RemoveDonateMoney(long userId, long count)
+        {
+            using(var db = new Database())
+            {
+                var user = db.Users.Single(u => u.Id == userId);
+                user.DonateMoney -= count;
+                return user.DonateMoney;
             }
         }
 

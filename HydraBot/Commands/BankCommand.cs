@@ -21,6 +21,7 @@ namespace HydraBot.Commands
             UsersCommandHelper.GetHelper().Add("", user.Id);
             var text = $"💳 У Вас в банке хранится {user.MoneyInBank} руб." +
                 $"\n 💵 У Вас наличных: {user.Money} руб." +
+                 $"{(user.DonateMoney == 0 ? "" : $"\n 💰 У Вас донат рублей: { user.DonateMoney} руб.")}" +
                 $"\n ❓ Выберите действие на клавиатуре.";
 
             var kb = new KeyboardBuilder(bot);
