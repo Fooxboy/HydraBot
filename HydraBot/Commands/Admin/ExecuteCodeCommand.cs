@@ -50,6 +50,7 @@ namespace HydraBot.Commands.Admin
             }
 
             sender.Text(text, msg.ChatId);
+            GC.Collect();
         }
 
         public void Init(IBot bot, ILoggerService logger)
