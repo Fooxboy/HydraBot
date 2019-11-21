@@ -31,7 +31,7 @@ namespace HydraBot.Commands.DrivingSchool
                 if (countTrueResponse < 4) sender.Text($"❌ Вы провалили экзамен! Вы ответили на {countTrueResponse} вопросов из 5", msg.ChatId, kb.Build());
                 else
                 {
-                    text = "✔ Вы получили права категории А!";
+                    text = "✔ Вы получили права категории B!";
                     sender.Text(text, msg.ChatId, kb.Build());
                 }
 
@@ -53,12 +53,12 @@ namespace HydraBot.Commands.DrivingSchool
                 text += $"\n ▶ {counter}) {resp}";
             }
 
-            kb.AddButton("1", "catA", new List<string>() { $"{q + 1}", "1", countTrueResponse.ToString() });
-            kb.AddButton("2", "catA", new List<string>() { $"{q + 1}", "2", countTrueResponse.ToString() });
+            kb.AddButton("1", "catB", new List<string>() { $"{q + 1}", "1", countTrueResponse.ToString() });
+            kb.AddButton("2", "catB", new List<string>() { $"{q + 1}", "2", countTrueResponse.ToString() });
             kb.AddLine();
 
-            kb.AddButton("3", "catA", new List<string>() { $"{q + 1}", "3", countTrueResponse.ToString() });
-            kb.AddButton("4", "catA", new List<string>() { $"{q + 1}", "4", countTrueResponse.ToString() });
+            kb.AddButton("3", "catB", new List<string>() { $"{q + 1}", "3", countTrueResponse.ToString() });
+            kb.AddButton("4", "catB", new List<string>() { $"{q + 1}", "4", countTrueResponse.ToString() });
 
             kb.SetOneTime();
 
