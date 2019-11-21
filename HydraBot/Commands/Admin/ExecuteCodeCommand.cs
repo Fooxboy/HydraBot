@@ -12,7 +12,7 @@ namespace HydraBot.Commands.Admin
     {
         public string Command => "code";
 
-        public string[] Aliases => new string[] { "exe",};
+        public string[] Aliases => new string[] { "exe"};
 
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
