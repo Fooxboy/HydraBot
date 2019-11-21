@@ -72,7 +72,7 @@ namespace HydraBot
                 new BuyOtherItemCommand(), new BusinessCommand(), new AddMoneyCommand(), 
                 new ExchangeDonateCommand(), new UsersCommand(), new AddScoreCommand(), 
                 new SetAccessCommand(), new AdminPanelCommand(), new ExecuteCodeCommand(),
-                new DrivingSchoolCommand(), new CategoryACommand());
+                new DrivingSchoolCommand(), new CategoryACommand(), new CategoryBCommand());
 
             //Установка сервисов.
             _bot.SetServices(new ReportService(), new BonusService(), new LevelService());
