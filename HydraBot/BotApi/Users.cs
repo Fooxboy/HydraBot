@@ -59,6 +59,18 @@ namespace HydraBot.BotApi
             }
         }
 
+        public long AddScore(long userId, long count)
+        {
+            using (var db = new Database())
+            {
+                var user = db.Users.Single(u => u.Id == userId);
+                user.Score += count;
+                db.SaveChanges();
+                return user.Score;
+            }
+            //throw new NotImplementedException();
+        }
+
         public long AddUser(User user)
         {
             try
@@ -169,6 +181,17 @@ namespace HydraBot.BotApi
             }
         }
 
+        public long RemoveScore(long userId, long count)
+        {
+            using(var db = new Database())
+            {
+                var user = db.Users.Single(u => u.Id == userId);
+                user.Score -= count;
+                db.SaveChanges();
+                return user.Score;
+            }
+        }
+
         public bool RemoveUser(User user)
         {
             try
@@ -212,6 +235,17 @@ namespace HydraBot.BotApi
                 user.IsAvailbleBonus = value;
                 db.SaveChanges();
                 return user.IsAvailbleBonus;
+            }
+        }
+
+        public long SetLevel(long userId, long lvl)
+        {
+            using(var db = new Database())
+            {
+                var user = db.Users.Single(u => u.Id == userId);
+                user.Level = lvl;
+                db.SaveChanges();
+                return user.Level;
             }
         }
 

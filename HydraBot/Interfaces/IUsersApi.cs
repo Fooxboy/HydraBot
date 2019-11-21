@@ -63,5 +63,9 @@ namespace HydraBot.Interfaces
         long SetDayBonus(long userId, long count);
         bool SetIsAvalibleBonus(long userId, bool value);
         long SetTimeBonus(long userId, long count);
+        long AddScore(long userId, long count);
+        long RemoveScore(long userId, long count);
+        long SetLevel(long userId, long lvl);
+
     }
 }
