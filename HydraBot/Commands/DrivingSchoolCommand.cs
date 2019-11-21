@@ -19,11 +19,11 @@ namespace HydraBot.Commands
             var text = "🚗 Автошкола." +
                 "\n ❓ Выберите категорию на клавиатуре ниже";
             var kb = new KeyboardBuilder(bot);
-            kb.AddButton("A (1 рубль)", "catA", new List<string> {"0", "0" });
-            kb.AddButton("B (1 рубль)", "catB", new List<string> {"0", "0" });
+            kb.AddButton("A (1 рубль)", "catA", new List<string> {"0", "0", "0" });
+            kb.AddButton("B (1 рубль)", "catB", new List<string> {"0", "0", "0" });
             kb.AddLine();
-            kb.AddButton("C (1 рубль)", "catC", new List<string> { "0", "0" });
-            kb.AddButton("D (1 рубль)", "catD", new List<string> { "0", "0" });
+            kb.AddButton("C (1 рубль)", "catC", new List<string> { "0", "0", "0" });
+            kb.AddButton("D (1 рубль)", "catD", new List<string> { "0", "0", "0" });
             kb.AddLine();
             kb.AddButton(ButtonsHelper.ToHomeButton());
             sender.Text(text, msg.ChatId, kb.Build());

@@ -7,6 +7,7 @@ using Fooxboy.NucleusBot.Models;
 using HydraBot.Commands;
 using HydraBot.Commands.Admin;
 using HydraBot.Commands.Bank;
+using HydraBot.Commands.DrivingSchool;
 using HydraBot.Commands.Garage;
 using HydraBot.Commands.Store;
 using HydraBot.Interfaces;
@@ -70,7 +71,8 @@ namespace HydraBot
                 new BuyGarageCommand(), new ActionCarCommand(), new OtherCommand(),
                 new BuyOtherItemCommand(), new BusinessCommand(), new AddMoneyCommand(), 
                 new ExchangeDonateCommand(), new UsersCommand(), new AddScoreCommand(), 
-                new SetAccessCommand(), new AdminPanelCommand(), new ExecuteCodeCommand());
+                new SetAccessCommand(), new AdminPanelCommand(), new ExecuteCodeCommand(),
+                new DrivingSchoolCommand(), new CategoryACommand());
 
             //Установка сервисов.
             _bot.SetServices(new ReportService(), new BonusService(), new LevelService());
