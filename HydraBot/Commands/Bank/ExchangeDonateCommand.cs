@@ -22,7 +22,7 @@ namespace HydraBot.Commands.Bank
             kb.AddButton("↩ Назад в банк", "bank");
             sender.Text($"💲 Напишите сумму донат-рублей, которую Вы хотите перевести в рубли." +
                 $"\n 🛒 Курс обмена: 1 донат рубль = 10.000 руб." +
-                $"\n 💰 Ваш баланс: {user.DonateMoney}", msg.ChatId);
+                $"\n 💰 Ваш баланс: {user.DonateMoney}", msg.ChatId, kb.Build());
         }
 
         public static string Exchange(Message msg, long count)

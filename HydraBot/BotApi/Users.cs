@@ -140,6 +140,7 @@ namespace HydraBot.BotApi
             {
                 var user = db.Users.Single(u => u.Id == userId);
                 user.DonateMoney -= count;
+                db.SaveChanges();
                 return user.DonateMoney;
             }
         }

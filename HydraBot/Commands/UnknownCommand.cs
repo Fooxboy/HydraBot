@@ -58,6 +58,7 @@ namespace HydraBot.Commands
                 try
                 {
                     count = long.Parse(msg.Text);
+                    text = ExchangeDonateCommand.Exchange(msg, count);
                 }catch
                 {
                     text = "❌ Вы ввели неверное число. Попробуйте ещё раз.";
