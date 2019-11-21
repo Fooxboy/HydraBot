@@ -28,6 +28,7 @@ namespace HydraBot.Commands.Store
                     if (user.Money < 5000) text = "❌ У Вас недостаточно наличных денег.";
                     else
                     {
+                        text = "✔ Вы купили телефон";
                         api.Users.RemoveMoney(user.Id, 5000);
                         api.Garages.SetPhone(user.Id, true);
                     }

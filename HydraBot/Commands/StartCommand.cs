@@ -5,6 +5,7 @@ using Fooxboy.NucleusBot.Models;
 using HydraBot.Helpers;
 using HydraBot.Interfaces;
 using HydraBot.Models;
+using HydraBot.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -74,6 +75,7 @@ namespace HydraBot.Commands
 
             //добавляем пользователя в бд.
             var id = _api.Users.AddUser(user);
+            user.Id = id;
 
             var garage = new Models.Garage() { Cars = "", Name = "no", IsPhone= false, Fuel=100, GarageModelId= -1, SelectCar = -1, ParkingPlaces = 0, UserId = id};
             Main.Api.Garages.RegisterGarage(garage);

@@ -1,14 +1,15 @@
 ﻿using Fooxboy.NucleusBot.Interfaces;
 using Fooxboy.NucleusBot.Models;
+using HydraBot.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace HydraBot.Commands.Admin
 {
-    public class AddScoreCommand : INucleusCommand
+    public class SetAccessCommand : INucleusCommand
     {
-        public string Command => "addscore";
+        public string Command => "setaccess";
 
         public string[] Aliases => new string[] { };
 
@@ -23,6 +24,7 @@ namespace HydraBot.Commands.Admin
                 return;
             }
 
+
             try
             {
                 userId = long.Parse(msg.Text.Split(" ")[1]);
@@ -33,27 +35,32 @@ namespace HydraBot.Commands.Admin
                 return;
             }
 
-            long countScore;
+            long access;
 
             try
             {
-                countScore = long.Parse(msg.Text.Split(" ")[2]);
+                access = long.Parse(msg.Text.Split(" ")[2]);
             }
             catch
             {
-                sender.Text("❌ Указано неверное количество опыта", msg.ChatId);
+                sender.Text("❌ Указано неверное количество денег", msg.ChatId);
                 return;
             }
 
-            if (!api.Users.CheckUser(userId))
-            {
-                sender.Text("❌ Пользователя с таким  ID нет в базе данных!", msg.ChatId);
-                return;
-            }
+            var prefix = string.Empty;
+            if (access == 0) prefix = "Игрок";
+            else if (access == 1) prefix = "VIP";
+            else if (access == 2) prefix = "Полицейский";
+            else if (access == 3) prefix = "Спонсор";
+            else if (access == 4) prefix = "Модератор";
+            else if (access == 5) prefix = "Старший модератор";
+            else if (access == 6) prefix = "Администратор";
+            else prefix = "Игрок";
 
+            api.Users.SetAccess(userId, access);
+            api.Users.SetPrefix(userId, prefix);
 
-            api.Users.AddScore(userId, countScore);
-            sender.Text("✔ Опыт пользователя увеличен.", msg.ChatId);
+            sender.Text($"✔ Вы установили игроку с ID {userId} права доступа {prefix}", msg.ChatId);
         }
 
         public void Init(IBot bot, ILoggerService logger)

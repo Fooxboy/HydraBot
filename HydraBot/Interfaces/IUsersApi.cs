@@ -66,6 +66,8 @@ namespace HydraBot.Interfaces
         long AddScore(long userId, long count);
         long RemoveScore(long userId, long count);
         long SetLevel(long userId, long lvl);
+        void SetAccess(long userId, long access);
+        void SetPrefix(long userId, string prefix);
 
     }
 }

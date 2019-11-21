@@ -216,6 +216,16 @@ namespace HydraBot.BotApi
             return RemoveUser(user);
         }
 
+        public void SetAccess(long userId, long access)
+        {
+            using(var db = new Database())
+            {
+                var user = db.Users.Single(u => u.Id == userId);
+                user.Access = access;
+                db.SaveChanges();
+            }
+        }
+
         public long SetDayBonus(long userId, long count)
         {
             using(var db = new Database())
@@ -265,6 +275,16 @@ namespace HydraBot.BotApi
             {
                 _logger.Error($"Произошла ошибка при смене никнейма: \n {e}");
                 return false;
+            }
+        }
+
+        public void SetPrefix(long userId, string prefix)
+        {
+            using(var db = new Database())
+            {
+                var user = db.Users.Single(u => u.Id == userId);
+                user.Prefix = prefix;
+                db.SaveChanges();
             }
         }
 
