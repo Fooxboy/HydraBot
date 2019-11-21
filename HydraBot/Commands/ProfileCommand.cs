@@ -16,28 +16,34 @@ namespace HydraBot.Commands
 
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
-
-
             var user = Main.Api.Users.GetUser(msg);
-
+            if(msg.Text.Split(" ").Length >= 2)
+            {
+                try
+                {
+                    
+                    var id = long.Parse(msg.Text.Split(" ")[1]);
+                    if (user.Access > 4)
+                        user = Main.Api.Users.GetUserFromId(id);
+                }catch { }
+            }
             var text = $"👾 Профиль игрока {user.Name}" +
                 $"\n 🐾 ID: {user.Id}" +
                 $"\n ▶ Префикс: {user.Prefix}" +
                 $"\n 💵 Наличных: {user.Money}" +
                  $"{(user.DonateMoney == 0 ? "" : $"\n 💰 Донат рубли: { user.DonateMoney} руб.")}" +
                 $"\n 💳 На банковском счету: {user.MoneyInBank}" +
+                $"{(user.DriverLicense != ""? $"\n📃 Категории прав: {user.DriverLicense}": "")}" +
                 $"\n ⭐ Уровень: {user.Level} ({user.Score} из {user.Level * 150})";
 
             var kb = new KeyboardBuilder(bot);
             kb.AddButton(ButtonsHelper.ToHomeButton());
 
             sender.Text(text, msg.ChatId, kb.Build());
-            //throw new NotImplementedException();
         }
 
         public void Init(IBot bot, ILoggerService logger)
         {
-            //throw new NotImplementedException();
         }
     }
 }
