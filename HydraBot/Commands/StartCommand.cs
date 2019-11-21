@@ -49,6 +49,7 @@ namespace HydraBot.Commands
             user.Score = 0;
             user.TimeBan = 0;
             user.BonusDay = 1;
+            user.DriverLicense = "";
             user.IsAvailbleBonus = true;
             user.TimeBonus = 0;
             if (msg.Platform == MessengerPlatform.Vkontakte)

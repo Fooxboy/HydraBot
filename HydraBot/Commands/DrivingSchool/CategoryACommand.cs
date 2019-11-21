@@ -5,6 +5,8 @@ using HydraBot.Helpers;
 using HydraBot.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -19,6 +21,8 @@ namespace HydraBot.Commands.DrivingSchool
 
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
+            var api = Main.Api;
+            var user = api.Users.GetUser(msg);
             var q = int.Parse(msg.Payload.Arguments[0]);
             var response = long.Parse(msg.Payload.Arguments[1]);
             var countTrueResponse = long.Parse(msg.Payload.Arguments[2]);
@@ -31,6 +35,12 @@ namespace HydraBot.Commands.DrivingSchool
                 if (countTrueResponse < 4) sender.Text($"❌ Вы провалили экзамен! Вы ответили на {countTrueResponse} вопросов из 5", msg.ChatId, kb.Build());
                 else
                 {
+                    using(var db = new Database())
+                    {
+                        var userDb = db.Users.Single(u => u.Id == user.Id);
+                        userDb.DriverLicense += "A,";
+                        db.SaveChanges();
+                    }
                     text = "✔ Вы получили права категории А!";
                     sender.Text(text, msg.ChatId, kb.Build());
                 }
@@ -42,6 +52,9 @@ namespace HydraBot.Commands.DrivingSchool
             {
                 var backQuestion = Questions[q - 1];
                 if (response == backQuestion.Response) countTrueResponse += 1;
+            }else
+            {
+                api.Users.RemoveMoney(user.Id, 1);
             }
             var question = Questions[q];
             text += $"❗| Вопрос №{q + 1}";
