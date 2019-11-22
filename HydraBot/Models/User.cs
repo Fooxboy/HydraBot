@@ -75,5 +75,6 @@ namespace HydraBot.Models
 
         public long DonateMoney { get; set; }
         public string DriverLicense { get; set; }
+        public long Gang { get; set; }
     }
 }
