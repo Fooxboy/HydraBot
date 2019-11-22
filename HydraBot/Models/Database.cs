@@ -19,6 +19,10 @@ namespace HydraBot.Models
         /// Гаражи
         /// </summary>
         public DbSet<Garage> Garages { get; set; }
+        /// <summary>
+        /// Банды
+        /// </summary>
+        public DbSet<Gang> Gangs { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite("Data source=bot.db");

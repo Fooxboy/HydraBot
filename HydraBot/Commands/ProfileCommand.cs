@@ -21,7 +21,6 @@ namespace HydraBot.Commands
             {
                 try
                 {
-                    
                     var id = long.Parse(msg.Text.Split(" ")[1]);
                     if (user.Access > 4)
                         user = Main.Api.Users.GetUserFromId(id);

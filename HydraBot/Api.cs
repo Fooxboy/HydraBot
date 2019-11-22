@@ -17,13 +17,23 @@ namespace HydraBot
             Users = new Users(logger);
             Reports = new Reports();
             Garages = new Garages();
+            Gangs = new Gangs();
         }
         /// <summary>
         /// Работа с пользователями.
         /// </summary>
         public IUsersApi Users { get; set; }
-
+        /// <summary>
+        /// Работа с репортами
+        /// </summary>
         public IReportsApi Reports { get; set; }
+        /// <summary>
+        /// Работа с гаражами
+        /// </summary>
         public IGarageApi Garages { get; set; }
+        /// <summary>
+        /// Работа с бандами
+        /// </summary>
+        public IGangs Gangs { get; set; }
     }
 }

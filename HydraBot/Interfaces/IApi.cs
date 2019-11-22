@@ -21,5 +21,7 @@ namespace HydraBot.Interfaces
         /// Гаражи
         /// </summary>
         IGarageApi Garages { get; set; }
+
+        IGangs Gangs { get; set; }
     }
 }
