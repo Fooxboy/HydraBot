@@ -38,6 +38,7 @@ namespace HydraBot.Commands
 
             kb.AddButton("👤 Профиль", "profile");
             kb.AddButton("🏫 Автошкола", "drivingschool");
+            kb.AddButton("👥 Банда", "gang");
 
             sender.Text(text, msg.ChatId, kb.Build());
         }
