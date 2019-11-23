@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore.Update.Internal;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using HydraBot.Commands.Gang;
 
 namespace HydraBot.Commands
 {
@@ -63,6 +64,9 @@ namespace HydraBot.Commands
                 {
                     text = "❌ Вы ввели неверное число. Попробуйте ещё раз.";
                 }
+            }else if (command == "creategang")
+            {
+                 text = CreateCommand.Create(msg.Text, user.Id);
             }
 
             var kb = new KeyboardBuilder(bot);

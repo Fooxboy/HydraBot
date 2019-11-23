@@ -8,6 +8,7 @@ using HydraBot.Commands;
 using HydraBot.Commands.Admin;
 using HydraBot.Commands.Bank;
 using HydraBot.Commands.DrivingSchool;
+using HydraBot.Commands.Gang;
 using HydraBot.Commands.Garage;
 using HydraBot.Commands.Store;
 using HydraBot.Interfaces;
@@ -73,7 +74,8 @@ namespace HydraBot
                 new ExchangeDonateCommand(), new UsersCommand(), new AddScoreCommand(), 
                 new SetAccessCommand(), new AdminPanelCommand(), new ExecuteCodeCommand(),
                 new DrivingSchoolCommand(), new CategoryACommand(), new CategoryBCommand(),
-                new CategoryCCommand(), new CategoryDCommand(), new AddCarCommand());
+                new CategoryCCommand(), new CategoryDCommand(), new AddCarCommand(), new GangCommand(),
+                new CreateCommand());
 
             //Установка сервисов.
             _bot.SetServices(new ReportService(), new BonusService(), new LevelService());
