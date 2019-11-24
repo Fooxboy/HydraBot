@@ -26,12 +26,14 @@ namespace HydraBot.Commands
                         user = Main.Api.Users.GetUserFromId(id);
                 }catch { }
             }
+            
             var text = $"👾 Профиль игрока {user.Name}" +
                 $"\n 🐾 ID: {user.Id}" +
                 $"\n ▶ Префикс: {user.Prefix}" +
                 $"\n 💵 Наличных: {user.Money}" +
                  $"{(user.DonateMoney == 0 ? "" : $"\n 💰 Донат рубли: { user.DonateMoney} руб.")}" +
                 $"\n 💳 На банковском счету: {user.MoneyInBank}" +
+                $"{(user.Gang!= 0? $"\n 👥 Банда: {Main.Api.Gangs.GetGang(user.Gang).Name}": "")}" +
                 $"{(user.DriverLicense != ""? $"\n📃 Категории прав: {user.DriverLicense}": "")}" +
                 $"\n ⭐ Уровень: {user.Level} ({user.Score} из {user.Level * 150})";
 
