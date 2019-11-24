@@ -67,6 +67,9 @@ namespace HydraBot.Commands
             }else if (command == "creategang")
             {
                  text = CreateCommand.Create(msg.Text, user.Id);
+            }else if (command == "renamegang")
+            {
+                text = RenameCommand.Rename(user, msg.Text);
             }
 
             var kb = new KeyboardBuilder(bot);
