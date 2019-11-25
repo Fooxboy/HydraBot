@@ -42,6 +42,7 @@ namespace HydraBot.Commands.Store
                 {
                     var us = db.Users.Single(u => u.Id == user.Id);
                     us.BusinessIds += $"{id},";
+                    db.SaveChanges();
                 }
 
                 text = "✔ Вы купили бизнес!";

@@ -38,6 +38,11 @@ namespace HydraBot.Commands
                 $"\n ⭐ Уровень: {user.Level} ({user.Score} из {user.Level * 150})";
 
             var kb = new KeyboardBuilder(bot);
+            if (user.BusinessIds != "")
+            {
+                kb.AddButton("🏢 Мой бизнес", "mybusiness");
+                kb.AddLine();
+            }
             kb.AddButton(ButtonsHelper.ToHomeButton());
 
             sender.Text(text, msg.ChatId, kb.Build());
