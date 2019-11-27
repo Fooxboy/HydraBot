@@ -15,6 +15,64 @@ namespace HydraBot.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.0.0");
 
+            modelBuilder.Entity("HydraBot.Models.Car", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<long>("Engine")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<long>("Health")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("IsUnderRepair")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Manufacturer")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Model")
+                        .HasColumnType("TEXT");
+
+                    b.Property<long>("Power")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<long>("Price")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<long>("Weight")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Cars");
+                });
+
+            modelBuilder.Entity("HydraBot.Models.Engine", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<long>("CarId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
+
+                    b.Property<long>("Power")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<long>("Weight")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Engines");
+                });
+
             modelBuilder.Entity("HydraBot.Models.Gang", b =>
                 {
                     b.Property<long>("Id")
@@ -44,6 +102,9 @@ namespace HydraBot.Migrations
                     b.Property<string>("Cars")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Engines")
+                        .HasColumnType("TEXT");
+
                     b.Property<long>("Fuel")
                         .HasColumnType("INTEGER");
 
@@ -58,6 +119,9 @@ namespace HydraBot.Migrations
 
                     b.Property<long>("ParkingPlaces")
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("TEXT");
 
                     b.Property<long>("SelectCar")
                         .HasColumnType("INTEGER");
