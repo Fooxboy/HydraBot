@@ -42,7 +42,7 @@ namespace HydraBot.Commands
             foreach(var car in cars)
             {
                 counter++;
-                text += $"\n 🚘 [{car.Id}] {car.Manufacturer} {car.Model} | ⚡ {car.Power} л.с. | ⚖ {car.Weight} \n";
+                text += $"\n 🚘 [{car.Id}] {car.Manufacturer} {car.Model} ⚙ Двигатель:  ⚡ {car.Power} л.с. | ⚖ {car.Weight} кг. \n";
                 kb.AddButton($"🏎 {car.Id}", "actioncar", new List<string>() { car.Id.ToString() });
                 if(counter == 4)
                 {
@@ -53,6 +53,7 @@ namespace HydraBot.Commands
 
             text += "❓ Для дополнительных действий выберите автомобиль на клавиатуре";
             kb.AddButton(ButtonsHelper.ToHomeButton());
+            kb.AddButton("⚙ Двигатели", "engines");
             sender.Text(text, msg.ChatId, kb.Build());
         }
 

@@ -78,7 +78,7 @@ namespace HydraBot.Commands
             var id = _api.Users.AddUser(user);
             user.Id = id;
 
-            var garage = new Models.Garage() { Cars = "", Name = "no", IsPhone= false, Fuel=100, GarageModelId= -1, SelectCar = -1, ParkingPlaces = 0, UserId = id};
+            var garage = new Models.Garage() { Cars = "", PhoneNumber = null,Name = "no", IsPhone= false, Fuel=100, GarageModelId= -1, SelectCar = -1, ParkingPlaces = 0, UserId = id};
             Main.Api.Garages.RegisterGarage(garage);
 
             var kb = new KeyboardBuilder(bot);
@@ -89,13 +89,7 @@ namespace HydraBot.Commands
 
         public void Init(IBot bot, ILoggerService logger)
         {
-            //throw new NotImplementedException();
         }
-
-
-        //var kb1 = new KeyboardBuilder(bot);
-        //kb1.AddButton("➕ Зарегистрироваться", "start");
-        //        sender.Text("🛑 Вы не зарегистрировались в боте. Нажмите на кнопку ниже для регистрации.", msg.ChatId, kb1.Build());
-        //        return;
+        
     }
 }

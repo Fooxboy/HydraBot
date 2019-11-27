@@ -4,7 +4,9 @@ using Fooxboy.NucleusBot.Models;
 using HydraBot.Helpers;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using HydraBot.Models;
 
 namespace HydraBot.Commands.Store
 {
@@ -41,8 +43,27 @@ namespace HydraBot.Commands.Store
             if(isAvalible)
             {
                 Main.Api.Users.RemoveMoney(user.Id, car.Price);
-                var str = CarsHelper.GetHelper().AddCarToString(garage.Cars, car.Id);
-                Main.Api.Garages.SetCars(user.Id, str);
+                using (var db = new Database())
+                {
+                    car.Id = db.Cars.Count() + 1;
+                    
+                    var engine = new Engine();
+                    engine.Id = db.Engines.Count() + 1;
+                    engine.Name = car.Manufacturer + " " + car.Model;
+                    engine.Power = car.Power;
+                    engine.Weight = car.Weight;
+                    engine.CarId = car.Id;
+                    db.Engines.Add(engine);
+                    
+                    car.Engine = engine.Id;
+                    car.Health = 100;
+                    db.Cars.Add(car);
+
+                    var gar = db.Garages.Single(g => g.UserId == user.Id);
+                    gar.Engines = gar.Engines + $"{engine.Id};";
+                    gar.Cars = gar.Cars + $"{car.Id}";
+                    db.SaveChanges();
+                }
                 text = $"🚗 Поздравляем с покупкой! Ваш новенький {car.Manufacturer} {car.Model} уже стоит в гараже!";
                 kb.AddButton("🔧 Перейти в гараж", "garage");
             }
@@ -55,7 +76,6 @@ namespace HydraBot.Commands.Store
 
         public void Init(IBot bot, ILoggerService logger)
         {
-           // throw new NotImplementedException();
         }
     }
 }
