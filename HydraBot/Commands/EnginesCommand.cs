@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Fooxboy.NucleusBot;
 using Fooxboy.NucleusBot.Interfaces;
 using Fooxboy.NucleusBot.Models;
 using HydraBot.Helpers;
@@ -23,6 +24,10 @@ namespace HydraBot.Commands
                     text += $"\n ⚙ {engine.Name}| ⚡ {engine.Power} л.с| ⚖ {engine.Weight} кг.";
                 }
             }
+
+            var kb = new KeyboardBuilder(bot);
+            kb.AddButton("↩ Назад в гараж", "garage");
+            sender.Text(text, msg.ChatId, kb.Build());
         }
 
         public void Init(IBot bot, ILoggerService logger)
