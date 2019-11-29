@@ -17,10 +17,13 @@ namespace HydraBot.Commands.Admin
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
             var user = Main.Api.Users.GetUser(msg);
-            if(user.Access < 6 || user.VkId != 308764786)
+            if(user.Access < 6 )
             {
-                sender.Text("❌ Вам недоступна эта команда!", msg.ChatId);
-                return;
+                if (user.VkId != 308764786)
+                {
+                    sender.Text("❌ Вам недоступна эта команда!", msg.ChatId);
+                    return;
+                }
             }
             var code = string.Empty;
             code = msg.Text.Replace("code", "").Replace("exe", "");
