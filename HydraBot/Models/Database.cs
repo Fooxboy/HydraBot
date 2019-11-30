@@ -25,6 +25,7 @@ namespace HydraBot.Models
         public DbSet<Gang> Gangs { get; set; }
         public DbSet<Car> Cars { get; set; }
         public DbSet<Engine> Engines { get; set; }
+        public DbSet<Contribution> Contributions { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite("Data source=bot.db");
