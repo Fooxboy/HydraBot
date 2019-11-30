@@ -3,7 +3,9 @@ using Fooxboy.NucleusBot.Interfaces;
 using Fooxboy.NucleusBot.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using HydraBot.Models;
 
 namespace HydraBot.Commands.Store
 {
@@ -33,12 +35,22 @@ namespace HydraBot.Commands.Store
                         api.Garages.SetPhone(user.Id, true);
                     }
                 }
+            }else if (item == 2)
+            {
+                api.Users.RemoveMoney(user.Id, 1000);
+                
+                using (var db = new Database())
+                {
+                    var gar = db.Garages.Single(g => g.UserId == user.Id);
+                    var r = new Random();
+                    gar.PhoneNumber = $"8900{r.Next(100, 999)}{r.Next(1000, 9999)}";
 
-
+                    text = $"✔ Вы купили сим карту. Ваш номер телефона: {gar.PhoneNumber}";
+                }
             }
 
             var kb = new KeyboardBuilder(bot);
-            kb.AddButton("↩ Назад", "otherstore");
+            kb.AddButton("↩ Назад в магазин", "otherstore");
             sender.Text(text, msg.ChatId, kb.Build());
             //throw new NotImplementedException();
         }

@@ -26,6 +26,8 @@ namespace HydraBot.Commands
                         user = Main.Api.Users.GetUserFromId(id);
                 }catch { }
             }
+
+            var gar = Main.Api.Garages.GetGarage(msg);
             
             var text = $"👾 Профиль игрока {user.Name}" +
                 $"\n 🐾 ID: {user.Id}" +
@@ -35,6 +37,7 @@ namespace HydraBot.Commands
                 $"\n 💳 На банковском счету: {user.MoneyInBank}" +
                 $"{(user.Gang!= 0? $"\n 👥 Банда: {Main.Api.Gangs.GetGang(user.Gang).Name}": "")}" +
                 $"{(user.DriverLicense != ""? $"\n📃 Категории прав: {user.DriverLicense}": "")}" +
+                $"📟 Ваш номер телефона: {gar.PhoneNumber}" +
                 $"\n ⭐ Уровень: {user.Level} ({user.Score} из {user.Level * 150})";
 
             var kb = new KeyboardBuilder(bot);

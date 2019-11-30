@@ -18,10 +18,14 @@ namespace HydraBot.Commands.Store
             var text = $"🛒 Раздел другое:" +
                 $"\n" +
                 $"\n 📱 Телефон" +
-                $"\n 💵 Цена: 5.000 руб.";
+                $"\n 💵 Цена: 5.000 руб." +
+                $"\n 📟 Сим-карта" +
+                $"\n 💵 Цена: 1.000 руб.";
 
             var kb = new KeyboardBuilder(bot);
             kb.AddButton("📱 Купить телефон", "buyitem", new List<string>() { "1" });
+            kb.AddLine();
+            kb.AddButton("📟 Купить сим-карту", "buyitem", new List<string>() { "2" });
             kb.AddLine();
             kb.AddButton("↩ Назад", "store");
             sender.Text(text, msg.ChatId, kb.Build());
