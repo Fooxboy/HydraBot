@@ -31,6 +31,7 @@ namespace HydraBot.Commands.Bank
             if (user.Money < count) return $"❌ У Вас недостаточно наличных, чтобы положить их на банковский счет. \n" +
                     $"💵 У Вас наличных: {user.Money}";
 
+            if (count <= 0) return "❌ Неверное количество";
             var cash = Main.Api.Users.RemoveMoney(user.Id, count);
             var inBank = Main.Api.Users.AddMoneyToBank(user.Id, count);
 

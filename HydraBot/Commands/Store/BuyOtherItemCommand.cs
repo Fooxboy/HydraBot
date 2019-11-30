@@ -43,8 +43,8 @@ namespace HydraBot.Commands.Store
                 {
                     var gar = db.Garages.Single(g => g.UserId == user.Id);
                     var r = new Random();
-                    gar.PhoneNumber = $"8900{r.Next(100, 999)}{r.Next(1000, 9999)}";
-
+                    gar.PhoneNumber = $"{r.Next(100000, 999999)}";
+                    db.SaveChanges();
                     text = $"✔ Вы купили сим карту. Ваш номер телефона: {gar.PhoneNumber}";
                 }
             }

@@ -32,6 +32,7 @@ namespace HydraBot.Commands.Bank
             if (user.MoneyInBank < count) return $"❌ У Вас недостаточно средств на счету для снятия. \n" +
                     $"💳 Баланс Вашего счета: {user.MoneyInBank}";
 
+            if (count <= 0) return "❌ Указано неверное количество";
             var inBank =  Main.Api.Users.RemoveMoneyToBank(user.Id, count);
             var cash =  Main.Api.Users.AddMoney(user.Id, count);
 

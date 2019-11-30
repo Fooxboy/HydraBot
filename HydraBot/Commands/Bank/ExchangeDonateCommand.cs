@@ -31,6 +31,7 @@ namespace HydraBot.Commands.Bank
             if (user.DonateMoney < count) return $"❌ На Вашем счету недостаточно донат рублей." +
                     $"\n 💰 Ваш баланс донат рублей: {user.DonateMoney}";
 
+            if (count <= 0) return "❌ Неверное число";
             var api = Main.Api;
 
             var donateMoney = api.Users.RemoveDonateMoney(user.Id, count);
