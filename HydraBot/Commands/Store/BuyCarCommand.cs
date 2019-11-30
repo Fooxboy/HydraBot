@@ -61,7 +61,7 @@ namespace HydraBot.Commands.Store
 
                     var gar = db.Garages.Single(g => g.UserId == user.Id);
                     gar.Engines = gar.Engines + $"{engine.Id};";
-                    gar.Cars = gar.Cars + $"{car.Id}";
+                    gar.Cars = gar.Cars + $"{car.Id};";
                     db.SaveChanges();
                 }
                 text = $"🚗 Поздравляем с покупкой! Ваш новенький {car.Manufacturer} {car.Model} уже стоит в гараже!";

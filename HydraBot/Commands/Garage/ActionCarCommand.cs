@@ -22,8 +22,9 @@ namespace HydraBot.Commands.Garage
             var text = $"❓ Выберите действие с автомобилем {car.Manufacturer} {car.Model}";
             var kb = new KeyboardBuilder(bot);
             kb.AddButton("💵 Продать", "sell", new List<string>() {car.Id.ToString()});
+            kb.AddLine();
             kb.AddButton("⚙ Сменить двигатель", "setengine", new List<string>() {car.Id.ToString()});
-
+            kb.AddLine();
             var garage = api.Garages.GetGarage(msg);
             if(garage.SelectCar != car.Id) kb.AddButton("🏎 Выбрать для гонок", "selectcar", new List<string>() { car.Id.ToString() });
             kb.AddButton("↩ Назад", "garage");

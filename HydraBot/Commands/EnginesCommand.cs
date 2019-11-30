@@ -43,6 +43,8 @@ namespace HydraBot.Commands
                 }
             }
 
+            kb.AddButton("⚙ Действия над двигателями", "selectengine");
+            kb.AddLine();
             kb.AddButton("↩ Назад в гараж", "garage");
             sender.Text(text, msg.ChatId, kb.Build());
         }

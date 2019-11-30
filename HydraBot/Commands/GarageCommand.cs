@@ -4,7 +4,9 @@ using Fooxboy.NucleusBot.Models;
 using HydraBot.Helpers;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using HydraBot.Models;
 using VkNet.Enums.SafetyEnums;
 
 namespace HydraBot.Commands
@@ -18,9 +20,28 @@ namespace HydraBot.Commands
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
             var garage = Main.Api.Garages.GetGarage(msg);
-
-            var cars = CarsHelper.GetHelper().ConvertStringToCars(garage.Cars);
-
+            var cars = new List<Car>();
+            if (garage.Cars != "")
+            {
+                var carIds = garage.Cars.Split(";");
+                using (var db = new Database())
+                {
+                    foreach (var carId in carIds)
+                    {
+                        try
+                        {
+                            var id = long.Parse(carId);
+                            var carModel = db.Cars.Single(c => c.Id == id);
+                            cars.Add(carModel);
+                        }
+                        catch
+                        {
+                            // ignored
+                        }
+                    }
+                }
+            }
+           
             var kb = new KeyboardBuilder(bot);
 
             if(garage.GarageModelId == -1)
@@ -52,6 +73,7 @@ namespace HydraBot.Commands
             }
 
             text += "❓ Для дополнительных действий выберите автомобиль на клавиатуре";
+            kb.AddLine();
             kb.AddButton(ButtonsHelper.ToHomeButton());
             kb.AddButton("⚙ Двигатели", "engines");
             sender.Text(text, msg.ChatId, kb.Build());
