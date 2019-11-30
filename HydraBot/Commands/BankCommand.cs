@@ -33,6 +33,9 @@ namespace HydraBot.Commands
                 kb.AddButton("💲 Обменять донат рубли", "exchangedonate", color: KeyboardButtonColor.Positive);
                 kb.AddLine();
             }
+
+            kb.AddButton("💵 Вклад", "contribution");
+            kb.AddLine();
             kb.AddButton(ButtonsHelper.ToHomeButton());
 
             sender.Text(text, msg.ChatId, kb.Build());

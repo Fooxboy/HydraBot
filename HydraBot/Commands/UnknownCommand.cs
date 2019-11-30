@@ -70,6 +70,21 @@ namespace HydraBot.Commands
             }else if (command == "renamegang")
             {
                 text = RenameCommand.Rename(user, msg.Text);
+            }else if (command == "opencontribution")
+            {
+                try
+                {
+                    var array = msg.Text.Split(" ");
+
+                    var count = long.Parse(array[0]);
+                    var days = long.Parse(array[1]);
+                    text = OpenContributionCommand.Open(user.Id, count, days);
+                }
+                catch
+                {
+                    text = "❌ Вы указали неверные числа";
+                }
+                
             }
 
             var kb = new KeyboardBuilder(bot);
