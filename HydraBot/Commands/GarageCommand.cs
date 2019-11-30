@@ -63,7 +63,21 @@ namespace HydraBot.Commands
             foreach(var car in cars)
             {
                 counter++;
-                text += $"\n 🚘 [{car.Id}] {car.Manufacturer} {car.Model} ⚙ Двигатель:  ⚡ {car.Power} л.с. | ⚖ {car.Weight} кг. \n";
+                var engineText = string.Empty;
+                if (car.Engine != 0)
+                {
+                    using (var db = new Database())
+                    {
+                        var engine = db.Engines.Single(e => e.Id == car.Engine);
+                        engineText = $"⚡ {engine.Power} л.с. | ⚖ {engine.Weight} кг.";
+                    }
+                }
+                else
+                {
+                    engineText = "не установлен";
+                }
+                
+                text += $"\n 🚘 [{car.Id}] {car.Manufacturer} {car.Model} ⚙ Двигатель:  {engineText} \n";
                 kb.AddButton($"🏎 {car.Id}", "actioncar", new List<string>() { car.Id.ToString() });
                 if(counter == 4)
                 {

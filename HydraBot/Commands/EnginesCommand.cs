@@ -45,6 +45,10 @@ namespace HydraBot.Commands
                             var car = db.Cars.Single(c => c.Id == engine.CarId);
                             carText = $"🚗 Установлен в {car.Manufacturer} {car.Model}";
                         }
+                        else
+                        {
+                            carText = "🚗 Не установлен ни в какой автомобиль";
+                        }
                         text += $"\n ⚙ {engine.Name}| ⚡ {engine.Power} л.с| ⚖ {engine.Weight} кг. {carText}";
                         kb.AddButton($"⚙ Двигатель {counter}", "selectengine",
                             new List<string>() {engine.Id.ToString(), fromCar.ToString()});
