@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Fooxboy.NucleusBot;
 using Fooxboy.NucleusBot.Interfaces;
 using Fooxboy.NucleusBot.Models;
@@ -14,6 +15,11 @@ namespace HydraBot.Commands
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
             var text = "⚙ Ваши двигатели:";
+            long fromCar = 0;
+            try
+            {
+                fromCar = long.Parse(msg.Payload.Arguments[0]);
+            }catch {}
             var kb = new KeyboardBuilder(bot);
             var garage = Main.Api.Garages.GetGarage(msg);
             if (garage.Engines == "")
@@ -26,8 +32,10 @@ namespace HydraBot.Commands
             var engines = garage.Engines.Split(";").ToList();
             using (var db = new Database())
             {
+                int counter = 0;
                 foreach (var eng in engines)
                 {
+                    ++counter;
                     try
                     {
                         var engine = db.Engines.Single(e => e.Id == long.Parse(eng));
@@ -38,12 +46,12 @@ namespace HydraBot.Commands
                             carText = $"🚗 Установлен в {car.Manufacturer} {car.Model}";
                         }
                         text += $"\n ⚙ {engine.Name}| ⚡ {engine.Power} л.с| ⚖ {engine.Weight} кг. {carText}";
+                        kb.AddButton($"⚙ Двигатель {counter}", "selectengine",
+                            new List<string>() {engine.Id.ToString(), fromCar.ToString()});
+                        kb.AddLine();
                     }catch {}
-                   
                 }
             }
-
-            kb.AddButton("⚙ Действия над двигателями", "selectengine");
             kb.AddLine();
             kb.AddButton("↩ Назад в гараж", "garage");
             sender.Text(text, msg.ChatId, kb.Build());

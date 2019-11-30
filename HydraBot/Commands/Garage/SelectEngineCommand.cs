@@ -14,6 +14,7 @@ namespace HydraBot.Commands.Garage
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
             var idEngine = long.Parse(msg.Payload.Arguments[0]);
+            var idCar = long.Parse(msg.Payload.Arguments[1]);
             Engine engine = null;
             Car car = null;
             using (var db = new Database())
@@ -21,8 +22,6 @@ namespace HydraBot.Commands.Garage
                  engine = db.Engines.Single(e => e.Id == idEngine);
                  if (engine.CarId != 0) car = db.Cars.Single(c => c.Id == engine.CarId);
             }
-            
-            
             
             var text = $"⚙ Двигатель {engine.Name}" +
                        $"\n ⚡ Мощность: {engine.Power}" +
@@ -39,7 +38,10 @@ namespace HydraBot.Commands.Garage
             }
             else
             {
-                kb.AddButton("🚗 Установить в автомобиль", "setengine");
+                kb.AddButton("🚗 Установить в автомобиль", $"{(idCar !=0? "setengine":"garage" )}", new List<string>()
+                {
+                    idCar.ToString(), idEngine.ToString()
+                });
             }
 
             kb.AddButton("↩ Назад к двигателям", "engines");
