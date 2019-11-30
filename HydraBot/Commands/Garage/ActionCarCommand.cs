@@ -5,7 +5,9 @@ using HydraBot.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using System.Text;
+using HydraBot.Models;
 
 namespace HydraBot.Commands.Garage
 {
@@ -18,8 +20,14 @@ namespace HydraBot.Commands.Garage
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
             var api = Main.Api;
-            var car = CarsHelper.GetHelper().GetCarFromId(long.Parse(msg.Payload.Arguments[0]));
+            Car car = null;
+            using (var db = new Database())
+            {
+                car = db.Cars.Single(c => c.Id == long.Parse(msg.Payload.Arguments[0]));
+                
+            }
             var text = $"❓ Выберите действие с автомобилем {car.Manufacturer} {car.Model}";
+
             var kb = new KeyboardBuilder(bot);
             kb.AddButton("💵 Продать", "sellcar", new List<string>() {car.Id.ToString()});
             kb.AddLine();
