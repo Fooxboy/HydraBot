@@ -76,10 +76,11 @@ namespace HydraBot
                 new DrivingSchoolCommand(), new CategoryACommand(), new CategoryBCommand(),
                 new CategoryCCommand(), new CategoryDCommand(), new AddCarCommand(), new GangCommand(),
                 new CreateCommand(), new RenameCommand(), new BuyBusinessCommand(), new MyBusinessCommand(),
-                new EnginesCommand(), new SetEngineCommand(), new DeleteEngineCommand(), new SelectEngineCommand());
+                new EnginesCommand(), new SetEngineCommand(), new DeleteEngineCommand(), new SelectEngineCommand(),
+                new OpenContributionCommand(), new CloseContributionCommand(), new ContributionCommand());
 
             //Установка сервисов.
-            _bot.SetServices(new ReportService(), new BonusService(), new LevelService());
+            _bot.SetServices(new ReportService(), new BonusService(), new LevelService(), new ContributionService());
 
             //запуск бота
             Task.Run(()=> _bot.Start());

@@ -21,6 +21,7 @@ namespace HydraBot.Commands.Bank
                 var contr = db.Contributions.Single(c => c.UserId == user.Id);
                  money = contr.Money;
                  db.Contributions.Remove(contr);
+                 db.SaveChanges();
             }
 
             Main.Api.Users.AddMoneyToBank(user.Id, money);
