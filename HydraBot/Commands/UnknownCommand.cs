@@ -95,7 +95,6 @@ namespace HydraBot.Commands
 
         public void Init(IBot bot, ILoggerService logger)
         {
-            //throw new NotImplementedException();
         }
     }
 }
