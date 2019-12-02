@@ -19,5 +19,6 @@ namespace HydraBot.Models
         public long SelectCar { get; set; }
         public string Name { get; set; }
         public long Fuel { get; set; }
+        public string Numbers { get; set; }
     }
 }

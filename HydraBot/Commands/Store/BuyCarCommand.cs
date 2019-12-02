@@ -32,7 +32,8 @@ namespace HydraBot.Commands.Store
                 isAvalible = false;
             }
 
-            if((garage.ParkingPlaces - CarsHelper.GetHelper().ConvertStringToCars(garage.Cars).Count) <= 0)
+            
+            if((garage.ParkingPlaces - garage.Cars.Split(";").Length - 1) <= 0)
             {
                 text = $"❌ У Вас недостаточно парковочных мест в гараже. Освободите место и попробуйте ещё раз!";
                 kb.AddButton("🔧 Перейти в гараж", "garage");

@@ -33,6 +33,8 @@ namespace HydraBot.Commands.Garage
             kb.AddLine();
             kb.AddButton("⚙ Сменить двигатель", "engines", new List<string>() {car.Id.ToString()});
             kb.AddLine();
+            kb.AddButton("🗄 Сменить номер", "numbers", new List<string>() {car.Id.ToString()});
+            kb.AddLine();
             var garage = api.Garages.GetGarage(msg);
             if(garage.SelectCar != car.Id) kb.AddButton("🏎 Выбрать для гонок", "selectcar", new List<string>() { car.Id.ToString() });
             kb.AddButton("↩ Назад", "garage");

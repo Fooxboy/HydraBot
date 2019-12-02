@@ -2,7 +2,7 @@
   "profiles": {
     "HydraBot.ConsoleShell": {
       "commandName": "Project",
-      "workingDirectory": "C:\\Users\\Fooxboy\\source\\repos\\HydraBot\\HydraBot.ConsoleShell"
+      "workingDirectory": "C:\\Users\\Fooxboy\\RiderProjects\\HydraBot\\HydraBot.ConsoleShell"
     }
   }
 }

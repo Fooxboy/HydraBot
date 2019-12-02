@@ -77,7 +77,7 @@ namespace HydraBot.Commands
                     engineText = "не установлен";
                 }
                 
-                text += $"\n 🚘 [{car.Id}] {car.Manufacturer} {car.Model} ⚙ Двигатель:  {engineText} \n";
+                text += $"\n 🚘 [{car.Id}] {car.Manufacturer} {car.Model} ⚙ Двигатель:  {engineText} |🗄 Номер: {car.Number} \n";
                 kb.AddButton($"🏎 {car.Id}", "actioncar", new List<string>() { car.Id.ToString() });
                 if(counter == 4)
                 {

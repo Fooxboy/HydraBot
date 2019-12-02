@@ -77,7 +77,8 @@ namespace HydraBot
                 new CategoryCCommand(), new CategoryDCommand(), new AddCarCommand(), new GangCommand(),
                 new CreateCommand(), new RenameCommand(), new BuyBusinessCommand(), new MyBusinessCommand(),
                 new EnginesCommand(), new SetEngineCommand(), new DeleteEngineCommand(), new SelectEngineCommand(),
-                new OpenContributionCommand(), new CloseContributionCommand(), new ContributionCommand());
+                new OpenContributionCommand(), new CloseContributionCommand(), new ContributionCommand(),
+                new NumbersCommand());
 
             //Установка сервисов.
             _bot.SetServices(new ReportService(), new BonusService(), new LevelService(), new ContributionService());

@@ -14,6 +14,7 @@ namespace HydraBot.Models
         public long Power { get; set; }
         public long Weight { get; set; }
         public long Price { get; set; }
+        public long Number { get; set; }
         public long Engine { get; set; }
         public long Health { get; set; }
         public bool IsUnderRepair { get; set; }
