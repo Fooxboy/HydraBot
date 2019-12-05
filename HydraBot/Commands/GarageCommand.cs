@@ -76,8 +76,18 @@ namespace HydraBot.Commands
                 {
                     engineText = "не установлен";
                 }
-                
-                text += $"\n 🚘 [{car.Id}] {car.Manufacturer} {car.Model} ⚙ Двигатель:  {engineText} |🗄 Номер: {car.Number} \n";
+
+                var carNumber = string.Empty;
+                if (car.Number != 0)
+                {
+                    using (var db = new Database())
+                    {
+                        var num = db.NumbersCars.Single(n => n.Id == car.Number);
+                        carNumber = $"🗄 Номер: {num.Number} {num.Region}";
+                    }
+                }
+                else carNumber = $"🗄 Номер не установлен";
+                text += $"\n 🚘 [{car.Id}] {car.Manufacturer} {car.Model} ⚙ Двигатель:  {engineText} | {carNumber} \n";
                 kb.AddButton($"🏎 {car.Id}", "actioncar", new List<string>() { car.Id.ToString() });
                 if(counter == 4)
                 {
@@ -90,6 +100,7 @@ namespace HydraBot.Commands
             kb.AddLine();
             kb.AddButton(ButtonsHelper.ToHomeButton());
             kb.AddButton("⚙ Двигатели", "engines");
+            kb.AddButton("🗄 Номера", "numbers");
             sender.Text(text, msg.ChatId, kb.Build());
         }
 

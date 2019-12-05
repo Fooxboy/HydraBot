@@ -9,5 +9,6 @@ namespace HydraBot.Models
         public string Number { get; set; }
         public string Region { get; set; }
         public long CarId { get; set; }
+        public long Owner {get;set;}
     }
 }
