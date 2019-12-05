@@ -22,7 +22,6 @@ namespace HydraBot
 
         public static IApi Api { get; set; }
         public static string Token { get; set; }
-        
         private readonly long _groupId;
         private readonly string _tokenVk;
         private readonly string _tokenTg;
