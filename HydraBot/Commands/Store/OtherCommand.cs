@@ -20,7 +20,9 @@ namespace HydraBot.Commands.Store
                 $"\n 📱 Телефон" +
                 $"\n 💵 Цена: 5.000 руб." +
                 $"\n 📟 Сим-карта" +
-                $"\n 💵 Цена: 1.000 руб.";
+                $"\n 💵 Цена: 1.000 руб." +
+                $"\n 🗄 Автомобильный номер" +
+                $"\n 💵  Цена: 10.000 руб.";
 
             var kb = new KeyboardBuilder(bot);
             kb.AddButton("📱 Купить телефон", "buyitem", new List<string>() { "1" });

@@ -17,7 +17,7 @@ namespace HydraBot.Commands.Garage
             var carId = long.Parse(msg.Payload.Arguments[1]);
             var kb = new KeyboardBuilder(bot);
 
-            kb.AddButton("🚗 Установть на авто", $"{(carId != 0? "setnumbercar": "garage")}", new List<string>() {carId.ToString(), numberId.ToString()});
+            kb.AddButton("🚗 Установть на авто", $"{(carId != 0? "setсфкnumber": "garage")}", new List<string>() {carId.ToString(), numberId.ToString()});
             kb.AddLine();
             kb.AddButton("💷 Продать", "sellnumber", new List<string>() {numberId.ToString()});
         }
