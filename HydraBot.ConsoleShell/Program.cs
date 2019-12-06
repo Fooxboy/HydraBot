@@ -1,5 +1,6 @@
 ﻿using HydraBot.ConsoleShell.Services;
 using System;
+using HydraBot.ConsoleShell.Commands;
 
 namespace HydraBot.ConsoleShell
 {
@@ -15,11 +16,16 @@ namespace HydraBot.ConsoleShell
 
             var main = new Main(config.IdGroupVKontakte, config.TokenGroupVKontakte, config.TokenBotTelegram);
             main.Start();
-            //защита от дурака
+            
+            var consoleProccessor = new CommandProccessor();
+            consoleProccessor.SetCommands(new Helpp(consoleProccessor));
+            
             while (true)
             {
-                Console.ReadLine();
-
+                Console.WriteLine();
+                Console.Write("Введите команду: ");
+                var text = Console.ReadLine();
+                consoleProccessor.Start(text);
             }
         }
     }
