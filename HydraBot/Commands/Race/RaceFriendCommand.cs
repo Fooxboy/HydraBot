@@ -19,7 +19,9 @@ namespace HydraBot.Commands.Race
 
         public static string RunFriendBattle(long creatorId, long enemyId)
         {
-
+            
+            
+            return "";
         }
 
 

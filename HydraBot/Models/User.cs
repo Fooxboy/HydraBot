@@ -72,9 +72,21 @@ namespace HydraBot.Models
         public bool IsAvailbleBonus { get; set; }
         //Id бизнесов
         public string BusinessIds { get; set; }
-
+        /// <summary>
+        /// Количество Донат рублей.
+        /// </summary>
         public long DonateMoney { get; set; }
+        /// <summary>
+        /// Список автоправ
+        /// </summary>
         public string DriverLicense { get; set; }
+        /// <summary>
+        ///  Id команда
+        /// </summary>
         public long Gang { get; set; }
+        /// <summary>
+        /// Id гонки, в которой участвует пользователь.
+        /// </summary>
+        public long Race { get; set; }
     }
 }
