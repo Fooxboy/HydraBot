@@ -1,4 +1,6 @@
-﻿using Fooxboy.NucleusBot.Interfaces;
+﻿using System.Collections.Generic;
+using Fooxboy.NucleusBot;
+using Fooxboy.NucleusBot.Interfaces;
 using Fooxboy.NucleusBot.Models;
 
 namespace HydraBot.Commands.Race
@@ -9,6 +11,11 @@ namespace HydraBot.Commands.Race
         public string[] Aliases => new string[0];
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
+            var kb = new KeyboardBuilder(bot);
+            kb.AddButton("📕 Меню телефона", "menuphone");
+            kb.AddButton("✔ Принять гонку", "raceStart", new List<string>());
+            kb.AddButton("❌ Отклонить гонку", "racenoaccept", new List<string>());
+            sender.Text("❓ Выберите действие на клавиатуре", msg.ChatId, kb.Build());
         }
 
         public void Init(IBot bot, ILoggerService logger)

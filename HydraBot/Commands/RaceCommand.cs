@@ -19,7 +19,7 @@ namespace HydraBot.Commands
             kb.AddButton("🎭 Гонка с другом", "racefriend", new List<string>(){"0"});
 
             sender.Text("❓ Выберите действие на клавиатуре.", msg.ChatId, kb.Build());
-            //kb.AddButton("📕 Меню телефона")
+            
 
         }
 
