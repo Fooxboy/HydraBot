@@ -10,6 +10,7 @@ using HydraBot.Commands.Bank;
 using HydraBot.Commands.DrivingSchool;
 using HydraBot.Commands.Gang;
 using HydraBot.Commands.Garage;
+using HydraBot.Commands.Race;
 using HydraBot.Commands.Store;
 using HydraBot.Interfaces;
 using HydraBot.Models;
@@ -69,7 +70,7 @@ namespace HydraBot
                 new SetNickCommand(), 
                 new BankCommand(),
                 new WithdrawCommand(),
-                 new PutCommand(),
+                new PutCommand(),
                 new BonusCommand(),
                 new Commands.GarageCommand(), 
                 new AutoCommand(),
@@ -115,7 +116,9 @@ namespace HydraBot
                 new NumbersCommand(),
                 new SetNumberCarCommand(),
                 new SellNumberCommand(), 
-                new ActionsNumberCommand());
+                new ActionsNumberCommand(),
+                new RaceCommand(),
+                new OpenPhoneCommand());
 
             //Установка сервисов.
             _bot.SetServices(
