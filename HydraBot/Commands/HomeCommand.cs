@@ -28,18 +28,16 @@ namespace HydraBot.Commands
             User user = _api.Users.GetUser(msg);
             UsersCommandHelper.GetHelper().Add("", user.Id);
             var text = "❓ Выберите раздел на клавиатуре";
-
-
             var kb = new KeyboardBuilder(bot);
             kb.AddButton("💰 Банк", "bank");
             kb.AddButton("🏪 Магазин", "store");
             kb.AddButton("🔧 Гараж", "garage");
             kb.AddLine();
-
+            kb.AddButton("🏁 Гонки", "race");
             kb.AddButton("👤 Профиль", "profile");
             kb.AddButton("🏫 Автошкола", "drivingschool");
-            kb.AddButton("👥 Банда", "gang");
-
+            kb.AddLine();
+            kb.AddButton("👥 Команда", "gang");
             sender.Text(text, msg.ChatId, kb.Build());
         }
 
