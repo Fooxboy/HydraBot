@@ -14,8 +14,10 @@ namespace HydraBot.Commands.Race
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
             Models.Race race;
-            var user = Main.Api.Users.GetUser(msg);
+            var userEnemy = Main.Api.Users.GetUser(msg);
             var kb = new KeyboardBuilder(bot);
+            Car carCreator;
+            Car carEnemy;
             if(msg.Payload.Arguments.Count == 0)
             {
                 //Пользователь принимает гонку.
@@ -32,12 +34,18 @@ namespace HydraBot.Commands.Race
                         return;
                     }
 
+                    
                     race.IsRequest = false;
                     var usr = db.Users.Single(u => u.Id == user.Id);
+                    carEnemy = db.Cars.Single()
                     usr.Race = race.Id;
                     db.SaveChanges();
                 }
             }
+
+            sender.Text($"Гонка с игроком {user.Name} на автомобиле {carEnemy.Manufacturer} {carEnemy.Model} началась! Не переходите по разделам во время гонки");
+
+
         }
 
         public void Init(IBot bot, ILoggerService logger)
