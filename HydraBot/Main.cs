@@ -118,7 +118,10 @@ namespace HydraBot
                 new SellNumberCommand(), 
                 new ActionsNumberCommand(),
                 new RaceCommand(),
-                new OpenPhoneCommand());
+                new OpenPhoneCommand(),
+                new RaceCommand(),
+                new RaceFriendCommand(),
+                new RaceStartCommand());
 
             //Установка сервисов.
             _bot.SetServices(

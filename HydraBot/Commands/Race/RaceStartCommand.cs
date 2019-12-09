@@ -3,6 +3,7 @@ using Fooxboy.NucleusBot.Interfaces;
 using Fooxboy.NucleusBot.Models;
 using HydraBot.Helpers;
 using HydraBot.Models;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace HydraBot.Commands.Race
@@ -14,19 +15,23 @@ namespace HydraBot.Commands.Race
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
             Models.Race race;
-            var userEnemy = Main.Api.Users.GetUser(msg);
+            User userEnemy = null;
+            User userCreator = null;
+            Models.Garage garageEnemy = null;
+            Models.Garage garageCreator = null;
             var kb = new KeyboardBuilder(bot);
             Car carCreator;
             Car carEnemy;
             if(msg.Payload.Arguments.Count == 0)
             {
+                userEnemy = Main.Api.Users.GetUser(msg);
                 //Пользователь принимает гонку.
 
                 using(var db = new Database())
                 {
                     try
                     {
-                        race = db.Races.Single(r => r.Enemy == user.Id && r.IsRequest == true);
+                        race = db.Races.Single(r => r.Enemy == userEnemy.Id && r.IsRequest == true);
                     }catch
                     {
                         kb.AddButton(ButtonsHelper.ToHomeButton());
@@ -34,11 +39,15 @@ namespace HydraBot.Commands.Race
                         return;
                     }
 
-                    
+                    userCreator = db.Users.Single(u => u.Id == race.Creator);
+                    garageCreator = db.Garages.Single(g => g.UserId == userCreator.Id);
+                    carCreator = db.Cars.Single(c => c.Id == garageCreator.SelectCar);
+
                     race.IsRequest = false;
-                    var usr = db.Users.Single(u => u.Id == user.Id);
-                    carEnemy = db.Cars.Single()
-                    usr.Race = race.Id;
+                    garageEnemy = db.Garages.Single(g => g.UserId == userEnemy.Id);
+                    var usrE = db.Users.Single(u => u.Id == userEnemy.Id);
+                    carEnemy = db.Cars.Single(c => c.Id == garageEnemy.SelectCar);
+                    usrE.Race = race.Id;
                     db.SaveChanges();
                 }
             }
