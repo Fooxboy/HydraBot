@@ -87,8 +87,8 @@ namespace HydraBot.Commands.Store
                         }
                         kb.AddLine();
 
-                        kb.AddButton("↩ Назад", "autostore");
-                        if (cars.Count > 10) kb.AddButton("▶", "getcars", new List<string>() { manufacture, $"1" });
+                        kb.AddButton("↩ Назад в автомагазин", "autostore");
+                        if (cars.Count > 10) kb.AddButton("На страницу 2 ▶", "getcars", new List<string>() { manufacture, $"1" });
                     }
 
                     if (cars.Count == 0) text = "⚡ Автомобили от этого производителя скоро появятся!";
