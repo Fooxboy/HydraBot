@@ -31,7 +31,7 @@ namespace HydraBot.Commands.Store
             kb.AddLine();
             kb.AddButton("🗄 Купить автомобильный номер", "buyitem", new List<string>() { "3" });
             kb.AddLine();
-            kb.AddButton("↩ Назад", "store");
+            kb.AddButton("↩ Назад в магазин", "store");
             sender.Text(text, msg.ChatId, kb.Build());
         }
 

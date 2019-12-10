@@ -2,6 +2,7 @@
 using Fooxboy.NucleusBot;
 using Fooxboy.NucleusBot.Interfaces;
 using Fooxboy.NucleusBot.Models;
+using HydraBot.Helpers;
 
 namespace HydraBot.Commands
 {
@@ -21,8 +22,12 @@ namespace HydraBot.Commands
             {
                 text = "❓ Выберите действие на клавиатуре.";
                 kb.AddButton("📱 Открыть телефон", "openphone");
+                kb.AddLine();
                 kb.AddButton("🏁 Быстрая гонка", "rrrrrrr", new List<string>() { "0" });
+                kb.AddLine();
                 kb.AddButton("🎭 Гонка с другом", "racefriend", new List<string>() { "0" });
+                kb.AddLine();
+                kb.AddButton(ButtonsHelper.ToHomeButton());
             }else
             {
                 text = "❌ Для участия в гонках нужен телефон. Зайдите в магазин за ним!";

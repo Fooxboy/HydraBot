@@ -41,9 +41,9 @@ namespace HydraBot.Commands.Garage
                     kb.AddLine();
                 }
 
-                text += "❓ Выберите номер на клавиатуре, чтобы выполнить над ним действие.";
+                text += "\n❓ Выберите номер на клавиатуре, чтобы выполнить над ним действие.";
                 
-                sender.Text(text, msg.ChatId);
+                sender.Text(text, msg.ChatId, kb.Build());
             }
         }
 
