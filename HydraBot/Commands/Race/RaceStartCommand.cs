@@ -85,12 +85,19 @@ namespace HydraBot.Commands.Race
                     winnerLocal.Money += 1000;
                     winnerLocal.Score += winnerLocal.Level * 50;
 
+                    var usr1 = db.Users.Single(u => u.Id == raceLocal.Creator);
+                    var usr2 = db.Users.Single(u => u.Id == raceLocal.Enemy);
+
+                    usr1.Race = 0;
+                    usr2.Race = 0;
                     db.SaveChanges();
                 }
 
+                var kb = new KeyboardBuilder(bot);
+                kb.AddButton("🏁 Назад в гонки", "race");
 
-                Task.Run(() => sender.Text($"🎉 Поздравляю с победой! Вы получили: 💵 1.000 рублей и ⭐ {winner.Level * 50} опыта", winner.Id == userEnemy.Id ? enemyChatId : creatorChatId));
-                Task.Run(() => sender.Text($"🏁 Вы проиграли в этой гонке.", winner.Id == userEnemy.Id? enemyChatId: creatorChatId));
+                Task.Run(() => sender.Text($"🎉 Поздравляю с победой! Вы получили: 💵 1.000 рублей и ⭐ {winner.Level * 50} опыта", winner.Id == userEnemy.Id ? enemyChatId : creatorChatId, kb.Build()));
+                Task.Run(() => sender.Text($"🏁 Вы проиграли в этой гонке.", winner.Id == userEnemy.Id? creatorChatId : enemyChatId, kb.Build()));
 
             });
         }

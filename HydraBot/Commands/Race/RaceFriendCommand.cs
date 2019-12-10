@@ -74,7 +74,7 @@ namespace HydraBot.Commands.Race
                 creator.Race = race.Id;
                 db.Races.Add(race);
                 db.SaveChanges();
-                UsersCommandHelper.GetHelper().Add("", user.Id);
+                UsersCommandHelper.GetHelper().Add("", creatorId);
                 return "🏁 Мы отправили пользователю запрос о гонке с Вами. ";
 
             }
