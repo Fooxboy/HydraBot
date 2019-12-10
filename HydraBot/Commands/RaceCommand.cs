@@ -13,12 +13,26 @@ namespace HydraBot.Commands
         {
             var text = string.Empty;
 
-            var kb = new KeyboardBuilder(bot);
-            kb.AddButton("📱 Открыть телефон", "openphone");
-            kb.AddButton("🏁 Быстрая гонка", "racestart", new List<string>(){"0"});
-            kb.AddButton("🎭 Гонка с другом", "racefriend", new List<string>(){"0"});
+            var garage = Main.Api.Garages.GetGarage(msg);
 
-            sender.Text("❓ Выберите действие на клавиатуре.", msg.ChatId, kb.Build());
+            var kb = new KeyboardBuilder(bot);
+
+            if (garage.IsPhone)
+            {
+                text = "❓ Выберите действие на клавиатуре.";
+                kb.AddButton("📱 Открыть телефон", "openphone");
+                kb.AddButton("🏁 Быстрая гонка", "rrrrrrr", new List<string>() { "0" });
+                kb.AddButton("🎭 Гонка с другом", "racefriend", new List<string>() { "0" });
+            }else
+            {
+                text = "❌ Для участия в гонках нужен телефон. Зайдите в магазин за ним!";
+                kb.AddButton("🏪 Перейти в магазин", "store");
+            }
+            
+          
+           
+
+            sender.Text(text, msg.ChatId, kb.Build());
             
 
         }

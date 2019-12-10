@@ -4,7 +4,6 @@ using Fooxboy.NucleusBot.Models;
 using HydraBot.Helpers;
 using HydraBot.Models;
 using System;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
