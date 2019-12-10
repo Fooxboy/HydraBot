@@ -36,6 +36,7 @@ namespace HydraBot.Commands.Bank
             var inBank =  Main.Api.Users.RemoveMoneyToBank(user.Id, count);
             var cash =  Main.Api.Users.AddMoney(user.Id, count);
 
+            UsersCommandHelper.GetHelper().Add("", user.Id);
             return $"✔ Вы сняли с банковского счета деньги!" +
                 $"\n 💳 На счету: {inBank} руб." +
                 $"\n 💵 Наличных: {cash} руб.";

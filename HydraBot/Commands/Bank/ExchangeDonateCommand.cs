@@ -37,6 +37,7 @@ namespace HydraBot.Commands.Bank
             var donateMoney = api.Users.RemoveDonateMoney(user.Id, count);
             var money = api.Users.AddMoney(user.Id, count * 10000);
 
+            UsersCommandHelper.GetHelper().Add("", user.Id);
             return $"✔ Вы обменяли донат рубли!" +
                 $"\n 💵 Ваш баланс: {money} руб." +
                 $"\n 💰 Ваш баланс донат рублей: {donateMoney} руб.";

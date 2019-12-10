@@ -3,8 +3,11 @@ using Fooxboy.NucleusBot.Interfaces;
 using Fooxboy.NucleusBot.Models;
 using HydraBot.Helpers;
 using HydraBot.Models;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace HydraBot.Commands.Race
 {
@@ -14,14 +17,14 @@ namespace HydraBot.Commands.Race
         public string[] Aliases => new string[0];
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
-            Models.Race race;
+            Models.Race race = null;
             User userEnemy = null;
             User userCreator = null;
             Models.Garage garageEnemy = null;
             Models.Garage garageCreator = null;
             var kb = new KeyboardBuilder(bot);
-            Car carCreator;
-            Car carEnemy;
+            Car carCreator = null;
+            Car carEnemy = null;
             if(msg.Payload.Arguments.Count == 0)
             {
                 userEnemy = Main.Api.Users.GetUser(msg);
@@ -52,10 +55,47 @@ namespace HydraBot.Commands.Race
                 }
             }
 
-            sender.Text($"Гонка с игроком {user.Name} на автомобиле {carEnemy.Manufacturer} {carEnemy.Model} началась! Не переходите по разделам во время гонки");
+            long enemyChatId = 0;
+            long creatorChatId = 0;
+            if(sender.Platform == Fooxboy.NucleusBot.Enums.MessengerPlatform.Vkontakte)
+            {
+                enemyChatId = userEnemy.VkId;
+                creatorChatId = userCreator.VkId;
+            }else
+            {
+                enemyChatId = userEnemy.TgId;
+                creatorChatId = userCreator.TgId;
+            }
+            Task.Run(()=> sender.Text($"🏁 Гонка с игроком {userCreator.Name} на автомобиле {carCreator.Manufacturer} {carCreator.Model} ({carCreator.Number}) началась! Не переходите по разделам во время гонки", enemyChatId));
+            Task.Run(()=> sender.Text($"🏁 Гонка с игроком {userEnemy.Name} на автомобиле {carEnemy.Manufacturer} {carEnemy.Model} ({carEnemy.Number}) началась! Не переходите по разделам во время гонки", creatorChatId));
 
 
+            Task.Run(() =>
+            {
+                Thread.Sleep(TimeSpan.FromSeconds(5));
+
+                var winner = carEnemy.Power > carCreator.Power ? userEnemy : userCreator;
+
+                using(var db = new Database())
+                {
+                    var raceLocal = db.Races.Single(r => r.Id == race.Id);
+                    raceLocal.Winner = winner.Id;
+
+                    var winnerLocal = db.Users.Single(u => u.Id == winner.Id);
+                    winnerLocal.Money += 1000;
+                    winnerLocal.Score += winnerLocal.Level * 50;
+
+                    db.SaveChanges();
+                }
+
+
+                Task.Run(() => sender.Text($"🎉 Поздравляю с победой! Вы получили: 💵 1.000 рублей и ⭐ {winner.Level * 50} опыта", winner.Id == userEnemy.Id ? enemyChatId : creatorChatId));
+                Task.Run(() => sender.Text($"🏁 Вы проиграли в этой гонке.", winner.Id == userEnemy.Id? enemyChatId: creatorChatId));
+
+            });
         }
+
+
 
         public void Init(IBot bot, ILoggerService logger)
         {

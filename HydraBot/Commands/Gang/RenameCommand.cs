@@ -33,6 +33,7 @@ namespace HydraBot.Commands.Gang
                 db.SaveChanges();
             }
 
+            UsersCommandHelper.GetHelper().Add("", user.Id);
             return $"✔ Имя банды изменено на {name}";
         }
 

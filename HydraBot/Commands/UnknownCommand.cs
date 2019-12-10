@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using HydraBot.Commands.Gang;
+using HydraBot.Commands.Race;
 
 namespace HydraBot.Commands
 {
@@ -85,12 +86,23 @@ namespace HydraBot.Commands
                     text = "❌ Вы указали неверные числа";
                 }
                 
+            }else if(command == "racefriend")
+            {
+                try
+                {
+                    var array = msg.Text.Split(" ");
+                    var id = long.Parse(array[0]);
+                    text = RaceFriendCommand.RunFriendBattle(user.Id, id, sender, bot);
+                }catch
+                {
+                    text = "Вы указали неверный id";
+                }
             }
 
             var kb = new KeyboardBuilder(bot);
             kb.AddButton(ButtonsHelper.ToHomeButton());
             sender.Text(text, msg.ChatId, kb.Build());
-            
+           // UsersCommandHelper.GetHelper().Add("", user.Id);
         }
 
         public void Init(IBot bot, ILoggerService logger)

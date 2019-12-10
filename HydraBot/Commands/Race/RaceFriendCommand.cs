@@ -24,6 +24,8 @@ namespace HydraBot.Commands.Race
                 text = "❌ А ну стоять. Ты уже находишься в гонке!";
             }
 
+            UsersCommandHelper.GetHelper().Add("racefriend", user.Id);
+
             sender.Text(text, msg.ChatId, kb.Build());
         }
 
@@ -72,7 +74,7 @@ namespace HydraBot.Commands.Race
                 creator.Race = race.Id;
                 db.Races.Add(race);
                 db.SaveChanges();
-                
+                UsersCommandHelper.GetHelper().Add("", user.Id);
                 return "🏁 Мы отправили пользователю запрос о гонке с Вами. ";
 
             }

@@ -37,6 +37,7 @@ namespace HydraBot.Commands.Bank
                 };
                 db.Contributions.Add(contr);
                 db.SaveChanges();
+                UsersCommandHelper.GetHelper().Add("", user.Id);
                 return $"✔ Вы открыли вклад на сумму {count} руб., на {days} дн.";
             }
         }

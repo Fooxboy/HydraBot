@@ -38,6 +38,7 @@ namespace HydraBot.Commands.Gang
             {
                 var api = Main.Api;
                 var gang = api.Gangs.CreateGang(creator, name);
+
                 using (var db = new Database())
                 {
                     var user = db.Users.Single(u => u.Id == creator);
@@ -45,10 +46,12 @@ namespace HydraBot.Commands.Gang
                     db.SaveChanges();
                 }
 
+                UsersCommandHelper.GetHelper().Add("", creator);
                 return $"👥 Банда {name} создана!";
             }
             catch
             {
+                UsersCommandHelper.GetHelper().Add("", creator);
                 return "❌ Мы не смогли создать банду из-за системной ошибки!";
             }
             

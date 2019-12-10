@@ -6,6 +6,8 @@
     <Authors>Fooxboy</Authors>
     <Company>Fooxboy</Company>
     <StartupObject>HydraBot.ConsoleShell.Program</StartupObject>
+    <Description>Бот для ВКонтакте</Description>
+    <Copyright>Fooxboy</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
