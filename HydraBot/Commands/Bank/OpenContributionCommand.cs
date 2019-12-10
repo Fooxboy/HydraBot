@@ -22,6 +22,7 @@ namespace HydraBot.Commands.Bank
         public static string Open(long userId, long count, long days)
         {
             if (count <= 0) return "❌ Указана неверная сумма";
+            if (days < 1) return "❌ Указано неверное количество дней.";
 
             var user = Main.Api.Users.GetUserFromId(userId);
 
