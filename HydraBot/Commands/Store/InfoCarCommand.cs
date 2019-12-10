@@ -37,9 +37,9 @@ namespace HydraBot.Commands.Store
                 $"\n 💰 Цена: {car.Price}";
 
             var kb = new KeyboardBuilder(bot);
-            kb.AddButton("💵 Купить", "buycar", new List<string>() { car.Id.ToString() }, color: KeyboardButtonColor.Positive);
+            kb.AddButton("💵 Купить автомобиль", "buycar", new List<string>() { car.Id.ToString() }, color: KeyboardButtonColor.Positive);
             kb.AddLine();
-            kb.AddButton("↩ Назад", "getcars", new List<string>() { car.Manufacturer, "0" });
+            kb.AddButton("↩ Назад к автомобилям", "getcars", new List<string>() { car.Manufacturer, "0" });
 
             sender.Text(text, msg.ChatId, kb.Build());
         }

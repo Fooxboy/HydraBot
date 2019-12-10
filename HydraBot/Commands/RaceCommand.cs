@@ -29,12 +29,8 @@ namespace HydraBot.Commands
                 kb.AddButton("🏪 Перейти в магазин", "store");
             }
             
-          
-           
-
             sender.Text(text, msg.ChatId, kb.Build());
             
-
         }
 
         public void Init(IBot bot, ILoggerService logger)
