@@ -121,7 +121,8 @@ namespace HydraBot
                 new OpenPhoneCommand(),
                 new RaceCommand(),
                 new RaceFriendCommand(),
-                new RaceStartCommand());
+                new RaceStartCommand(),
+                new SelectCarCommand());
 
             //Установка сервисов.
             _bot.SetServices(

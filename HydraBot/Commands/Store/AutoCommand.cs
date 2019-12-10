@@ -36,7 +36,7 @@ namespace HydraBot.Commands.Store
                         kb.AddLine();
                         kb.AddButton("◀", "autostore", color: KeyboardButtonColor.Positive);
                         kb.AddButton("🏪 Магазин", "store");
-                        kb.AddButton("▶", "autostore", new List<string> { "2" }, color: KeyboardButtonColor.Positive);
+                        kb.AddButton("Страница 2 ▶", "autostore", new List<string> { "2" }, color: KeyboardButtonColor.Positive);
                     }
                     else if (msg.Payload.Arguments[0] == "2")
                     {
@@ -50,9 +50,9 @@ namespace HydraBot.Commands.Store
                         kb.AddButton("Mercedes-Benz", "getcars", new List<string> { "Mercedes-Benz", "0" });
                         kb.AddButton("Mitsubishi", "getcars", new List<string> { "Mitsubishi", "0" });
                         kb.AddLine();
-                        kb.AddButton("◀", "autostore", new List<string> { "1" }, color: KeyboardButtonColor.Positive);
+                        kb.AddButton("◀ Страница 1", "autostore", new List<string> { "1" }, color: KeyboardButtonColor.Positive);
                         kb.AddButton("🏪 Магазин", "store");
-                        kb.AddButton("▶", "autostore", new List<string> { "3" }, color: KeyboardButtonColor.Positive);
+                        kb.AddButton("Страница 3 ▶", "autostore", new List<string> { "3" }, color: KeyboardButtonColor.Positive);
                     }
                     else if (msg.Payload.Arguments[0] == "3")
                     {
@@ -67,9 +67,9 @@ namespace HydraBot.Commands.Store
                         kb.AddButton("Saab", "getcars", new List<string> { "Saab", "0" });
                         kb.AddButton("Skoda", "getcars", new List<string> { "Skoda", "0" });
                         kb.AddLine();
-                        kb.AddButton("◀", "autostore", new List<string> { "2" }, color: KeyboardButtonColor.Positive);
+                        kb.AddButton("◀ Страница 2", "autostore", new List<string> { "2" }, color: KeyboardButtonColor.Positive);
                         kb.AddButton("🏪 Магазин", "store");
-                        kb.AddButton("▶", "autostore", new List<string> { "4" }, color: KeyboardButtonColor.Positive);
+                        kb.AddButton("Страница 4 ▶", "autostore", new List<string> { "4" }, color: KeyboardButtonColor.Positive);
                     }
                     else if (msg.Payload.Arguments[0] == "4")
                     {
@@ -81,7 +81,7 @@ namespace HydraBot.Commands.Store
                         kb.AddButton("Volvo", "getcars", new List<string> { "Volvo", "0" });
                         kb.AddButton("Русский автопром", "getcars", new List<string> { "Rus", "0" });
                         kb.AddLine();
-                        kb.AddButton("◀", "autostore", new List<string> { "2" }, color: KeyboardButtonColor.Positive);
+                        kb.AddButton("◀ Страница 2", "autostore", new List<string> { "2" }, color: KeyboardButtonColor.Positive);
                         kb.AddButton("🏪 Магазин", "store");
                     }
                 }
@@ -98,7 +98,7 @@ namespace HydraBot.Commands.Store
                     kb.AddButton("Ferrari", "getcars", new List<string> { "Ferrari", "0" });
                     kb.AddLine();
                     kb.AddButton("🏪 Магазин", "store");
-                    kb.AddButton("▶", "autostore", new List<string> { "1" }, color: KeyboardButtonColor.Positive);
+                    kb.AddButton("Страница 1 ▶", "autostore", new List<string> { "1" }, color: KeyboardButtonColor.Positive);
 
                 }
             }else
@@ -114,7 +114,7 @@ namespace HydraBot.Commands.Store
                 kb.AddButton("Ferrari", "getcars", new List<string> { "Ferrari", "0" });
                 kb.AddLine();
                 kb.AddButton("🏪 Магазин", "store");
-                kb.AddButton("▶", "autostore", new List<string> { "1" }, color: KeyboardButtonColor.Positive);
+                kb.AddButton("Страница 1 ▶", "autostore", new List<string> { "1" }, color: KeyboardButtonColor.Positive);
             }
             sender.Text("🏎 Выберите производителя автомобиля на клавиатуре.", msg.ChatId, kb.Build());
         }

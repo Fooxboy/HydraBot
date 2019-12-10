@@ -66,11 +66,11 @@ namespace HydraBot.Commands.DrivingSchool
                 text += $"\n ▶ {counter}) {resp}";
             }
 
-            kb.AddButton("1", "catA", new List<string>() { $"{q + 1}", "1", countTrueResponse.ToString() });
-            kb.AddButton("2", "catA", new List<string>() { $"{q + 1}", "2", countTrueResponse.ToString() });
+            kb.AddButton($"{q} - Ответ 1", "catA", new List<string>() { $"{q + 1}", "1", countTrueResponse.ToString() });
+            kb.AddButton($"{q} - Ответ 2 ", "catA", new List<string>() { $"{q + 1}", "2", countTrueResponse.ToString() });
             kb.AddLine();
-            kb.AddButton("3", "catA", new List<string>() { $"{q + 1}", "3", countTrueResponse.ToString() });
-            kb.AddButton("4", "catA", new List<string>() { $"{q + 1}", "4", countTrueResponse.ToString() });
+            kb.AddButton($"{q} - Ответ 3 ", "catA", new List<string>() { $"{q + 1}", "3", countTrueResponse.ToString() });
+            kb.AddButton($"{q} - Ответ 4 ", "catA", new List<string>() { $"{q + 1}", "4", countTrueResponse.ToString() });
             kb.SetOneTime();
 
 
