@@ -18,16 +18,34 @@ namespace HydraBot.Commands
 
             var kb = new KeyboardBuilder(bot);
 
+            if(sender.Platform == Fooxboy.NucleusBot.Enums.MessengerPlatform.Vkontakte)
+            {
+                if(msg.ChatId > 2000000000)
+                {
+                    text = "❌ Заходить в раздел гонок можно только в личных сообщениях.";
+                    kb.AddButton(ButtonsHelper.ToHomeButton());
+                    sender.Text(text, msg.ChatId, kb.Build());
+                    return;
+                }
+            }
+
             if (garage.IsPhone)
             {
-                text = "❓ Выберите действие на клавиатуре.";
-                kb.AddButton("📱 Открыть телефон", "openphone");
-                kb.AddLine();
-                kb.AddButton("🏁 Быстрая гонка", "rrrrrrr", new List<string>() { "0" });
-                kb.AddLine();
-                kb.AddButton("🎭 Гонка с другом", "racefriend", new List<string>() { "0" });
-                kb.AddLine();
-                kb.AddButton(ButtonsHelper.ToHomeButton());
+                if (garage.SelectCar == 0)
+                {
+                    text = "❌ Вы не выбрали автомобиль для гонок, перейдите в гараж.";
+                    kb.AddButton("🔧 В гараж", "garage");
+                }else
+                {
+                    text = "❓ Выберите действие на клавиатуре.";
+                    kb.AddButton("📱 Открыть телефон", "openphone");
+                    kb.AddLine();
+                    kb.AddButton("🏁 Быстрая гонка", "rrrrrrr", new List<string>() { "0" });
+                    kb.AddLine();
+                    kb.AddButton("🎭 Гонка с другом", "racefriend", new List<string>() { "0" });
+                    kb.AddLine();
+                    kb.AddButton(ButtonsHelper.ToHomeButton());
+                }
             }else
             {
                 text = "❌ Для участия в гонках нужен телефон. Зайдите в магазин за ним!";

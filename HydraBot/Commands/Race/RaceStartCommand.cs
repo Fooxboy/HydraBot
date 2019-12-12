@@ -33,7 +33,7 @@ namespace HydraBot.Commands.Race
                 {
                     try
                     {
-                        race = db.Races.Single(r => r.Enemy == userEnemy.Id && r.IsRequest == true);
+                        race = db.Races.FirstOrDefault(r => r.Enemy == userEnemy.Id && r.IsRequest == true);
                     }catch
                     {
                         kb.AddButton(ButtonsHelper.ToHomeButton());
@@ -92,11 +92,20 @@ namespace HydraBot.Commands.Race
                     db.SaveChanges();
                 }
 
-                var kb = new KeyboardBuilder(bot);
-                kb.AddButton("🏁 Назад в гонки", "race");
+               
+                Task.Run(() =>
+                {
+                    var kb1 = new KeyboardBuilder(bot);
+                    kb1.AddButton("🏁 Назад в гонки", "race");
+                    sender.Text($"🎉 Поздравляю с победой! Вы получили: 💵 1.000 рублей и ⭐ {winner.Level * 50} опыта", winner.Id == userEnemy.Id ? enemyChatId : creatorChatId, kb1.Build());
+                });
 
-                Task.Run(() => sender.Text($"🎉 Поздравляю с победой! Вы получили: 💵 1.000 рублей и ⭐ {winner.Level * 50} опыта", winner.Id == userEnemy.Id ? enemyChatId : creatorChatId, kb.Build()));
-                Task.Run(() => sender.Text($"🏁 Вы проиграли в этой гонке.", winner.Id == userEnemy.Id? creatorChatId : enemyChatId, kb.Build()));
+                Task.Run(() =>
+                {
+                    var kb2 = new KeyboardBuilder(bot);
+                    kb2.AddButton("🏁 Назад в гонки", "race");
+                    sender.Text($"🏁 Вы проиграли в этой гонке.", winner.Id == userEnemy.Id ? creatorChatId : enemyChatId, kb2.Build());
+                });
 
             });
         }

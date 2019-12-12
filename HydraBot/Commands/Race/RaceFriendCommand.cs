@@ -32,6 +32,9 @@ namespace HydraBot.Commands.Race
 
         public static string RunFriendBattle(long creatorId, long enemyId, IMessageSenderService sender, IBot bot)
         {
+
+            if (creatorId == enemyId) return "❌ Участвовать в гонке с самим собой невозможно.";
+
             using (var db = new Database())
             {
                 var creator = db.Users.Single(u => u.Id == creatorId);

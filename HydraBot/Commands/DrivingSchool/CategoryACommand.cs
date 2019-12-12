@@ -9,6 +9,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
+using VkNet.Enums.SafetyEnums;
 
 namespace HydraBot.Commands.DrivingSchool
 {
@@ -71,6 +72,10 @@ namespace HydraBot.Commands.DrivingSchool
             kb.AddLine();
             kb.AddButton($"{q} - Ответ 3 ", "catA", new List<string>() { $"{q + 1}", "3", countTrueResponse.ToString() });
             kb.AddButton($"{q} - Ответ 4 ", "catA", new List<string>() { $"{q + 1}", "4", countTrueResponse.ToString() });
+
+            kb.AddLine();
+            kb.AddButton("❌ Отменить экзамен", "drivingschool", color: KeyboardButtonColor.Negative);
+
             kb.SetOneTime();
 
 

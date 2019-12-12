@@ -20,7 +20,10 @@ namespace HydraBot.Commands
             var user = Main.Api.Users.GetUser(msg);
             UsersCommandHelper.GetHelper().Add("", user.Id);
 
-            var nickname = msg.Text.Replace("nick", "").Replace("ник", "").Replace("никнейм", "");
+            var nickname = string.Empty;
+            var array = msg.Text.Split(" ");
+            for (int i = 1; i < array.Length; i++) nickname += $"{array[i]}";
+                //msg.Text.Replace("nick", "").Replace("ник", "").Replace("никнейм", "");
             
             var text = string.Empty;
             var isAvaible = true;

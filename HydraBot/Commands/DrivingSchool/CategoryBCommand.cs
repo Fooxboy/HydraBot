@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using VkNet.Enums.SafetyEnums;
 
 namespace HydraBot.Commands.DrivingSchool
 {
@@ -69,6 +70,9 @@ namespace HydraBot.Commands.DrivingSchool
             kb.AddButton($"{q} - Ответ 3", "catB", new List<string>() { $"{q + 1}", "3", countTrueResponse.ToString() });
             kb.AddButton($"{q} - Ответ 4", "catB", new List<string>() { $"{q + 1}", "4", countTrueResponse.ToString() });
 
+            kb.AddLine();
+            kb.AddButton("❌ Отменить экзамен", "drivingschool", color: KeyboardButtonColor.Negative);
+
             kb.SetOneTime();
 
 
@@ -91,7 +95,7 @@ namespace HydraBot.Commands.DrivingSchool
             {
                 Question = "Максимальная скорость по городу:",
                 Responses = new List<string>() { "30", "90", "60", "70" },
-                Response = 4
+                Response = 3
             });
 
             Questions.Add(new QuestionsDrivingSchool()
