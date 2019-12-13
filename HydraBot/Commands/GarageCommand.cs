@@ -19,7 +19,32 @@ namespace HydraBot.Commands
 
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
+            var user = Main.Api.Users.GetUser(msg);
             var garage = Main.Api.Garages.GetGarage(msg);
+
+            long offset = 0;
+            try
+            {
+                offset = msg.Payload.Arguments[0].ToLong();
+                try
+                {
+                    var idGarage = msg.Payload.Arguments[1].ToLong();
+                    if(idGarage != user.Id) garage = Main.Api.Garages.GetGarage(idGarage);
+                }catch { }
+            }
+            catch { }
+
+            if (msg.Text.Split(" ").Length >= 2)
+            {
+                try
+                {
+                    var id = long.Parse(msg.Text.Split(" ")[1]);
+                    if (user.Access > 4)
+                        garage = Main.Api.Garages.GetGarage(id);
+                }
+                catch { }
+            }
+
             var cars = new List<Car>();
             if (garage.Cars != "")
             {
@@ -57,11 +82,7 @@ namespace HydraBot.Commands
                 $"\n 🆓 Свободных парковочных мест: {garage.ParkingPlaces - cars.Count}" +
                 $"\n 🚕 Ваши автомобили: \n";
 
-            long offset = 0;
-            try
-            {
-                offset = msg.Payload.Arguments[0].ToLong();
-            }catch { }
+            
             
             if (cars.Count == 0)
             {
@@ -115,7 +136,7 @@ namespace HydraBot.Commands
 
             if (cars.Count > 3) kb.AddLine();
             if(offset > 0) kb.AddButton("◀ Назад ", "garage", new List<string>() { $"{offset + 1}" });
-            if (cars.Count > 6) kb.AddButton("Дальше ▶", "garage", new List<string>() { $"{offset + 1}" });
+            if (cars.Count > 6) kb.AddButton("Дальше ▶", "garage", new List<string>() { $"{offset + 1}", garage.UserId.ToString() });
 
             kb.AddLine();
             kb.AddButton("⚙ Двигатели", "engines");
