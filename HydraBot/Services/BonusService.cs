@@ -26,7 +26,7 @@ namespace HydraBot.Services
                         if(!user.IsAvailbleBonus)
                         {
                             user.TimeBonus -= 1;
-                            if (user.TimeBonus == 0) user.IsAvailbleBonus = true;
+                            if (user.TimeBonus <= 0) user.IsAvailbleBonus = true;
                             db.SaveChanges();
                         }
                     }

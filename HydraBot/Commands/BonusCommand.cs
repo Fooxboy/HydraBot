@@ -30,7 +30,7 @@ namespace HydraBot.Commands
                 Main.Api.Users.AddMoneyToBank(user.Id, countMoney);
                 text = $"💳 Вы получили ежедневный бонус в размере {countMoney}. \n" +
                     $"❓ Приходите завтра и получите больше!";
-                //TODO: добавить возможность выдачи бонусов.
+                
             }else if(user.BonusDay == 2)
             {
                 var countMoney = 100;
@@ -76,7 +76,7 @@ namespace HydraBot.Commands
             }
 
             Main.Api.Users.SetIsAvalibleBonus(user.Id, false);
-
+            Main.Api.Users.SetTimeBonus(user.Id, 24);
             var kb = new KeyboardBuilder(bot);
             kb.AddButton(ButtonsHelper.ToHomeButton());
             sender.Text(text, msg.ChatId, kb.Build());

@@ -15,6 +15,7 @@ namespace HydraBot.Commands.Store
 
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
+            var garage = Main.Api.Garages.GetGarage(msg);
             var text = $"🛒 Раздел другое:" +
                 $"\n" +
                 $"\n 📱 Телефон" +
@@ -25,8 +26,11 @@ namespace HydraBot.Commands.Store
                 $"\n 💵  Цена: 10.000 руб.";
 
             var kb = new KeyboardBuilder(bot);
-            kb.AddButton("📱 Купить телефон", "buyitem", new List<string>() { "1" });
-            kb.AddLine();
+            if(!garage.IsPhone)
+            {
+                kb.AddButton("📱 Купить телефон", "buyitem", new List<string>() { "1" });
+                kb.AddLine();
+            }
             kb.AddButton("📟 Купить сим-карту", "buyitem", new List<string>() { "2" });
             kb.AddLine();
             kb.AddButton("🗄 Купить автомобильный номер", "buyitem", new List<string>() { "3" });

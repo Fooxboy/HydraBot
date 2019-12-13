@@ -42,7 +42,7 @@ namespace HydraBot.Commands.Store
                     {
                         var offset = Int32.Parse(msg.Payload.Arguments[1]);
 
-                        var countCars = cars.Count; //22
+                        var countCars = cars.Count; 
 
                         for(var i=0; i < 10; i++ )
                         {
@@ -62,10 +62,10 @@ namespace HydraBot.Commands.Store
                         }
 
                         kb.AddLine();
-                        if(offset >0) kb.AddButton("◀", "getcars", new List<string>() { manufacture, $"{offset - 1}" });
+                        if(offset >0) kb.AddButton("◀ Назад", "getcars", new List<string>() { manufacture, $"{offset - 1}" });
                         kb.AddButton("↩ Назад", "autostore");
                         if (countCars > ((offset+1) * 10)) 
-                            kb.AddButton("▶", "getcars", new List<string>() { manufacture, $"{offset + 1}" });
+                            kb.AddButton($"На страницу {offset + 1} ▶", "getcars", new List<string>() { manufacture, $"{offset + 1}" });
 
                     }catch
                     {

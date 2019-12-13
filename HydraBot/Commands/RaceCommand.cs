@@ -31,7 +31,7 @@ namespace HydraBot.Commands
 
             if (garage.IsPhone)
             {
-                if (garage.SelectCar == 0)
+                if (garage.SelectCar <= 0)
                 {
                     text = "❌ Вы не выбрали автомобиль для гонок, перейдите в гараж.";
                     kb.AddButton("🔧 В гараж", "garage");
