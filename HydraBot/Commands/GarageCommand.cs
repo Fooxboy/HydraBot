@@ -57,12 +57,27 @@ namespace HydraBot.Commands
                 $"\n 🆓 Свободных парковочных мест: {garage.ParkingPlaces - cars.Count}" +
                 $"\n 🚕 Ваши автомобили: \n";
 
-            
-            if (cars.Count == 0) text += "\n 🏎 У Вас нет автомобилей.";
-            var counter = 0;
-            foreach(var car in cars)
+            long offset = 0;
+            try
             {
-                counter++;
+                offset = msg.Payload.Arguments[0].ToLong();
+            }catch { }
+            
+            if (cars.Count == 0)
+            {
+                text += "\n 🏎 У Вас пока нет автомобилей.";
+                kb.AddButton(ButtonsHelper.ToHomeButton());
+                sender.Text(text, msg.ChatId, kb.Build());
+                return;
+            }
+
+
+            var counter = cars.Count < 6 ? cars.Count : 6;
+
+
+            for (int i = Convert.ToInt32(offset) * 6; i < counter; i++)
+            {
+                var car = cars[i];
                 var engineText = string.Empty;
                 if (car.Engine != 0)
                 {
@@ -89,17 +104,22 @@ namespace HydraBot.Commands
                 else carNumber = $"🗄 Номер не установлен";
                 text += $"\n 🚘 [{car.Id}] {car.Manufacturer} {car.Model} ⚙ Двигатель:  {engineText} | {carNumber} \n";
                 kb.AddButton($"🏎 {car.Id}", "actioncar", new List<string>() { car.Id.ToString() });
-                if(counter == 4)
+                if (i == 2)
                 {
                     kb.AddLine();
-                    counter = 0;
                 }
             }
 
+
             text += "❓ Для дополнительных действий выберите автомобиль на клавиатуре";
+
+            if (cars.Count > 3) kb.AddLine();
+            if(offset > 0) kb.AddButton("◀ Назад ", "garage", new List<string>() { $"{offset + 1}" });
+            if (cars.Count > 6) kb.AddButton("Дальше ▶", "garage", new List<string>() { $"{offset + 1}" });
+
             kb.AddLine();
-            kb.AddButton(ButtonsHelper.ToHomeButton());
             kb.AddButton("⚙ Двигатели", "engines");
+            kb.AddButton(ButtonsHelper.ToHomeButton());
             kb.AddButton("🗄 Номера", "numbers");
             sender.Text(text, msg.ChatId, kb.Build());
         }

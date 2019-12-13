@@ -27,7 +27,7 @@ namespace HydraBot.Commands
                 }catch { }
             }
 
-            var gar = Main.Api.Garages.GetGarage(msg);
+            var gar = Main.Api.Garages.GetGarage(user.Id);
             
             var text = $"👾 Профиль игрока {user.Name}" +
                 $"\n 🐾 ID: {user.Id}" +
