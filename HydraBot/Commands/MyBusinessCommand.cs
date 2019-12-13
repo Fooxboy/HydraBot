@@ -14,6 +14,11 @@ namespace HydraBot.Commands
             var user = Main.Api.Users.GetUser(msg);
             var kb = new KeyboardBuilder(bot);
             kb.AddButton(ButtonsHelper.ToHomeButton());
+            if(user.BusinessIds == "")
+            {
+                sender.Text($"🤨 У вас нет ни одного бизнеса.", msg.ChatId, kb.Build());
+                return;
+            }
             sender.Text($"🏢 Ваши бизнесы: {user.BusinessIds}", msg.ChatId, kb.Build());
         }
 
