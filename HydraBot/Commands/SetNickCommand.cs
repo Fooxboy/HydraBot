@@ -28,7 +28,7 @@ namespace HydraBot.Commands
             var text = string.Empty;
             var isAvaible = true;
 
-            if(nickname.Length < 5)
+            if(nickname.Length < 4)
             {
                 text = "❌ Вы не можете установить меньше четырех символов";
                 isAvaible = false;
