@@ -14,7 +14,7 @@ namespace HydraBot.Commands.Race
             var kb = new KeyboardBuilder(bot);
             kb.AddButton("📕 Меню телефона", "menuphone");
             kb.AddButton("✔ Принять гонку", "raceStart", new List<string>());
-            kb.AddButton("❌ Отклонить гонку", "racenoaccept", new List<string>());
+            kb.AddButton("❌ Отклонить гонку", "raceundo", new List<string>());
             kb.AddLine();
             kb.AddButton("🏁 Вернуться в раздел гонок", "race");
             sender.Text("❓ Выберите действие на клавиатуре", msg.ChatId, kb.Build());

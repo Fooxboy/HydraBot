@@ -1,10 +1,14 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using Fooxboy.NucleusBot;
 using Fooxboy.NucleusBot.Enums;
 using Fooxboy.NucleusBot.Interfaces;
 using Fooxboy.NucleusBot.Models;
 using HydraBot.Helpers;
 using HydraBot.Models;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace HydraBot.Commands.Race
 {
@@ -58,7 +62,7 @@ namespace HydraBot.Commands.Race
         }
 
 
-        public static string RunFriendBattle(long creatorId, long enemyId, IMessageSenderService sender, IBot bot)
+        public static string RunFriendBattle(long creatorId, long enemyId, IMessageSenderService sender, IBot bot, Message msg)
         {
 
             if (creatorId == enemyId) return "❌ Участвовать в гонке с самим собой невозможно.";
@@ -106,8 +110,17 @@ namespace HydraBot.Commands.Race
                 db.Races.Add(race);
                 db.SaveChanges();
                 UsersCommandHelper.GetHelper().Add("", creatorId);
-                return "🏁 Мы отправили пользователю запрос о гонке с Вами. ";
 
+
+                Task.Run(() =>
+                {
+                    Thread.Sleep(TimeSpan.FromSeconds(3));
+                    var kb = new KeyboardBuilder(bot);
+                    kb.AddButton("❌ Отменить гонку", "racestop");
+                    sender.Text("❓ Вы можете отменить гонку, если Ваш противник не принимает гонку.", msg.ChatId, kb.Build());
+                });
+
+                return "🏁 Мы отправили пользователю запрос о гонке с Вами. ";
             }
         }
 
