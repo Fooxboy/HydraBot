@@ -123,7 +123,8 @@ namespace HydraBot
                 new RaceFriendCommand(),
                 new RaceStartCommand(),
                 new SelectCarCommand(),
-                new RaceStopCommand());
+                new RaceStopCommand(),
+                new RaceUndoCommand());
 
             //Установка сервисов.
             _bot.SetServices(
