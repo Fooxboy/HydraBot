@@ -17,9 +17,11 @@ namespace HydraBot.Commands
 
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
-            var text = "🚗 Автошкола." +
-                "\n ❓ Выберите категорию на клавиатуре ниже";
             var user = Main.Api.Users.GetUser(msg);
+            var text = "🚗 Автошкола." +
+                $"{(user.DriverLicense != "" ? $"\n📃 Ваши категории прав: {user.DriverLicense}" : "")}" +
+                "\n ❓ Выберите категорию на клавиатуре ниже";
+
             var kb = new KeyboardBuilder(bot);
             if(!(user.DriverLicense.Split(",").Any(s=> s == "A"))) kb.AddButton("A (1 рубль)", "catA", new List<string> {"0", "0", "0" });
             if (!(user.DriverLicense.Split(",").Any(s => s == "B"))) kb.AddButton("B (1 рубль)", "catB", new List<string> {"0", "0", "0" });

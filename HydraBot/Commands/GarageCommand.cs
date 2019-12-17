@@ -21,7 +21,7 @@ namespace HydraBot.Commands
         {
             var user = Main.Api.Users.GetUser(msg);
             var garage = Main.Api.Garages.GetGarage(msg);
-
+            var showKeyboard = true;
             long offset = 0;
             try
             {
@@ -29,7 +29,11 @@ namespace HydraBot.Commands
                 try
                 {
                     var idGarage = msg.Payload.Arguments[1].ToLong();
-                    if(idGarage != user.Id) garage = Main.Api.Garages.GetGarage(idGarage);
+                    if(idGarage != user.Id)
+                    {
+                        garage = Main.Api.Garages.GetGarage(idGarage);
+                        showKeyboard = false;
+                    }
                 }catch { }
             }
             catch { }
@@ -40,7 +44,10 @@ namespace HydraBot.Commands
                 {
                     var id = long.Parse(msg.Text.Split(" ")[1]);
                     if (user.Access > 4)
+                    {
                         garage = Main.Api.Garages.GetGarage(id);
+                        showKeyboard = false;
+                    }
                 }
                 catch { }
             }
@@ -78,7 +85,9 @@ namespace HydraBot.Commands
                 return;
             }
 
-            var text = $"🔧 Ваш гараж: {garage.Name}" +
+            var helper = new UsersHelper();
+
+            var text = $"🔧 Гараж пользователя: {helper.GetLink(user)}" +
                 $"\n 🆓 Свободных парковочных мест: {garage.ParkingPlaces - cars.Count}" +
                 $"\n 🚕 Ваши автомобили: \n";
 
@@ -124,24 +133,35 @@ namespace HydraBot.Commands
                 }
                 else carNumber = $"🗄 Номер не установлен";
                 text += $"\n 🚘 [{car.Id}] {car.Manufacturer} {car.Model} ⚙ Двигатель:  {engineText} | {carNumber} \n";
-                kb.AddButton($"🏎 {car.Id}", "actioncar", new List<string>() { car.Id.ToString() });
-                if (i == 2)
+                if (showKeyboard) 
                 {
-                    kb.AddLine();
+                    kb.AddButton($"🏎 {car.Id}", "actioncar", new List<string>() { car.Id.ToString() });
+                    if (i == 2)
+                    {
+                        kb.AddLine();
+                    }
                 }
+                
             }
 
 
-            text += "❓ Для дополнительных действий выберите автомобиль на клавиатуре";
+            if(showKeyboard) text += "❓ Для дополнительных действий выберите автомобиль на клавиатуре";
 
-            if (cars.Count > 3) kb.AddLine();
-            if(offset > 0) kb.AddButton("◀ Назад ", "garage", new List<string>() { $"{offset + 1}" });
+            if (cars.Count > 3 && showKeyboard) kb.AddLine();
+            if (offset > 0) kb.AddButton("◀ Назад ", "garage", new List<string>() { $"{offset + 1}", garage.UserId.ToString() });
             if (cars.Count > 6) kb.AddButton("Дальше ▶", "garage", new List<string>() { $"{offset + 1}", garage.UserId.ToString() });
 
-            kb.AddLine();
-            kb.AddButton("⚙ Двигатели", "engines");
-            kb.AddButton(ButtonsHelper.ToHomeButton());
-            kb.AddButton("🗄 Номера", "numbers");
+            if (showKeyboard)
+            {
+                kb.AddLine();
+                kb.AddButton("⚙ Двигатели", "engines");
+                kb.AddButton(ButtonsHelper.ToHomeButton());
+                kb.AddButton("🗄 Номера", "numbers");
+            }else
+            {
+                kb.AddButton(ButtonsHelper.ToHomeButton());
+            }
+           
             sender.Text(text, msg.ChatId, kb.Build());
         }
 

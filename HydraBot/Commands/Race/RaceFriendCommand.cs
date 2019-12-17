@@ -45,9 +45,14 @@ namespace HydraBot.Commands.Race
             if (user.Race != 0)
             {
                 text = "❌ А ну стоять. Ты уже находишься в гонке!";
+                kb.AddLine();
+                kb.AddButton("❌ Отменить гонку", "racestop");
+            }else
+            {
+                UsersCommandHelper.GetHelper().Add("racefriend", user.Id);
+
             }
 
-            UsersCommandHelper.GetHelper().Add("racefriend", user.Id);
 
             sender.Text(text, msg.ChatId, kb.Build());
         }

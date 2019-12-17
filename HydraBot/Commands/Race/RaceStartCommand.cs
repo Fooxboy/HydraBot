@@ -72,12 +72,12 @@ namespace HydraBot.Commands.Race
             Task.Run(() =>
             {
                 Thread.Sleep(TimeSpan.FromSeconds(5));
-
                 var winner = carEnemy.Power > carCreator.Power ? userEnemy : userCreator;
 
                 using(var db = new Database())
                 {
                     var raceLocal = db.Races.Single(r => r.Id == race.Id);
+                    if (raceLocal.Winner != 0) winner = db.Users.Single(u => u.Id == raceLocal.Winner);
                     raceLocal.Winner = winner.Id;
 
                     var winnerLocal = db.Users.Single(u => u.Id == winner.Id);
