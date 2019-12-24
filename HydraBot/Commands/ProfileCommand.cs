@@ -16,6 +16,7 @@ namespace HydraBot.Commands
 
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
+            bool showKeyboard = true;
             var user = Main.Api.Users.GetUser(msg);
             if(msg.Text.Split(" ").Length >= 2)
             {
@@ -23,7 +24,11 @@ namespace HydraBot.Commands
                 {
                     var id = long.Parse(msg.Text.Split(" ")[1]);
                     if (user.Access > 4)
+                    {
                         user = Main.Api.Users.GetUserFromId(id);
+                        showKeyboard = false;
+                    }
+                        
                 }catch { }
             }
 
@@ -40,12 +45,19 @@ namespace HydraBot.Commands
                 $"\n ⭐ Уровень: {user.Level} ({user.Score} из {user.Level * 150})";
 
             var kb = new KeyboardBuilder(bot);
-            if (user.BusinessIds != "")
+            if (showKeyboard)
             {
-                kb.AddButton("🏢 Мой бизнес", "mybusiness");
-                kb.AddLine();
+                if (user.BusinessIds != "")
+                {
+                    kb.AddButton("🏢 Мой бизнес", "mybusiness");
+                    kb.AddLine();
+                }
+
+                kb.AddButton("🎮 Мои навыки", "skills");
             }
+            
             kb.AddButton(ButtonsHelper.ToHomeButton());
+            
 
             sender.Text(text, msg.ChatId, kb.Build());
         }

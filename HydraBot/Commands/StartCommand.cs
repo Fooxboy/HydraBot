@@ -82,6 +82,14 @@ namespace HydraBot.Commands
             var garage = new Models.Garage() { Cars = "", PhoneNumber = null,Name = "no", IsPhone= false, Engines = "", Fuel=100, GarageModelId= -1, SelectCar = -1, ParkingPlaces = 0, UserId = id};
             Main.Api.Garages.RegisterGarage(garage);
 
+            var skills = new Skills();
+            skills.UserId = id;
+            using (var db = new Database())
+            {
+                db.Skillses.Add(skills);
+                db.SaveChanges();
+            }
+            
             var kb = new KeyboardBuilder(bot);
             kb.AddButton(ButtonsHelper.ToHomeButton());
             sender.Text("✔ Вы успешно зарегистрировались! Перейдите на главный экран, нажав на кнопку домой.", msg.ChatId, kb.Build());

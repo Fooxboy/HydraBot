@@ -92,7 +92,7 @@ namespace HydraBot.Commands
                 {
                     var array = msg.Text.Split(" ");
                     var id = long.Parse(array[0]);
-                    text = RaceFriendCommand.RunFriendBattle(user.Id, id, sender, bot);
+                    text = RaceFriendCommand.RunFriendBattle(user.Id, id, sender, bot, msg);
                 }catch
                 {
                     text = "Вы указали неверный id";
