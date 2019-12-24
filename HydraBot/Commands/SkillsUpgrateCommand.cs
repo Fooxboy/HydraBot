@@ -38,7 +38,8 @@ namespace HydraBot.Commands
                             return;
                         }
 
-
+                        var usr = db.Users.Single(u => u.Id == user.Id);
+                        usr.Money = usr.Money - price;
                         skls.Driving = skls.Driving + 1;
                         db.SaveChanges();
                         sender.Text("✔ Вы улучшили навык вождения", msg.ChatId, kb2.Build());

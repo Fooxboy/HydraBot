@@ -126,7 +126,9 @@ namespace HydraBot
                 new RaceStopCommand(),
                 new RaceUndoCommand(), 
                 new SkillsCommand(),
-                new SkillsUpgrateCommand());
+                new SkillsUpgrateCommand(),
+                new MenuPhoneCommand(), 
+                new FriendsCommand());
 
             //Установка сервисов.
             _bot.SetServices(

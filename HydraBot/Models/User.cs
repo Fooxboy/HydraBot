@@ -88,5 +88,9 @@ namespace HydraBot.Models
         /// Id гонки, в которой участвует пользователь.
         /// </summary>
         public long Race { get; set; }
+        /// <summary>
+        /// Друзья.
+        /// </summary>
+        public string Friends { get; set; }
     }
 }
