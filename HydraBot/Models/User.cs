@@ -92,5 +92,9 @@ namespace HydraBot.Models
         /// Друзья.
         /// </summary>
         public string Friends { get; set; }
+        /// <summary>
+        /// Id пользователей, которые отправили запрос в друзья.
+        /// </summary>
+        public string FriendsRequests { get; set; }
     }
 }

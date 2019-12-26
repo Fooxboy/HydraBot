@@ -72,7 +72,46 @@ namespace HydraBot.Commands.Race
             Task.Run(() =>
             {
                 Thread.Sleep(TimeSpan.FromSeconds(5));
-                var winner = carEnemy.Power > carCreator.Power ? userEnemy : userCreator;
+                long scoreCreator = 0;
+                long scoreEnemy = 0;
+                if (carEnemy.Power > carCreator.Power) scoreEnemy += 5;
+                else scoreCreator += 5;
+
+                if (carEnemy.Weight > carCreator.Weight) scoreCreator += 3;
+                else scoreEnemy += 3;
+
+                Skills skillsCretor = null;
+                Skills skillsEnemy = null;
+
+                using (var db = new Database())
+                {
+                    try
+                    {
+                        skillsCretor = db.Skillses.Single(s => s.UserId == userCreator.Id);
+
+                    }
+                    catch
+                    {
+                        skillsCretor = new Skills();
+                    }
+
+                    try
+                    {
+                        skillsEnemy = db.Skillses.Single(s => s.UserId == userEnemy.Id);
+
+                    }
+                    catch
+                    {
+                        skillsEnemy = new Skills();
+                    }
+                }
+                
+                scoreCreator += skillsCretor.Driving;
+                scoreEnemy += skillsEnemy.Driving;
+                
+                
+                
+                var winner = scoreEnemy > scoreCreator ? userEnemy : userCreator;
 
                 using(var db = new Database())
                 {
