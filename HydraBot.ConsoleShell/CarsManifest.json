@@ -5,6 +5,7 @@
       "manufacturer": "Aston Martin",
       "model": "DB11",
       "power": 608,
+      "price": 100,
       "weight": 1875
     },
     {
@@ -12,6 +13,7 @@
       "manufacturer": "Aston Martin",
       "model": "DB9",
       "power": 510,
+      "price": 100,
       "weight": 1890
     },
     {
@@ -19,6 +21,7 @@
       "manufacturer": "Aston Martin",
       "model": "DBS",
       "power": 517,
+      "price": 100,
       "weight": 1693
     },
     {
@@ -26,6 +29,7 @@
       "manufacturer": "Aston Martin",
       "model": "Rapide",
       "power": 560,
+      "price": 100,
       "weight": 1990
     },
     {
@@ -33,6 +37,7 @@
       "manufacturer": "Aston Martin",
       "model": "Vanquish",
       "power": 568,
+      "price": 100,
       "weight": 1844
     },
     {
@@ -40,6 +45,7 @@
       "manufacturer": "Aston Martin",
       "model": "Vantage",
       "power": 573,
+      "price": 100,
       "weight": 1665
     },
     {
@@ -47,6 +53,7 @@
       "manufacturer": "Aston Martin",
       "model": "Virage",
       "power": 497,
+      "price": 100,
       "weight": 1785
     },
     {
@@ -54,6 +61,7 @@
       "manufacturer": "Audi",
       "model": "A4 B8 (S4)",
       "power": 272,
+      "price": 100,
       "weight": 1680
     },
     {
@@ -61,20 +69,23 @@
       "manufacturer": "Audi",
       "model": "A4 allroad B8",
       "power": 225,
+      "price": 100,
       "weight": 1725
     },
     {
       "id": 9,
       "manufacturer": "Audi",
-      "model": "A5 8T (S5)",
+      "model": "A5 8T",
       "power": 272,
+      "price": 100,
       "weight": 1790
     },
     {
       "id": 10,
       "manufacturer": "Audi",
-      "model": "A6 C7 (S6)",
+      "model": "A6 C7",
       "power": 333,
+      "price": 100,
       "weight": 1825
     },
     {
@@ -82,27 +93,31 @@
       "manufacturer": "Audi",
       "model": "A6 allroad C7",
       "power": 310,
+      "price": 100,
       "weight": 1930
     },
     {
       "id": 12,
       "manufacturer": "Audi",
-      "model": "A7 4G (S7)",
+      "model": "A7",
       "power": 333,
+      "price": 100,
       "weight": 1885
     },
     {
       "id": 13,
       "manufacturer": "Audi",
-      "model": "A8 D4 (S8)",
+      "model": "A8",
       "power": 500,
+      "price": 100,
       "weight": 2170
     },
     {
       "id": 14,
       "manufacturer": "Audi",
-      "model": "Q5 8R",
+      "model": "Q5",
       "power": 272,
+      "price": 100,
       "weight": 1935
     },
     {
@@ -110,6 +125,7 @@
       "manufacturer": "Audi",
       "model": "Q7 4L",
       "power": 500,
+      "price": 100,
       "weight": 2710
     },
     {
@@ -117,6 +133,7 @@
       "manufacturer": "Audi",
       "model": "Q8 SUV",
       "power": 340,
+      "price": 100,
       "weight": 2155
     },
     {
@@ -124,6 +141,7 @@
       "manufacturer": "Audi",
       "model": "RS4 B8",
       "power": 450,
+      "price": 100,
       "weight": 1870
     },
     {
@@ -131,6 +149,7 @@
       "manufacturer": "Audi",
       "model": "RS5 8T",
       "power": 450,
+      "price": 100,
       "weight": 1790
     },
     {
@@ -138,6 +157,7 @@
       "manufacturer": "Audi",
       "model": "RS6 C7",
       "power": 605,
+      "price": 100,
       "weight": 2025
     },
     {
@@ -145,6 +165,7 @@
       "manufacturer": "Audi",
       "model": "RS7 4G",
       "power": 605,
+      "price": 100,
       "weight": 2005
     },
     {
@@ -152,6 +173,7 @@
       "manufacturer": "Audi",
       "model": "R8 4S",
       "power": 610,
+      "price": 100,
       "weight": 1670
     },
     {
@@ -159,6 +181,7 @@
       "manufacturer": "Audi",
       "model": "TT 8S",
       "power": 230,
+      "price": 100,
       "weight": 1410
     },
     {
@@ -166,6 +189,7 @@
       "manufacturer": "Audi",
       "model": "TT RS 8J",
       "power": 360,
+      "price": 100,
       "weight": 1550
     },
     {
@@ -173,6 +197,7 @@
       "manufacturer": "Audi",
       "model": "TTS 8S",
       "power": 310,
+      "price": 100,
       "weight": 1460
     },
     {
@@ -180,6 +205,7 @@
       "manufacturer": "Audi",
       "model": "quattro S1",
       "power": 600,
+      "price": 100,
       "weight": 1090
     },
     {
@@ -187,6 +213,7 @@
       "manufacturer": "BMW",
       "model": "1M",
       "power": 340,
+      "price": 100,
       "weight": 1900
     },
     {
@@ -194,6 +221,7 @@
       "manufacturer": "BMW",
       "model": "2-Series F22",
       "power": 340,
+      "price": 100,
       "weight": 1565
     },
     {
@@ -201,6 +229,7 @@
       "manufacturer": "BMW",
       "model": "M2 F87",
       "power": 410,
+      "price": 100,
       "weight": 1595
     },
     {
@@ -208,6 +237,7 @@
       "manufacturer": "BMW",
       "model": "3-Series G20",
       "power": 387,
+      "price": 100,
       "weight": 1615
     },
     {
@@ -215,6 +245,7 @@
       "manufacturer": "BMW",
       "model": "M3 E30",
       "power": 215,
+      "price": 100,
       "weight": 1200
     },
     {
@@ -222,6 +253,7 @@
       "manufacturer": "BMW",
       "model": "M3 E36",
       "power": 321,
+      "price": 100,
       "weight": 1530
     },
     {
@@ -229,6 +261,7 @@
       "manufacturer": "BMW",
       "model": "M3 E92",
       "power": 420,
+      "price": 100,
       "weight": 1655
     },
     {
@@ -236,6 +269,7 @@
       "manufacturer": "BMW",
       "model": "4-Series F36",
       "power": 326,
+      "price": 100,
       "weight": 1760
     },
     {
@@ -243,6 +277,7 @@
       "manufacturer": "BMW",
       "model": "M4 F82",
       "power": 450,
+      "price": 100,
       "weight": 1612
     },
     {
@@ -250,6 +285,7 @@
       "manufacturer": "BMW",
       "model": "5-Series G30",
       "power": 462,
+      "price": 100,
       "weight": 1920
     },
     {
@@ -257,27 +293,31 @@
       "manufacturer": "BMW",
       "model": "M5 F90",
       "power": 625,
+      "price": 100,
       "weight": 1930
     },
     {
       "id": 37,
       "manufacturer": "BMW",
-      "model": "X5 F15 (F85 M)",
+      "model": "X5 F15",
       "power": 450,
+      "price": 100,
       "weight": 2305
     },
     {
       "id": 38,
       "manufacturer": "BMW",
-      "model": "X6 F16 (F86 M)",
+      "model": "X6 F16",
       "power": 450,
+      "price": 100,
       "weight": 2260
     },
     {
       "id": 39,
       "manufacturer": "BMW",
-      "model": "X7 G07(G07 M)",
+      "model": "X7 G07",
       "power": 340,
+      "price": 100,
       "weight": 2445
     },
     {
@@ -285,6 +325,7 @@
       "manufacturer": "BMW",
       "model": "6-Series E63",
       "power": 367,
+      "price": 100,
       "weight": 1690
     },
     {
@@ -292,6 +333,7 @@
       "manufacturer": "BMW",
       "model": "M6 E63",
       "power": 507,
+      "price": 100,
       "weight": 1785
     },
     {
@@ -299,6 +341,7 @@
       "manufacturer": "BMW",
       "model": "7-Series G12",
       "power": 609,
+      "price": 100,
       "weight": 2255
     },
     {
@@ -306,6 +349,7 @@
       "manufacturer": "BMW",
       "model": "M8 F92",
       "power": 625,
+      "price": 100,
       "weight": 1960
     },
     {
@@ -313,6 +357,7 @@
       "manufacturer": "Bugatti",
       "model": "Chiron",
       "power": 1500,
+      "price": 100,
       "weight": 1996
     },
     {
@@ -320,6 +365,7 @@
       "manufacturer": "Bugatti",
       "model": "Veyron Super Sport",
       "power": 1200,
+      "price": 100,
       "weight": 1838
     },
     {
@@ -327,6 +373,7 @@
       "manufacturer": "Cadillac",
       "model": "ATS",
       "power": 276,
+      "price": 100,
       "weight": 1607
     },
     {
@@ -334,6 +381,7 @@
       "manufacturer": "Cadillac",
       "model": "CT6",
       "power": 335,
+      "price": 100,
       "weight": 1834
     },
     {
@@ -341,6 +389,7 @@
       "manufacturer": "Cadillac",
       "model": "CTS",
       "power": 564,
+      "price": 100,
       "weight": 1850
     },
     {
@@ -348,6 +397,7 @@
       "manufacturer": "Cadillac",
       "model": "Escalade GMT K2",
       "power": 426,
+      "price": 100,
       "weight": 2800
     },
     {
@@ -355,6 +405,7 @@
       "manufacturer": "Chevrolet",
       "model": "Camaro 2015",
       "power": 238,
+      "price": 100,
       "weight": 1671
     },
     {
@@ -362,6 +413,7 @@
       "manufacturer": "Chevrolet",
       "model": "Corvette C7",
       "power": 659,
+      "price": 100,
       "weight": 1734
     },
     {
@@ -369,6 +421,7 @@
       "manufacturer": "Chevrolet",
       "model": "Cruze J300",
       "power": 141,
+      "price": 100,
       "weight": 1385
     },
     {
@@ -376,6 +429,7 @@
       "manufacturer": "Chevrolet",
       "model": "Lacetti J200",
       "power": 122,
+      "price": 100,
       "weight": 1250
     },
     {
@@ -383,6 +437,7 @@
       "manufacturer": "Chevrolet",
       "model": "Niva 21236",
       "power": 80,
+      "price": 100,
       "weight": 1410
     },
     {
@@ -390,6 +445,7 @@
       "manufacturer": "Chevrolet",
       "model": "Suburban GMT900",
       "power": 335,
+      "price": 100,
       "weight": 2910
     },
     {
@@ -397,6 +453,7 @@
       "manufacturer": "Chevrolet",
       "model": "Tahoe K2UC",
       "power": 426,
+      "price": 100,
       "weight": 2788
     },
     {
@@ -404,13 +461,15 @@
       "manufacturer": "Dodge",
       "model": "Challenger SRT Hellcat",
       "power": 707,
+      "price": 100,
       "weight": 2018
     },
     {
       "id": 58,
       "manufacturer": "Dodge",
-      "model": "Ram (DT)",
+      "model": "Ram",
       "power": 395,
+      "price": 100,
       "weight": 2455
     },
     {
@@ -418,6 +477,7 @@
       "manufacturer": "Dodge",
       "model": "Viper 2010",
       "power": 608,
+      "price": 100,
       "weight": 1556
     },
     {
@@ -425,6 +485,7 @@
       "manufacturer": "Ferrari",
       "model": "458 Italia",
       "power": 570,
+      "price": 100,
       "weight": 1380
     },
     {
@@ -432,6 +493,7 @@
       "manufacturer": "Ferrari",
       "model": "488 GTB",
       "power": 670,
+      "price": 100,
       "weight": 1475
     },
     {
@@ -439,6 +501,7 @@
       "manufacturer": "Ferrari",
       "model": "599 GTO",
       "power": 680,
+      "price": 100,
       "weight": 1495
     },
     {
@@ -446,6 +509,7 @@
       "manufacturer": "Ferrari",
       "model": "812 Superfast",
       "power": 800,
+      "price": 100,
       "weight": 1630
     },
     {
@@ -453,6 +517,7 @@
       "manufacturer": "Ferrari",
       "model": "California T",
       "power": 560,
+      "price": 100,
       "weight": 1625
     },
     {
@@ -460,6 +525,7 @@
       "manufacturer": "Ferrari",
       "model": "Enzo Ferrari",
       "power": 660,
+      "price": 100,
       "weight": 1255
     },
     {
@@ -467,6 +533,7 @@
       "manufacturer": "Ferrari",
       "model": "F12 Berlinetta",
       "power": 740,
+      "price": 100,
       "weight": 1630
     },
     {
@@ -474,6 +541,7 @@
       "manufacturer": "Ferrari",
       "model": "F8 Tributo",
       "power": 720,
+      "price": 100,
       "weight": 1435
     },
     {
@@ -481,6 +549,7 @@
       "manufacturer": "Ferrari",
       "model": "458 Italia",
       "power": 570,
+      "price": 100,
       "weight": 1380
     },
     {
@@ -488,6 +557,7 @@
       "manufacturer": "Ferrari",
       "model": "FF",
       "power": 660,
+      "price": 100,
       "weight": 1880
     },
     {
@@ -495,6 +565,7 @@
       "manufacturer": "Ferrari",
       "model": "GTC4Lusso",
       "power": 690,
+      "price": 100,
       "weight": 1920
     },
     {
@@ -502,6 +573,7 @@
       "manufacturer": "Ferrari",
       "model": "LaFerrari",
       "power": 800,
+      "price": 100,
       "weight": 1255
     },
     {
@@ -509,6 +581,7 @@
       "manufacturer": "Ferrari",
       "model": "Portofino",
       "power": 600,
+      "price": 100,
       "weight": 1664
     },
     {
@@ -516,6 +589,7 @@
       "manufacturer": "Ferrari",
       "model": "SF90 Stradale",
       "power": 780,
+      "price": 100,
       "weight": 1570
     },
     {
@@ -523,6 +597,7 @@
       "manufacturer": "Ford",
       "model": "Explorer",
       "power": 360,
+      "price": 100,
       "weight": 2405
     },
     {
@@ -530,6 +605,7 @@
       "manufacturer": "Ford",
       "model": "F150",
       "power": 395,
+      "price": 100,
       "weight": 2275
     },
     {
@@ -537,6 +613,7 @@
       "manufacturer": "Ford",
       "model": "Focus RS II",
       "power": 360,
+      "price": 100,
       "weight": 2405
     },
     {
@@ -544,6 +621,7 @@
       "manufacturer": "Ford",
       "model": "Mondeo 5",
       "power": 149,
+      "price": 100,
       "weight": 1550
     },
     {
@@ -551,6 +629,7 @@
       "manufacturer": "Ford",
       "model": "Mustang",
       "power": 526,
+      "price": 100,
       "weight": 1725
     },
     {
@@ -558,6 +637,7 @@
       "manufacturer": "Ford",
       "model": "Taurus",
       "power": 292,
+      "price": 100,
       "weight": 1903
     },
     {
@@ -565,6 +645,7 @@
       "manufacturer": "GMC",
       "model": "Yukon GMT400",
       "power": 180,
+      "price": 100,
       "weight": 2925
     },
     {
@@ -572,6 +653,7 @@
       "manufacturer": "Honda",
       "model": "Accord CU1",
       "power": 201,
+      "price": 100,
       "weight": 1607
     },
     {
@@ -579,6 +661,7 @@
       "manufacturer": "Honda",
       "model": "Civic FN1",
       "power": 140,
+      "price": 100,
       "weight": 1310
     },
     {
@@ -586,6 +669,7 @@
       "manufacturer": "Honda",
       "model": " Civic Type R FN2",
       "power": 201,
+      "price": 100,
       "weight": 1267
     },
     {
@@ -593,6 +677,7 @@
       "manufacturer": "Honda",
       "model": "NSX",
       "power": 507,
+      "price": 100,
       "weight": 1780
     },
     {
@@ -600,6 +685,7 @@
       "manufacturer": "Honda",
       "model": "S2000",
       "power": 242,
+      "price": 100,
       "weight": 1270
     },
     {
@@ -607,6 +693,7 @@
       "manufacturer": "Honda",
       "model": "Vigor",
       "power": 110,
+      "price": 100,
       "weight": 990
     },
     {
@@ -614,6 +701,7 @@
       "manufacturer": "Hummer",
       "model": "H2 E85",
       "power": 393,
+      "price": 100,
       "weight": 2900
     },
     {
@@ -621,6 +709,7 @@
       "manufacturer": "Hummer",
       "model": "H3",
       "power": 300,
+      "price": 100,
       "weight": 2200
     },
     {
@@ -628,6 +717,7 @@
       "manufacturer": "Infiniti",
       "model": "EX25 J50",
       "power": 222,
+      "price": 100,
       "weight": 1842
     },
     {
@@ -635,6 +725,7 @@
       "manufacturer": "Infiniti",
       "model": "EX35 J50",
       "power": 302,
+      "price": 100,
       "weight": 1480
     },
     {
@@ -642,6 +733,7 @@
       "manufacturer": "Infiniti",
       "model": "EX37 J50",
       "power": 330,
+      "price": 100,
       "weight": 1870
     },
     {
@@ -649,6 +741,7 @@
       "manufacturer": "Infiniti",
       "model": " FX30d S51",
       "power": 238,
+      "price": 100,
       "weight": 2100
     },
     {
@@ -656,6 +749,7 @@
       "manufacturer": "Infiniti",
       "model": "FX35 S50",
       "power": 280,
+      "price": 100,
       "weight": 2080
     },
     {
@@ -663,6 +757,7 @@
       "manufacturer": "Infiniti",
       "model": "FX37 S51",
       "power": 333,
+      "price": 100,
       "weight": 2023
     },
     {
@@ -670,6 +765,7 @@
       "manufacturer": "Infiniti",
       "model": "FX45 S50",
       "power": 328,
+      "price": 100,
       "weight": 2080
     },
     {
@@ -677,6 +773,7 @@
       "manufacturer": "Infiniti",
       "model": "FX50 S51",
       "power": 400,
+      "price": 100,
       "weight": 2107
     },
     {
@@ -684,6 +781,7 @@
       "manufacturer": "Infiniti",
       "model": "Q30",
       "power": 211,
+      "price": 100,
       "weight": 1531
     },
     {
@@ -691,6 +789,7 @@
       "manufacturer": "Infiniti",
       "model": "Q50 V37",
       "power": 405,
+      "price": 100,
       "weight": 1914
     },
     {
@@ -698,6 +797,7 @@
       "manufacturer": "Infiniti",
       "model": "Q60 CV37",
       "power": 405,
+      "price": 100,
       "weight": 1914
     },
     {
@@ -705,6 +805,7 @@
       "manufacturer": "Infiniti",
       "model": "QX50",
       "power": 249,
+      "price": 100,
       "weight": 1884
     },
     {
@@ -712,6 +813,7 @@
       "manufacturer": "Infiniti",
       "model": "QX56 Z62",
       "power": 405,
+      "price": 100,
       "weight": 2800
     },
     {
@@ -719,6 +821,7 @@
       "manufacturer": "Infiniti",
       "model": "QX60 L50",
       "power": 283,
+      "price": 100,
       "weight": 2132
     },
     {
@@ -726,6 +829,7 @@
       "manufacturer": "Infiniti",
       "model": "QX70 S51",
       "power": 400,
+      "price": 100,
       "weight": 2107
     },
     {
@@ -733,7 +837,104 @@
       "manufacturer": "Infiniti",
       "model": "QX80 Z62",
       "power": 405,
+      "price": 100,
       "weight": 2828
+    },
+    {
+      "id": 105,
+      "manufacturer": "Jaguar",
+      "model": "F-Pace",
+      "power": 550,
+      "price": 100,
+      "weight": 2070
+    },
+    {
+      "id": 106,
+      "manufacturer": "Jaguar ",
+      "model": "F-Type",
+      "power": 575,
+      "price": 100,
+      "weight": 1730
+    },
+    {
+      "id": 107,
+      "manufacturer": "Jaguar",
+      "model": "I-Pace",
+      "power": 400,
+      "price": 100,
+      "weight": 2133
+    },
+    {
+      "id": 108,
+      "manufacturer": "Jaguar",
+      "model": "XE X760",
+      "power": 180,
+      "price": 100,
+      "weight": 1690
+    },
+    {
+      "id": 109,
+      "manufacturer": "Jaguar",
+      "model": "XF CC9",
+      "power": 380,
+      "price": 100,
+      "weight": 1760
+    },
+    {
+      "id": 110,
+      "manufacturer": "Jaguar",
+      "model": "XJ X351",
+      "power": 510,
+      "price": 100,
+      "weight": 1885
+    },
+    {
+      "id": 111,
+      "manufacturer": "Jaguar",
+      "model": "XK X150",
+      "power": 550,
+      "price": 100,
+      "weight": 1753
+    },
+    {
+      "id": 112,
+      "manufacturer": "Jeep",
+      "model": "Commander XK",
+      "power": 218,
+      "price": 100,
+      "weight": 2345
+    },
+    {
+      "id": 113,
+      "manufacturer": "Jeep",
+      "model": "Compass MP MP522",
+      "power": 175,
+      "price": 100,
+      "weight": 1644
+    },
+    {
+      "id": 114,
+      "manufacturer": "Jeep",
+      "model": "Grand Cherokee WK2 Trackhawk",
+      "power": 710,
+      "price": 100,
+      "weight": 2418
+    },
+    {
+      "id": 115,
+      "manufacturer": "Jeep",
+      "model": "Renegade BU",
+      "power": 184,
+      "price": 100,
+      "weight": 1395
+    },
+    {
+      "id": 116,
+      "manufacturer": "Jeep",
+      "model": "Wrangler JL",
+      "power": 272,
+      "price": 100,
+      "weight": 1819
     }
   ]
 }

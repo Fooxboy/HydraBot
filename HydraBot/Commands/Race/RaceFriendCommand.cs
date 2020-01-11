@@ -54,10 +54,7 @@ namespace HydraBot.Commands.Race
             }else
             {
                 UsersCommandHelper.GetHelper().Add("racefriend", user.Id);
-
             }
-
-
             sender.Text(text, msg.ChatId, kb.Build());
         }
 

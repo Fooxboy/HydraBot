@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore.Update.Internal;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using HydraBot.Commands.Friends;
 using HydraBot.Commands.Gang;
 using HydraBot.Commands.Race;
 
@@ -96,6 +97,27 @@ namespace HydraBot.Commands
                 }catch
                 {
                     text = "Вы указали неверный id";
+                }
+            }else if (command == "addfriend")
+            {
+                try
+                {
+                    text = AddFriendCommand.AddFriend(user, msg.Text.ToLong(), sender);
+                }
+                catch
+                {
+                    text = "❌ Вы указали неверный Id.";
+                }
+            }else if (command == "removefriend")
+            {
+                try
+                {
+
+                    text = RemoveFriendCommand.RemoveFriend(user, msg.Text.ToLong());
+                }
+                catch
+                {
+                    text = "❌ Вы указали невеный Id.";
                 }
             }
 
