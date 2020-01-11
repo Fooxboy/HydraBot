@@ -37,13 +37,13 @@ namespace HydraBot.Commands.Race
 
             if(!garage.IsPhone)
             {
-                var t = "❌ Для участия в гонках необходим телефон. Зайдите в магазин!";
+                var t = "❌ Для участия в гонках необходим телефон. Загляните в магазин!";
 
                 kb.AddButton("🏪 Перейти в магазин", "store");
                 sender.Text(t, msg.ChatId, kb.Build());
                 return;
             }
-            var text = "🏁 Укажите id (в боте) своего друга.";
+            var text = "🏁 Укажите id (в боте) своего друга (друг должен быть в списке Ваших друзей).";
 
             kb.AddButton("↩ Вернуться в меню гонок", "race");
             if (user.Race != 0)
@@ -64,12 +64,13 @@ namespace HydraBot.Commands.Race
 
         public static string RunFriendBattle(long creatorId, long enemyId, IMessageSenderService sender, IBot bot, Message msg)
         {
-
             if (creatorId == enemyId) return "❌ Участвовать в гонке с самим собой невозможно.";
-
+            
             using (var db = new Database())
             {
                 var creator = db.Users.Single(u => u.Id == creatorId);
+                var friends = FriendsHelper.GetFriends(creator.Friends);
+                if (friends.Any(f => f != enemyId)) return "❌ Этот пользователь не в списке Ваших друзей.";
                 if (creator.Race != 0) return "❌ Вы уже участвуете в гонке!";
                 User enemy;
                 try

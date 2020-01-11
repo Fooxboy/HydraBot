@@ -15,12 +15,13 @@ namespace HydraBot.Commands.Friends
         {
             var user = Main.Api.Users.GetUser(msg);
             UsersCommandHelper.GetHelper().Add("addfriend", user.Id);
-            sender.Text("❓ Укажите Id (в боте) друга, мы отправим пользователю запрос.", msg.ChatId);
+            sender.Text("❓ Укажите Id (в боте) друга, мы отправим ему запрос.", msg.ChatId);
         }
 
 
         public static string AddFriend(User creator, long userId, IMessageSenderService sender)
         {
+            if (creator.Id == userId) return "❌ Отправить запрос самому себе невозможно.";
             var friends = FriendsHelper.GetFriends(creator.Friends);
             if (friends.Any(id => id == userId)) return "❌ Этот пользователь уже у Вас в списке друзей";
 
