@@ -1,4 +1,5 @@
-﻿using Fooxboy.NucleusBot;
+﻿using System.Collections.Generic;
+using Fooxboy.NucleusBot;
 using Fooxboy.NucleusBot.Interfaces;
 using Fooxboy.NucleusBot.Models;
 using HydraBot.Helpers;
@@ -26,9 +27,9 @@ namespace HydraBot.Commands.Friends
                 text += $"\n🧒 {req.Id} | [{req.Prefix}] {req.Name} - {req.Level} уровень.";
             }
 
-            kb.AddButton("✔ Принять запрос", "acceptrequestfriend");
+            kb.AddButton("✔ Принять запрос", "acceptrequestfriend", new List<string>(){requests[0].ToString()});
             kb.AddLine();
-            kb.AddButton("❌ Отклонить запрос", "noacceptrequestfriend");
+            kb.AddButton("❌ Отклонить запрос", "noacceptrequestfriend", new List<string>(){requests[0].ToString()});
             
             sender.Text(text, msg.ChatId, kb.Build());
         }

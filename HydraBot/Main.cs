@@ -8,6 +8,7 @@ using HydraBot.Commands;
 using HydraBot.Commands.Admin;
 using HydraBot.Commands.Bank;
 using HydraBot.Commands.DrivingSchool;
+using HydraBot.Commands.Friends;
 using HydraBot.Commands.Gang;
 using HydraBot.Commands.Garage;
 using HydraBot.Commands.Race;
@@ -128,7 +129,11 @@ namespace HydraBot
                 new SkillsCommand(),
                 new SkillsUpgrateCommand(),
                 new MenuPhoneCommand(), 
-                new FriendsCommand());
+                new FriendsCommand(),
+                new AcceptRequestFriendCommand(),
+                new AddFriendCommand(),
+                new RemoveFriendCommand(),
+                new RequestFriendsCommand());
 
             //Установка сервисов.
             _bot.SetServices(
