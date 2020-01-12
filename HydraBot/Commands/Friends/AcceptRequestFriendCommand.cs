@@ -26,6 +26,9 @@ namespace HydraBot.Commands.Friends
 
                 user.FriendsRequests = s;
                 user.Friends += $"{request};";
+                var userFriend = db.Users.Single(uu => uu.Id == request);
+                userFriend.Friends += $"{user.Id};";
+                
                 db.SaveChanges();
             }
             

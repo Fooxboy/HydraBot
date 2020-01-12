@@ -10,24 +10,32 @@ namespace HydraBot.Commands
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
             var user = Main.Api.Users.GetUser(msg);
-            var friends = FriendsHelper.GetFriends(user.Friends);
             var helper = new UsersHelper();
+            var kb = new KeyboardBuilder(bot);
             var text = $"🧒 Друзья пользователя  {helper.GetLink(user)}";
-
-            foreach (var friendId in friends)
+            if (user.Friends is null)
             {
-                var friend = Main.Api.Users.GetUserFromId(friendId);
-                text += $"\n 🧒 [{friend.Id}]| [{friend.Prefix}] {helper.GetLink(friend)} - {friend.Level} уровень.";
+                text = "💔 Ваш список друзей пуст. Найдите себе друзей скорее!";
+                kb.AddButton("🔙 В меню телефона", "menuphone");
+            }
+            else
+            {
+                var friends = FriendsHelper.GetFriends(user.Friends);
+                foreach (var friendId in friends)
+                {
+                    var friend = Main.Api.Users.GetUserFromId(friendId);
+                    text += $"\n 🧒 [{friend.Id}]| [{friend.Prefix}] {helper.GetLink(friend)} - {friend.Level} уровень.";
+                }
+            
+                kb.AddButton("➕ Добавить друга", "addfriend");
+                kb.AddLine();
+                kb.AddButton("❌ Удалить друга", "removefriend");
+                kb.AddLine();
+                kb.AddButton("✔ Запросы в друзья", "requestfriends");
+                kb.AddLine();
+                kb.AddButton("↩ В меню телефона", "menuphone");
             }
             
-            var kb = new KeyboardBuilder(bot);
-            kb.AddButton("➕ Добавить друга", "addfriend");
-            kb.AddLine();
-            kb.AddButton("❌ Удалить друга", "removefriend");
-            kb.AddLine();
-            kb.AddButton("✔ Запросы в друзья", "requestfriends");
-            kb.AddLine();
-            kb.AddButton("↩ В меню телефона", "menuphone");
             
             sender.Text(text, msg.ChatId, kb.Build());
         }

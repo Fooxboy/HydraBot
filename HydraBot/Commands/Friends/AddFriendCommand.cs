@@ -22,8 +22,11 @@ namespace HydraBot.Commands.Friends
         public static string AddFriend(User creator, long userId, IMessageSenderService sender)
         {
             if (creator.Id == userId) return "❌ Отправить запрос самому себе невозможно.";
-            var friends = FriendsHelper.GetFriends(creator.Friends);
-            if (friends.Any(id => id == userId)) return "❌ Этот пользователь уже у Вас в списке друзей";
+            if (creator.Friends != null)
+            {
+                var friends = FriendsHelper.GetFriends(creator.Friends);
+                if (friends.Any(id => id == userId)) return "❌ Этот пользователь уже у Вас в списке друзей";
+            }
 
             var helper = new UsersHelper();
             var user = Main.Api.Users.GetUserFromId(userId);
@@ -52,6 +55,7 @@ namespace HydraBot.Commands.Friends
                 using (var db = new Database())
                 {
                     var usr = db.Users.Single(u => u.Id == userId);
+                    if (usr.FriendsRequests is null) usr.FriendsRequests = "";
                     usr.FriendsRequests += $"{creator.Id};";
                     db.SaveChanges();
                 }

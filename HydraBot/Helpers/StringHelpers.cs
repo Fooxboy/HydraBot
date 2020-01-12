@@ -6,6 +6,15 @@ namespace HydraBot.Helpers
 {
     public static class StringHelpers
     {
-        public static long ToLong(this string str)=> long.Parse(str);
+        public static long ToLong(this string str)
+        {
+            if (str != "")
+            {
+                return long.Parse(str);
+            }
+
+            return -1;
+
+        }
     }
 }

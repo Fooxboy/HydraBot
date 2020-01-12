@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Fooxboy.NucleusBot;
+using VkNet.Enums.SafetyEnums;
 
 
 namespace HydraBot.Commands.Race
@@ -23,7 +24,13 @@ namespace HydraBot.Commands.Race
             var kb = new KeyboardBuilder(bot);
             kb.AddButton("🧒 Мои друзья", "friends");
             kb.AddLine();
+            kb.AddButton("➕ Добавить друга", "addfriend", color: KeyboardButtonColor.Positive);
+            kb.AddButton("➖ Удалить друга", "removefriend", color: KeyboardButtonColor.Negative);
+            kb.AddLine();
+            kb.AddButton("⚠ Запросы в друзья", "requestfriends");
+            kb.AddLine();
             kb.AddButton("❌ Закрыть меню", "openphone");
+            
             sender.Text(text, msg.ChatId, kb.Build());
         }
 
