@@ -42,8 +42,12 @@ namespace HydraBot.Models
         /// <summary>
         /// Гонки
         /// </summary>
-        public DbSet<Skills> Skillses { get; set; }
         public DbSet<Race> Races { get; set; }
+        /// <summary>
+        /// Навыки
+        /// </summary>
+        public DbSet<Skills> Skillses { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite("Data source=bot.db");

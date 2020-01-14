@@ -40,7 +40,7 @@ namespace HydraBot.Commands
                     text = "❓ Выберите действие на клавиатуре.";
                     kb.AddButton("📱 Открыть телефон", "openphone");
                     kb.AddLine();
-                    kb.AddButton("🏁 Быстрая гонка", "rrrrrrr", new List<string>() { "0" });
+                    kb.AddButton("🏁 Быстрая гонка", "racefast", new List<string>() { "0" });
                     kb.AddLine();
                     kb.AddButton("🎭 Гонка с другом", "racefriend", new List<string>() { "0" });
                     kb.AddLine();

@@ -24,11 +24,13 @@ namespace HydraBot.Commands.Race
             var kb = new KeyboardBuilder(bot);
             Car carCreator = null;
             Car carEnemy = null;
+            bool sendMessageToEnemy = true;
+            bool isBot = false;
             if(msg.Payload.Arguments.Count == 0)
             {
                 userEnemy = Main.Api.Users.GetUser(msg);
                 //Пользователь принимает гонку.
-
+                isBot = false;
                 using(var db = new Database())
                 {
                     try
@@ -38,6 +40,19 @@ namespace HydraBot.Commands.Race
                     {
                         kb.AddButton(ButtonsHelper.ToHomeButton());
                         sender.Text("❌ Ваш противник уже отменил гонку!", msg.ChatId, kb.Build());
+                        var a =db.Users.Single(u => u.Id == userEnemy.Id);
+                        a.Race = 0;
+                        db.SaveChanges();
+                        return;
+                    }
+
+                    if (race is null)
+                    {
+                        kb.AddButton(ButtonsHelper.ToHomeButton());
+                        sender.Text("❌ Мы не смогли найти эту гонку в базе данных.", msg.ChatId, kb.Build());
+                        var a =db.Users.Single(u => u.Id == userEnemy.Id);
+                        a.Race = 0;
+                        db.SaveChanges();
                         return;
                     }
 
@@ -53,19 +68,75 @@ namespace HydraBot.Commands.Race
                     db.SaveChanges();
                 }
             }
+            else
+            {
+                //если какой-то тип
+                var typeRace = msg.Payload.Arguments[0].ToLong();
+                if (typeRace == 1) //если это быстрая гонка
+                {
+                    var enemyId = msg.Payload.Arguments[0].ToLong();
+
+                    race = new Models.Race();
+                    userCreator = Main.Api.Users.GetUser(msg);
+                    garageCreator = Main.Api.Garages.GetGarage(userCreator.Id);
+                    race.Creator = userCreator.Id;
+                    race.Enemy = enemyId;
+                    race.IsRequest = false;
+                    
+                    using (var db = new Database())
+                    {
+                        carCreator = db.Cars.Single(c => c.Id == garageCreator.SelectCar);
+                        db.Races.Add(race);
+                        db.SaveChanges();
+                    }
+                    
+                    
+                    sendMessageToEnemy = false;
+                    if (enemyId == -2) //генерим бота
+                    {
+                        isBot = true;
+                        userEnemy = new User();
+                        userEnemy.Id = -2;
+                        userEnemy.Name = "Бот без имени";
+                        
+                        garageEnemy =  new Models.Garage();
+                        carEnemy = new Car();
+                        carEnemy.Id = -2;
+                        
+                        var r = new Random();
+
+                        int a = r.Next(1, 3);
+
+                        carEnemy.Power = a == 2 ? carCreator.Power + 1 : carCreator.Power - 1;
+
+                        int b = r.Next(1, 3);
+                    }
+                    else
+                    {
+                        using (var db = new Database())
+                        {
+                            userEnemy = db.Users.Single(u => u.Id == enemyId);
+                            garageEnemy = db.Garages.Single(g => g.UserId == enemyId);
+                            carEnemy = db.Cars.Single(c => c.Id == garageEnemy.SelectCar);
+
+                        }
+                    }
+                }
+                
+            }
 
             long enemyChatId = 0;
             long creatorChatId = 0;
             if(sender.Platform == Fooxboy.NucleusBot.Enums.MessengerPlatform.Vkontakte)
             {
-                enemyChatId = userEnemy.VkId;
+               if(sendMessageToEnemy && !isBot) enemyChatId = userEnemy.VkId;
                 creatorChatId = userCreator.VkId;
             }else
             {
-                enemyChatId = userEnemy.TgId;
+                if(sendMessageToEnemy && !isBot) enemyChatId = userEnemy.TgId;
                 creatorChatId = userCreator.TgId;
             }
-            Task.Run(()=> sender.Text($"🏁 Гонка с игроком {userCreator.Name} на автомобиле {carCreator.Manufacturer} {carCreator.Model} ({carCreator.Number}) началась! Не переходите по разделам во время гонки", enemyChatId));
+           if(sendMessageToEnemy && !isBot) Task.Run(()=> sender.Text($"🏁 Гонка с игроком {userCreator.Name} на автомобиле {carCreator.Manufacturer} {carCreator.Model} ({carCreator.Number}) началась! Не переходите по разделам во время гонки", enemyChatId));
             Task.Run(()=> sender.Text($"🏁 Гонка с игроком {userEnemy.Name} на автомобиле {carEnemy.Manufacturer} {carEnemy.Model} ({carEnemy.Number}) началась! Не переходите по разделам во время гонки", creatorChatId));
 
 
@@ -97,54 +168,91 @@ namespace HydraBot.Commands.Race
 
                     try
                     {
-                        skillsEnemy = db.Skillses.Single(s => s.UserId == userEnemy.Id);
-
+                        if (isBot)
+                        {
+                            
+                            //генерируем рандомный скилл
+                            skillsEnemy = new Skills();
+                            skillsEnemy.Driving = 0;
+                        }
+                        else
+                        {
+                            skillsEnemy = db.Skillses.Single(s => s.UserId == userEnemy.Id);
+                        }
                     }
                     catch
                     {
-                        skillsEnemy = new Skills();
+                        if (isBot)
+                        {
+                            //генерируем рандомный скилл
+                            skillsEnemy = new Skills();
+                            skillsEnemy.Driving = 0;
+
+                        }
+                        else
+                        {
+                            skillsEnemy = new Skills();
+
+                        }
                     }
                 }
-                
+
+                //тут считаем навыки
+
                 scoreCreator += skillsCretor.Driving;
                 scoreEnemy += skillsEnemy.Driving;
-                
-                
-                
+
+
+
                 var winner = scoreEnemy > scoreCreator ? userEnemy : userCreator;
 
-                using(var db = new Database())
+                using (var db = new Database())
                 {
                     var raceLocal = db.Races.Single(r => r.Id == race.Id);
                     if (raceLocal.Winner != 0) winner = db.Users.Single(u => u.Id == raceLocal.Winner);
                     raceLocal.Winner = winner.Id;
 
-                    var winnerLocal = db.Users.Single(u => u.Id == winner.Id);
-                    winnerLocal.Money += 1000;
-                    winnerLocal.Score += winnerLocal.Level * 50;
+                    if (winner.Id != -2)
+                    {
+                        var winnerLocal = db.Users.Single(u => u.Id == winner.Id);
+                        winnerLocal.Money += 1000;
+                        winnerLocal.Score += winnerLocal.Level * 50;
+                    }
+
 
                     var usr1 = db.Users.Single(u => u.Id == raceLocal.Creator);
-                    var usr2 = db.Users.Single(u => u.Id == raceLocal.Enemy);
+                    if (!isBot)
+                    {
+                        var usr2 = db.Users.Single(u => u.Id == raceLocal.Enemy);
+                        usr2.Race = 0;
+                    }
 
                     usr1.Race = 0;
-                    usr2.Race = 0;
                     db.SaveChanges();
                 }
 
-               
-                Task.Run(() =>
+                if (!isBot && winner.Id == -2)
                 {
-                    var kb1 = new KeyboardBuilder(bot);
-                    kb1.AddButton("🏁 Назад в гонки", "race");
-                    sender.Text($"🎉 Поздравляю с победой! Вы получили: 💵 1.000 рублей и ⭐ {winner.Level * 50} опыта", winner.Id == userEnemy.Id ? enemyChatId : creatorChatId, kb1.Build());
-                });
+                    Task.Run(() =>
+                    {
+                        var kb1 = new KeyboardBuilder(bot);
+                        kb1.AddButton("🏁 Назад в гонки", "race");
+                        sender.Text(
+                            $"🎉 Поздравляю с победой! Вы получили: 💵 1.000 рублей и ⭐ {winner.Level * 50} опыта",
+                            winner.Id == userEnemy.Id ? enemyChatId : creatorChatId, kb1.Build());
+                    });
+                }
 
-                Task.Run(() =>
+                if (!isBot && winner.Id != -2)
                 {
-                    var kb2 = new KeyboardBuilder(bot);
-                    kb2.AddButton("🏁 Назад в гонки", "race");
-                    sender.Text($"🏁 Вы проиграли в этой гонке.", winner.Id == userEnemy.Id ? creatorChatId : enemyChatId, kb2.Build());
-                });
+                    Task.Run(() =>
+                    {
+                        var kb2 = new KeyboardBuilder(bot);
+                        kb2.AddButton("🏁 Назад в гонки", "race");
+                        sender.Text($"🏁 Вы проиграли в этой гонке.", winner.Id == userEnemy.Id ? creatorChatId : enemyChatId, kb2.Build());
+                    });
+                }
+               
 
             });
         }
