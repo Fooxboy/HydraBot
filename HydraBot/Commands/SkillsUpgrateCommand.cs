@@ -10,15 +10,12 @@ namespace HydraBot.Commands
 {
     public class SkillsUpgrateCommand :INucleusCommand
     {
-        public string Command => "skillsupgrate";
+        public string Command => "skillupgrate";
         public string[] Aliases => new string[0];
         
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
             var user = Main.Api.Users.GetUser(msg);
-
-            
-
             try
             {
                 var id = msg.Payload.Arguments[0];

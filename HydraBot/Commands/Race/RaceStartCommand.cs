@@ -74,7 +74,7 @@ namespace HydraBot.Commands.Race
                 var typeRace = msg.Payload.Arguments[0].ToLong();
                 if (typeRace == 1) //если это быстрая гонка
                 {
-                    var enemyId = msg.Payload.Arguments[0].ToLong();
+                    var enemyId = msg.Payload.Arguments[1].ToLong();
 
                     race = new Models.Race();
                     userCreator = Main.Api.Users.GetUser(msg);
@@ -86,6 +86,7 @@ namespace HydraBot.Commands.Race
                     using (var db = new Database())
                     {
                         carCreator = db.Cars.Single(c => c.Id == garageCreator.SelectCar);
+                        race.Id = db.Races.Count() + 1;
                         db.Races.Add(race);
                         db.SaveChanges();
                     }
@@ -102,6 +103,8 @@ namespace HydraBot.Commands.Race
                         garageEnemy =  new Models.Garage();
                         carEnemy = new Car();
                         carEnemy.Id = -2;
+                        carEnemy.Manufacturer = "abc";
+                        carEnemy.Model = "def";
                         
                         var r = new Random();
 
@@ -201,9 +204,7 @@ namespace HydraBot.Commands.Race
 
                 scoreCreator += skillsCretor.Driving;
                 scoreEnemy += skillsEnemy.Driving;
-
-
-
+                
                 var winner = scoreEnemy > scoreCreator ? userEnemy : userCreator;
 
                 using (var db = new Database())
@@ -221,17 +222,20 @@ namespace HydraBot.Commands.Race
 
 
                     var usr1 = db.Users.Single(u => u.Id == raceLocal.Creator);
+                    var gar1 = db.Garages.Single(u => u.UserId == usr1.Id);
+                    gar1.Fuel = gar1.Fuel - 5;
                     if (!isBot)
                     {
                         var usr2 = db.Users.Single(u => u.Id == raceLocal.Enemy);
+                        var gar2 = db.Garages.Single(u => u.UserId == usr2.Id);
+                        gar2.Fuel = gar2.Fuel - 5;
                         usr2.Race = 0;
                     }
-
                     usr1.Race = 0;
                     db.SaveChanges();
                 }
 
-                if (!isBot && winner.Id == -2)
+                if (winner.Id != -2)
                 {
                     Task.Run(() =>
                     {
@@ -243,7 +247,7 @@ namespace HydraBot.Commands.Race
                     });
                 }
 
-                if (!isBot && winner.Id != -2)
+                if (winner.Id == -2)
                 {
                     Task.Run(() =>
                     {

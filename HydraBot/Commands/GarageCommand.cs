@@ -88,6 +88,7 @@ namespace HydraBot.Commands
             var helper = new UsersHelper();
 
             var text = $"🔧 Гараж пользователя: {helper.GetLink(user)}" +
+                       $"\n ⛽ Топливо: {garage.Fuel} литров." +
                 $"\n 🆓 Свободных парковочных мест: {garage.ParkingPlaces - cars.Count}" +
                 $"\n 🚕 Ваши автомобили: \n";
 

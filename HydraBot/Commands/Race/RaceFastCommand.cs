@@ -13,6 +13,15 @@ namespace HydraBot.Commands.Race
         {
             var user = Main.Api.Users.GetUser(msg);
             var garageUser = Main.Api.Garages.GetGarage(user.Id);
+            if (garageUser.Fuel < 5)
+            {
+                var kb1 = new KeyboardBuilder(bot);
+                kb1.AddButton("⛽ Заправить бак", "gasstation");
+                kb1.AddLine();
+                kb1.AddButton("🏎 В раздел гонок", "race");
+                sender.Text("❌ У Вас кончилось топливо! Заправте бак, чтобы продолжить гонки!", msg.ChatId, kb1.Build());
+                return;
+            }
             sender.Text("⌛ Подождите, мы подбираем Вам противника", msg.ChatId);
 
             var enemys = new List<RaceFindModel>();
@@ -23,11 +32,16 @@ namespace HydraBot.Commands.Race
                 scoreUser = userCar.Power + userCar.Weight;
                 foreach (var enemyGarage in db.Garages)
                 {
-                    if(enemyGarage.SelectCar == 0 ) break;
+                    if (enemyGarage.SelectCar != 0)
+                    {
+                        if (enemyGarage.UserId != user.Id)
+                        {
+                            var carEnemy = db.Cars.Single(c=> c.Id == enemyGarage.SelectCar);
+                            var scoreEnemy = carEnemy.Power + carEnemy.Weight;
+                            enemys.Add(new RaceFindModel() { UserId = enemyGarage.UserId, Score = scoreEnemy});
+                        }
+                    }
                     
-                    var carEnemy = db.Cars.Single(c=> c.Id == enemyGarage.SelectCar);
-                    var scoreEnemy = carEnemy.Power + carEnemy.Weight;
-                    enemys.Add(new RaceFindModel() { UserId = enemyGarage.UserId, Score = scoreEnemy});
                 }
             }
 
@@ -35,7 +49,7 @@ namespace HydraBot.Commands.Race
 
             for (long i = 1; i < 4; i++)
             {
-                for (long b = 0; b < 300; b++)
+                for (long b = 0; b < 100; b++)
                 {
                     var enemy = enemys.SingleOrDefault(e => e.Score == scoreUser + b*i);
                     ememyRaceModel = enemy;
@@ -48,7 +62,7 @@ namespace HydraBot.Commands.Race
 
                 if (ememyRaceModel is null)
                 {
-                    for (long b = 0; b < 300; b++)
+                    for (long b = 0; b < 100; b++)
                     {
                         var enemy = enemys.SingleOrDefault(e => e.Score == scoreUser - i);
                         ememyRaceModel = enemy;
@@ -57,7 +71,6 @@ namespace HydraBot.Commands.Race
                             var garage = Main.Api.Garages.GetGarage(enemy.UserId);
                             if(garage.SelectCar != 0)  break;
                         }
-                        
                     }
                 }
                 else
@@ -75,6 +88,8 @@ namespace HydraBot.Commands.Race
             var kb = new KeyboardBuilder(bot);
 
             kb.AddButton("🏎 Начать гонку", "RaceStart", new List<string>() {"1", $"{ememyRaceModel.UserId}"});
+            
+            sender.Text("✔ Мы нашли Вам противника", msg.ChatId, kb.Build());
 
         }
 

@@ -12,7 +12,7 @@ namespace HydraBot.Commands.Friends
         {
             var user = Main.Api.Users.GetUser(msg);
             var kb = new KeyboardBuilder(bot);
-            if (user.FriendsRequests == "")
+            if (user.FriendsRequests == "" || user.FriendsRequests is null)
             {
                 sender.Text("🤔 У Вас нет запросов в друзья", msg.ChatId, kb.Build());
                 return;
