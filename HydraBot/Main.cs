@@ -134,7 +134,8 @@ namespace HydraBot
                 new AddFriendCommand(),
                 new RemoveFriendCommand(),
                 new RequestFriendsCommand(),
-                new RaceFastCommand());
+                new RaceFastCommand(),
+                new NewsletterCommand());
 
             //Установка сервисов.
             _bot.SetServices(
