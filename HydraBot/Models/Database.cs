@@ -47,6 +47,10 @@ namespace HydraBot.Models
         /// Навыки
         /// </summary>
         public DbSet<Skills> Skillses { get; set; }
+        /// <summary>
+        /// Архив продаж авто.
+        /// </summary>
+        public DbSet<SellCar> SellCars { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
