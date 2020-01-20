@@ -69,6 +69,6 @@ namespace HydraBot.Commands.Garage
         }
 
         public string Command => "sellcar";
-        public string[] Aliases => new string[] {"продать "};
+        public string[] Aliases => new string[0] {};
     }
 }

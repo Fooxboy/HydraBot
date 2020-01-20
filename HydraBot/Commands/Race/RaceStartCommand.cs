@@ -219,16 +219,18 @@ namespace HydraBot.Commands.Race
                         winnerLocal.Money += 1000;
                         winnerLocal.Score += winnerLocal.Level * 50;
                     }
-
-
                     var usr1 = db.Users.Single(u => u.Id == raceLocal.Creator);
                     var gar1 = db.Garages.Single(u => u.UserId == usr1.Id);
+                    var car1 = db.Cars.Single(c => c.Id == carCreator.Id);
                     gar1.Fuel = gar1.Fuel - 5;
+                    car1.Health = car1.Health - 5;
                     if (!isBot)
                     {
                         var usr2 = db.Users.Single(u => u.Id == raceLocal.Enemy);
                         var gar2 = db.Garages.Single(u => u.UserId == usr2.Id);
+                        var car2 = db.Cars.Single(c => c.Id == carEnemy.Id);
                         gar2.Fuel = gar2.Fuel - 5;
+                        car2.Health = car2.Health - 5;
                         usr2.Race = 0;
                     }
                     usr1.Race = 0;

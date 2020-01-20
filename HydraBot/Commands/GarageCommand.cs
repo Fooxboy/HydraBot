@@ -133,7 +133,7 @@ namespace HydraBot.Commands
                     }
                 }
                 else carNumber = $"🗄 Номер не установлен";
-                text += $"\n 🚘 [{car.Id}] {car.Manufacturer} {car.Model} ⚙ Двигатель:  {engineText} | {carNumber} \n";
+                text += $"\n 🚘 [{car.Id}] {car.Manufacturer} {car.Model} ⚙ Двигатель:  {engineText} | {carNumber} | 💔 Здоровье: {car.Health} \n";
                 if (showKeyboard) 
                 {
                     kb.AddButton($"🏎 {car.Id}", "actioncar", new List<string>() { car.Id.ToString() });
@@ -142,9 +142,7 @@ namespace HydraBot.Commands
                         kb.AddLine();
                     }
                 }
-                
             }
-
 
             if(showKeyboard) text += "❓ Для дополнительных действий выберите автомобиль на клавиатуре";
 
