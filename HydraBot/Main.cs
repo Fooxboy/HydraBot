@@ -13,6 +13,7 @@ using HydraBot.Commands.Gang;
 using HydraBot.Commands.Garage;
 using HydraBot.Commands.Race;
 using HydraBot.Commands.Store;
+using HydraBot.Commands.Works;
 using HydraBot.Interfaces;
 using HydraBot.Models;
 using HydraBot.Services;
@@ -136,7 +137,9 @@ namespace HydraBot
                 new RequestFriendsCommand(),
                 new RaceFastCommand(),
                 new NewsletterCommand(),
-                new SellCarCommand());
+                new SellCarCommand(),
+                new WorkCommand(),
+                new TaxiWorkCommand());
 
             //Установка сервисов.
             _bot.SetServices(
