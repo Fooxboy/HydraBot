@@ -16,7 +16,7 @@ namespace HydraBot.Commands.Works
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
             var user = Main.Api.Users.GetUser(msg);
-            var text = "⌛ Выберите время поездки:";
+            var text = "⌛ Выберите понравившийся заказ:";
             var kb = new KeyboardBuilder(bot);
 
             if (!user.DriverLicense.Contains("B"))
@@ -29,11 +29,16 @@ namespace HydraBot.Commands.Works
             
             if (msg.Payload.Arguments.Count == 0)
             {
-                kb.AddButton("⌚ 10 Минут", "taxiwork", new List<string>() {"10"});
-                kb.AddButton("⌚ 15 Минут", "taxiwork", new List<string>() {"15"});
+                var r = new Random();
+                var t = r.Next(2, 11);
+                kb.AddButton($"⌚ {t * 10} км ({t} мин.)", "taxiwork", new List<string>() {$"{t}"});
+                t = r.Next(2, 11);
+                kb.AddButton($"⌚ {t * 10} км ({t} мин.)", "taxiwork", new List<string>() {$"{t}"});
+                t = r.Next(2, 11);
                 kb.AddLine();
-                kb.AddButton("⌚ 30 Минут", "taxiwork", new List<string>() {"30"});
-                kb.AddButton("⌚ 1 Час", "taxiwork", new List<string>() {"60"});
+                kb.AddButton($"⌚ {t * 10} км ({t} мин.)", "taxiwork", new List<string>() {$"{t}"});
+                t = r.Next(2, 11);
+                kb.AddButton($"⌚ {t * 10} км ({t} мин.)", "taxiwork", new List<string>() {$"{t}"});
                 kb.AddLine();
                 kb.AddButton("↩ Назад к списку работы", "work");
                 sender.Text(text, msg.ChatId, kb.Build());
@@ -41,7 +46,7 @@ namespace HydraBot.Commands.Works
             else
             {
                 var time = msg.Payload.Arguments[0].ToLong();
-                text = $"✔ Вы устроились на работу таксистом. Вы освободитесь через: {time} минут";
+                text = $"✔ Вы устроились на работу таксистом. Вы освободитесь через: {time} минут.";
                 kb.AddButton(ButtonsHelper.ToHomeButton());
                 sender.Text(text, msg.ChatId, kb.Build());
                 
@@ -63,7 +68,7 @@ namespace HydraBot.Commands.Works
                     }
 
                     text = $"✔ Вы закончили работу таксистом.\n" +
-                           $"💰 Вы заработали: {time * 1000} руб.";
+                           $"💰 Вы заработали: {time * 5000} руб.";
                     Main.Api.Users.AddMoney(user.Id, time * 1000);
                     sender.Text(text, msg.ChatId, kb.Build());
                 });
