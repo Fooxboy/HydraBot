@@ -12,6 +12,11 @@ namespace HydraBot.Commands.Race
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
             var user = Main.Api.Users.GetUser(msg);
+            if (user.OnWork)
+            {
+                sender.Text("❌ Вы не можете идти в гонку, пока находитесь на работе, дождитесь завершения и возвращайтесь!", msg.ChatId);
+                return;
+            }
             var garageUser = Main.Api.Garages.GetGarage(user.Id);
             if (garageUser.Fuel < 5)
             {

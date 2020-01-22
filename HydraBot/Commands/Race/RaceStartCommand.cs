@@ -29,6 +29,11 @@ namespace HydraBot.Commands.Race
             if(msg.Payload.Arguments.Count == 0)
             {
                 userEnemy = Main.Api.Users.GetUser(msg);
+                if (userEnemy.OnWork)
+                {
+                    sender.Text("❌ Вы не можете идти в гонку, пока находитесь на работе, дождитесь завершения и возвращайтесь!", msg.ChatId);
+                    return;
+                }
                 //Пользователь принимает гонку.
                 isBot = false;
                 using(var db = new Database())

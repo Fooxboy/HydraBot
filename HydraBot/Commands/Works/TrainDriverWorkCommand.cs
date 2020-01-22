@@ -15,6 +15,11 @@ namespace HydraBot.Commands.Works
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
             var user = Main.Api.Users.GetUser(msg);
+            if (user.OnWork)
+            {
+                sender.Text("❌ Вы уже на работе, дождитесь завершения и возвращайтесь!", msg.ChatId);
+                return;
+            }
             var text = "⌛ Выберите время поездки:";
             var kb = new KeyboardBuilder(bot);
             

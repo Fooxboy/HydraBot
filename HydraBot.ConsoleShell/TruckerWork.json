@@ -6,6 +6,33 @@
       "distance": 400,
       "money": 1000,
       "time": 20
+    },
+    {
+      "item": "Бочки с молоком2",
+      "weight": 7,
+      "distance": 400,
+      "money": 1000,
+      "time": 20
+    },
+    {
+      "item": "Бочки с молоком3",
+      "weight": 7,
+      "distance": 400,
+      "money": 1000,
+      "time": 20
+    },
+    {
+      "item": "Бочки с молоком4",
+      "weight": 7,
+      "distance": 400,
+      "money": 1000,
+      "time": 20
+    },{
+      "item": "Бочки с молоком5",
+      "weight": 7,
+      "distance": 400,
+      "money": 1000,
+      "time": 20
     }
   ] 
 }

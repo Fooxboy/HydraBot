@@ -33,6 +33,13 @@ namespace HydraBot.Commands.Race
             }
 
             var user = Main.Api.Users.GetUser(msg);
+            
+            if (user.OnWork)
+            {
+                sender.Text("❌ Вы не можете идти в гонку, пока находитесь на работе, дождитесь завершения и возвращайтесь!", msg.ChatId);
+                return;
+            }
+            
             var garage = Main.Api.Garages.GetGarage(user.Id);
 
             if(!garage.IsPhone)
