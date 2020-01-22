@@ -96,5 +96,9 @@ namespace HydraBot.Models
         /// Id пользователей, которые отправили запрос в друзья.
         /// </summary>
         public string FriendsRequests { get; set; }
+        /// <summary>
+        /// Нахоидтся на работе.
+        /// </summary>
+        public bool OnWork { get; set; }
     }
 }

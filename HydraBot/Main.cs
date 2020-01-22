@@ -139,7 +139,11 @@ namespace HydraBot
                 new NewsletterCommand(),
                 new SellCarCommand(),
                 new WorkCommand(),
-                new TaxiWorkCommand());
+                new TaxiWorkCommand(),
+                new BusDriverWorkCommand(),
+                new CourierWorkCommand(),
+                new TrainDriverWorkCommand(),
+                new TruckerWorkCommand());
 
             //Установка сервисов.
             _bot.SetServices(

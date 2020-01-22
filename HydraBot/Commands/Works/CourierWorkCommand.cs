@@ -8,20 +8,19 @@ using Fooxboy.NucleusBot.Interfaces;
 using Fooxboy.NucleusBot.Models;
 using HydraBot.Helpers;
 using HydraBot.Models;
-
 namespace HydraBot.Commands.Works
 {
-    public class TaxiWorkCommand:INucleusCommand
+    public class CourierWorkCommand:INucleusCommand
     {
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
-            var user = Main.Api.Users.GetUser(msg);
+             var user = Main.Api.Users.GetUser(msg);
             var text = "⌛ Выберите время поездки:";
             var kb = new KeyboardBuilder(bot);
 
-            if (!user.DriverLicense.Contains("B"))
+            if (!user.DriverLicense.Contains("A"))
             {
-                text = "❌ Для того, чтобы работать таксистом, Вам необходимы права категории B.";
+                text = "❌ Для того, чтобы работать курьером, Вам необходимы права категории A.";
                 kb.AddButton(ButtonsHelper.ToHomeButton());
                 sender.Text(text, msg.ChatId, kb.Build());
                 return;
@@ -29,11 +28,11 @@ namespace HydraBot.Commands.Works
             
             if (msg.Payload.Arguments.Count == 0)
             {
-                kb.AddButton("⌚ 10 Минут", "taxiwork", new List<string>() {"10"});
-                kb.AddButton("⌚ 15 Минут", "taxiwork", new List<string>() {"15"});
+                kb.AddButton("⌚ 10 Минут", "courierwork", new List<string>() {"10"});
+                kb.AddButton("⌚ 15 Минут", "courierwork", new List<string>() {"15"});
                 kb.AddLine();
-                kb.AddButton("⌚ 30 Минут", "taxiwork", new List<string>() {"30"});
-                kb.AddButton("⌚ 1 Час", "taxiwork", new List<string>() {"60"});
+                kb.AddButton("⌚ 30 Минут", "courierwork", new List<string>() {"30"});
+                kb.AddButton("⌚ 1 Час", "courierwork", new List<string>() {"60"});
                 kb.AddLine();
                 kb.AddButton("↩ Назад к списку работы", "work");
                 sender.Text(text, msg.ChatId, kb.Build());
@@ -41,7 +40,7 @@ namespace HydraBot.Commands.Works
             else
             {
                 var time = msg.Payload.Arguments[0].ToLong();
-                text = $"✔ Вы устроились на работу таксистом. Вы освободитесь через: {time} минут";
+                text = $"✔ Вы устроились на работу курьера. Вы освободитесь через: {time} минут";
                 kb.AddButton(ButtonsHelper.ToHomeButton());
                 sender.Text(text, msg.ChatId, kb.Build());
                 
@@ -62,7 +61,7 @@ namespace HydraBot.Commands.Works
                         db.SaveChanges();
                     }
 
-                    text = $"✔ Вы закончили работу таксистом.\n" +
+                    text = $"✔ Вы закончили работу курьера.\n" +
                            $"💰 Вы заработали: {time * 1000} руб.";
                     Main.Api.Users.AddMoney(user.Id, time * 1000);
                     sender.Text(text, msg.ChatId, kb.Build());
@@ -74,7 +73,7 @@ namespace HydraBot.Commands.Works
         {
         }
 
-        public string Command => "taxiwork";
+        public string Command => "courierwork";
         public string[] Aliases => new string[0];
     }
 }
