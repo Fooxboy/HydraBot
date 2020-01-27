@@ -47,18 +47,7 @@ namespace HydraBot.Commands.Works
                 return;
             }
             
-            if (msg.Payload.Arguments.Count == 0)
-            {
-                kb.AddButton("🚚 1", "truckerwork", new List<string>() {$"{Items[index1].Time}"});
-                kb.AddButton("🚚 2", "truckerwork", new List<string>() {$"{Items[index2].Time}"});
-                kb.AddLine();
-                kb.AddButton("🚚 3", "truckerwork", new List<string>() {$"{Items[index3].Time}"});
-                kb.AddButton("🚚 4", "truckerwork", new List<string>() {$"{Items[index4].Time}"});
-                kb.AddLine();
-                kb.AddButton("↩ Назад к списку работы", "work");
-                sender.Text(text, msg.ChatId, kb.Build());
-            }
-            else
+            if (msg.Payload.Arguments != null)
             {
                 var time = msg.Payload.Arguments[0].ToLong();
                 text = $"✔ Вы устроились на работу дальнобойщика. Вы освободитесь через: {time} минут";
@@ -87,6 +76,17 @@ namespace HydraBot.Commands.Works
                     Main.Api.Users.AddMoney(user.Id, time * 1100);
                     sender.Text(text, msg.ChatId, kb.Build());
                 });
+            }
+            else
+            {
+                kb.AddButton("🚚 1", "truckerwork", new List<string>() {$"{Items[index1].Time}"});
+                kb.AddButton("🚚 2", "truckerwork", new List<string>() {$"{Items[index2].Time}"});
+                kb.AddLine();
+                kb.AddButton("🚚 3", "truckerwork", new List<string>() {$"{Items[index3].Time}"});
+                kb.AddButton("🚚 4", "truckerwork", new List<string>() {$"{Items[index4].Time}"});
+                kb.AddLine();
+                kb.AddButton("↩ Назад к списку работы", "work");
+                sender.Text(text, msg.ChatId, kb.Build());
             }
         }
 

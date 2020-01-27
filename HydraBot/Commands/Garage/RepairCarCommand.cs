@@ -23,7 +23,7 @@ namespace HydraBot.Commands.Garage
             var kb = new KeyboardBuilder(bot);
             var carId = msg.Payload.Arguments[0].ToLong();
             
-            if (msg.Payload.Arguments.Count < 2)
+            if (msg.Payload.Arguments?.Count < 2)
             {
                 kb.AddButton("🔧 Починить самому", "repaircar", new List<string>() {"1"});
                 kb.AddLine();

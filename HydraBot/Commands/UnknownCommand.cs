@@ -9,7 +9,9 @@ using System.Collections.Generic;
 using System.Text;
 using HydraBot.Commands.Friends;
 using HydraBot.Commands.Gang;
+using HydraBot.Commands.Garage;
 using HydraBot.Commands.Race;
+using HydraBot.Models;
 
 namespace HydraBot.Commands
 {
@@ -118,6 +120,19 @@ namespace HydraBot.Commands
                 catch
                 {
                     text = "❌ Вы указали невеный Id.";
+                }
+            }else if (command == "sellcar")
+            {
+                try
+                {
+                    var array = msg.Text.Split(" ");
+                    var idUser = long.Parse(array[0]);
+                    var price = long.Parse(array[1]);
+
+                    text = SellCarCommand.Sell(user, idUser, sender, price);
+                }catch
+                {
+                    text = "❌ Произошла ошибка.";
                 }
             }
 

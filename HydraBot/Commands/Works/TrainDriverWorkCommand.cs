@@ -24,18 +24,7 @@ namespace HydraBot.Commands.Works
             var kb = new KeyboardBuilder(bot);
             
             
-            if (msg.Payload.Arguments.Count == 0)
-            {
-                kb.AddButton("⌚ 10 Минут", "traindriverwork", new List<string>() {"10"});
-                kb.AddButton("⌚ 15 Минут", "traindriverwork", new List<string>() {"15"});
-                kb.AddLine();
-                kb.AddButton("⌚ 30 Минут", "traindriverwork", new List<string>() {"30"});
-                kb.AddButton("⌚ 1 Час", "traindriverwork", new List<string>() {"60"});
-                kb.AddLine();
-                kb.AddButton("↩ Назад к списку работы", "work");
-                sender.Text(text, msg.ChatId, kb.Build());
-            }
-            else
+            if (msg.Payload.Arguments != null)
             {
                 var time = msg.Payload.Arguments[0].ToLong();
                 text = $"✔ Вы устроились на работу водителя поезда. Вы освободитесь через: {time} минут";
@@ -64,6 +53,17 @@ namespace HydraBot.Commands.Works
                     Main.Api.Users.AddMoney(user.Id, time * 1000);
                     sender.Text(text, msg.ChatId, kb.Build());
                 });
+            }
+            else
+            {
+                kb.AddButton("⌚ 10 Минут", "traindriverwork", new List<string>() {"10"});
+                kb.AddButton("⌚ 15 Минут", "traindriverwork", new List<string>() {"15"});
+                kb.AddLine();
+                kb.AddButton("⌚ 30 Минут", "traindriverwork", new List<string>() {"30"});
+                kb.AddButton("⌚ 1 Час", "traindriverwork", new List<string>() {"60"});
+                kb.AddLine();
+                kb.AddButton("↩ Назад к списку работы", "work");
+                sender.Text(text, msg.ChatId, kb.Build());
             }
         }
 
