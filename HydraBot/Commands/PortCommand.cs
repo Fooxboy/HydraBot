@@ -34,7 +34,9 @@ namespace HydraBot.Commands
             
             var kb = new KeyboardBuilder(bot);
             kb.AddButton($"📦 #1 ({Containers[0].Price + 1000} руб.)", "port", new List<string>() {"0"});
+            kb.AddLine();
             kb.AddButton($"📦 #2 ({Containers[1].Price + 1000} руб.)", "port", new List<string>() {"1"});
+            kb.AddLine();
             kb.AddButton($"📦 #3 ({Containers[2].Price + 1000} руб.)", "port", new List<string>() {"2"});
             kb.AddLine();
             kb.AddButton("🔃 Обновить", "port");
@@ -65,7 +67,10 @@ namespace HydraBot.Commands
         public void Init(IBot bot, ILoggerService logger)
         {
             Containers = new List<Container>();
-            Time = 0;
+            Containers.Add(new Container() {Country = "Россия", LastNamePrice = "Новый", Name = "без имени", UserId = 0, Price = 1000});
+            Containers.Add(new Container() {Country = "Россия", LastNamePrice = "Новый", Name = "без имени", UserId = 0, Price = 1000});
+            Containers.Add(new Container() {Country = "Россия", LastNamePrice = "Новый", Name = "без имени", UserId = 0, Price = 1000});
+            Time = 5;
             Task.Run((() =>
             {
                 while (true)
@@ -112,9 +117,9 @@ namespace HydraBot.Commands
                         }
                         
                         Containers.Clear();
-                        Containers.Add(new Container() {Country = "Росиия", LastNamePrice = "Новый", Name = "без имени", UserId = 0, Price = 1000});
-                        Containers.Add(new Container() {Country = "Росиия", LastNamePrice = "Новый", Name = "без имени", UserId = 0, Price = 1000});
-                        Containers.Add(new Container() {Country = "Росиия", LastNamePrice = "Новый", Name = "без имени", UserId = 0, Price = 1000});
+                        Containers.Add(new Container() {Country = "Россия", LastNamePrice = "Новый", Name = "без имени", UserId = 0, Price = 1000});
+                        Containers.Add(new Container() {Country = "Россия", LastNamePrice = "Новый", Name = "без имени", UserId = 0, Price = 1000});
+                        Containers.Add(new Container() {Country = "Россия", LastNamePrice = "Новый", Name = "без имени", UserId = 0, Price = 1000});
                         
                     }
                     Time -= 1;

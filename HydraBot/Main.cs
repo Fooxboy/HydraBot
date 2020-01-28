@@ -146,7 +146,8 @@ namespace HydraBot
                 new TruckerWorkCommand(),
                 new RepairCarCommand(),
                 new PortCommand(),
-                new SellContainerCommand());
+                new SellContainerCommand(),
+                new BuyCarNumberCommand());
 
             //Установка сервисов.
             _bot.SetServices(

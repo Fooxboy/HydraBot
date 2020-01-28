@@ -11,6 +11,7 @@ using HydraBot.Commands.Friends;
 using HydraBot.Commands.Gang;
 using HydraBot.Commands.Garage;
 using HydraBot.Commands.Race;
+using HydraBot.Commands.Store;
 using HydraBot.Models;
 
 namespace HydraBot.Commands
@@ -134,6 +135,22 @@ namespace HydraBot.Commands
                 {
                     text = "❌ Произошла ошибка.";
                 }
+            }else if (command == "buycarnumber")
+            {
+                try
+                {
+                    var region = long.Parse(msg.Text);
+                    if (region < 1 || region > 200) text = "❌ Регион находится за пределом допустимого значения.";
+                    else
+                    {
+                        text = BuyCarNumberCommand.BuyNumber(user, region);
+                    }
+                }
+                catch
+                {
+                    text = "❌ Произошла ошибка.";
+                }
+                
             }
 
             var kb = new KeyboardBuilder(bot);

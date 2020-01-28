@@ -33,7 +33,7 @@ namespace HydraBot.Commands.Store
             }
             kb.AddButton("📟 Купить сим-карту", "buyitem", new List<string>() { "2" });
             kb.AddLine();
-            kb.AddButton("🗄 Купить автомобильный номер", "buyitem", new List<string>() { "3" });
+            kb.AddButton("🗄 Купить автомобильный номер", "buycarnumber");
             kb.AddLine();
             kb.AddButton("↩ Назад в магазин", "store");
             sender.Text(text, msg.ChatId, kb.Build());
