@@ -39,6 +39,7 @@ namespace HydraBot.Commands
             kb.AddLine();
             kb.AddButton("👥 Команда", "gang");
             kb.AddButton("🏢 Работа", "work");
+            kb.AddButton("📦 Порт", "port");
             sender.Text(text, msg.ChatId, kb.Build());
         }
 
