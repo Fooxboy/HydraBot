@@ -26,7 +26,7 @@ namespace HydraBot.Commands
             if (ids.Any(w => w == "1")) textBusiness += "\n⚙ Шиномонтаж: Доход - 100 руб./час";
             if (ids.Any(w => w == "2")) textBusiness += "\n🚗 Автомойка: Доход - 100 руб./час";
             if (ids.Any(w => w == "3")) textBusiness += "\n🔧 Автосервис: Доход - 100 руб./час";
-            sender.Text($"🏢 Ваши бизнесы: {user.BusinessIds}", msg.ChatId, kb.Build());
+            sender.Text($"🏢 Ваши бизнесы:\n {textBusiness}", msg.ChatId, kb.Build());
         }
 
         public void Init(IBot bot, ILoggerService logger)
