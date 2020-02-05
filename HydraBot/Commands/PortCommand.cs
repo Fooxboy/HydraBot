@@ -49,6 +49,11 @@ namespace HydraBot.Commands
                 var container = Containers[number];
 
                 var user = Main.Api.Users.GetUser(msg);
+                if (Containers.Any(c => c.UserId == user.Id))
+                {
+                    sender.Text("❌ Вы можете сделать только одну ставку.", msg.ChatId);
+                }
+
                 var price = container.Price + 1000;
                 if(user.Money < price) sender.Text("❌ У Вас недостаточно денег для ставки.", msg.ChatId);
                 else
