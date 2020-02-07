@@ -40,6 +40,8 @@ namespace HydraBot.Commands
             kb.AddButton("👥 Команда", "gang");
             kb.AddButton("🏢 Работа", "work");
             kb.AddButton("📦 Порт", "port");
+            kb.AddLine();
+            kb.AddButton("🎲 Казино", "casino");
             sender.Text(text, msg.ChatId, kb.Build());
         }
 

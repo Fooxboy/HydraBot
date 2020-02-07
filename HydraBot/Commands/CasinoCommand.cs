@@ -2,6 +2,8 @@
 using Fooxboy.NucleusBot;
 using Fooxboy.NucleusBot.Interfaces;
 using Fooxboy.NucleusBot.Models;
+using HydraBot.Helpers;
+using VkNet.Enums.SafetyEnums;
 
 namespace HydraBot.Commands
 {
@@ -10,7 +12,7 @@ namespace HydraBot.Commands
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
             var user = Main.Api.Users.GetUser(msg);
-            if (msg.Payload.Arguments is null)
+            if (msg.Payload?.Arguments is null)
             {
                 var text = $"⚜ Количество фишек: {user.Chips}" 
                            + "\n🃏 Выберите игру на клавиатуре";
@@ -22,7 +24,8 @@ namespace HydraBot.Commands
                 kb.AddLine();
                 kb.AddButton("🗃 Слоты", "casino", new List<string>() {"3"});
                 kb.AddLine();
-                kb.AddButton("⚜ Купить фишки", "buychips");
+                kb.AddButton("⚜ Купить фишки", "buychips", color: KeyboardButtonColor.Positive);
+                kb.AddButton(ButtonsHelper.ToHomeButton());
                 sender.Text(text, msg.ChatId, kb.Build());
             }
             else

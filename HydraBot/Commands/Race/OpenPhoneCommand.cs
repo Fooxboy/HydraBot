@@ -13,6 +13,7 @@ namespace HydraBot.Commands.Race
         {
             var kb = new KeyboardBuilder(bot);
             kb.AddButton("📕 Меню телефона", "menuphone");
+            kb.AddLine();
             kb.AddButton("✔ Принять гонку", "raceStart", new List<string>());
             kb.AddButton("❌ Отклонить гонку", "raceundo", new List<string>());
             kb.AddLine();
