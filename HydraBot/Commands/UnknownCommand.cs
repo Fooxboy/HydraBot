@@ -151,6 +151,19 @@ namespace HydraBot.Commands
                     text = "❌ Произошла ошибка.";
                 }
                 
+            }else if (command == "sellnumber")
+            {
+                try
+                {
+                    var array = msg.Text.Split(" ");
+                    var idUser = long.Parse(array[0]);
+                    var price = long.Parse(array[1]);
+
+                    text = SellNumberCommand.Sell(user, idUser, sender, price);
+                }catch
+                {
+                    text = "❌ Произошла ошибка.";
+                }
             }
 
             var kb = new KeyboardBuilder(bot);

@@ -52,6 +52,8 @@ namespace HydraBot.Commands
                 if (Containers.Any(c => c.UserId == user.Id))
                 {
                     sender.Text("❌ Вы можете сделать только одну ставку.", msg.ChatId);
+                    return;
+                    
                 }
 
                 var price = container.Price + 1000;

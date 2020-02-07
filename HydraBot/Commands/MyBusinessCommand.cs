@@ -23,9 +23,24 @@ namespace HydraBot.Commands
 
             var textBusiness = "";
             var ids = user.BusinessIds.Split(",");
-            if (ids.Any(w => w == "1")) textBusiness += "\n⚙ Шиномонтаж: Доход - 100 руб./час";
-            if (ids.Any(w => w == "2")) textBusiness += "\n🚗 Автомойка: Доход - 100 руб./час";
-            if (ids.Any(w => w == "3")) textBusiness += "\n🔧 Автосервис: Доход - 100 руб./час";
+            if (ids.Any(w => w == "1"))
+            {
+                var count = ids.Count(w => w == "1");
+                textBusiness += $"\n⚙ Шиномонтаж: Количество: {count} Доход - {100 * count} руб./час";
+            }
+
+            if (ids.Any(w => w == "2"))
+            {
+                var count = ids.Count(w => w == "2");
+                textBusiness += $"\n🚗 Автомойка:  Количество: {count} Доход - {100 * count} руб./час";
+            }
+
+            if (ids.Any(w => w == "3"))
+            {
+                var count = ids.Count(w => w == "3");
+
+                textBusiness += $"\n🔧 Автосервис: Количество: {count} Доход - {100 * count} руб./час";
+            }
             sender.Text($"🏢 Ваши бизнесы:\n {textBusiness}", msg.ChatId, kb.Build());
         }
 

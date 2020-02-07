@@ -74,7 +74,8 @@ namespace HydraBot.Commands.Race
             {
                 var creator = db.Users.Single(u => u.Id == creatorId);
                 var friends = FriendsHelper.GetFriends(creator.Friends);
-                if (friends.Any(f => f != enemyId)) return "❌ Этот пользователь не в списке Ваших друзей.";
+                if(!friends.Any(f=> f == enemyId)) return "❌ Этот пользователь не в списке Ваших друзей.";
+                
                 if (creator.Race != 0) return "❌ Вы уже участвуете в гонке!";
                 User enemy;
                 try

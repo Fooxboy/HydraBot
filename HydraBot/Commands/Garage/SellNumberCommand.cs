@@ -33,9 +33,14 @@ namespace HydraBot.Commands.Garage
         
         public static string Sell(User user, long userId, IMessageSenderService sender, long money)
         {
+            if (user.Id == userId) return "❌ Вы не можете продать сами себе.";
             NumberCar number = null;
             using (var db = new Database())
             {
+                if (!db.Users.Any(u => u.Id == userId))
+                {
+                    return "❌ Пользователь с таким Id не найден.";
+                }
                 var sellNumber = db.SellNumbers.Single(n => n.IsClose && n.OwnerId == user.Id);
                 sellNumber.BuynerId = userId;
                 number = db.NumbersCars.Single(c => c.Id == sellNumber.NumberId);

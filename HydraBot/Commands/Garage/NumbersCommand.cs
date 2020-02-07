@@ -3,6 +3,7 @@ using System.Linq;
 using Fooxboy.NucleusBot;
 using Fooxboy.NucleusBot.Interfaces;
 using Fooxboy.NucleusBot.Models;
+using HydraBot.Helpers;
 using HydraBot.Models;
 
 namespace HydraBot.Commands.Garage
@@ -23,11 +24,13 @@ namespace HydraBot.Commands.Garage
             var text = "🗄 Ваши номера:";
             var kb = new KeyboardBuilder(bot);
             
-            foreach (var num in garage.Numbers.Split(";"))
+            using (var db = new Database())
             {
-                using (var db = new Database())
+                foreach (var num in garage.Numbers.Split(";"))
                 {
-                    var number = db.NumbersCars.Single(n => n.Id == long.Parse(num));
+                    if(num == "") break;
+                    
+                    var number = db.NumbersCars.Single(n => n.Id == num.ToLong());
                     var inCarText = string.Empty;
                     if (number.CarId != 0)
                     {
@@ -40,11 +43,11 @@ namespace HydraBot.Commands.Garage
                         new List<string> {number.Id.ToString(), carId.ToString()});
                     kb.AddLine();
                 }
-
-                text += "\n❓ Выберите номер на клавиатуре, чтобы выполнить над ним действие.";
-                
-                sender.Text(text, msg.ChatId, kb.Build());
             }
+            
+            text += "\n❓ Выберите номер на клавиатуре, чтобы выполнить над ним действие.";
+
+            sender.Text(text, msg.ChatId, kb.Build());
         }
 
 

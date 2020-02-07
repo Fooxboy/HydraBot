@@ -9,9 +9,20 @@ namespace HydraBot.Commands.Race
 {
     public class RaceFastCommand: INucleusCommand
     {
+        public List<RaceUser> UserRace { get; set; }
+
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
             var user = Main.Api.Users.GetUser(msg);
+            if (UserRace.All(r => r.UserId != user.Id))
+            {
+                UserRace.Add(new RaceUser()
+                {
+                    UserId =  user.Id,
+                    Users =  new List<long>()
+                });
+            }
+            
             if (user.OnWork)
             {
                 sender.Text("❌ Вы не можете идти в гонку, пока находитесь на работе, дождитесь завершения и возвращайтесь!", msg.ChatId);
@@ -41,9 +52,17 @@ namespace HydraBot.Commands.Race
                     {
                         if (enemyGarage.UserId != user.Id)
                         {
-                            var carEnemy = db.Cars.Single(c=> c.Id == enemyGarage.SelectCar);
-                            var scoreEnemy = carEnemy.Power + carEnemy.Weight;
-                            enemys.Add(new RaceFindModel() { UserId = enemyGarage.UserId, Score = scoreEnemy});
+                            if (enemyGarage.SelectCar != -1)
+                            {
+                                var carEnemy = db.Cars.Single(c=> c.Id == enemyGarage.SelectCar);
+                                var scoreEnemy = carEnemy.Power + carEnemy.Weight;
+                                var rusr = UserRace.Single(r => r.UserId == user.Id);
+                                if (rusr.Users.Any(r => r != enemyGarage.UserId))
+                                {
+                                    enemys.Add(new RaceFindModel() { UserId = enemyGarage.UserId, Score = scoreEnemy});
+
+                                }
+                            }
                         }
                     }
                     
@@ -91,7 +110,7 @@ namespace HydraBot.Commands.Race
             
             
             var kb = new KeyboardBuilder(bot);
-
+            kb.SetOneTime();
             kb.AddButton("🏎 Начать гонку", "RaceStart", new List<string>() {"1", $"{ememyRaceModel.UserId}"});
             
             sender.Text("✔ Мы нашли Вам противника", msg.ChatId, kb.Build());
@@ -100,6 +119,7 @@ namespace HydraBot.Commands.Race
 
         public void Init(IBot bot, ILoggerService logger)
         {
+            UserRace = new List<RaceUser>();
         }
 
         public string Command => "racefast";

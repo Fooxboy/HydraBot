@@ -20,21 +20,34 @@ namespace HydraBot.Commands
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
             var user = Main.Api.Users.GetUser(msg);
-            var garage = Main.Api.Garages.GetGarage(msg);
+            var garage = Main.Api.Garages.GetGarage(user.Id);
             var showKeyboard = true;
             long offset = 0;
+            
+            
             try
             {
-                offset = msg.Payload.Arguments[0].ToLong();
-                try
+                if (msg.Payload.Arguments?.Count >= 3)
                 {
-                    var idGarage = msg.Payload.Arguments[1].ToLong();
-                    if(idGarage != user.Id)
+                    if (msg.Payload.Arguments[2] == "setcarnumber")
                     {
-                        garage = Main.Api.Garages.GetGarage(idGarage);
-                        showKeyboard = false;
+                    
                     }
-                }catch { }
+                }
+                else
+                {
+                    offset = msg.Payload.Arguments[0].ToLong();
+                    try
+                    {
+                        var idGarage = msg.Payload.Arguments[1].ToLong();
+                        if(idGarage != user.Id)
+                        {
+                            garage = Main.Api.Garages.GetGarage(idGarage);
+                            showKeyboard = false;
+                        }
+                    }catch { }
+                }
+                
             }
             catch { }
 

@@ -100,5 +100,10 @@ namespace HydraBot.Models
         /// Нахоидтся на работе.
         /// </summary>
         public bool OnWork { get; set; }
+        /// <summary>
+        /// Подписан на рассылку.
+        /// </summary>
+        public bool SubOnNews { get; set; }
+        public long Chips { get; set; }
     }
 }

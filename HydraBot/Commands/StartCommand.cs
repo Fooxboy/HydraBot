@@ -49,6 +49,7 @@ namespace HydraBot.Commands
             user.Score = 0;
             user.TimeBan = 0;
             user.BonusDay = 1;
+            user.SubOnNews = true;
             user.Money = 100000;
             user.DriverLicense = "";
             user.IsAvailbleBonus = true;
@@ -98,6 +99,7 @@ namespace HydraBot.Commands
 
         public void Init(IBot bot, ILoggerService logger)
         {
+            
         }
         
     }

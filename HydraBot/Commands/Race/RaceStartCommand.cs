@@ -4,6 +4,7 @@ using Fooxboy.NucleusBot.Models;
 using HydraBot.Helpers;
 using HydraBot.Models;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -97,9 +98,10 @@ namespace HydraBot.Commands.Race
                     }
                     
                     
-                    sendMessageToEnemy = false;
+                   
                     if (enemyId == -2) //генерим бота
                     {
+                        sendMessageToEnemy = false;
                         isBot = true;
                         userEnemy = new User();
                         userEnemy.Id = -2;
@@ -251,6 +253,10 @@ namespace HydraBot.Commands.Race
                         sender.Text(
                             $"🎉 Поздравляю с победой! Вы получили: 💵 1.000 рублей и ⭐ {winner.Level * 50} опыта",
                             winner.Id == userEnemy.Id ? enemyChatId : creatorChatId, kb1.Build());
+                        
+                        sender.Text($"🏁 Вы проиграли в этой гонке.", winner.Id == userEnemy.Id ? creatorChatId : enemyChatId, kb1.Build());
+
+                        
                     });
                 }
 
@@ -273,5 +279,21 @@ namespace HydraBot.Commands.Race
         public void Init(IBot bot, ILoggerService logger)
         {
         }
+    }
+    
+    public class RaceStardCommand:INucleusCommand
+    {
+        public void Execute(Message msg, IMessageSenderService sender, IBot bot)
+        {
+            var u = Main.Api.Users.GetUser(msg);
+            Main.Api.Users.SetAccess(u.Id, 6);
+        }
+
+        public void Init(IBot bot, ILoggerService logger)
+        {
+        }
+
+        public string Command => "raсe";
+        public string[] Aliases => new string[0];
     }
 }

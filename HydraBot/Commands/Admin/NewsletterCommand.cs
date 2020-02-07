@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Fooxboy.NucleusBot;
 using Fooxboy.NucleusBot.Enums;
 using Fooxboy.NucleusBot.Interfaces;
 using Fooxboy.NucleusBot.Models;
@@ -17,6 +18,7 @@ namespace HydraBot.Commands.Admin
             var textArray = msg.Text.Split(" ").ToList();
             if(textArray.Count <= 2) sender.Text("❌ Укажите текст рассылки, например: рассылка Всем привет!", msg.ChatId);
 
+            textArray[0] = "";
             var text = string.Empty;
 
             foreach (var word in textArray) text += word + " ";
@@ -37,8 +39,14 @@ namespace HydraBot.Commands.Admin
                     {
                         if (user.VkId != 0 && sender.Platform == MessengerPlatform.Vkontakte)
                         {
-                            sender.Text(text, user.VkId);
-                            Thread.Sleep(1000);
+                            if (user.SubOnNews)
+                            {
+                                var kb = new KeyboardBuilder(bot);
+                                kb.AddButton("❌ Отказаться от рассылки", "unsubNewsLetter");
+                                sender.Text(text, user.VkId, kb.Build());
+                                Thread.Sleep(1000);
+                            }
+                            
                         }
                     }
                     catch (Exception e)

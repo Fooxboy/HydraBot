@@ -7,6 +7,7 @@ using Fooxboy.NucleusBot.Models;
 using HydraBot.Commands;
 using HydraBot.Commands.Admin;
 using HydraBot.Commands.Bank;
+using HydraBot.Commands.Casino;
 using HydraBot.Commands.DrivingSchool;
 using HydraBot.Commands.Friends;
 using HydraBot.Commands.Gang;
@@ -147,7 +148,11 @@ namespace HydraBot
                 new RepairCarCommand(),
                 new PortCommand(),
                 new SellContainerCommand(),
-                new BuyCarNumberCommand());
+                new BuyCarNumberCommand(),
+                new RaceStardCommand(),
+                new UnsubNewsLetterCommand(),
+                new CasinoCommand(),
+                new BuyChipsCommand());
 
             //Установка сервисов.
             _bot.SetServices(
