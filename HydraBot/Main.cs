@@ -152,7 +152,8 @@ namespace HydraBot
                 new RaceStardCommand(),
                 new UnsubNewsLetterCommand(),
                 new CasinoCommand(),
-                new BuyChipsCommand());
+                new BuyChipsCommand(),
+                new ExchangeChipsCommand());
 
             //Установка сервисов.
             _bot.SetServices(

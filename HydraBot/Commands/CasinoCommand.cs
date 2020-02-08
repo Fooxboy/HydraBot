@@ -42,17 +42,17 @@ namespace HydraBot.Commands
                     
                         var kb = new KeyboardBuilder(bot);
                         kb.SetOneTime();
-                        kb.AddButton("⬛ На черное 1 фишка", "casino", new List<string>(){"1", "1", "1"});
-                        kb.AddButton("🟥 На красное 1 фишка", "casino", new List<string>(){"1", "2", "1"});
-                        kb.AddButton("🟩 На зеленое 1 фишка", "casino", new List<string>(){"1", "3", "1"});
+                        kb.AddButton("⬛ Черное 1 фишка", "casino", new List<string>(){"1", "1", "1"});
+                        kb.AddButton("🟥 Красное 1 фишка", "casino", new List<string>(){"1", "2", "1"});
+                        kb.AddButton("🟩 Зеленое 1 фишка", "casino", new List<string>(){"1", "3", "1"});
                         kb.AddLine();
-                        kb.AddButton("⬛ На черное 3 фишки", "casino", new List<string>(){"1", "1", "3"});
-                        kb.AddButton("🟥 На красное 3 фишки", "casino", new List<string>(){"1", "2", "3"});
-                        kb.AddButton("🟩 На зеленое 3 фишки", "casino", new List<string>(){"1", "3", "3"});
+                        kb.AddButton("⬛ Черное 3 фишки", "casino", new List<string>(){"1", "1", "3"});
+                        kb.AddButton("🟥 Красное 3 фишки", "casino", new List<string>(){"1", "2", "3"});
+                        kb.AddButton("🟩 Зеленое 3 фишки", "casino", new List<string>(){"1", "3", "3"});
                         kb.AddLine();
-                        kb.AddButton("⬛ На черное 5 фишки", "casino", new List<string>(){"1", "1", "5"});
-                        kb.AddButton("🟥 На красное 5 фишки", "casino", new List<string>(){"1", "2", "5"});
-                        kb.AddButton("🟩 На зеленое 5 фишки", "casino", new List<string>() {"1", "3", "5"});
+                        kb.AddButton("⬛ Черное 5 фишки", "casino", new List<string>(){"1", "1", "5"});
+                        kb.AddButton("🟥 Красное 5 фишки", "casino", new List<string>(){"1", "2", "5"});
+                        kb.AddButton("🟩 Зеленое 5 фишки", "casino", new List<string>() {"1", "3", "5"});
                         kb.AddLine();
                         kb.AddButton(ButtonsHelper.ToHomeButton());
                         sender.Text(text, msg.ChatId, kb.Build());
