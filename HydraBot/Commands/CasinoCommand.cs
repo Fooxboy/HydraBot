@@ -35,7 +35,7 @@ namespace HydraBot.Commands
                 kb.AddButton("🎲 Рулетка", "casino", new List<string>() {"1"});
                 kb.AddLine();
                 kb.AddButton("⚜ Купить фишки", "buychips", color: KeyboardButtonColor.Positive);
-                kb.AddButton("💰 Обменять фишки", "buychips", color: KeyboardButtonColor.Positive);
+                kb.AddButton("💰 Обменять фишки", "exchangechips", color: KeyboardButtonColor.Positive);
                 kb.AddLine();
                 kb.AddButton(ButtonsHelper.ToHomeButton());
                 sender.Text(text, msg.ChatId, kb.Build());

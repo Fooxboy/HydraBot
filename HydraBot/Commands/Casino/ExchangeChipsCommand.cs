@@ -19,7 +19,7 @@ namespace HydraBot.Commands.Casino
                 return;
             }
             var user = Main.Api.Users.GetUser(msg);
-            UsersCommandHelper.GetHelper().Add("buychips", user.Id);
+            UsersCommandHelper.GetHelper().Add("exchangechips", user.Id);
             var text = "⚜ Обмен фишек на рубли:" +
                        "♣ 1 фишка = 1000 рублей" +
                        "\n" +
@@ -32,7 +32,7 @@ namespace HydraBot.Commands.Casino
         public static string ExchangeChips(User user, long count)
         {
             if (count <= 0) return "❌ Нельзя использовать отрицательные числа или ноль.";
-            if (user.Chips < count) return "❌ У Вас недостаточно денег для покупки.";
+            if (user.Chips < count) return "❌ У Вас недостаточно фишек для обмена.";
 
             using (var db = new Database())
             {

@@ -185,6 +185,17 @@ namespace HydraBot.Commands
                 {
                     text = "❌ Произошла ошибка.";
                 }
+            }else if (command == "exchangechips")
+            {
+                try
+                {
+                    var count = msg.Text.ToLong();
+                    text = ExchangeChipsCommand.ExchangeChips(user, count);
+                }
+                catch
+                {
+                    text = "❌ Произошла ошибка.";
+                }
             }
 
             var kb = new KeyboardBuilder(bot);
