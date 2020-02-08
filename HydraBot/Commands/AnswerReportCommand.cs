@@ -5,6 +5,7 @@ using HydraBot.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Fooxboy.NucleusBot;
 using VkNet.Exception;
 
 namespace HydraBot.Commands
@@ -22,6 +23,15 @@ namespace HydraBot.Commands
 
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
+            if (Main.Api.Users.CheckUser(msg))
+            {
+                var kb = new KeyboardBuilder(bot);
+                kb.AddButton("➕ Зарегистрироваться", "start");
+                sender.Text("❌ Вы не зарегистрированы, нажмите на кнопку ниже, чтобы начать", msg.ChatId, kb.Build());
+                return;
+                
+            }
+            
             var userAnswer = _api.Users.GetUser(msg);
             if (userAnswer.Access < 4) return;
 

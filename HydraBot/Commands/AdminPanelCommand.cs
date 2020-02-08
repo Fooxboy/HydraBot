@@ -3,6 +3,8 @@ using Fooxboy.NucleusBot.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Fooxboy.NucleusBot;
+
 
 namespace HydraBot.Commands
 {
@@ -14,6 +16,13 @@ namespace HydraBot.Commands
 
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
+            if (Main.Api.Users.CheckUser(msg))
+            {
+                var kb = new KeyboardBuilder(bot);
+                kb.AddButton("➕ Зарегистрироваться", "start");
+                sender.Text("❌ Вы не зарегистрированы, нажмите на кнопку ниже, чтобы начать", msg.ChatId, kb.Build());
+            }
+            
             var user = Main.Api.Users.GetUser(msg);
 
             if(user.Access < 4)

@@ -9,6 +9,15 @@ namespace HydraBot.Commands
     {
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
+            
+            if (Main.Api.Users.CheckUser(msg))
+            {
+                var kb2 = new KeyboardBuilder(bot);
+                kb2.AddButton("➕ Зарегистрироваться", "start");
+                sender.Text("❌ Вы не зарегистрированы, нажмите на кнопку ниже, чтобы начать", msg.ChatId, kb2.Build());
+                return;
+            }
+            
             var text = "🏢 Выберите на клавиатуре нужную Вам работу.";
             var kb = new KeyboardBuilder(bot);
             kb.AddButton("🚕 Таксист", "taxiwork");

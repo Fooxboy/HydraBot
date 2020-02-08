@@ -15,6 +15,15 @@ namespace HydraBot.Commands.Admin
     {
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
+            
+            if (Main.Api.Users.CheckUser(msg))
+            {
+                var kb2 = new KeyboardBuilder(bot);
+                kb2.AddButton("➕ Зарегистрироваться", "start");
+                sender.Text("❌ Вы не зарегистрированы, нажмите на кнопку ниже, чтобы начать", msg.ChatId, kb2.Build());
+                return;
+            }
+            
             var textArray = msg.Text.Split(" ").ToList();
             if(textArray.Count <= 2) sender.Text("❌ Укажите текст рассылки, например: рассылка Всем привет!", msg.ChatId);
 

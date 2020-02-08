@@ -17,6 +17,14 @@ namespace HydraBot.Commands.Store
 
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
+            if (Main.Api.Users.CheckUser(msg))
+            {
+                var kb2 = new KeyboardBuilder(bot);
+                kb2.AddButton("➕ Зарегистрироваться", "start");
+                sender.Text("❌ Вы не зарегистрированы, нажмите на кнопку ниже, чтобы начать", msg.ChatId, kb2.Build());
+                return;
+            }
+            
             var helper = GarageHelper.GetHelper();
             var api = Main.Api;
             var id = long.Parse(msg.Payload.Arguments[0]);
