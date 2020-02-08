@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore.Update.Internal;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using HydraBot.Commands.Casino;
 using HydraBot.Commands.Friends;
 using HydraBot.Commands.Gang;
 using HydraBot.Commands.Garage;
@@ -161,6 +162,17 @@ namespace HydraBot.Commands
 
                     text = SellNumberCommand.Sell(user, idUser, sender, price);
                 }catch
+                {
+                    text = "❌ Произошла ошибка.";
+                }
+            }else if (command == "buychips")
+            {
+                try
+                {
+                    var count = msg.Text.ToLong();
+                    text = BuyChipsCommand.BuyChips(user, count);
+                }
+                catch
                 {
                     text = "❌ Произошла ошибка.";
                 }
