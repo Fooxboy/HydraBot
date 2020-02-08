@@ -17,7 +17,7 @@ namespace HydraBot.Commands
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
             
-            if (Main.Api.Users.CheckUser(msg))
+            if (!Main.Api.Users.CheckUser(msg))
             {
                 var kb2 = new KeyboardBuilder(bot);
                 kb2.AddButton("➕ Зарегистрироваться", "start");

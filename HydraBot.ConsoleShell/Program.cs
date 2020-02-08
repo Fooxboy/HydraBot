@@ -8,11 +8,11 @@ namespace HydraBot.ConsoleShell
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hydra bot Shell loading...");
-            Console.Title = "Hydra bot";
+            Console.WriteLine("Refine bot Shell loading...");
+            Console.Title = "Refine bot";
 
-            var configLoager = new ConfigLoaderService();
-            var config = configLoager.LoadConfig();
+            var configLoader = new ConfigLoaderService();
+            var config = configLoader.LoadConfig();
 
             var main = new Main(config.IdGroupVKontakte, config.TokenGroupVKontakte, config.TokenBotTelegram);
             main.Start();
