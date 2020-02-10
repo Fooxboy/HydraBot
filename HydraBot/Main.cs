@@ -156,7 +156,9 @@ namespace HydraBot
                 new ExchangeChipsCommand(),
                 new RaceFriendStartCommand(),
                 new SettingsCommand(),
-                new SubOnNewsLetterCommand());
+                new SubOnNewsLetterCommand(),
+                new PromocodeCommand(),
+                new PromocodeGenerateCommand());
 
             //Установка сервисов.
             _bot.SetServices(

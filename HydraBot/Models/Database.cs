@@ -55,6 +55,10 @@ namespace HydraBot.Models
         /// Архив продаж номеров.
         /// </summary>
         public DbSet<SellNumber> SellNumbers { get; set; }
+        /// <summary>
+        /// Промокоды
+        /// </summary>
+        public DbSet<Promocode> Promocodes { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
