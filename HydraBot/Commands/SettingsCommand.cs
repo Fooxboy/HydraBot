@@ -34,7 +34,7 @@ namespace HydraBot.Commands
             
         }
 
-        public string Command { get; }
-        public string[] Aliases { get; }
+        public string Command => "settings";
+        public string[] Aliases => new string[0];
     }
 }
