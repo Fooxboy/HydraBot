@@ -35,8 +35,10 @@ namespace HydraBot.Commands.Race
             Car carEnemy = null;
             bool sendMessageToEnemy = true;
             bool isBot = false;
+            bool isFriendStart = false;
             if(msg.Payload.Arguments.Count == 0)
             {
+                if (msg.Payload.Arguments[0] == "222") isFriendStart = true;
                 userEnemy = Main.Api.Users.GetUser(msg);
                 if (userEnemy.OnWork)
                 {
@@ -84,6 +86,7 @@ namespace HydraBot.Commands.Race
             }
             else
             {
+                
                 //если какой-то тип
                 var typeRace = msg.Payload.Arguments[0].ToLong();
                 if (typeRace == 1) //если это быстрая гонка
@@ -191,7 +194,9 @@ namespace HydraBot.Commands.Race
                             
                             //генерируем рандомный скилл
                             skillsEnemy = new Skills();
-                            skillsEnemy.Driving = 0;
+                            var r = new Random();
+                            int i = r.Next(1, 3);
+                            skillsEnemy.Driving = i==2? skillsCretor.Driving -1 : skillsCretor.Driving + 1;
                         }
                         else
                         {
@@ -230,9 +235,13 @@ namespace HydraBot.Commands.Race
 
                     if (winner.Id != -2)
                     {
-                        var winnerLocal = db.Users.Single(u => u.Id == winner.Id);
-                        winnerLocal.Money += 1000;
-                        winnerLocal.Score += winnerLocal.Level * 50;
+                        if (!isFriendStart)
+                        {
+                            var winnerLocal = db.Users.Single(u => u.Id == winner.Id);
+                            winnerLocal.Money += 1000;
+                            winnerLocal.Score += winnerLocal.Level * 50;
+                        }
+                        
                     }
                     var usr1 = db.Users.Single(u => u.Id == raceLocal.Creator);
                     var gar1 = db.Garages.Single(u => u.UserId == usr1.Id);
@@ -258,13 +267,14 @@ namespace HydraBot.Commands.Race
                     {
                         var kb1 = new KeyboardBuilder(bot);
                         kb1.AddButton("🏁 Назад в гонки", "race");
+                        var t = isFriendStart
+                            ? "🎉 Поздравляю с победой  над смвоим другом!"
+                            : $"🎉 Поздравляю с победой! Вы получили: 💵 1.000 рублей и ⭐ {winner.Level * 50} опыта";
                         sender.Text(
-                            $"🎉 Поздравляю с победой! Вы получили: 💵 1.000 рублей и ⭐ {winner.Level * 50} опыта",
+                            t,
                             winner.Id == userEnemy.Id ? enemyChatId : creatorChatId, kb1.Build());
                         
                         sender.Text($"🏁 Вы проиграли в этой гонке.", winner.Id == userEnemy.Id ? creatorChatId : enemyChatId, kb1.Build());
-
-                        
                     });
                 }
 
