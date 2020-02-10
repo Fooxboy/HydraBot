@@ -50,7 +50,7 @@ namespace HydraBot.Commands
                  $"{(user.DonateMoney == 0 ? "" : $"\n 💰 Донат рубли: { user.DonateMoney} руб.")}" +
                 $"\n 💳 На банковском счету: {user.MoneyInBank}" +
                 $"{(user.Gang!= 0? $"\n 👥 Команда: {Main.Api.Gangs.GetGang(user.Gang).Name}": "")}" +
-                $"\n 📟 Ваш номер телефона: {gar.PhoneNumber}" +
+                $" {(gar.IsPhone? "\n📟 Ваш номер телефона: {gar.PhoneNumber}": "") }"  +
                 $"\n ⭐ Уровень: {user.Level} ({user.Score} из {user.Level * 150})";
 
             var kb = new KeyboardBuilder(bot);

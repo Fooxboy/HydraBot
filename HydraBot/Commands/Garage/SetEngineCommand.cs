@@ -36,7 +36,7 @@ namespace HydraBot.Commands.Garage
                 car.Engine = engineId;
                 
                 var engine = db.Engines.Single(e => e.Id == engineId);
-                car.Power = engine.Power;
+                //car.Power = engine.Power;
                 car.Weight = engine.Weight;
                 engine.CarId = carId;
                 db.SaveChanges();

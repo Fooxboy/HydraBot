@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -59,19 +60,51 @@ namespace HydraBot.Commands.Race
                 sender.Text(t, msg.ChatId, kb.Build());
                 return;
             }
-            var text = "🏁 Укажите id (в боте) своего друга (друг должен быть в списке Ваших друзей).";
 
-            kb.AddButton("↩ Вернуться в меню гонок", "race");
-            if (user.Race != 0)
+
+            if (msg.Payload.Arguments is null)
             {
-                text = "❌ А ну стоять. Ты уже находишься в гонке!";
-                kb.AddLine();
-                kb.AddButton("❌ Отменить гонку", "racestop");
-            }else
-            {
-                UsersCommandHelper.GetHelper().Add("racefriend", user.Id);
+                var text = "🏁 Ваши последние 6 друзей:";
+                
+                var friends = FriendsHelper.GetFriends(user.Friends);
+
+                int counter = 0;
+                int counter2 = 0;
+                foreach (var friend in friends)
+                {
+                    if(counter2 >= 6) break;
+                    var frd = Main.Api.Users.GetUserFromId(friend);
+                    text += $"\n [{frd.Prefix}] {frd.Name} (ур. {frd.Level})";
+                    kb.AddButton($"{frd.Name}", "raceFriendStart", new List<string>(){$"{frd.Id}"});
+                    counter++;
+                    counter2++;
+                    if (counter == 2)
+                    {
+                        kb.AddLine();
+                        counter = 0;
+                    }
+                }
+
+                kb.AddButton("➕ Указать Id друга вручную", "racefriend", new List<string>(){"123"});
+                sender.Text(text, msg.ChatId, kb.Build());
+                
             }
-            sender.Text(text, msg.ChatId, kb.Build());
+            else
+            {
+                var text = "🏁 Укажите id (в боте) своего друга (друг должен быть в списке Ваших друзей).";
+
+                kb.AddButton("↩ Вернуться в меню гонок", "race");
+                if (user.Race != 0)
+                {
+                    text = "❌ А ну стоять. Ты уже находишься в гонке!";
+                    kb.AddLine();
+                    kb.AddButton("❌ Отменить гонку", "racestop");
+                }else
+                {
+                    UsersCommandHelper.GetHelper().Add("racefriend", user.Id);
+                }
+                sender.Text(text, msg.ChatId, kb.Build());
+            }
         }
 
 
