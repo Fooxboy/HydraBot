@@ -46,6 +46,9 @@ namespace HydraBot.Commands.Race
                 usr.Race = 0;
                 db.SaveChanges();
             }
+
+            kb.AddButton("🏎 Вернуться в раздел гонок", "race");
+            sender.Text("✔ Вы отменили гонку", msg.ChatId, kb.Build());
         }
 
         public void Init(IBot bot, ILoggerService logger)

@@ -50,6 +50,8 @@ namespace HydraBot.Commands
             kb.AddButton("📦 Порт", "port");
             kb.AddLine();
             kb.AddButton("🎲 Казино", "casino");
+            kb.AddButton("⚙ Настройки", "settings");
+
             sender.Text(text, msg.ChatId, kb.Build());
         }
 

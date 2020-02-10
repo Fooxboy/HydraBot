@@ -51,7 +51,7 @@ namespace HydraBot.Commands
                     kb.AddLine();
                     kb.AddButton("🏁 Быстрая гонка", "racefast", new List<string>() { "0" });
                     kb.AddLine();
-                    kb.AddButton("🎭 Гонка с другом", "racefriend", new List<string>() { "0" });
+                    kb.AddButton("🎭 Гонка с другом", "racefriend");
                     kb.AddLine();
                     kb.AddButton(ButtonsHelper.ToHomeButton());
                 }
