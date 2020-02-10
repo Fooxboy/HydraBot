@@ -51,6 +51,7 @@ namespace HydraBot.Commands
                         if(idGarage != user.Id)
                         {
                             garage = Main.Api.Garages.GetGarage(idGarage);
+                            user = Main.Api.Users.GetUserFromId(idGarage);
                             showKeyboard = false;
                         }
                     }catch { }
@@ -67,6 +68,8 @@ namespace HydraBot.Commands
                     if (user.Access > 4)
                     {
                         garage = Main.Api.Garages.GetGarage(id);
+                        user = Main.Api.Users.GetUserFromId(id);
+
                         showKeyboard = false;
                     }
                 }

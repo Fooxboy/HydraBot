@@ -38,13 +38,10 @@ namespace HydraBot.Commands
             using (var db = new Database())
             {
                 var promocode = db.Promocodes.SingleOrDefault(p => p.Text == promocodetext);
-                if (promocode.IsActivate)
-                {
-                    text = "❌ Данный промокод был уже активирован.";
-                }
+                if (promocode is null) text = "❌ Такого промокода не существует.";
                 else
                 {
-                    if (promocode is null) text = "❌ Такого промокода не существует.";
+                    if(promocode.IsActivate) text = "❌ Данный промокод был уже активирован.";
                     else
                     {
                         var usr = db.Users.Single(u => u.Id == user.Id);
@@ -54,13 +51,14 @@ namespace HydraBot.Commands
 
                         text = "✔ Вы активировали промокод. Вы получили:";
                         if (promocode.DonateMoney != 0) text += $"\n💰 Донат рублей: {promocode.DonateMoney}";
-                        if (promocode.Money != 0) text += $"\n💵 Рублей: {promocode.DonateMoney}";
-                        if (promocode.Experience != 0) text += $"\n🌟 Опыт: {promocode.DonateMoney}";
+                        if (promocode.Money != 0) text += $"\n💵 Рублей: {promocode.Money}";
+                        if (promocode.Experience != 0) text += $"\n🌟 Опыт: {promocode.Experience}";
 
                         promocode.IsActivate = true;
                     
                         db.SaveChanges();
                     }
+                        
                 }
                 
             }

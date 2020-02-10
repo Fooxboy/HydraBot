@@ -23,37 +23,47 @@ namespace HydraBot.Commands.Admin
             var user = Main.Api.Users.GetUser(msg);
             if(user.Access < 6 )
             {
+                sender.Text("❌ Вам недоступна эта команда!", msg.ChatId);
+                return;
                 if (user.VkId != 308764786)
                 {
-                    sender.Text("❌ Вам недоступна эта команда!", msg.ChatId);
-                    return;
+                   
                 }
             }
 
-            var array = msg.Text.Split(" ");
-
-            var money = array[1].ToLong();
-            var donateMoney = array[2].ToLong();
-            var experience = array[3].ToLong();
-
-            var promo = string.Empty;
-            using (var db = new Database())
+            try
             {
+                var array = msg.Text.Split(" ");
+
+                var money = array[1].ToLong();
+                var donateMoney = array[2].ToLong();
+                var experience = array[3].ToLong();
+
                 var promocode = new Promocode();
-                promocode.Id = db.Promocodes.Count() + 1;
-                promocode.Text = new Random().Next(11111, 999999999).ToString();
-                promocode.Money = money;
-                promocode.DonateMoney = donateMoney;
-                promocode.Experience = experience;
-                promocode.IsActivate = false;
 
-                db.Promocodes.Add(promocode);
-                db.SaveChanges();
+                var promo = string.Empty;
+                using (var db = new Database())
+                {
+                    promocode.Id = db.Promocodes.Count() + 1;
+                    promocode.Text = new Random().Next(11111, 999999999).ToString();
+                    promocode.Money = money;
+                    promocode.DonateMoney = donateMoney;
+                    promocode.Experience = experience;
+                    promocode.IsActivate = false;
 
-                promo = promocode.Text;
+                    db.Promocodes.Add(promocode);
+                    db.SaveChanges();
+
+                    promo = promocode.Text;
+                }
+
+                sender.Text($"✔ Промокод сгенерирован: {promo}", msg.ChatId);
+            }
+            catch (Exception e)
+            {
+                sender.Text(e.ToString(), msg.ChatId);
             }
             
-            sender.Text($"✔ Промокод сгенерирован: {promo}", msg.ChatId);
         }
 
         public void Init(IBot bot, ILoggerService logger)
