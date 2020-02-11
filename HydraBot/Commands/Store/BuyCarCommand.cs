@@ -74,11 +74,16 @@ namespace HydraBot.Commands.Store
                     gar.Cars = gar.Cars + $"{car.Id};";
                     db.SaveChanges();
                 }
-                text = $"🚗 Поздравляем с покупкой! Ваш новенький {car.Manufacturer} {car.Model} уже стоит в гараже!";
-                kb.AddButton("🔧 Перейти в гараж", "garage");
+                text = $"🚗 Поздравляем с покупкой! Ваш новенький {car.Manufacturer} {car.Model} уже стоит в гараже!" +
+                       $"\n ❗ Теперь укажите номер региона для автомобильного номера:";
+                
+                UsersCommandHelper.GetHelper().Add("buycarnumber", user.Id);
+            }
+            else
+            {
+                kb.AddButton("🚘 Перейти в автосалон", "autostore");
             }
 
-            kb.AddButton("🚘 Перейти в автосалон", "autostore");
 
             sender.Text(text, msg.ChatId, kb.Build());
 
