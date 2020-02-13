@@ -169,6 +169,6 @@ namespace HydraBot.Commands
         }
 
         public string Command => "casino";
-        public string[] Aliases => new string[0];
+        public string[] Aliases => new string[]{"казино"};
     }
 }
