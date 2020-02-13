@@ -161,7 +161,8 @@ namespace HydraBot
                 new PromocodeGenerateCommand(),
                 new BanCommand(),
                 new UnBanCommand(),
-                new GetIdCommand());
+                new GetIdCommand(),
+                new BansCommand());
 
             //Установка сервисов.
             _bot.SetServices(
