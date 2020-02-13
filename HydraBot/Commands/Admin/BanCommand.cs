@@ -32,13 +32,23 @@ namespace HydraBot.Commands.Admin
             var userId = array[1].ToLong();
             var time = array[2].ToLong();
 
+            var reason = string.Empty;
+            
+            for(int i = 3; i < array.Length; i++)
+            {
+                reason += $"{array[i]} ";
+            }
+
             using (var db = new Database())
             {
                 var usr = db.Users.Single(u => u.Id == userId);
                 usr.IsBanned = true;
                 usr.TimeBan = time;
                 db.SaveChanges();
+                sender.Text($"☠ Вам выдан бан на {time} часов. Причина: {reason}", usr.VkId);
+
             }
+            
             
             sender.Text("Бан выдан.", msg.ChatId);
         }

@@ -30,7 +30,8 @@ namespace HydraBot.Commands
 
         public void Execute(Fooxboy.NucleusBot.Models.Message msg, IMessageSenderService sender, IBot bot)
         {
-            
+            if (Main.Api.Users.IsBanned(msg)) return;
+
             //проверка на регистрацию.
             if (_api.Users.CheckUser(msg))
             {

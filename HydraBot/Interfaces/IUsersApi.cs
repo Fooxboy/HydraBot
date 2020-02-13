@@ -68,6 +68,7 @@ namespace HydraBot.Interfaces
         long SetLevel(long userId, long lvl);
         void SetAccess(long userId, long access);
         void SetPrefix(long userId, string prefix);
+        bool IsBanned(Message msg);
 
     }
 }

@@ -158,14 +158,16 @@ namespace HydraBot
                 new SettingsCommand(),
                 new SubOnNewsLetterCommand(),
                 new PromocodeCommand(),
-                new PromocodeGenerateCommand());
+                new PromocodeGenerateCommand(),
+                new BanCommand());
 
             //Установка сервисов.
             _bot.SetServices(
                 new ReportService(),
                 new BonusService(), 
                 new LevelService(),
-                new ContributionService());
+                new ContributionService(),
+                new BansService());
 
             //запуск бота
             Task.Run(()=> _bot.Start());

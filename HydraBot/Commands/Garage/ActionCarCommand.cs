@@ -19,6 +19,8 @@ namespace HydraBot.Commands.Garage
 
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
+            if (Main.Api.Users.IsBanned(msg)) return;
+
             if (!Main.Api.Users.CheckUser(msg))
             {
                 var kb2 = new KeyboardBuilder(bot);

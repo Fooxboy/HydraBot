@@ -288,6 +288,8 @@ namespace HydraBot.BotApi
             }
         }
 
+        public bool IsBanned(Message msg) => GetUser(msg).IsBanned;
+
         public long SetTimeBonus(long userId, long count)
         {
             using(var db = new Database())

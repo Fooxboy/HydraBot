@@ -8,6 +8,8 @@ namespace HydraBot.Commands.Race
     {
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
+            if (Main.Api.Users.IsBanned(msg)) return;
+
             var enemy = msg.Payload.Arguments[0].ToLong();
             var user = Main.Api.Users.GetUser(msg);
             var text = RaceFriendCommand.RunFriendBattle(user.Id, enemy, sender, bot, msg);
