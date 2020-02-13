@@ -159,7 +159,8 @@ namespace HydraBot
                 new SubOnNewsLetterCommand(),
                 new PromocodeCommand(),
                 new PromocodeGenerateCommand(),
-                new BanCommand());
+                new BanCommand(),
+                new UnBanCommand());
 
             //Установка сервисов.
             _bot.SetServices(
