@@ -33,8 +33,8 @@ namespace HydraBot.Commands
             var kb = new KeyboardBuilder(bot);
             if(user.Gang  == 0)
             {
-                text = "❌ Вы не являетесь участником банды. Но Вы можете создать свою!";
-                kb.AddButton("➕ Создать банду (100.000 руб.)", "creategang");
+                text = "❌ Вы не являетесь участником команды. Но Вы можете создать свою!";
+                kb.AddButton("➕ Создать команду (100.000 руб.)", "creategang");
                 kb.AddLine();
                 kb.AddButton(ButtonsHelper.ToHomeButton());
                 sender.Text(text, msg.ChatId, kb.Build());
@@ -46,7 +46,8 @@ namespace HydraBot.Commands
             var helper = new UsersHelper();
             var creatorLink = helper.GetLink(creatorUser);
 
-            text = $"👥 Название банды: {gang.Name}" +
+            text = $"👥 Название команды: {gang.Name}" +
+                   $"\n 🔝 ID: {gang.Id}" +
                 $"\n ⭐ Основатель: {creatorLink}" +
                 $"\n 📖 Участники:";
 
@@ -56,11 +57,11 @@ namespace HydraBot.Commands
                 text += $"\n ▶ {helper.GetLink(member)}";
             }
 
-            kb.AddButton("🔁 Переименовать банду", "renamegang");
+            kb.AddButton("🔁 Переименовать команду", "renamegang");
             kb.AddLine();
-            kb.AddButton("💱 Передать банду", "transfergang");
+            kb.AddButton("💱 Передать команду", "transfergang");
             kb.AddLine();
-            kb.AddButton("❌ Удалить банду", "deletegang", color: KeyboardButtonColor.Negative);
+            kb.AddButton("❌ Удалить команду", "deletegang", color: KeyboardButtonColor.Negative);
             kb.AddLine();
             kb.AddButton(ButtonsHelper.ToHomeButton());
             sender.Text(text, msg.ChatId, kb.Build());

@@ -31,13 +31,13 @@ namespace HydraBot.Commands.Gang
             if (user.Money < price)
             {
                 kb.AddButton(ButtonsHelper.ToHomeButton());
-                sender.Text("❌ У Вас недостаточно наличных денег для создания банды.", msg.ChatId, kb.Build());
+                sender.Text("❌ У Вас недостаточно наличных денег для создания команды.", msg.ChatId, kb.Build());
                 return;
             }
             
             UsersCommandHelper.GetHelper().Add("creategang", user.Id);
             kb.AddButton("❌ Отменить", "menu", color: KeyboardButtonColor.Negative);
-            sender.Text("👥 Напишите название Вашей банды", msg.ChatId, kb.Build());
+            sender.Text("👥 Напишите название Вашей команды", msg.ChatId, kb.Build());
 
         }
 
@@ -56,12 +56,12 @@ namespace HydraBot.Commands.Gang
                 }
 
                 UsersCommandHelper.GetHelper().Add("", creator);
-                return $"👥 Банда {name} создана!";
+                return $"👥 Команда {name} создана!";
             }
             catch
             {
                 UsersCommandHelper.GetHelper().Add("", creator);
-                return "❌ Мы не смогли создать банду из-за системной ошибки!";
+                return "❌ Мы не смогли создать команду из-за системной ошибки!";
             }
             
         }

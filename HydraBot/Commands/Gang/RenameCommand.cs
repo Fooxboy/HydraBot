@@ -26,14 +26,14 @@ namespace HydraBot.Commands.Gang
             UsersCommandHelper.GetHelper().Add("renamegang", user.Id);
             var kb = new KeyboardBuilder(bot);
             kb.AddButton("❌ Отменить", "gang");
-            sender.Text("📃 Введите новое название Вашей банды", msg.ChatId, kb.Build());
+            sender.Text("📃 Введите новое название Вашей команды", msg.ChatId, kb.Build());
         }
 
         public static string Rename(User user, string name)
         {
             var api = Main.Api;
             var gang = api.Gangs.GetGang(user.Gang);
-            if (gang.Creator != user.Id) return "❌ Вы не являетесь создателем банды!";
+            if (gang.Creator != user.Id) return "❌ Вы не являетесь создателем команды!";
 
             using (var db = new Database())
             {
@@ -43,7 +43,7 @@ namespace HydraBot.Commands.Gang
             }
 
             UsersCommandHelper.GetHelper().Add("", user.Id);
-            return $"✔ Имя банды изменено на {name}";
+            return $"✔ Имя команды изменено на {name}";
         }
 
         public void Init(IBot bot, ILoggerService logger)
