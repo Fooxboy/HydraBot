@@ -82,7 +82,7 @@ namespace HydraBot.Commands
             var id = _api.Users.AddUser(user);
             user.Id = id;
 
-            var garage = new Models.Garage() { Cars = "", PhoneNumber = null,Name = "no", IsPhone= false, Engines = "", Fuel=100, GarageModelId= -1, SelectCar = -1, ParkingPlaces = 0, UserId = id};
+            var garage = new Models.Garage() { Cars = "", PhoneNumber = null,Name = "no", IsPhone= false, Engines = "", Fuel=9999999999999, GarageModelId= -1, SelectCar = -1, ParkingPlaces = 0, UserId = id};
             Main.Api.Garages.RegisterGarage(garage);
 
             var skills = new Skills();

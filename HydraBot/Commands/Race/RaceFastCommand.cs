@@ -39,15 +39,7 @@ namespace HydraBot.Commands.Race
                 return;
             }
             var garageUser = Main.Api.Garages.GetGarage(user.Id);
-            if (garageUser.Fuel < 5)
-            {
-                var kb1 = new KeyboardBuilder(bot);
-                kb1.AddButton("⛽ Заправить бак", "gasstation");
-                kb1.AddLine();
-                kb1.AddButton("🏎 В раздел гонок", "race");
-                sender.Text("❌ У Вас кончилось топливо! Заправте бак, чтобы продолжить гонки!", msg.ChatId, kb1.Build());
-                return;
-            }
+           
             sender.Text("⌛ Подождите, мы подбираем Вам противника", msg.ChatId);
 
             var enemys = new List<RaceFindModel>();
