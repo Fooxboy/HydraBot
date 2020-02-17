@@ -935,6 +935,974 @@
       "power": 272,
       "price": 100,
       "weight": 1819
+    },
+    {
+      "id": 117,
+      "manufacturer": "Kia",
+      "model": "Ceed JD",
+      "power": 204,
+      "price": 100,
+      "weight": 1429
+    },
+    {
+      "id": 118,
+      "manufacturer": "Kia",
+      "model": "Cerato",
+      "power": 150,
+      "price": 100,
+      "weight": 1255
+    },
+    {
+      "id": 119,
+      "manufacturer": "Kia",
+      "model": "Cerato Koup TD",
+      "power": 150,
+      "price": 100,
+      "weight": 1242
+    },
+    {
+      "id": 120,
+      "manufacturer": "Kia",
+      "model": "K900 RJ",
+      "power": 413,
+      "price": 100,
+      "weight": 2195
+    },
+    {
+      "id": 121,
+      "manufacturer": "Kia",
+      "model": "Optima JF",
+      "power": 245,
+      "price": 100,
+      "weight": 1655
+    },
+    {
+      "id": 122,
+      "manufacturer": "Kia",
+      "model": "ProCeed CD",
+      "power": 200,
+      "price": 100,
+      "weight": 1355
+    },
+    {
+      "id": 123,
+      "manufacturer": "Kia",
+      "model": "Quoris KH",
+      "power": 424,
+      "price": 100,
+      "weight": 2145
+    },
+    {
+      "id": 124,
+      "manufacturer": "Kia",
+      "model": "Rio QB",
+      "power": 123,
+      "price": 100,
+      "weight": 1145
+    },
+    {
+      "id": 125,
+      "manufacturer": "Kia",
+      "model": "Sorento UM",
+      "power": 249,
+      "price": 100,
+      "weight": 2032
+    },
+    {
+      "id": 126,
+      "manufacturer": "Kia",
+      "model": "Stinger CK",
+      "power": 370,
+      "price": 100,
+      "weight": 1855
+    },
+    {
+      "id": 127,
+      "manufacturer": "Kia",
+      "model": "Telluride",
+      "power": 295,
+      "price": 100,
+      "weight": 1975
+    },
+    {
+      "id": 128,
+      "manufacturer": "Lamborghini",
+      "model": "Aventador SVJ",
+      "power": 770,
+      "price": 100,
+      "weight": 1525
+    },
+    {
+      "id": 129,
+      "manufacturer": "Lamborghini",
+      "model": "Aventador J",
+      "power": 700,
+      "price": 100,
+      "weight": 1425
+    },
+    {
+      "id": 130,
+      "manufacturer": "Lamborghini",
+      "model": "Centenario",
+      "power": 770,
+      "price": 100,
+      "weight": 1520
+    },
+    {
+      "id": 131,
+      "manufacturer": "Lamborghini",
+      "model": "Countach",
+      "power": 375,
+      "price": 100,
+      "weight": 1490
+    },
+    {
+      "id": 132,
+      "manufacturer": "Lamborghini",
+      "model": "Gallardo Superleggera",
+      "power": 570,
+      "price": 100,
+      "weight": 1340
+    },
+    {
+      "id": 133,
+      "manufacturer": "Lamborghini",
+      "model": "Huracan Performante",
+      "power": 640,
+      "price": 100,
+      "weight": 1480
+    },
+    {
+      "id": 134,
+      "manufacturer": "Lamborghini",
+      "model": "Miura",
+      "power": 385,
+      "price": 100,
+      "weight": 1245
+    },
+    {
+      "id": 135,
+      "manufacturer": "Lamborghini",
+      "model": "Murcielago",
+      "power": 640,
+      "price": 100,
+      "weight": 1550
+    },
+    {
+      "id": 136,
+      "manufacturer": "Lamborghini",
+      "model": "Reventon",
+      "power": 640,
+      "price": 100,
+      "weight": 1665
+    },
+    {
+      "id": 137,
+      "manufacturer": "Lamborghini",
+      "model": "Sesto Elemento",
+      "power": 570 ,
+      "price": 100,
+      "weight": 999
+    },
+    {
+      "id": 138,
+      "manufacturer": "Lamborghini",
+      "model": "Urus",
+      "power": 650,
+      "price": 100,
+      "weight": 2200
+    },
+    {
+      "id": 139,
+      "manufacturer": "Lamborghini",
+      "model": "Veneno",
+      "power": 750,
+      "price": 100,
+      "weight": 1450
+    },
+    {
+      "id": 140,
+      "manufacturer": "Land Rover",
+      "model": "Discovery",
+      "power": 340,
+      "price": 100,
+      "weight": 2230
+    },
+    {
+      "id": 141,
+      "manufacturer": "Land Rover",
+      "model": "Discovery Sport",
+      "power": 249,
+      "price": 100,
+      "weight": 1916
+    },
+    {
+      "id": 142,
+      "manufacturer": "Land Rover",
+      "model": "Freelander",
+      "power": 240,
+      "price": 100,
+      "weight": 1805
+    },
+    {
+      "id": 143,
+      "manufacturer": "Land Rover",
+      "model": "Range Rover SVA",
+      "power": 565,
+      "price": 100,
+      "weight": 2497
+    },
+    {
+      "id": 144,
+      "manufacturer": "Land Rover",
+      "model": "Range Rover Evoque",
+      "power": 300,
+      "price": 100,
+      "weight": 1925
+    },
+    {
+      "id": 145,
+      "manufacturer": "Land Rover",
+      "model": "Range Rover Sport SVR",
+      "power": 575,
+      "price": 100,
+      "weight": 2310
+    },
+    {
+      "id": 146,
+      "manufacturer": "Land Rover",
+      "model": "Range Rover Velar SVA",
+      "power": 550,
+      "price": 100,
+      "weight": 2160
+    },
+    {
+      "id": 147,
+      "manufacturer": "Lexus",
+      "model": "ES200 XV70",
+      "power": 150,
+      "price": 100,
+      "weight": 1700
+    },
+    {
+      "id": 148,
+      "manufacturer": "Lexus",
+      "model": "ES250 XV70",
+      "power": 200,
+      "price": 100,
+      "weight": 1695
+    },
+    {
+      "id": 149,
+      "manufacturer": "Lexus",
+      "model": "ES300h XV60",
+      "power": 161,
+      "price": 100,
+      "weight": 1765
+    },
+    {
+      "id": 150,
+      "manufacturer": "Lexus",
+      "model": "ES350 XV70",
+      "power": 249,
+      "price": 100,
+      "weight": 1725
+    },
+    {
+      "id": 151,
+      "manufacturer": "Lexus",
+      "model": "GS F L10",
+      "power": 477,
+      "price": 100,
+      "weight": 1830
+    },
+    {
+      "id": 152,
+      "manufacturer": "Lexus",
+      "model": "GS200t",
+      "power": 245,
+      "price": 100,
+      "weight": 1690
+    },
+    {
+      "id": 153,
+      "manufacturer": "Lexus",
+      "model": "GS300h L10",
+      "power": 178,
+      "price": 100,
+      "weight": 1770
+    },
+    {
+      "id": 154,
+      "manufacturer": "Lexus",
+      "model": "GS350 L10",
+      "power": 317,
+      "price": 100,
+      "weight": 1805
+    },
+    {
+      "id": 155,
+      "manufacturer": "Lexus",
+      "model": "GS450h L10",
+      "power": 292,
+      "price": 100,
+      "weight": 1940
+    },
+    {
+      "id": 156,
+      "manufacturer": "Lexus",
+      "model": "GX460 J150",
+      "power": 296,
+      "price": 100,
+      "weight": 2450
+    },
+    {
+      "id": 157,
+      "manufacturer": "Lexus",
+      "model": "IS F XE20",
+      "power": 423,
+      "price": 100,
+      "weight": 1700
+    },
+    {
+      "id": 158,
+      "manufacturer": "Lexus",
+      "model": "IS200d XE20",
+      "power": 150,
+      "price": 100,
+      "weight": 1545
+    },
+    {
+      "id": 159,
+      "manufacturer": "Lexus",
+      "model": "IS200t XE30",
+      "power": 245,
+      "price": 100,
+      "weight": 1680
+    },
+    {
+      "id": 160,
+      "manufacturer": "Lexus",
+      "model": "IS220d XE20",
+      "power": 177,
+      "price": 100,
+      "weight": 1545
+    },
+    {
+      "id": 161,
+      "manufacturer": "Lexus",
+      "model": "IS250 XE30",
+      "power": 208,
+      "price": 100,
+      "weight": 1660
+    },
+    {
+      "id": 162,
+      "manufacturer": "Lexus",
+      "model": "IS300 XE30",
+      "power": 245,
+      "price": 100,
+      "weight": 1665
+    },
+    {
+      "id": 163,
+      "manufacturer": "Lexus",
+      "model": "IS300h XE30",
+      "power": 181,
+      "price": 100,
+      "weight": 1695
+    },
+    {
+      "id": 164,
+      "manufacturer": "Lexus",
+      "model": "IS350",
+      "power": 318,
+      "price": 100,
+      "weight": 1650
+    },
+    {
+      "id": 165,
+      "manufacturer": "Lexus",
+      "model": "LC500",
+      "power": 477,
+      "price": 100,
+      "weight": 2010
+    },
+    {
+      "id": 166,
+      "manufacturer": "Lexus",
+      "model": "LFA A10",
+      "power": 560,
+      "price": 100,
+      "weight": 1480
+    },
+    {
+      "id": 167,
+      "manufacturer": "Lexus",
+      "model": "LS350 XF50",
+      "power": 315,
+      "price": 100,
+      "weight": 2135
+    },
+    {
+      "id": 168,
+      "manufacturer": "Lexus",
+      "model": "LS460 XF40",
+      "power": 388,
+      "price": 100,
+      "weight": 2200
+    },
+    {
+      "id": 169,
+      "manufacturer": "Lexus",
+      "model": "LS460L XF40",
+      "power": 370,
+      "price": 100,
+      "weight": 2295
+    },
+    {
+      "id": 170,
+      "manufacturer": "Lexus",
+      "model": "LS500 XF50",
+      "power": 421,
+      "price": 100,
+      "weight": 2320
+    },
+    {
+      "id": 171,
+      "manufacturer": "Lexus",
+      "model": "LS600h XF40",
+      "power": 394,
+      "price": 100,
+      "weight": 2345
+    },
+    {
+      "id": 172,
+      "manufacturer": "Lexus",
+      "model": "LX450d J200",
+      "power": 272,
+      "price": 100,
+      "weight": 2585
+    },
+    {
+      "id": 173,
+      "manufacturer": "Lexus",
+      "model": "LX470 J100",
+      "power": 234,
+      "price": 100,
+      "weight": 2450
+    },
+    {
+      "id": 174,
+      "manufacturer": "Lexus",
+      "model": "LX570 J200",
+      "power": 367,
+      "price": 100,
+      "weight": 2730
+    },
+    {
+      "id": 175,
+      "manufacturer": "Lexus",
+      "model": "NX200 Z10",
+      "power": 150,
+      "price": 100,
+      "weight": 1705
+    },
+    {
+      "id": 176,
+      "manufacturer": "Lexus",
+      "model": "NX300 Z10",
+      "power": 238 ,
+      "price": 100,
+      "weight": 1810
+    },
+    {
+      "id": 177,
+      "manufacturer": "Lexus",
+      "model": "RC F C10",
+      "power": 477 ,
+      "price": 100,
+      "weight": 1765
+    },
+    {
+      "id": 178,
+      "manufacturer": "Lexus",
+      "model": "RC200t",
+      "power": 245,
+      "price": 100,
+      "weight": 1725
+    },
+    {
+      "id": 179,
+      "manufacturer": "Lexus",
+      "model": "RC300",
+      "power": 245 ,
+      "price": 100,
+      "weight": 1725
+    },
+    {
+      "id": 180,
+      "manufacturer": "Lexus",
+      "model": "RC350 C10",
+      "power": 317 ,
+      "price": 100,
+      "weight": 1805
+    },
+    {
+      "id": 181,
+      "manufacturer": "Lexus",
+      "model": "RX200t AL20",
+      "power": 238 ,
+      "price": 100,
+      "weight": 2145
+    },
+    {
+      "id": 182,
+      "manufacturer": "Lexus",
+      "model": "RX270 AL10",
+      "power": 188 ,
+      "price": 100,
+      "weight": 2025
+    },
+    {
+      "id": 183,
+      "manufacturer": "Lexus",
+      "model": "RX300 AL20",
+      "power": 238 ,
+      "price": 100,
+      "weight": 2155
+    },
+    {
+      "id": 184,
+      "manufacturer": "Lexus",
+      "model": "RX350 AL20",
+      "power": 301 ,
+      "price": 100,
+      "weight": 2160
+    },
+    {
+      "id": 185,
+      "manufacturer": "Lexus",
+      "model": "RX450h AL20",
+      "power": 263 ,
+      "price": 100,
+      "weight": 2285
+    },
+    {
+      "id": 186,
+      "manufacturer": "Lexus",
+      "model": "RX450hL AL20",
+      "power": 262 ,
+      "price": 100,
+      "weight": 2240
+    },
+    {
+      "id": 187,
+      "manufacturer": "Lexus",
+      "model": "UX200",
+      "power": 150 ,
+      "price": 100,
+      "weight": 1540
+    },
+    {
+      "id": 188,
+      "manufacturer": "Marussia",
+      "model": "B1",
+      "power": 420,
+      "price": 100,
+      "weight": 1100
+    },
+    {
+      "id": 189,
+      "manufacturer": "Marussia",
+      "model": "B2",
+      "power": 420,
+      "price": 100,
+      "weight": 1100
+    },
+    {
+      "id": 190,
+      "manufacturer": "Maserati",
+      "model": "GranTurismo",
+      "power": 460,
+      "price": 100,
+      "weight": 1800
+    },
+    {
+      "id": 191,
+      "manufacturer": "Maserati",
+      "model": "Levante",
+      "power": 590,
+      "price": 100,
+      "weight": 2205
+    },
+    {
+      "id": 192,
+      "manufacturer": "Maserati",
+      "model": "Quattroporte M156",
+      "power": 530,
+      "price": 100,
+      "weight": 1820
+    },
+    {
+      "id": 193,
+      "manufacturer": "Maserati",
+      "model": "GranTurismo",
+      "power": 460,
+      "price": 100,
+      "weight": 1800
+    },
+    {
+      "id": 194,
+      "manufacturer": "Mazda",
+      "model": "Atenza GJ",
+      "power": 190,
+      "price": 100,
+      "weight": 1670
+    },
+    {
+      "id": 195,
+      "manufacturer": "Mazda",
+      "model": "CX-3 DK",
+      "power": 150,
+      "price": 100,
+      "weight": 1390
+    },
+    {
+      "id": 196,
+      "manufacturer": "Mazda",
+      "model": "CX-5 KF",
+      "power": 194,
+      "price": 100,
+      "weight": 1617
+    },
+    {
+      "id": 197,
+      "manufacturer": "Mazda",
+      "model": "CX-7 ER",
+      "power": 238,
+      "price": 100,
+      "weight": 1831
+    },
+    {
+      "id": 198,
+      "manufacturer": "Mazda",
+      "model": "CX-8",
+      "power": 230,
+      "price": 100,
+      "weight": 1910
+    },
+    {
+      "id": 199,
+      "manufacturer": "Mazda",
+      "model": "CX-9",
+      "power": 231,
+      "price": 100,
+      "weight": 1925
+    },
+    {
+      "id": 200,
+      "manufacturer": "Mazda",
+      "model": "Efini RX-7 FD",
+      "power": 265,
+      "price": 100,
+      "weight": 1330
+    },
+    {
+      "id": 201,
+      "manufacturer": "Mazda",
+      "model": "Eunos Roadster NA",
+      "power": 140,
+      "price": 100,
+      "weight": 990
+    },
+    {
+      "id": 202,
+      "manufacturer": "Mazda",
+      "model": "Mazda3 BP",
+      "power": 120,
+      "price": 100,
+      "weight": 1334
+    },
+    {
+      "id": 203,
+      "manufacturer": "Mazda",
+      "model": "Mazda3 MPS BK",
+      "power": 260,
+      "price": 100,
+      "weight": 1483
+    },
+    {
+      "id": 204,
+      "manufacturer": "Mazda",
+      "model": "Mazda6 GL",
+      "power": 231,
+      "price": 100,
+      "weight": 1578
+    },
+    {
+      "id": 205,
+      "manufacturer": "Mazda",
+      "model": "Mazda6 MPS GG",
+      "power": 260,
+      "price": 100,
+      "weight": 1590
+    },
+    {
+      "id": 206,
+      "manufacturer": "Mazda",
+      "model": "MX-5 NC",
+      "power": 160,
+      "price": 100,
+      "weight": 1186
+    },
+    {
+      "id": 207,
+      "manufacturer": "Mazda",
+      "model": "Roadster ND",
+      "power": 184 ,
+      "price": 100,
+      "weight": 1130
+    },
+    {
+      "id": 208,
+      "manufacturer": "Mazda",
+      "model": "RX-7 FD",
+      "power": 280,
+      "price": 100,
+      "weight": 1280
+    },
+    {
+      "id": 209,
+      "manufacturer": "Mazda",
+      "model": "RX-8 SE",
+      "power": 231,
+      "price": 100,
+      "weight": 1390
+    },
+    {
+      "id": 209,
+      "manufacturer": "McLaren",
+      "model": "540C",
+      "power": 540,
+      "price": 100,
+      "weight": 1449
+    },
+    {
+      "id": 210,
+      "manufacturer": "McLaren",
+      "model": "570S",
+      "power": 570 ,
+      "price": 100,
+      "weight": 1443
+    },
+    {
+      "id": 211,
+      "manufacturer": "McLaren",
+      "model": "625C",
+      "power": 625,
+      "price": 100,
+      "weight": 1434
+    },
+    {
+      "id": 212,
+      "manufacturer": "McLaren",
+      "model": "650S",
+      "power": 650 ,
+      "price": 100,
+      "weight": 1428
+    },
+    {
+      "id": 213,
+      "manufacturer": "McLaren",
+      "model": "720S",
+      "power": 720  ,
+      "price": 100,
+      "weight": 1419
+    },
+    {
+      "id": 214,
+      "manufacturer": "McLaren",
+      "model": "F1",
+      "power": 627,
+      "price": 100,
+      "weight": 1140
+    },
+    {
+      "id": 215,
+      "manufacturer": "McLaren",
+      "model": "MP4-12C",
+      "power": 600 ,
+      "price": 100,
+      "weight": 1399
+    },
+    {
+      "id": 216,
+      "manufacturer": "McLaren",
+      "model": "P1",
+      "power": 916 ,
+      "price": 100,
+      "weight": 1400
+    },
+    {
+      "id": 217,
+      "manufacturer": "McLaren",
+      "model": "Senna",
+      "power": 800 ,
+      "price": 100,
+      "weight": 1374
+    },
+    {
+      "id": 218,
+      "manufacturer": "Mercedes-Benz",
+      "model": "A45 AMG W176",
+      "power": 360,
+      "price": 100,
+      "weight": 1555
+    },
+    {
+      "id": 219,
+      "manufacturer": "Mercedes-Benz",
+      "model": "GLE63 AMG W166",
+      "power": 585,
+      "price": 100,
+      "weight": 2345
+    },
+    {
+      "id": 220,
+      "manufacturer": "Mercedes-Benz",
+      "model": "GLE63 AMG C292",
+      "power": 557,
+      "price": 100,
+      "weight": 2275
+    },
+    {
+      "id": 221,
+      "manufacturer": "Mercedes-Benz",
+      "model": "AMG GT",
+      "power": 510,
+      "price": 100,
+      "weight": 2120
+    },
+    {
+      "id": 222,
+      "manufacturer": "Mercedes-Benz",
+      "model": "AMG GT63S",
+      "power": 639,
+      "price": 100,
+      "weight": 2195
+    },
+    {
+      "id": 223,
+      "manufacturer": "Mercedes-Benz",
+      "model": "C63 AMG W204",
+      "power": 457 ,
+      "price": 100,
+      "weight": 1730
+    },
+    {
+      "id": 224,
+      "manufacturer": "Mercedes-Benz",
+      "model": "C63 AMG W205",
+      "power": 476 ,
+      "price": 100,
+      "weight": 1999
+    },
+    {
+      "id": 225,
+      "manufacturer": "Mercedes-Benz",
+      "model": "E63 AMG W212",
+      "power": 585 ,
+      "price": 100,
+      "weight": 1845
+    },
+    {
+      "id": 226,
+      "manufacturer": "Mercedes-Benz",
+      "model": "CLA45 AMG C117",
+      "power": 360 ,
+      "price": 100,
+      "weight": 1430
+    },
+    {
+      "id": 227,
+      "manufacturer": "Mercedes-Benz",
+      "model": "CLS63 AMG C218",
+      "power": 525 ,
+      "price": 100,
+      "weight": 1945
+    },
+    {
+      "id": 228,
+      "manufacturer": "Mercedes-Benz",
+      "model": "G63 AMG W463",
+      "power": 571,
+      "price": 100,
+      "weight": 2550
+    },
+    {
+      "id": 229,
+      "manufacturer": "Mercedes-Benz",
+      "model": "G63 6x6 AMG",
+      "power": 544,
+      "price": 100,
+      "weight": 3850
+    },
+    {
+      "id": 230,
+      "manufacturer": "Mercedes-Benz",
+      "model": "GL63 AMG X166",
+      "power": 557,
+      "price": 100,
+      "weight": 2580
+    },
+    {
+      "id": 231,
+      "manufacturer": "Mercedes-Benz",
+      "model": "GLS63 AMG X166",
+      "power": 585,
+      "price": 100,
+      "weight": 2505
+    },
+    {
+      "id": 232,
+      "manufacturer": "Mercedes-Benz",
+      "model": "X-class",
+      "power": 258 ,
+      "price": 100,
+      "weight": 2389
+    },
+    {
+      "id": 233,
+      "manufacturer": "Mercedes-Benz",
+      "model": "S63 W222 AMG",
+      "power": 585 ,
+      "price": 100,
+      "weight": 2070
+    },
+    {
+      "id": 234,
+      "manufacturer": "Mercedes-Benz",
+      "model": "SL65 AMG R230",
+      "power": 525 ,
+      "price": 100,
+      "weight": 2110
+    },
+    {
+      "id": 235,
+      "manufacturer": "Mercedes-Benz",
+      "model": "Maybach S650",
+      "power": 650 ,
+      "price": 100,
+      "weight": 2285
+    },
+    {
+      "id": 236,
+      "manufacturer": "Mercedes-Benz",
+      "model": "SLR MacLaren C199",
+      "power": 626 ,
+      "price": 100,
+      "weight": 1768
     }
   ]
 }

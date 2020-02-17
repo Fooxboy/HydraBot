@@ -151,7 +151,7 @@ namespace HydraBot.Commands
                 try
                 {
                     var region = long.Parse(msg.Text);
-                    if (region < 1 || region > 200) text = "❌ Регион находится за пределом допустимого значения.";
+                    if (region < 1 || region > 999) text = "❌ Регион находится за пределом допустимого значения.";
                     else
                     {
                         text = BuyCarNumberCommand.BuyNumber(user, region);
