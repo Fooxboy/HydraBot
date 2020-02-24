@@ -1903,6 +1903,502 @@
       "power": 626 ,
       "price": 100,
       "weight": 1768
+    },
+    {
+      "id": 237,
+      "manufacturer": "Mitsubishi",
+      "model": "Eclipse",
+      "power": 265,
+      "price": 100,
+      "weight": 1600
+    },
+    {
+      "id": 238,
+      "manufacturer": "Mitsubishi",
+      "model": "Lancer Evolution IX",
+      "power": 280 ,
+      "price": 100,
+      "weight": 1465
+    },
+    {
+      "id": 239,
+      "manufacturer": "Mitsubishi",
+      "model": "Lancer Evolution X",
+      "power": 295 ,
+      "price": 100,
+      "weight": 1590
+    },
+    {
+      "id": 240,
+      "manufacturer": "Mitsubishi",
+      "model": "Pajero V90",
+      "power": 250,
+      "price": 100,
+      "weight": 2355
+    },
+    {
+      "id": 241,
+      "manufacturer": "Nissan",
+      "model": "350Z",
+      "power": 301,
+      "price": 100,
+      "weight": 1525
+    },
+    {
+      "id": 242,
+      "manufacturer": "Nissan",
+      "model": "370Z",
+      "power": 328 ,
+      "price": 100,
+      "weight": 1525
+    },
+    {
+      "id": 243,
+      "manufacturer": "Nissan",
+      "model": "GT-R 2017",
+      "power": 555,
+      "price": 100,
+      "weight": 1769
+    },
+    {
+      "id": 244,
+      "manufacturer": "Nissan",
+      "model": "Silvia S13",
+      "power": 205 ,
+      "price": 100,
+      "weight": 1210
+    },
+    {
+      "id": 245,
+      "manufacturer": "Nissan",
+      "model": "Silvia S14",
+      "power": 220,
+      "price": 100,
+      "weight": 1280
+    },
+    {
+      "id": 246,
+      "manufacturer": "Nissan",
+      "model": "Silvia S15",
+      "power": 250,
+      "price": 100,
+      "weight": 1270
+    },
+    {
+      "id": 247,
+      "manufacturer": "Nissan",
+      "model": "Skyline GT-R R32",
+      "power": 280,
+      "price": 100,
+      "weight": 1500
+    },
+    {
+      "id": 248,
+      "manufacturer": "Nissan",
+      "model": "Skyline GT-R R33",
+      "power": 280,
+      "price": 100,
+      "weight": 1540
+    },
+    {
+      "id": 249,
+      "manufacturer": "Nissan",
+      "model": "Skyline GT-R R34",
+      "power": 280 ,
+      "price": 100,
+      "weight": 1500
+    },
+    {
+      "id": 250,
+      "manufacturer": "Nissan",
+      "model": "Titan A61",
+      "power": 390 ,
+      "price": 100,
+      "weight": 2404
+    },
+    {
+      "id": 251,
+      "manufacturer": "Pagani",
+      "model": "Huayra Roadster",
+      "power": 764,
+      "price": 100,
+      "weight": 1360
+    },
+    {
+      "id": 252,
+      "manufacturer": "Pagani",
+      "model": "Zonda HP Barchetta",
+      "power": 800,
+      "price": 100,
+      "weight": 1250
+    },
+    {
+      "id": 253,
+      "manufacturer": "Pontiac",
+      "model": "Solstice",
+      "power": 260,
+      "price": 100,
+      "weight": 1337
+    },
+    {
+      "id": 254,
+      "manufacturer": "Pontiac",
+      "model": "Firebird",
+      "power": 330,
+      "price": 100,
+      "weight": 1710
+    },
+    {
+      "id": 255,
+      "manufacturer": "Pontiac",
+      "model": "GTO",
+      "power": 405,
+      "price": 100,
+      "weight": 1698
+    },
+    {
+      "id": 256,
+      "manufacturer": "Porsche",
+      "model": "718 Boxster GTS",
+      "power": 365,
+      "price": 100,
+      "weight": 1450
+    },
+    {
+      "id": 257,
+      "manufacturer": "Porsche",
+      "model": "718 Cayman GT4",
+      "power": 420 ,
+      "price": 100,
+      "weight": 1495
+    },
+    {
+      "id": 258,
+      "manufacturer": "Porsche",
+      "model": "911 Carrera S",
+      "power": 450 ,
+      "price": 100,
+      "weight": 1640
+    },
+    {
+      "id": 259,
+      "manufacturer": "Porsche",
+      "model": "911 GT2 RS",
+      "power": 700 ,
+      "price": 100,
+      "weight": 1545
+    },
+    {
+      "id": 260,
+      "manufacturer": "Porsche",
+      "model": "Panamera Turbo Executive",
+      "power": 550 ,
+      "price": 100,
+      "weight": 1935
+    },
+    {
+      "id": 261,
+      "manufacturer": "Porsche",
+      "model": "Macan Turbo",
+      "power": 440 ,
+      "price": 100,
+      "weight": 1925
+    },
+    {
+      "id": 262,
+      "manufacturer": "Porsche",
+      "model": "Cayenne S",
+      "power": 440 ,
+      "price": 100,
+      "weight": 2370
+    },
+    {
+      "id": 263,
+      "manufacturer": "Renault",
+      "model": "Arkana",
+      "power": 149,
+      "price": 100,
+      "weight": 1378
+    },
+    {
+      "id": 264,
+      "manufacturer": "Renault",
+      "model": "Clio RS",
+      "power": 200 ,
+      "price": 100,
+      "weight": 1240
+    },
+    {
+      "id": 265,
+      "manufacturer": "Renault",
+      "model": "Duster",
+      "power": 143,
+      "price": 100,
+      "weight": 1394
+    },
+    {
+      "id": 266,
+      "manufacturer": "Renault",
+      "model": "Fluence",
+      "power": 137,
+      "price": 100,
+      "weight": 1380
+    },
+    {
+      "id": 267,
+      "manufacturer": "Renault",
+      "model": "Kaptur",
+      "power": 143,
+      "price": 100,
+      "weight": 1405
+    },
+    {
+      "id": 268,
+      "manufacturer": "Renault",
+      "model": "Logan",
+      "power": 113,
+      "price": 100,
+      "weight": 1165
+    },
+    {
+      "id": 269,
+      "manufacturer": "Renault",
+      "model": "Talisman",
+      "power": 225,
+      "price": 100,
+      "weight": 1595
+    },
+    {
+      "id": 270,
+      "manufacturer": "Rolls-Royce",
+      "model": "Dawn",
+      "power": 571 ,
+      "price": 100,
+      "weight": 2560
+    },
+    {
+      "id": 271,
+      "manufacturer": "Rolls-Royce",
+      "model": "Ghost",
+      "power": 563  ,
+      "price": 100,
+      "weight": 2435
+    },
+    {
+      "id": 272,
+      "manufacturer": "Rolls-Royce",
+      "model": "Phantom",
+      "power": 563  ,
+      "price": 100,
+      "weight": 2630
+    },
+    {
+      "id": 273,
+      "manufacturer": "Rolls-Royce",
+      "model": "Wraith",
+      "power": 624,
+      "price": 100,
+      "weight": 2360
+    },
+    {
+      "id": 274,
+      "manufacturer": "Saab",
+      "model": "9-3",
+      "power": 260,
+      "price": 100,
+      "weight": 1395
+    },
+    {
+      "id": 275,
+      "manufacturer": "Skoda",
+      "model": "Rapid",
+      "power": 125,
+      "price": 100,
+      "weight": 1227
+    },
+    {
+      "id": 276,
+      "manufacturer": "Skoda",
+      "model": "Octavia",
+      "power": 230,
+      "price": 100,
+      "weight": 1352
+    },
+    {
+      "id": 277,
+      "manufacturer": "Skoda",
+      "model": "Suberb",
+      "power": 280 ,
+      "price": 100,
+      "weight": 1635
+    },
+    {
+      "id": 278,
+      "manufacturer": "Skoda",
+      "model": "Yeti",
+      "power": 152 ,
+      "price": 100,
+      "weight": 1560
+    },
+    {
+      "id": 279,
+      "manufacturer": "Subaru",
+      "model": "BRZ",
+      "power": 200,
+      "price": 100,
+      "weight": 1278
+    },
+    {
+      "id": 280,
+      "manufacturer": "Subaru",
+      "model": "Crosstrek GT",
+      "power": 150,
+      "price": 100,
+      "weight": 1690
+    },
+    {
+      "id": 281,
+      "manufacturer": "Subaru",
+      "model": "Impreza WRX STI 2002",
+      "power": 265,
+      "price": 100,
+      "weight": 1430
+    },
+    {
+      "id": 282,
+      "manufacturer": "Subaru",
+      "model": "Impreza WRX STI 2004",
+      "power": 265,
+      "price": 100,
+      "weight": 1450
+    },
+    {
+      "id": 283,
+      "manufacturer": "Subaru",
+      "model": "Impreza WRX STI 2006",
+      "power": 280 ,
+      "price": 100,
+      "weight": 1495
+    },
+    {
+      "id": 284,
+      "manufacturer": "Subaru",
+      "model": "Legacy",
+      "power": 175 ,
+      "price": 100,
+      "weight": 1604
+    },
+    {
+      "id": 285,
+      "manufacturer": "Subaru",
+      "model": "Forester",
+      "power": 185 ,
+      "price": 100,
+      "weight": 1677
+    },
+    {
+      "id": 286,
+      "manufacturer": "Tesla",
+      "model": "Model 3",
+      "power": 450,
+      "price": 100,
+      "weight": 1847
+    },
+    {
+      "id": 287,
+      "manufacturer": "Tesla",
+      "model": "Model S",
+      "power": 762,
+      "price": 100,
+      "weight": 2263
+    },
+    {
+      "id": 288,
+      "manufacturer": "Tesla",
+      "model": "Model X",
+      "power": 773 ,
+      "price": 100,
+      "weight": 2509
+    },
+    {
+      "id": 289,
+      "manufacturer": "Tesla",
+      "model": "Model Y",
+      "power": 450 ,
+      "price": 100,
+      "weight": 1850
+    },
+    {
+      "id": 290,
+      "manufacturer": "Tesla",
+      "model": "Roadster",
+      "power": 248,
+      "price": 100,
+      "weight": 1814
+    },
+    {
+      "id": 291,
+      "manufacturer": "Toyota",
+      "model": "GT 86",
+      "power": 200,
+      "price": 100,
+      "weight": 1230
+    },
+    {
+      "id": 292,
+      "manufacturer": "Toyota",
+      "model": "Mark II 100",
+      "power": 280 ,
+      "price": 100,
+      "weight": 1540
+    },
+    {
+      "id": 293,
+      "manufacturer": "Toyota",
+      "model": "Camry XV40",
+      "power": 277 ,
+      "price": 100,
+      "weight": 1610
+    },
+    {
+      "id": 294,
+      "manufacturer": "Toyota",
+      "model": "Camry XV55",
+      "power": 249 ,
+      "price": 100,
+      "weight": 1615
+    },
+    {
+      "id": 295,
+      "manufacturer": "Toyota",
+      "model": "Chaser X100",
+      "power": 280,
+      "price": 100,
+      "weight": 1490
+    },
+    {
+      "id": 296,
+      "manufacturer": "Toyota",
+      "model": "Crown 2017",
+      "power": 299 ,
+      "price": 100,
+      "weight": 1890
+    },
+    {
+      "id": 297,
+      "manufacturer": "Toyota",
+      "model": "Land Cruiser Prado J150",
+      "power": 282 ,
+      "price": 100,
+      "weight": 2165
+    },
+    {
+      "id": 298,
+      "manufacturer": "Toyota",
+      "model": "Supra A90",
+      "power": 340 ,
+      "price": 100,
+      "weight": 1570
     }
   ]
 }
