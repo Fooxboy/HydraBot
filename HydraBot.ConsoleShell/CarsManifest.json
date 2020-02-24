@@ -2465,7 +2465,7 @@
       "weight": 2040
     },
     {
-      "id": 305,
+      "id": 306,
       "manufacturer": "Volvo",
       "model": "XC90",
       "power": 320,
@@ -2473,7 +2473,7 @@
       "weight": 2274
     },
     {
-      "id": 305,
+      "id": 307,
       "manufacturer": "Volvo",
       "model": "XC70",
       "power": 304,
@@ -2481,7 +2481,7 @@
       "weight": 1977
     },
     {
-      "id": 305,
+      "id": 308,
       "manufacturer": "Volvo",
       "model": "S60",
       "power": 249 ,
@@ -2489,12 +2489,252 @@
       "weight": 1677
     },
     {
-      "id": 305,
+      "id": 309,
       "manufacturer": "Volvo",
       "model": "S90",
       "power": 320,
       "price": 100,
       "weight": 1953
+    },
+    {
+      "id": 310,
+      "manufacturer": "ВАЗ",
+      "model": "2101",
+      "power": 64,
+      "price": 100,
+      "weight": 955
+    },
+    {
+      "id": 311,
+      "manufacturer": "ВАЗ",
+      "model": "2102",
+      "power": 77 ,
+      "price": 100,
+      "weight": 1020
+    },
+    {
+      "id": 312,
+      "manufacturer": "ВАЗ",
+      "model": "2103 ",
+      "power": 71 ,
+      "price": 100,
+      "weight": 1030
+    },
+    {
+      "id": 313,
+      "manufacturer": "ВАЗ",
+      "model": "2104 ",
+      "power": 74 ,
+      "price": 100,
+      "weight": 1060
+    },
+    {
+      "id": 314,
+      "manufacturer": "ВАЗ",
+      "model": "2105 ",
+      "power": 71 ,
+      "price": 100,
+      "weight": 1020
+    },
+    {
+      "id": 315,
+      "manufacturer": "ВАЗ",
+      "model": "2106 ",
+      "power": 75 ,
+      "price": 100,
+      "weight": 1050
+    },
+    {
+      "id": 316,
+      "manufacturer": "ВАЗ",
+      "model": "2107 ",
+      "power": 73 ,
+      "price": 100,
+      "weight": 1060
+    },
+    {
+      "id": 317,
+      "manufacturer": "ВАЗ",
+      "model": "2108 ",
+      "power": 93 ,
+      "price": 100,
+      "weight": 920
+    },
+    {
+      "id": 318,
+      "manufacturer": "ВАЗ",
+      "model": "2109 ",
+      "power": 78 ,
+      "price": 100,
+      "weight": 945
+    },
+    {
+      "id": 319,
+      "manufacturer": "ВАЗ",
+      "model": "21099",
+      "power": 140,
+      "price": 100,
+      "weight": 970
+    },
+    {
+      "id": 320,
+      "manufacturer": "ВАЗ",
+      "model": "2110",
+      "power": 148,
+      "price": 100,
+      "weight": 1100
+    },
+    {
+      "id": 321,
+      "manufacturer": "ВАЗ",
+      "model": "2111",
+      "power": 91,
+      "price": 100,
+      "weight": 1040
+    },
+    {
+      "id": 322,
+      "manufacturer": "ВАЗ",
+      "model": "2112",
+      "power": 120 ,
+      "price": 100,
+      "weight": 1030
+    },
+    {
+      "id": 323,
+      "manufacturer": "ВАЗ",
+      "model": "2113 ",
+      "power": 98 ,
+      "price": 100,
+      "weight": 1050
+    },
+    {
+      "id": 324,
+      "manufacturer": "ВАЗ",
+      "model": "2114 ",
+      "power": 98   ,
+      "price": 100,
+      "weight": 1060
+    },
+    {
+      "id": 325,
+      "manufacturer": "ВАЗ",
+      "model": "2115 ",
+      "power": 82 ,
+      "price": 100,
+      "weight": 1000
+    },
+    {
+      "id": 326,
+      "manufacturer": "Лада",
+      "model": "Калина Спорт",
+      "power": 136,
+      "price": 100,
+      "weight": 1215
+    },
+    {
+      "id": 327,
+      "manufacturer": "Лада",
+      "model": "Приора ",
+      "power": 106,
+      "price": 100,
+      "weight": 1185
+    },
+    {
+      "id": 328,
+      "manufacturer": "Лада",
+      "model": "Гранта Спорт",
+      "power": 118 ,
+      "price": 100,
+      "weight": 1140
+    },
+    {
+      "id": 329,
+      "manufacturer": "Лада",
+      "model": "Ларгус",
+      "power": 106 ,
+      "price": 100,
+      "weight": 1260
+    },
+    {
+      "id": 330,
+      "manufacturer": "Лада",
+      "model": "Веста Спорт",
+      "power": 145,
+      "price": 100,
+      "weight": 1322
+    },
+    {
+      "id": 331,
+      "manufacturer": "Лада",
+      "model": "X-Ray",
+      "power": 122,
+      "price": 100,
+      "weight": 1190
+    },
+    {
+      "id": 332,
+      "manufacturer": "Нива",
+      "model": "4х4",
+      "power": 83 ,
+      "price": 100,
+      "weight": 1285
+    },
+    {
+      "id": 333,
+      "manufacturer": "ГАЗ",
+      "model": "21",
+      "power": 75,
+      "price": 100,
+      "weight": 1450
+    },
+    {
+      "id": 334,
+      "manufacturer": "ГАЗ",
+      "model": "24",
+      "power": 195 ,
+      "price": 100,
+      "weight": 1400
+    },
+    {
+      "id": 335,
+      "manufacturer": "ГАЗ",
+      "model": "3110",
+      "power": 145 ,
+      "price": 100,
+      "weight": 1400
+    },
+    {
+      "id": 336,
+      "manufacturer": "Москвич",
+      "model": "407",
+      "power": 45  ,
+      "price": 100,
+      "weight": 910
+    },
+    {
+      "id": 337,
+      "manufacturer": "Москвич",
+      "model": "412",
+      "power": 75   ,
+      "price": 100,
+      "weight": 1045
+    },
+    {
+      "id": 338,
+      "manufacturer": "УАЗ",
+      "model": "Хантер",
+      "power": 135 ,
+      "price": 100,
+      "weight": 1845
+    },
+    {
+      "id": 339,
+      "manufacturer": "УАЗ",
+      "model": "Патриот",
+      "power": 150 ,
+      "price": 100,
+      "weight": 2125
     }
   ]
 }
