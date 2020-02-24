@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using HydraBot.Models;
 
 namespace HydraBot.Commands.Store
 {
@@ -43,9 +44,27 @@ namespace HydraBot.Commands.Store
                         sender.Text("❌ Эту команду можно вызвать только с аргументом через кнопку.", msg.ChatId);
                         return;
                     }
-                    
 
-                    var cars = CarsHelper.GetHelper().Cars.Where(c => c.Manufacturer == manufacture).ToList();
+                    List<Car> cars; 
+                    if (manufacture == "Rus")
+                    {
+                        var l1 = CarsHelper.GetHelper().Cars.Where(c => c.Manufacturer == "ВАЗ").ToList();
+                        var l2 = CarsHelper.GetHelper().Cars.Where(c => c.Manufacturer == "Лада").ToList();
+                        var l3 = CarsHelper.GetHelper().Cars.Where(c => c.Manufacturer == "Нива").ToList();
+                        var l4 = CarsHelper.GetHelper().Cars.Where(c => c.Manufacturer == "Москвич").ToList();
+                        var l5 = CarsHelper.GetHelper().Cars.Where(c => c.Manufacturer == "УАЗ").ToList();
+                        cars = new List<Car>();
+
+                        foreach (var car in l1) cars.Add(car);
+                        foreach (var car in l2) cars.Add(car);
+                        foreach (var car in l3) cars.Add(car);
+                        foreach (var car in l4) cars.Add(car);
+                        foreach (var car in l5) cars.Add(car);
+                    }
+                    else
+                    {
+                        cars = CarsHelper.GetHelper().Cars.Where(c => c.Manufacturer == manufacture).ToList();
+                    }
 
                     try
                     {
