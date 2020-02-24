@@ -2399,6 +2399,102 @@
       "power": 340 ,
       "price": 100,
       "weight": 1570
+    },
+    {
+      "id": 298,
+      "manufacturer": "Volkswagen",
+      "model": "Golf R",
+      "power": 700,
+      "price": 100,
+      "weight": 1414
+    },
+    {
+      "id": 299,
+      "manufacturer": "Volkswagen",
+      "model": "Jetta NF",
+      "power": 150 ,
+      "price": 100,
+      "weight": 1473
+    },
+    {
+      "id": 300,
+      "manufacturer": "Volkswagen",
+      "model": "Passat B8",
+      "power": 180 ,
+      "price": 100,
+      "weight": 1505
+    },
+    {
+      "id": 301,
+      "manufacturer": "Volkswagen",
+      "model": "Polo Mk5",
+      "power": 125 ,
+      "price": 100,
+      "weight": 1217
+    },
+    {
+      "id": 302,
+      "manufacturer": "Volkswagen",
+      "model": "Scirocco Mk3",
+      "power": 210 ,
+      "price": 100,
+      "weight": 1393
+    },
+    {
+      "id": 303,
+      "manufacturer": "Volkswagen",
+      "model": "Teramont",
+      "power": 280 ,
+      "price": 100,
+      "weight": 2105
+    },
+    {
+      "id": 304,
+      "manufacturer": "Volkswagen",
+      "model": "Tiguan Mk 2",
+      "power": 220 ,
+      "price": 100,
+      "weight": 1696
+    },
+    {
+      "id": 305,
+      "manufacturer": "Volkswagen",
+      "model": "Touareg",
+      "power": 340 ,
+      "price": 100,
+      "weight": 2040
+    },
+    {
+      "id": 305,
+      "manufacturer": "Volvo",
+      "model": "XC90",
+      "power": 320,
+      "price": 100,
+      "weight": 2274
+    },
+    {
+      "id": 305,
+      "manufacturer": "Volvo",
+      "model": "XC70",
+      "power": 304,
+      "price": 100,
+      "weight": 1977
+    },
+    {
+      "id": 305,
+      "manufacturer": "Volvo",
+      "model": "S60",
+      "power": 249 ,
+      "price": 100,
+      "weight": 1677
+    },
+    {
+      "id": 305,
+      "manufacturer": "Volvo",
+      "model": "S90",
+      "power": 320,
+      "price": 100,
+      "weight": 1953
     }
   ]
 }
