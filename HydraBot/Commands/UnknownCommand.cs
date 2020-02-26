@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore.Update.Internal;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using HydraBot.Commands.Admin;
 using HydraBot.Commands.Casino;
 using HydraBot.Commands.Donate;
 using HydraBot.Commands.Friends;
@@ -216,6 +217,19 @@ namespace HydraBot.Commands
                     text = CarDonateCommand.CreateCar(msg.Text, user);
                 }
                 catch
+                {
+                    text = "❌ Произошла ошибка.";
+                }
+            }else if (command == "expDonate")
+            {
+                try
+                {
+                    var array = msg.Text.Split(" ");
+                    var power = long.Parse(array[0]);
+                    var weight = long.Parse(array[1]);
+
+                    text = AcceptCustomCarCommand.SetParams(power, weight, user, sender);
+                }catch
                 {
                     text = "❌ Произошла ошибка.";
                 }

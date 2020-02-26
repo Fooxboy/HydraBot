@@ -8,6 +8,7 @@ using HydraBot.Commands;
 using HydraBot.Commands.Admin;
 using HydraBot.Commands.Bank;
 using HydraBot.Commands.Casino;
+using HydraBot.Commands.Donate;
 using HydraBot.Commands.DrivingSchool;
 using HydraBot.Commands.Friends;
 using HydraBot.Commands.Gang;
@@ -163,7 +164,11 @@ namespace HydraBot
                 new UnBanCommand(),
                 new GetIdCommand(),
                 new BansCommand(),
-                new DonateCommand());
+                new DonateCommand(),
+                new CarDonateCommand(),
+                new ExpDonateCommand(),
+                new MoneyDonateCommand(),
+                new VipDonateCommand());
 
             //Установка сервисов.
             _bot.SetServices(
