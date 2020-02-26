@@ -239,9 +239,12 @@ namespace HydraBot.Commands.Race
                     {
                         if (!isFriendStart)
                         {
+                            //Добавляем опыта и денег победителю.
                             var winnerLocal = db.Users.Single(u => u.Id == winner.Id);
-                            winnerLocal.Money += 1000;
-                            winnerLocal.Score += winnerLocal.Level * 50;
+                            int factor = 1;
+                            if (winnerLocal.Access >= 1) factor = 2;
+                            winnerLocal.Money += (1000 * factor);
+                            winnerLocal.Score += (winnerLocal.Level * 50 * factor);
                         }
                         
                     }
@@ -270,8 +273,8 @@ namespace HydraBot.Commands.Race
                         var kb1 = new KeyboardBuilder(bot);
                         kb1.AddButton("🏁 Назад в гонки", "race");
                         var t = isFriendStart
-                            ? "🎉 Поздравляю с победой  над смвоим другом!"
-                            : $"🎉 Поздравляю с победой! Вы получили: 💵 1.000 рублей и ⭐ {winner.Level * 50} опыта";
+                            ? "🎉 Поздравляю с победой  над своим другом!"
+                            : $"🎉 Поздравляю с победой! Вы получили: 💵 {(winner.Access >=1? "2.000": "1.000")} рублей и ⭐ {(winner.Access >=1? $"{winner.Level * 50}": $"{winner.Level * 50* 2}")} опыта";
                         sender.Text(
                             t,
                             winner.Id == userEnemy.Id ? enemyChatId : creatorChatId, kb1.Build());
