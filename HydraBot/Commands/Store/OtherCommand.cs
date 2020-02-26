@@ -15,6 +15,7 @@ namespace HydraBot.Commands.Store
 
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
+            var user = Main.Api.Users.GetUser(msg);
             if (Main.Api.Users.IsBanned(msg)) return;
 
             if (!Main.Api.Users.CheckUser(msg))
@@ -34,6 +35,8 @@ namespace HydraBot.Commands.Store
                 $"\n 🗄 Автомобильный номер" +
                 $"\n 💵  Цена: 10.000 руб.";
 
+            if (user.Access >= 1) text += "📟 Собственный номер телефона (Доступно только VIP)";
+
             var kb = new KeyboardBuilder(bot);
             if(!garage.IsPhone)
             {
@@ -44,6 +47,11 @@ namespace HydraBot.Commands.Store
             kb.AddLine();
             kb.AddButton("🗄 Купить автомобильный номер", "buycarnumber");
             kb.AddLine();
+            if (user.Access >= 1)
+            {
+                kb.AddButton("📟 Купить собственный номер телефона", "buyitem", new List<string>() {"3"});
+                kb.AddLine();
+            }
             kb.AddButton("↩ Назад в магазин", "store");
             sender.Text(text, msg.ChatId, kb.Build());
         }

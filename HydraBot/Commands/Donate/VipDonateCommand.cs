@@ -14,9 +14,12 @@ namespace HydraBot.Commands.Donate
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
             var user = Main.Api.Users.GetUser(msg);
+            var text = string.Empty;
+            var kb = new KeyboardBuilder(bot);
+
             if (msg.Payload.Arguments[0] == "0")
             {
-                var text = "👑 VIP привелегия:" +
+                 text = "👑 VIP привелегия:" +
                            "\n ❓ У вас появится возможность:" +
                            "\n ✒ Максимально символов в нике - 20." +
                            "\n 💳 Вклады в банке до 75 млн." +
@@ -25,15 +28,12 @@ namespace HydraBot.Commands.Donate
                            "\n 💰 Получение Х2 приза в гонках" +
                            "\n" +
                            "\n ✔ Цена: 45 донат рублей.";
-                var kb = new KeyboardBuilder(bot);
+                 kb = new KeyboardBuilder(bot);
                 kb.AddButton("💲 Купить", "vipDonate", new List<string>(){"1"}, color: KeyboardButtonColor.Positive);
                 kb.AddLine();
-                kb.AddButton("👑 В раздел донатов", "donate");
-                sender.Text(text, msg.ChatId, kb.Build());
             }
             else
             {
-                var text = string.Empty;
 
                 if (user.DonateMoney < 45) text = "❌ У Вас недостаточно донат рублей для покупки.";
                 else
@@ -53,15 +53,13 @@ namespace HydraBot.Commands.Donate
                         text = "👑 Поздравляю с покупкой! Вы теперь VIP!";
                     }
                 }
-                
-                var kb = new KeyboardBuilder(bot);
-                kb.AddButton("↩ К донатам", "donate");
-                kb.AddLine();
-                kb.AddButton(ButtonsHelper.ToHomeButton());
-                
-                sender.Text(text, msg.ChatId, kb.Build());
-
             }
+            
+            kb.AddButton("↩ К донатам", "donate");
+            kb.AddLine();
+            kb.AddButton(ButtonsHelper.ToHomeButton());
+                
+            sender.Text(text, msg.ChatId, kb.Build());
             
         }
 
@@ -69,7 +67,7 @@ namespace HydraBot.Commands.Donate
         {
         }
 
-        public string Command => "vipDonateCommand";
+        public string Command => "vipDonate";
         public string[] Aliases => new string[0];
     }
 }

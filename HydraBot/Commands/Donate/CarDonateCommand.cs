@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Fooxboy.NucleusBot;
 using Fooxboy.NucleusBot.Interfaces;
 using Fooxboy.NucleusBot.Models;
 using HydraBot.Helpers;
@@ -15,6 +16,12 @@ namespace HydraBot.Commands.Donate
                        "\n ❓ Заявка на автомобиль отправляется модераторам и они подберут для Вас мощность и вес двигателя." +
                        "\n ❓ Стоимость авто: 30 донат рублей.";
             UsersCommandHelper.GetHelper().Add("carDonate", user.Id);
+            
+            var kb = new KeyboardBuilder(bot);
+            
+            kb.AddButton("↩ К донатам", "donate");
+            
+            sender.Text(text, msg.ChatId, kb.Build());
 
         }
 

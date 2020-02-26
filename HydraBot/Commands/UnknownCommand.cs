@@ -199,7 +199,7 @@ namespace HydraBot.Commands
                 {
                     text = "❌ Произошла ошибка.";
                 }
-            }else if (command == "expDonate")
+            }else if (command == "vipDonateBuy")
             {
                 try
                 {

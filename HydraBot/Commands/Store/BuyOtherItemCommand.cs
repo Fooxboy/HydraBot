@@ -57,6 +57,9 @@ namespace HydraBot.Commands.Store
                     db.SaveChanges();
                     text = $"✔ Вы купили сим карту. Ваш номер телефона: {gar.PhoneNumber}";
                 }
+            }else if (item == 3)
+            {
+                text = "❓ Укажите желаемый номер телефона (6 цифр):";
             }
 
             var kb = new KeyboardBuilder(bot);
