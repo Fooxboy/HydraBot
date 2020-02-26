@@ -76,7 +76,9 @@ namespace HydraBot.Commands.Store
 
             using (var db = new Database())
             {
+                if (db.Garages.Any(g => g.PhoneNumber == number)) return "❌ Данный номер телефона уже занят.";
                 var gar = db.Garages.Single(g => g.UserId == user.Id);
+                
                 gar.PhoneNumber = number;
                 db.SaveChanges();
                 return $"✔ Вы купили сим карту. Ваш номер телефона: {gar.PhoneNumber}";
