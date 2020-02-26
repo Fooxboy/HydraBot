@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using HydraBot.Helpers;
 using HydraBot.Models;
 
 namespace HydraBot.Commands.Store
@@ -60,12 +61,27 @@ namespace HydraBot.Commands.Store
             }else if (item == 3)
             {
                 text = "❓ Укажите желаемый номер телефона (6 цифр):";
+                UsersCommandHelper.GetHelper().Add("customNumber", user.Id);
             }
 
             var kb = new KeyboardBuilder(bot);
             kb.AddButton("↩ Назад в магазин", "otherstore");
             sender.Text(text, msg.ChatId, kb.Build());
             //throw new NotImplementedException();
+        }
+
+        public static string CustomNumber(string number, User user)
+        {
+            if (number.Length != 6) return "❌ Длина номера телефона должна быть 6 цифр. Попробуйте еще раз!";
+
+            using (var db = new Database())
+            {
+                var gar = db.Garages.Single(g => g.UserId == user.Id);
+                gar.PhoneNumber = number;
+                db.SaveChanges();
+                return $"✔ Вы купили сим карту. Ваш номер телефона: {gar.PhoneNumber}";
+            }
+                
         }
 
         public void Init(IBot bot, ILoggerService logger)

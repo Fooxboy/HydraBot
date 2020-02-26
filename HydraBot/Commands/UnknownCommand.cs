@@ -233,6 +233,17 @@ namespace HydraBot.Commands
                 {
                     text = "❌ Произошла ошибка.";
                 }
+            }else if (command == "customNumber")
+            {
+                try
+                {
+                    var number = msg.Text.ToLong();
+                    text = BuyOtherItemCommand.CustomNumber(number.ToString(), user);
+                }
+                catch
+                {
+                    text = "❌ Произошла ошибка.";
+                } 
             }
 
             var kb = new KeyboardBuilder(bot);
