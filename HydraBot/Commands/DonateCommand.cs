@@ -27,6 +27,7 @@ namespace HydraBot.Commands
             kb.AddButton("🏎 Кастомный авто", "carDonate", new List<string>() {"0"});
             kb.AddLine();
             kb.AddButton(ButtonsHelper.ToHomeButton());
+            sender.Text(text, msg.ChatId, kb.Build());
         }
 
         public void Init(IBot bot, ILoggerService logger)

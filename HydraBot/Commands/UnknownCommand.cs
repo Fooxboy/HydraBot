@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using HydraBot.Commands.Casino;
+using HydraBot.Commands.Donate;
 using HydraBot.Commands.Friends;
 using HydraBot.Commands.Gang;
 using HydraBot.Commands.Garage;
@@ -192,6 +193,17 @@ namespace HydraBot.Commands
                 {
                     var count = msg.Text.ToLong();
                     text = ExchangeChipsCommand.ExchangeChips(user, count);
+                }
+                catch
+                {
+                    text = "❌ Произошла ошибка.";
+                }
+            }else if (command == "expDonate")
+            {
+                try
+                {
+                    var count = msg.Text.ToLong();
+                    text = ExpDonateCommand.BuyExp(count, user);
                 }
                 catch
                 {
