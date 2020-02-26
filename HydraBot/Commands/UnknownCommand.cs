@@ -209,6 +209,16 @@ namespace HydraBot.Commands
                 {
                     text = "❌ Произошла ошибка.";
                 }
+            }else if (command == "carDonate")
+            {
+                try
+                {
+                    text = CarDonateCommand.CreateCar(msg.Text, user);
+                }
+                catch
+                {
+                    text = "❌ Произошла ошибка.";
+                }
             }
 
             var kb = new KeyboardBuilder(bot);

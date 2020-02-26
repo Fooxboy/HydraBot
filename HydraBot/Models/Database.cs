@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using HydraBot.Commands.Donate;
 
 namespace HydraBot.Models
 {
@@ -59,6 +60,10 @@ namespace HydraBot.Models
         /// Промокоды
         /// </summary>
         public DbSet<Promocode> Promocodes { get; set; }
+        /// <summary>
+        /// Кастомные автомобили
+        /// </summary>
+        public DbSet<CustomCar> CustomCars { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
