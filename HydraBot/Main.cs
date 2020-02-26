@@ -168,7 +168,11 @@ namespace HydraBot
                 new CarDonateCommand(),
                 new ExpDonateCommand(),
                 new MoneyDonateCommand(),
-                new VipDonateCommand());
+                new VipDonateCommand(),
+                new AcceptCustomCarCommand(),
+                new CustomCarsActionsCommand(),
+                new CustomCarsPanelCommand(),
+                new RejectCustomCarCommand());
 
             //Установка сервисов.
             _bot.SetServices(
