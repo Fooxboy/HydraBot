@@ -162,7 +162,8 @@ namespace HydraBot
                 new BanCommand(),
                 new UnBanCommand(),
                 new GetIdCommand(),
-                new BansCommand());
+                new BansCommand(),
+                new DonateCommand());
 
             //Установка сервисов.
             _bot.SetServices(

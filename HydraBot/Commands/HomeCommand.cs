@@ -53,6 +53,8 @@ namespace HydraBot.Commands
             kb.AddLine();
             kb.AddButton("🎲 Казино", "casino");
             kb.AddButton("⚙ Настройки", "settings");
+            kb.AddLine();
+            kb.AddButton("👑 Донат", "donate", color: KeyboardButtonColor.Primary);
 
             sender.Text(text, msg.ChatId, kb.Build());
         }
