@@ -44,7 +44,7 @@ namespace HydraBot.Commands
             if(command == "")
             {
                 if (msg.ChatId > 2000000000) return;
-                sender.Text("Неизвестная команда", msg.ChatId);
+                sender.Text("❌ Неизвестная команда", msg.ChatId);
                 return;
             }else if(command == "putrawmoney")
             {
@@ -251,9 +251,10 @@ namespace HydraBot.Commands
                     var textMsg = msg.Text;
                     text = ChatCommand.Send(textMsg, user, sender);
                 }
-                catch
+                catch(Exception e)
                 {
-                    text = "❌ Произошла ошибка.";
+                    text = $"❌ Произошла ошибка. {e}";
+                    
                 } 
             }else if (command == "newChatCreate")
             {
