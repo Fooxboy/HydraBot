@@ -28,17 +28,7 @@ namespace HydraBot.Commands
                     return;
                 }
 
-                if (db.MessagesInfo.Any(m => m.UserId == user.Id))
-                {
-                    var info = db.MessagesInfo.Single(m => m.UserId == user.Id);
-                    var lastMessages = info.LastMessageUsers;
-                    lastMessages += $"{gar.UserId};";
-                }
-                else
-                {
-                    db.MessagesInfo.Add(new MessageInfo()
-                        {UserId = user.Id, LastMessageText = "", LastMessageUsers = $"{gar.UserId}"});
-                }
+                
                 var garage = db.Garages.Single(g => g.UserId == user.Id);
                 var usr = db.Users.Single(u => u.Id == gar.UserId);
                 text += $"[{usr.Prefix}] {usr.Name}";

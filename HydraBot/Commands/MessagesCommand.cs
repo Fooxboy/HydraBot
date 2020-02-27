@@ -27,6 +27,8 @@ namespace HydraBot.Commands
                     
                     foreach (var userId in userIds)
                     {
+                        if(userId == "") break;
+                        
                         var usr = db.Users.Single(u => u.Id == userId.ToLong());
                         var gar = db.Garages.Single(g => g.UserId == usr.Id);
                         text += $"✒ ({gar.PhoneNumber}) [{usr.Prefix}] {usr.Name}";
