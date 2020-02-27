@@ -23,7 +23,7 @@ namespace HydraBot.ConsoleShell
             while (true)
             {
                 Console.WriteLine();
-                Console.Write("Введите команду: ");
+               // Console.Write("Введите команду: ");
                 var text = Console.ReadLine();
                 consoleProccessor.Start(text);
             }

@@ -40,6 +40,7 @@ namespace HydraBot.Commands
             var user = Main.Api.Users.GetUser(msg);
             var command = UsersCommandHelper.GetHelper().Get(user.Id);
 
+            //TODO: написать с использованием команд-менеджера.
             var text = string.Empty;
             if(command == "")
             {
@@ -48,7 +49,6 @@ namespace HydraBot.Commands
                 return;
             }else if(command == "putrawmoney")
             {
-                
                 long count;
                 try
                 {
