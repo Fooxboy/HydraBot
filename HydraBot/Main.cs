@@ -172,7 +172,10 @@ namespace HydraBot
                 new AcceptCustomCarCommand(),
                 new CustomCarsActionsCommand(),
                 new CustomCarsPanelCommand(),
-                new RejectCustomCarCommand());
+                new RejectCustomCarCommand(),
+                new MessagesCommand(),
+                new ChatCommand(),
+                new NewChatCommand());
 
             //Установка сервисов.
             _bot.SetServices(

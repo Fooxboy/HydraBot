@@ -47,7 +47,8 @@ namespace HydraBot.Commands
             var chatTemp = ChatsTemp.Single(u => u.UserId == user.Id);
 
             var usrSend = Main.Api.Users.GetUserFromId(chatTemp.ChatUserId);
-            sender.Text($"✉ ({chatTemp.NumberUser}) {user.Name}: {text}", usrSend.VkId);
+            sender.Text($"✉ ({chatTemp.NumberUser}) {user.Name}: {text}" +
+                        $"\n ❓ Чтобы ответить, перейдите в меню телефона - сообщения", usrSend.VkId);
             return "✔ Сообщение отправлено";
         }
 

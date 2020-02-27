@@ -244,6 +244,28 @@ namespace HydraBot.Commands
                 {
                     text = "❌ Произошла ошибка.";
                 } 
+            }else if (command == "chatSend")
+            {
+                try
+                {
+                    var textMsg = msg.Text;
+                    text = ChatCommand.Send(textMsg, user, sender);
+                }
+                catch
+                {
+                    text = "❌ Произошла ошибка.";
+                } 
+            }else if (command == "newChatCreate")
+            {
+                try
+                {
+                    var number = msg.Text;
+                    text = NewChatCommand.CreateChat(number, user, sender, bot);
+                }
+                catch
+                {
+                    text = "❌ Произошла ошибка.";
+                } 
             }
 
             var kb = new KeyboardBuilder(bot);
