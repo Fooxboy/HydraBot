@@ -38,6 +38,7 @@ namespace HydraBot.Commands.Race
             kb.AddButton("➖ Удалить друга", "removefriend", color: KeyboardButtonColor.Negative);
             kb.AddLine();
             kb.AddButton("⚠ Запросы в друзья", "requestfriends");
+            kb.AddButton("✉ Сообщения", "messages");
             kb.AddLine();
             kb.AddButton("❌ Закрыть меню", "openphone");
             

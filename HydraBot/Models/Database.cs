@@ -64,6 +64,10 @@ namespace HydraBot.Models
         /// Кастомные автомобили
         /// </summary>
         public DbSet<CustomCar> CustomCars { get; set; }
+        /// <summary>
+        /// Информация о сообщениях
+        /// </summary>
+        public DbSet<MessageInfo> MessagesInfo { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
