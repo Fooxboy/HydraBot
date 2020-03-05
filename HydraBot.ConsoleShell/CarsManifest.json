@@ -5,7 +5,7 @@
       "manufacturer": "Aston Martin",
       "model": "DB11",
       "power": 608,
-      "price": 100,
+      "price": 11000000,
       "weight": 1875
     },
     {
@@ -13,7 +13,7 @@
       "manufacturer": "Aston Martin",
       "model": "DB9",
       "power": 510,
-      "price": 100,
+      "price": 4500000,
       "weight": 1890
     },
     {
@@ -21,7 +21,7 @@
       "manufacturer": "Aston Martin",
       "model": "DBS",
       "power": 517,
-      "price": 100,
+      "price": 8000000,
       "weight": 1693
     },
     {
@@ -29,7 +29,7 @@
       "manufacturer": "Aston Martin",
       "model": "Rapide",
       "power": 560,
-      "price": 100,
+      "price": 6300000,
       "weight": 1990
     },
     {
@@ -37,7 +37,7 @@
       "manufacturer": "Aston Martin",
       "model": "Vanquish",
       "power": 568,
-      "price": 100,
+      "price": 10650000,
       "weight": 1844
     },
     {
@@ -45,7 +45,7 @@
       "manufacturer": "Aston Martin",
       "model": "Vantage",
       "power": 573,
-      "price": 100,
+      "price": 13700000,
       "weight": 1665
     },
     {
@@ -53,63 +53,63 @@
       "manufacturer": "Aston Martin",
       "model": "Virage",
       "power": 497,
-      "price": 100,
+      "price": 6000000,
       "weight": 1785
     },
     {
       "id": 7,
       "manufacturer": "Audi",
-      "model": "A4 B8 (S4)",
-      "power": 272,
-      "price": 100,
-      "weight": 1680
+      "model": "S4 B8",
+      "power": 333,
+      "price": 1000000,
+      "weight": 1780
     },
     {
       "id": 8,
       "manufacturer": "Audi",
       "model": "A4 allroad B8",
       "power": 225,
-      "price": 100,
+      "price": 1200000,
       "weight": 1725
     },
     {
       "id": 9,
       "manufacturer": "Audi",
-      "model": "A5 8T",
-      "power": 272,
-      "price": 100,
-      "weight": 1790
+      "model": "S5 8T",
+      "power": 333,
+      "price": 1450000,
+      "weight": 1820
     },
     {
       "id": 10,
       "manufacturer": "Audi",
-      "model": "A6 C7",
-      "power": 333,
-      "price": 100,
-      "weight": 1825
+      "model": "S6 C7",
+      "power": 450,
+      "price": 1350000,
+      "weight": 1970
     },
     {
       "id": 11,
       "manufacturer": "Audi",
       "model": "A6 allroad C7",
       "power": 310,
-      "price": 100,
+      "price": 1550000,
       "weight": 1930
     },
     {
       "id": 12,
       "manufacturer": "Audi",
-      "model": "A7",
-      "power": 333,
-      "price": 100,
-      "weight": 1885
+      "model": "S7",
+      "power": 450,
+      "price": 3000000,
+      "weight": 2030
     },
     {
       "id": 13,
       "manufacturer": "Audi",
       "model": "A8",
       "power": 500,
-      "price": 100,
+      "price": 1700000,
       "weight": 2170
     },
     {
@@ -117,7 +117,7 @@
       "manufacturer": "Audi",
       "model": "Q5",
       "power": 272,
-      "price": 100,
+      "price": 1200000,
       "weight": 1935
     },
     {
@@ -125,7 +125,7 @@
       "manufacturer": "Audi",
       "model": "Q7 4L",
       "power": 500,
-      "price": 100,
+      "price": 1550000,
       "weight": 2710
     },
     {
@@ -133,7 +133,7 @@
       "manufacturer": "Audi",
       "model": "Q8 SUV",
       "power": 340,
-      "price": 100,
+      "price": 6000000,
       "weight": 2155
     },
     {
@@ -141,7 +141,7 @@
       "manufacturer": "Audi",
       "model": "RS4 B8",
       "power": 450,
-      "price": 100,
+      "price": 2000000,
       "weight": 1870
     },
     {
@@ -149,7 +149,7 @@
       "manufacturer": "Audi",
       "model": "RS5 8T",
       "power": 450,
-      "price": 100,
+      "price": 1400000,
       "weight": 1790
     },
     {
@@ -157,7 +157,7 @@
       "manufacturer": "Audi",
       "model": "RS6 C7",
       "power": 605,
-      "price": 100,
+      "price": 3200000,
       "weight": 2025
     },
     {
@@ -165,7 +165,7 @@
       "manufacturer": "Audi",
       "model": "RS7 4G",
       "power": 605,
-      "price": 100,
+      "price": 4560000,
       "weight": 2005
     },
     {
@@ -173,7 +173,7 @@
       "manufacturer": "Audi",
       "model": "R8 4S",
       "power": 610,
-      "price": 100,
+      "price": 7000000,
       "weight": 1670
     },
     {
@@ -181,7 +181,7 @@
       "manufacturer": "Audi",
       "model": "TT 8S",
       "power": 230,
-      "price": 100,
+      "price": 1750000,
       "weight": 1410
     },
     {
@@ -189,7 +189,7 @@
       "manufacturer": "Audi",
       "model": "TT RS 8J",
       "power": 360,
-      "price": 100,
+      "price": 1800000,
       "weight": 1550
     },
     {
@@ -197,7 +197,7 @@
       "manufacturer": "Audi",
       "model": "TTS 8S",
       "power": 310,
-      "price": 100,
+      "price": 2200000,
       "weight": 1460
     },
     {
@@ -205,7 +205,7 @@
       "manufacturer": "Audi",
       "model": "quattro S1",
       "power": 600,
-      "price": 100,
+      "price": 7900000,
       "weight": 1090
     },
     {
@@ -213,7 +213,7 @@
       "manufacturer": "BMW",
       "model": "1M",
       "power": 340,
-      "price": 100,
+      "price": 2300000,
       "weight": 1900
     },
     {
@@ -221,7 +221,7 @@
       "manufacturer": "BMW",
       "model": "2-Series F22",
       "power": 340,
-      "price": 100,
+      "price": 2800000,
       "weight": 1565
     },
     {
@@ -229,7 +229,7 @@
       "manufacturer": "BMW",
       "model": "M2 F87",
       "power": 410,
-      "price": 100,
+      "price": 4000000,
       "weight": 1595
     },
     {
@@ -237,7 +237,7 @@
       "manufacturer": "BMW",
       "model": "3-Series G20",
       "power": 387,
-      "price": 100,
+      "price": 2750000,
       "weight": 1615
     },
     {
@@ -245,7 +245,7 @@
       "manufacturer": "BMW",
       "model": "M3 E30",
       "power": 215,
-      "price": 100,
+      "price": 1400000,
       "weight": 1200
     },
     {
@@ -253,7 +253,7 @@
       "manufacturer": "BMW",
       "model": "M3 E36",
       "power": 321,
-      "price": 100,
+      "price": 750000,
       "weight": 1530
     },
     {
@@ -261,7 +261,7 @@
       "manufacturer": "BMW",
       "model": "M3 E92",
       "power": 420,
-      "price": 100,
+      "price": 2900000,
       "weight": 1655
     },
     {
@@ -269,7 +269,7 @@
       "manufacturer": "BMW",
       "model": "4-Series F36",
       "power": 326,
-      "price": 100,
+      "price": 2500000,
       "weight": 1760
     },
     {
@@ -277,7 +277,7 @@
       "manufacturer": "BMW",
       "model": "M4 F82",
       "power": 450,
-      "price": 100,
+      "price": 4400000,
       "weight": 1612
     },
     {
@@ -285,7 +285,7 @@
       "manufacturer": "BMW",
       "model": "5-Series G30",
       "power": 462,
-      "price": 100,
+      "price": 5450000,
       "weight": 1920
     },
     {
@@ -293,39 +293,39 @@
       "manufacturer": "BMW",
       "model": "M5 F90",
       "power": 625,
-      "price": 100,
+      "price": 8000000,
       "weight": 1930
     },
     {
       "id": 37,
       "manufacturer": "BMW",
-      "model": "X5 F15",
-      "power": 450,
-      "price": 100,
-      "weight": 2305
+      "model": "X5M F85",
+      "power": 575,
+      "price": 3800000,
+      "weight": 2970
     },
     {
       "id": 38,
       "manufacturer": "BMW",
-      "model": "X6 F16",
-      "power": 450,
-      "price": 100,
-      "weight": 2260
+      "model": "X6M F86",
+      "power": 575,
+      "price": 3950000,
+      "weight": 2950
     },
     {
       "id": 39,
       "manufacturer": "BMW",
-      "model": "X7 G07",
-      "power": 340,
-      "price": 100,
-      "weight": 2445
+      "model": "X7M G07",
+      "power": 400,
+      "price": 10000000,
+      "weight": 2535
     },
     {
       "id": 40,
       "manufacturer": "BMW",
       "model": "6-Series E63",
       "power": 367,
-      "price": 100,
+      "price": 1000000,
       "weight": 1690
     },
     {
@@ -333,7 +333,7 @@
       "manufacturer": "BMW",
       "model": "M6 E63",
       "power": 507,
-      "price": 100,
+      "price": 1900000,
       "weight": 1785
     },
     {
@@ -341,7 +341,7 @@
       "manufacturer": "BMW",
       "model": "7-Series G12",
       "power": 609,
-      "price": 100,
+      "price": 9200000,
       "weight": 2255
     },
     {
@@ -349,7 +349,7 @@
       "manufacturer": "BMW",
       "model": "M8 F92",
       "power": 625,
-      "price": 100,
+      "price": 13000000,
       "weight": 1960
     },
     {
@@ -357,7 +357,7 @@
       "manufacturer": "Bugatti",
       "model": "Chiron",
       "power": 1500,
-      "price": 100,
+      "price": 190000000,
       "weight": 1996
     },
     {
@@ -365,7 +365,7 @@
       "manufacturer": "Bugatti",
       "model": "Veyron Super Sport",
       "power": 1200,
-      "price": 100,
+      "price": 118000000,
       "weight": 1838
     },
     {
@@ -373,7 +373,7 @@
       "manufacturer": "Cadillac",
       "model": "ATS",
       "power": 276,
-      "price": 100,
+      "price": 1000000,
       "weight": 1607
     },
     {
@@ -381,7 +381,7 @@
       "manufacturer": "Cadillac",
       "model": "CT6",
       "power": 335,
-      "price": 100,
+      "price": 4200000,
       "weight": 1834
     },
     {
@@ -389,7 +389,7 @@
       "manufacturer": "Cadillac",
       "model": "CTS",
       "power": 564,
-      "price": 100,
+      "price": 6000000,
       "weight": 1850
     },
     {
@@ -397,7 +397,7 @@
       "manufacturer": "Cadillac",
       "model": "Escalade GMT K2",
       "power": 426,
-      "price": 100,
+      "price": 5500000,
       "weight": 2800
     },
     {
@@ -405,7 +405,7 @@
       "manufacturer": "Chevrolet",
       "model": "Camaro 2015",
       "power": 238,
-      "price": 100,
+      "price": 2200000,
       "weight": 1671
     },
     {
@@ -413,23 +413,23 @@
       "manufacturer": "Chevrolet",
       "model": "Corvette C7",
       "power": 659,
-      "price": 100,
+      "price": 6350000,
       "weight": 1734
     },
     {
       "id": 52,
       "manufacturer": "Chevrolet",
-      "model": "Cruze J300",
+      "model": "Cruze",
       "power": 141,
-      "price": 100,
+      "price": 400000,
       "weight": 1385
     },
     {
       "id": 53,
       "manufacturer": "Chevrolet",
-      "model": "Lacetti J200",
+      "model": "Lacetti",
       "power": 122,
-      "price": 100,
+      "price": 250000,
       "weight": 1250
     },
     {
@@ -437,31 +437,31 @@
       "manufacturer": "Chevrolet",
       "model": "Niva 21236",
       "power": 80,
-      "price": 100,
+      "price": 265000,
       "weight": 1410
     },
     {
       "id": 55,
       "manufacturer": "Chevrolet",
       "model": "Suburban GMT900",
-      "power": 335,
-      "price": 100,
+      "power": 359,
+      "price": 1700000,
       "weight": 2910
     },
     {
       "id": 56,
       "manufacturer": "Chevrolet",
-      "model": "Tahoe K2UC",
+      "model": "Tahoe",
       "power": 426,
-      "price": 100,
+      "price": 3100000,
       "weight": 2788
     },
     {
       "id": 57,
       "manufacturer": "Dodge",
       "model": "Challenger SRT Hellcat",
-      "power": 707,
-      "price": 100,
+      "power": 717,
+      "price": 6000000,
       "weight": 2018
     },
     {
@@ -469,7 +469,7 @@
       "manufacturer": "Dodge",
       "model": "Ram",
       "power": 395,
-      "price": 100,
+      "price": 3250000,
       "weight": 2455
     },
     {
@@ -477,7 +477,7 @@
       "manufacturer": "Dodge",
       "model": "Viper 2010",
       "power": 608,
-      "price": 100,
+      "price": 7950000,
       "weight": 1556
     },
     {
@@ -485,7 +485,7 @@
       "manufacturer": "Ferrari",
       "model": "458 Italia",
       "power": 570,
-      "price": 100,
+      "price": 8400000,
       "weight": 1380
     },
     {
@@ -493,7 +493,7 @@
       "manufacturer": "Ferrari",
       "model": "488 GTB",
       "power": 670,
-      "price": 100,
+      "price": 9350000,
       "weight": 1475
     },
     {
@@ -501,7 +501,7 @@
       "manufacturer": "Ferrari",
       "model": "599 GTO",
       "power": 680,
-      "price": 100,
+      "price": 9100000,
       "weight": 1495
     },
     {
@@ -509,7 +509,7 @@
       "manufacturer": "Ferrari",
       "model": "812 Superfast",
       "power": 800,
-      "price": 100,
+      "price": 23000000,
       "weight": 1630
     },
     {
@@ -517,7 +517,7 @@
       "manufacturer": "Ferrari",
       "model": "California T",
       "power": 560,
-      "price": 100,
+      "price": 10500000,
       "weight": 1625
     },
     {
@@ -525,15 +525,15 @@
       "manufacturer": "Ferrari",
       "model": "Enzo Ferrari",
       "power": 660,
-      "price": 100,
+      "price": 129000000,
       "weight": 1255
     },
     {
       "id": 66,
       "manufacturer": "Ferrari",
-      "model": "F12 Berlinetta",
+      "model": "F12berlinetta",
       "power": 740,
-      "price": 100,
+      "price": 10950000,
       "weight": 1630
     },
     {
@@ -541,23 +541,15 @@
       "manufacturer": "Ferrari",
       "model": "F8 Tributo",
       "power": 720,
-      "price": 100,
+      "price": 20000000,
       "weight": 1435
-    },
-    {
-      "id": 68,
-      "manufacturer": "Ferrari",
-      "model": "458 Italia",
-      "power": 570,
-      "price": 100,
-      "weight": 1380
     },
     {
       "id": 69,
       "manufacturer": "Ferrari",
       "model": "FF",
       "power": 660,
-      "price": 100,
+      "price": 8000000,
       "weight": 1880
     },
     {
@@ -565,23 +557,23 @@
       "manufacturer": "Ferrari",
       "model": "GTC4Lusso",
       "power": 690,
-      "price": 100,
+      "price": 21500000,
       "weight": 1920
     },
     {
       "id": 71,
       "manufacturer": "Ferrari",
       "model": "LaFerrari",
-      "power": 800,
-      "price": 100,
-      "weight": 1255
+      "power": 963,
+      "price": 94750000,
+      "weight": 1350
     },
     {
       "id": 72,
       "manufacturer": "Ferrari",
       "model": "Portofino",
       "power": 600,
-      "price": 100,
+      "price": 18550000,
       "weight": 1664
     },
     {
@@ -589,15 +581,15 @@
       "manufacturer": "Ferrari",
       "model": "SF90 Stradale",
       "power": 780,
-      "price": 100,
+      "price": 35000000,
       "weight": 1570
     },
     {
       "id": 74,
       "manufacturer": "Ford",
       "model": "Explorer",
-      "power": 360,
-      "price": 100,
+      "power": 345,
+      "price": 2000000,
       "weight": 2405
     },
     {
@@ -605,7 +597,7 @@
       "manufacturer": "Ford",
       "model": "F150",
       "power": 395,
-      "price": 100,
+      "price": 3000000,
       "weight": 2275
     },
     {
@@ -613,7 +605,7 @@
       "manufacturer": "Ford",
       "model": "Focus RS II",
       "power": 360,
-      "price": 100,
+      "price": 2500000,
       "weight": 2405
     },
     {
@@ -621,7 +613,7 @@
       "manufacturer": "Ford",
       "model": "Mondeo 5",
       "power": 149,
-      "price": 100,
+      "price": 1000000,
       "weight": 1550
     },
     {
@@ -629,7 +621,7 @@
       "manufacturer": "Ford",
       "model": "Mustang",
       "power": 526,
-      "price": 100,
+      "price": 6000000,
       "weight": 1725
     },
     {
@@ -637,39 +629,39 @@
       "manufacturer": "Ford",
       "model": "Taurus",
       "power": 292,
-      "price": 100,
+      "price": 1950000,
       "weight": 1903
     },
     {
       "id": 80,
       "manufacturer": "GMC",
       "model": "Yukon GMT400",
-      "power": 180,
-      "price": 100,
+      "power": 258,
+      "price": 400000,
       "weight": 2925
     },
     {
       "id": 81,
       "manufacturer": "Honda",
-      "model": "Accord CU1",
+      "model": "Accord",
       "power": 201,
-      "price": 100,
+      "price": 710000,
       "weight": 1607
     },
     {
       "id": 82,
       "manufacturer": "Honda",
-      "model": "Civic FN1",
+      "model": "Civic",
       "power": 140,
-      "price": 100,
+      "price": 415000,
       "weight": 1310
     },
     {
       "id": 83,
       "manufacturer": "Honda",
-      "model": " Civic Type R FN2",
+      "model": "Civic Type R FN2",
       "power": 201,
-      "price": 100,
+      "price": 600000,
       "weight": 1267
     },
     {
@@ -677,7 +669,7 @@
       "manufacturer": "Honda",
       "model": "NSX",
       "power": 507,
-      "price": 100,
+      "price": 10000000,
       "weight": 1780
     },
     {
@@ -685,23 +677,23 @@
       "manufacturer": "Honda",
       "model": "S2000",
       "power": 242,
-      "price": 100,
+      "price": 1000000,
       "weight": 1270
     },
     {
       "id": 86,
       "manufacturer": "Honda",
       "model": "Vigor",
-      "power": 110,
-      "price": 100,
+      "power": 165,
+      "price": 195000,
       "weight": 990
     },
     {
       "id": 87,
       "manufacturer": "Hummer",
-      "model": "H2 E85",
-      "power": 393,
-      "price": 100,
+      "model": "H2",
+      "power": 325,
+      "price": 1150000,
       "weight": 2900
     },
     {
@@ -709,71 +701,71 @@
       "manufacturer": "Hummer",
       "model": "H3",
       "power": 300,
-      "price": 100,
+      "price": 1100000,
       "weight": 2200
     },
     {
       "id": 89,
       "manufacturer": "Infiniti",
-      "model": "EX25 J50",
+      "model": "EX25 (J50)",
       "power": 222,
-      "price": 100,
+      "price": 1050000,
       "weight": 1842
     },
     {
       "id": 90,
       "manufacturer": "Infiniti",
-      "model": "EX35 J50",
+      "model": "EX35 (J50)",
       "power": 302,
-      "price": 100,
+      "price": 700000,
       "weight": 1480
     },
     {
       "id": 91,
       "manufacturer": "Infiniti",
-      "model": "EX37 J50",
+      "model": "EX37 (J50)",
       "power": 330,
-      "price": 100,
+      "price": 820000,
       "weight": 1870
     },
     {
       "id": 92,
       "manufacturer": "Infiniti",
-      "model": " FX30d S51",
+      "model": "FX30d (S51)",
       "power": 238,
-      "price": 100,
+      "price": 1400000,
       "weight": 2100
     },
     {
       "id": 93,
       "manufacturer": "Infiniti",
-      "model": "FX35 S50",
-      "power": 280,
+      "model": "FX35 (S50)",
+      "power": 307,
       "price": 100,
       "weight": 2080
     },
     {
       "id": 94,
       "manufacturer": "Infiniti",
-      "model": "FX37 S51",
+      "model": "FX37 (S51)",
       "power": 333,
-      "price": 100,
+      "price": 850000,
       "weight": 2023
     },
     {
       "id": 95,
       "manufacturer": "Infiniti",
-      "model": "FX45 S50",
+      "model": "FX45 (S50)",
       "power": 328,
-      "price": 100,
+      "price": 635000,
       "weight": 2080
     },
     {
       "id": 96,
       "manufacturer": "Infiniti",
-      "model": "FX50 S51",
+      "model": "FX50 (S51)",
       "power": 400,
-      "price": 100,
+      "price": 990000,
       "weight": 2107
     },
     {
@@ -781,23 +773,23 @@
       "manufacturer": "Infiniti",
       "model": "Q30",
       "power": 211,
-      "price": 100,
+      "price": 1590000,
       "weight": 1531
     },
     {
       "id": 98,
       "manufacturer": "Infiniti",
-      "model": "Q50 V37",
+      "model": "Q50",
       "power": 405,
-      "price": 100,
+      "price": 1950000,
       "weight": 1914
     },
     {
       "id": 99,
       "manufacturer": "Infiniti",
-      "model": "Q60 CV37",
+      "model": "Q60",
       "power": 405,
-      "price": 100,
+      "price": 2150000,
       "weight": 1914
     },
     {
@@ -805,39 +797,39 @@
       "manufacturer": "Infiniti",
       "model": "QX50",
       "power": 249,
-      "price": 100,
+      "price": 3100000,
       "weight": 1884
     },
     {
       "id": 101,
       "manufacturer": "Infiniti",
-      "model": "QX56 Z62",
+      "model": "QX56",
       "power": 405,
-      "price": 100,
+      "price": 1300000,
       "weight": 2800
     },
     {
       "id": 102,
       "manufacturer": "Infiniti",
-      "model": "QX60 L50",
+      "model": "QX60",
       "power": 283,
-      "price": 100,
+      "price": 3100000,
       "weight": 2132
     },
     {
       "id": 103,
       "manufacturer": "Infiniti",
-      "model": "QX70 S51",
-      "power": 400,
-      "price": 100,
+      "model": "QX70",
+      "power": 333,
+      "price": 1430000,
       "weight": 2107
     },
     {
       "id": 104,
       "manufacturer": "Infiniti",
-      "model": "QX80 Z62",
+      "model": "QX80",
       "power": 405,
-      "price": 100,
+      "price": 3250000,
       "weight": 2828
     },
     {
@@ -845,15 +837,15 @@
       "manufacturer": "Jaguar",
       "model": "F-Pace",
       "power": 550,
-      "price": 100,
+      "price": 6550000,
       "weight": 2070
     },
     {
       "id": 106,
       "manufacturer": "Jaguar ",
-      "model": "F-Type",
+      "model": "F-Type SVR",
       "power": 575,
-      "price": 100,
+      "price": 7200000,
       "weight": 1730
     },
     {
@@ -861,87 +853,87 @@
       "manufacturer": "Jaguar",
       "model": "I-Pace",
       "power": 400,
-      "price": 100,
+      "price": 6590000,
       "weight": 2133
     },
     {
       "id": 108,
       "manufacturer": "Jaguar",
-      "model": "XE X760",
+      "model": "XE",
       "power": 180,
-      "price": 100,
+      "price": 1450000,
       "weight": 1690
     },
     {
       "id": 109,
       "manufacturer": "Jaguar",
-      "model": "XF CC9",
-      "power": 380,
-      "price": 100,
+      "model": "XF",
+      "power": 340,
+      "price": 1300000,
       "weight": 1760
     },
     {
       "id": 110,
       "manufacturer": "Jaguar",
-      "model": "XJ X351",
-      "power": 510,
-      "price": 100,
+      "model": "XJ",
+      "power": 340,
+      "price": 1250000,
       "weight": 1885
     },
     {
       "id": 111,
       "manufacturer": "Jaguar",
-      "model": "XK X150",
-      "power": 550,
+      "model": "XK",
+      "power": 385,
       "price": 100,
       "weight": 1753
     },
     {
       "id": 112,
       "manufacturer": "Jeep",
-      "model": "Commander XK",
+      "model": "Commander",
       "power": 218,
-      "price": 100,
+      "price": 670000,
       "weight": 2345
     },
     {
       "id": 113,
       "manufacturer": "Jeep",
-      "model": "Compass MP MP522",
-      "power": 175,
-      "price": 100,
+      "model": "Compass",
+      "power": 170,
+      "price": 690000,
       "weight": 1644
     },
     {
       "id": 114,
       "manufacturer": "Jeep",
-      "model": "Grand Cherokee WK2 Trackhawk",
-      "power": 710,
-      "price": 100,
+      "model": "Grand Cherokee Trackhawk",
+      "power": 717,
+      "price": 8250000,
       "weight": 2418
     },
     {
       "id": 115,
       "manufacturer": "Jeep",
-      "model": "Renegade BU",
-      "power": 184,
-      "price": 100,
+      "model": "Renegade",
+      "power": 170,
+      "price": 2000000,
       "weight": 1395
     },
     {
       "id": 116,
       "manufacturer": "Jeep",
-      "model": "Wrangler JL",
+      "model": "Wrangler",
       "power": 272,
-      "price": 100,
+      "price": 3100000,
       "weight": 1819
     },
     {
       "id": 117,
       "manufacturer": "Kia",
-      "model": "Ceed JD",
-      "power": 204,
-      "price": 100,
+      "model": "Ceed",
+      "power": 130,
+      "price": 650000,
       "weight": 1429
     },
     {
@@ -949,79 +941,79 @@
       "manufacturer": "Kia",
       "model": "Cerato",
       "power": 150,
-      "price": 100,
+      "price": 735000,
       "weight": 1255
     },
     {
       "id": 119,
       "manufacturer": "Kia",
-      "model": "Cerato Koup TD",
+      "model": "Cerato Koup",
       "power": 150,
-      "price": 100,
+      "price": 725000,
       "weight": 1242
     },
     {
       "id": 120,
       "manufacturer": "Kia",
-      "model": "K900 RJ",
-      "power": 413,
-      "price": 100,
+      "model": "K900",
+      "power": 249,
+      "price": 3730000,
       "weight": 2195
     },
     {
       "id": 121,
       "manufacturer": "Kia",
-      "model": "Optima JF",
+      "model": "Optima",
       "power": 245,
-      "price": 100,
+      "price": 1200000,
       "weight": 1655
     },
     {
       "id": 122,
       "manufacturer": "Kia",
-      "model": "ProCeed CD",
+      "model": "Proceed",
       "power": 200,
-      "price": 100,
+      "price": 1650000,
       "weight": 1355
     },
     {
       "id": 123,
       "manufacturer": "Kia",
-      "model": "Quoris KH",
+      "model": "Quoris",
       "power": 424,
-      "price": 100,
+      "price": 3620000,
       "weight": 2145
     },
     {
       "id": 124,
       "manufacturer": "Kia",
-      "model": "Rio QB",
+      "model": "Rio",
       "power": 123,
-      "price": 100,
+      "price": 600000,
       "weight": 1145
     },
     {
       "id": 125,
       "manufacturer": "Kia",
-      "model": "Sorento UM",
-      "power": 249,
-      "price": 100,
+      "model": "Sorento Prime",
+      "power": 200,
+      "price": 1650000,
       "weight": 2032
     },
     {
       "id": 126,
       "manufacturer": "Kia",
-      "model": "Stinger CK",
+      "model": "Stinger",
       "power": 370,
-      "price": 100,
+      "price": 2180000,
       "weight": 1855
     },
     {
       "id": 127,
       "manufacturer": "Kia",
       "model": "Telluride",
-      "power": 295,
-      "price": 100,
+      "power": 291,
+      "price": 2350000,
       "weight": 1975
     },
     {
@@ -1029,7 +1021,7 @@
       "manufacturer": "Lamborghini",
       "model": "Aventador SVJ",
       "power": 770,
-      "price": 100,
+      "price": 32500000,
       "weight": 1525
     },
     {
@@ -1037,7 +1029,7 @@
       "manufacturer": "Lamborghini",
       "model": "Aventador J",
       "power": 700,
-      "price": 100,
+      "price": 95500000,
       "weight": 1425
     },
     {
@@ -1045,7 +1037,7 @@
       "manufacturer": "Lamborghini",
       "model": "Centenario",
       "power": 770,
-      "price": 100,
+      "price": 115000000,
       "weight": 1520
     },
     {
@@ -1053,7 +1045,7 @@
       "manufacturer": "Lamborghini",
       "model": "Countach",
       "power": 375,
-      "price": 100,
+      "price": 25200000,
       "weight": 1490
     },
     {
@@ -1061,7 +1053,7 @@
       "manufacturer": "Lamborghini",
       "model": "Gallardo Superleggera",
       "power": 570,
-      "price": 100,
+      "price": 17400000,
       "weight": 1340
     },
     {
@@ -1069,7 +1061,7 @@
       "manufacturer": "Lamborghini",
       "model": "Huracan Performante",
       "power": 640,
-      "price": 100,
+      "price": 19750000,
       "weight": 1480
     },
     {
@@ -1077,7 +1069,7 @@
       "manufacturer": "Lamborghini",
       "model": "Miura",
       "power": 385,
-      "price": 100,
+      "price": 79000000,
       "weight": 1245
     },
     {
@@ -1085,7 +1077,7 @@
       "manufacturer": "Lamborghini",
       "model": "Murcielago",
       "power": 640,
-      "price": 100,
+      "price": 11500000,
       "weight": 1550
     },
     {
@@ -1093,7 +1085,7 @@
       "manufacturer": "Lamborghini",
       "model": "Reventon",
       "power": 640,
-      "price": 100,
+      "price": 85000000,
       "weight": 1665
     },
     {
@@ -1101,7 +1093,7 @@
       "manufacturer": "Lamborghini",
       "model": "Sesto Elemento",
       "power": 570 ,
-      "price": 100,
+      "price": 195500000,
       "weight": 999
     },
     {
@@ -1109,7 +1101,7 @@
       "manufacturer": "Lamborghini",
       "model": "Urus",
       "power": 650,
-      "price": 100,
+      "price": 17000000,
       "weight": 2200
     },
     {
@@ -1117,7 +1109,7 @@
       "manufacturer": "Lamborghini",
       "model": "Veneno",
       "power": 750,
-      "price": 100,
+      "price": 210000000,
       "weight": 1450
     },
     {
@@ -1125,7 +1117,7 @@
       "manufacturer": "Land Rover",
       "model": "Discovery",
       "power": 340,
-      "price": 100,
+      "price": 5590000,
       "weight": 2230
     },
     {
@@ -1133,7 +1125,7 @@
       "manufacturer": "Land Rover",
       "model": "Discovery Sport",
       "power": 249,
-      "price": 100,
+      "price": 2850000,
       "weight": 1916
     },
     {
@@ -1141,7 +1133,7 @@
       "manufacturer": "Land Rover",
       "model": "Freelander",
       "power": 240,
-      "price": 100,
+      "price": 1100000,
       "weight": 1805
     },
     {
@@ -1149,15 +1141,15 @@
       "manufacturer": "Land Rover",
       "model": "Range Rover SVA",
       "power": 565,
-      "price": 100,
+      "price": 16000000,
       "weight": 2497
     },
     {
       "id": 144,
       "manufacturer": "Land Rover",
       "model": "Range Rover Evoque",
-      "power": 300,
-      "price": 100,
+      "power": 240,
+      "price": 1150000,
       "weight": 1925
     },
     {
@@ -1165,7 +1157,7 @@
       "manufacturer": "Land Rover",
       "model": "Range Rover Sport SVR",
       "power": 575,
-      "price": 100,
+      "price": 9600000,
       "weight": 2310
     },
     {
@@ -1173,47 +1165,47 @@
       "manufacturer": "Land Rover",
       "model": "Range Rover Velar SVA",
       "power": 550,
-      "price": 100,
+      "price": 8000000,
       "weight": 2160
     },
     {
       "id": 147,
       "manufacturer": "Lexus",
-      "model": "ES200 XV70",
+      "model": "ES200",
       "power": 150,
-      "price": 100,
+      "price": 1650000,
       "weight": 1700
     },
     {
       "id": 148,
       "manufacturer": "Lexus",
-      "model": "ES250 XV70",
+      "model": "ES250",
       "power": 200,
-      "price": 100,
+      "price": 2450000,
       "weight": 1695
     },
     {
       "id": 149,
       "manufacturer": "Lexus",
-      "model": "ES300h XV60",
+      "model": "ES300h",
       "power": 161,
-      "price": 100,
+      "price": 1500000,
       "weight": 1765
     },
     {
       "id": 150,
       "manufacturer": "Lexus",
-      "model": "ES350 XV70",
+      "model": "ES350",
       "power": 249,
-      "price": 100,
+      "price": 3560000,
       "weight": 1725
     },
     {
       "id": 151,
       "manufacturer": "Lexus",
-      "model": "GS F L10",
+      "model": "GS F",
       "power": 477,
-      "price": 100,
+      "price": 4100000,
       "weight": 1830
     },
     {
@@ -1221,103 +1213,103 @@
       "manufacturer": "Lexus",
       "model": "GS200t",
       "power": 245,
-      "price": 100,
+      "price": 1900000,
       "weight": 1690
     },
     {
       "id": 153,
       "manufacturer": "Lexus",
-      "model": "GS300h L10",
+      "model": "GS300h",
       "power": 178,
-      "price": 100,
+      "price": 2100000,
       "weight": 1770
     },
     {
       "id": 154,
       "manufacturer": "Lexus",
-      "model": "GS350 L10",
+      "model": "GS350",
       "power": 317,
-      "price": 100,
+      "price": 1690000,
       "weight": 1805
     },
     {
       "id": 155,
       "manufacturer": "Lexus",
-      "model": "GS450h L10",
+      "model": "GS450h",
       "power": 292,
-      "price": 100,
+      "price": 1340000,
       "weight": 1940
     },
     {
       "id": 156,
       "manufacturer": "Lexus",
-      "model": "GX460 J150",
+      "model": "GX460",
       "power": 296,
-      "price": 100,
+      "price": 2300000,
       "weight": 2450
     },
     {
       "id": 157,
       "manufacturer": "Lexus",
-      "model": "IS F XE20",
+      "model": "IS F",
       "power": 423,
-      "price": 100,
+      "price": 1600000,
       "weight": 1700
     },
     {
       "id": 158,
       "manufacturer": "Lexus",
-      "model": "IS200d XE20",
+      "model": "IS200d",
       "power": 150,
-      "price": 100,
+      "price": 750000,
       "weight": 1545
     },
     {
       "id": 159,
       "manufacturer": "Lexus",
-      "model": "IS200t XE30",
+      "model": "IS200t",
       "power": 245,
-      "price": 100,
+      "price": 1700000,
       "weight": 1680
     },
     {
       "id": 160,
       "manufacturer": "Lexus",
-      "model": "IS220d XE20",
+      "model": "IS220d",
       "power": 177,
-      "price": 100,
+      "price": 790000,
       "weight": 1545
     },
     {
       "id": 161,
       "manufacturer": "Lexus",
-      "model": "IS250 XE30",
+      "model": "IS250",
       "power": 208,
-      "price": 100,
+      "price": 750000,
       "weight": 1660
     },
     {
       "id": 162,
       "manufacturer": "Lexus",
-      "model": "IS300 XE30",
+      "model": "IS300",
       "power": 245,
-      "price": 100,
+      "price": 2200000,
       "weight": 1665
     },
     {
       "id": 163,
       "manufacturer": "Lexus",
-      "model": "IS300h XE30",
+      "model": "IS300h",
       "power": 181,
-      "price": 100,
+      "price": 1400000,
       "weight": 1695
     },
     {
       "id": 164,
       "manufacturer": "Lexus",
       "model": "IS350",
-      "power": 318,
-      "price": 100,
+      "power": 306,
+      "price": 1750000,
       "weight": 1650
     },
     {
@@ -1325,95 +1317,95 @@
       "manufacturer": "Lexus",
       "model": "LC500",
       "power": 477,
-      "price": 100,
+      "price": 4790000,
       "weight": 2010
     },
     {
       "id": 166,
       "manufacturer": "Lexus",
-      "model": "LFA A10",
+      "model": "LFA",
       "power": 560,
-      "price": 100,
+      "price": 19350000,
       "weight": 1480
     },
     {
       "id": 167,
       "manufacturer": "Lexus",
-      "model": "LS350 XF50",
+      "model": "LS350",
       "power": 315,
-      "price": 100,
+      "price": 5850000,
       "weight": 2135
     },
     {
       "id": 168,
       "manufacturer": "Lexus",
-      "model": "LS460 XF40",
-      "power": 388,
-      "price": 100,
+      "model": "LS460",
+      "power": 380,
+      "price": 900000,
       "weight": 2200
     },
     {
       "id": 169,
       "manufacturer": "Lexus",
-      "model": "LS460L XF40",
+      "model": "LS460L",
       "power": 370,
-      "price": 100,
+      "price": 1800000,
       "weight": 2295
     },
     {
       "id": 170,
       "manufacturer": "Lexus",
-      "model": "LS500 XF50",
+      "model": "LS500",
       "power": 421,
-      "price": 100,
+      "price": 4950000,
       "weight": 2320
     },
     {
       "id": 171,
       "manufacturer": "Lexus",
-      "model": "LS600h XF40",
+      "model": "LS600h",
       "power": 394,
-      "price": 100,
+      "price": 3210000,
       "weight": 2345
     },
     {
       "id": 172,
       "manufacturer": "Lexus",
-      "model": "LX450d J200",
+      "model": "LX450d",
       "power": 272,
-      "price": 100,
+      "price": 4550000,
       "weight": 2585
     },
     {
       "id": 173,
       "manufacturer": "Lexus",
-      "model": "LX470 J100",
+      "model": "LX470",
       "power": 234,
-      "price": 100,
+      "price": 1300000,
       "weight": 2450
     },
     {
       "id": 174,
       "manufacturer": "Lexus",
-      "model": "LX570 J200",
+      "model": "LX570",
       "power": 367,
-      "price": 100,
+      "price": 5350000,
       "weight": 2730
     },
     {
       "id": 175,
       "manufacturer": "Lexus",
-      "model": "NX200 Z10",
+      "model": "NX200",
       "power": 150,
-      "price": 100,
+      "price": 1950000,
       "weight": 1705
     },
     {
       "id": 176,
       "manufacturer": "Lexus",
-      "model": "NX300 Z10",
+      "model": "NX300",
       "power": 238 ,
-      "price": 100,
+      "price": 2650000,
       "weight": 1810
     },
     {
@@ -1421,7 +1413,7 @@
       "manufacturer": "Lexus",
       "model": "RC F C10",
       "power": 477 ,
-      "price": 100,
+      "price": 6980000,
       "weight": 1765
     },
     {
@@ -1429,7 +1421,7 @@
       "manufacturer": "Lexus",
       "model": "RC200t",
       "power": 245,
-      "price": 100,
+      "price": 4000000,
       "weight": 1725
     },
     {
@@ -1437,63 +1429,63 @@
       "manufacturer": "Lexus",
       "model": "RC300",
       "power": 245 ,
-      "price": 100,
+      "price": 4150000,
       "weight": 1725
     },
     {
       "id": 180,
       "manufacturer": "Lexus",
-      "model": "RC350 C10",
+      "model": "RC350",
       "power": 317 ,
-      "price": 100,
+      "price": 2650000,
       "weight": 1805
     },
     {
       "id": 181,
       "manufacturer": "Lexus",
-      "model": "RX200t AL20",
+      "model": "RX200t",
       "power": 238 ,
-      "price": 100,
+      "price": 2950000,
       "weight": 2145
     },
     {
       "id": 182,
       "manufacturer": "Lexus",
-      "model": "RX270 AL10",
+      "model": "RX270",
       "power": 188 ,
-      "price": 100,
+      "price": 1450000,
       "weight": 2025
     },
     {
       "id": 183,
       "manufacturer": "Lexus",
-      "model": "RX300 AL20",
+      "model": "RX300",
       "power": 238 ,
-      "price": 100,
+      "price": 3150000,
       "weight": 2155
     },
     {
       "id": 184,
       "manufacturer": "Lexus",
-      "model": "RX350 AL20",
-      "power": 301 ,
-      "price": 100,
+      "model": "RX350",
+      "power": 300 ,
+      "price": 2870000,
       "weight": 2160
     },
     {
       "id": 185,
       "manufacturer": "Lexus",
-      "model": "RX450h AL20",
+      "model": "RX450h",
       "power": 263 ,
-      "price": 100,
+      "price": 3050000,
       "weight": 2285
     },
     {
       "id": 186,
       "manufacturer": "Lexus",
-      "model": "RX450hL AL20",
+      "model": "RX450hL",
       "power": 262 ,
-      "price": 100,
+      "price": 3500000,
       "weight": 2240
     },
     {
@@ -1501,7 +1493,7 @@
       "manufacturer": "Lexus",
       "model": "UX200",
       "power": 150 ,
-      "price": 100,
+      "price": 1950000,
       "weight": 1540
     },
     {
@@ -1509,7 +1501,7 @@
       "manufacturer": "Marussia",
       "model": "B1",
       "power": 420,
-      "price": 100,
+      "price": 4800000,
       "weight": 1100
     },
     {
@@ -1517,71 +1509,63 @@
       "manufacturer": "Marussia",
       "model": "B2",
       "power": 420,
-      "price": 100,
+      "price": 5400000,
       "weight": 1100
     },
     {
       "id": 190,
       "manufacturer": "Maserati",
-      "model": "GranTurismo",
+      "model": "GranTurismo Sport",
       "power": 460,
-      "price": 100,
+      "price": 5400000,
       "weight": 1800
     },
     {
       "id": 191,
       "manufacturer": "Maserati",
       "model": "Levante",
-      "power": 590,
-      "price": 100,
+      "power": 430,
+      "price": 4900000,
       "weight": 2205
     },
     {
       "id": 192,
       "manufacturer": "Maserati",
-      "model": "Quattroporte M156",
+      "model": "Quattroporte GTS",
       "power": 530,
-      "price": 100,
+      "price": 4200000,
       "weight": 1820
-    },
-    {
-      "id": 193,
-      "manufacturer": "Maserati",
-      "model": "GranTurismo",
-      "power": 460,
-      "price": 100,
-      "weight": 1800
     },
     {
       "id": 194,
       "manufacturer": "Mazda",
-      "model": "Atenza GJ",
-      "power": 190,
-      "price": 100,
+      "model": "Atenza",
+      "power": 178,
+      "price": 270000,
       "weight": 1670
     },
     {
       "id": 195,
       "manufacturer": "Mazda",
-      "model": "CX-3 DK",
-      "power": 150,
-      "price": 100,
+      "model": "CX-3",
+      "power": 120,
+      "price": 900000,
       "weight": 1390
     },
     {
       "id": 196,
       "manufacturer": "Mazda",
-      "model": "CX-5 KF",
+      "model": "CX-5",
       "power": 194,
-      "price": 100,
+      "price": 1850000,
       "weight": 1617
     },
     {
       "id": 197,
       "manufacturer": "Mazda",
-      "model": "CX-7 ER",
+      "model": "CX-7",
       "power": 238,
-      "price": 100,
+      "price": 610000,
       "weight": 1831
     },
     {
@@ -1589,7 +1573,7 @@
       "manufacturer": "Mazda",
       "model": "CX-8",
       "power": 230,
-      "price": 100,
+      "price": 2890000,
       "weight": 1910
     },
     {
@@ -1597,87 +1581,87 @@
       "manufacturer": "Mazda",
       "model": "CX-9",
       "power": 231,
-      "price": 100,
+      "price": 2730000,
       "weight": 1925
     },
     {
       "id": 200,
       "manufacturer": "Mazda",
-      "model": "Efini RX-7 FD",
+      "model": "Efini RX-7",
       "power": 265,
-      "price": 100,
+      "price": 790000,
       "weight": 1330
     },
     {
       "id": 201,
       "manufacturer": "Mazda",
-      "model": "Eunos Roadster NA",
+      "model": "Eunos Roadster",
       "power": 140,
-      "price": 100,
+      "price": 640000,
       "weight": 990
     },
     {
       "id": 202,
       "manufacturer": "Mazda",
-      "model": "Mazda3 BP",
+      "model": "3",
       "power": 120,
-      "price": 100,
+      "price": 1650000,
       "weight": 1334
     },
     {
       "id": 203,
       "manufacturer": "Mazda",
-      "model": "Mazda3 MPS BK",
+      "model": "3 MPS",
       "power": 260,
-      "price": 100,
+      "price": 700000,
       "weight": 1483
     },
     {
       "id": 204,
       "manufacturer": "Mazda",
-      "model": "Mazda6 GL",
+      "model": "6",
       "power": 231,
-      "price": 100,
+      "price": 2100000,
       "weight": 1578
     },
     {
       "id": 205,
       "manufacturer": "Mazda",
-      "model": "Mazda6 MPS GG",
+      "model": "6 MPS",
       "power": 260,
-      "price": 100,
+      "price": 405000,
       "weight": 1590
     },
     {
       "id": 206,
       "manufacturer": "Mazda",
-      "model": "MX-5 NC",
+      "model": "MX-5",
       "power": 160,
-      "price": 100,
+      "price": 1200000,
       "weight": 1186
     },
     {
       "id": 207,
       "manufacturer": "Mazda",
-      "model": "Roadster ND",
-      "power": 184 ,
-      "price": 100,
+      "model": "Roadster",
+      "power": 166,
+      "price": 950000,
       "weight": 1130
     },
     {
       "id": 208,
       "manufacturer": "Mazda",
-      "model": "RX-7 FD",
-      "power": 280,
-      "price": 100,
+      "model": "RX-7",
+      "power": 255,
+      "price": 1000000,
       "weight": 1280
     },
     {
       "id": 209,
       "manufacturer": "Mazda",
-      "model": "RX-8 SE",
+      "model": "RX-8",
       "power": 231,
-      "price": 100,
+      "price": 935000,
       "weight": 1390
     },
     {
@@ -1685,15 +1669,15 @@
       "manufacturer": "McLaren",
       "model": "540C",
       "power": 540,
-      "price": 100,
+      "price": 12300000,
       "weight": 1449
     },
     {
       "id": 210,
       "manufacturer": "McLaren",
       "model": "570S",
-      "power": 570 ,
-      "price": 100,
+      "power": 570,
+      "price": 12700000,
       "weight": 1443
     },
     {
@@ -1701,23 +1685,23 @@
       "manufacturer": "McLaren",
       "model": "625C",
       "power": 625,
-      "price": 100,
+      "price": 17500000,
       "weight": 1434
     },
     {
       "id": 212,
       "manufacturer": "McLaren",
       "model": "650S",
-      "power": 650 ,
-      "price": 100,
+      "power": 650,
+      "price": 18000000,
       "weight": 1428
     },
     {
       "id": 213,
       "manufacturer": "McLaren",
       "model": "720S",
-      "power": 720  ,
-      "price": 100,
+      "power": 720,
+      "price": 23000000,
       "weight": 1419
     },
     {
@@ -1725,31 +1709,31 @@
       "manufacturer": "McLaren",
       "model": "F1",
       "power": 627,
-      "price": 100,
+      "price": 84000000,
       "weight": 1140
     },
     {
       "id": 215,
       "manufacturer": "McLaren",
       "model": "MP4-12C",
-      "power": 600 ,
-      "price": 100,
+      "power": 600,
+      "price": 16500000,
       "weight": 1399
     },
     {
       "id": 216,
       "manufacturer": "McLaren",
       "model": "P1",
-      "power": 916 ,
-      "price": 100,
+      "power": 916,
+      "price": 88000000,
       "weight": 1400
     },
     {
       "id": 217,
       "manufacturer": "McLaren",
       "model": "Senna",
-      "power": 800 ,
-      "price": 100,
+      "power": 800,
+      "price": 62000000,
       "weight": 1374
     },
     {
@@ -1757,7 +1741,7 @@
       "manufacturer": "Mercedes-Benz",
       "model": "A45 AMG W176",
       "power": 360,
-      "price": 100,
+      "price": 1450000,
       "weight": 1555
     },
     {
@@ -1765,23 +1749,23 @@
       "manufacturer": "Mercedes-Benz",
       "model": "GLE63 AMG W166",
       "power": 585,
-      "price": 100,
+      "price": 4400000,
       "weight": 2345
     },
     {
       "id": 220,
       "manufacturer": "Mercedes-Benz",
-      "model": "GLE63 AMG C292",
-      "power": 557,
-      "price": 100,
+      "model": "GLE63 Coupe AMG C292",
+      "power": 558,
+      "price": 3990000,
       "weight": 2275
     },
     {
       "id": 221,
       "manufacturer": "Mercedes-Benz",
-      "model": "AMG GT",
+      "model": "AMG GT S",
       "power": 510,
-      "price": 100,
+      "price": 5400000,
       "weight": 2120
     },
     {
@@ -1789,31 +1773,31 @@
       "manufacturer": "Mercedes-Benz",
       "model": "AMG GT63S",
       "power": 639,
-      "price": 100,
+      "price": 15100000,
       "weight": 2195
     },
     {
       "id": 223,
       "manufacturer": "Mercedes-Benz",
       "model": "C63 AMG W204",
-      "power": 457 ,
-      "price": 100,
+      "power": 457,
+      "price": 1980000,
       "weight": 1730
     },
     {
       "id": 224,
       "manufacturer": "Mercedes-Benz",
       "model": "C63 AMG W205",
-      "power": 476 ,
-      "price": 100,
+      "power": 476,
+      "price": 3300000,
       "weight": 1999
     },
     {
       "id": 225,
       "manufacturer": "Mercedes-Benz",
       "model": "E63 AMG W212",
-      "power": 585 ,
-      "price": 100,
+      "power": 557,
+      "price": 2750000,
       "weight": 1845
     },
     {
@@ -1821,23 +1805,23 @@
       "manufacturer": "Mercedes-Benz",
       "model": "CLA45 AMG C117",
       "power": 360 ,
-      "price": 100,
+      "price": 1700000,
       "weight": 1430
     },
     {
       "id": 227,
       "manufacturer": "Mercedes-Benz",
-      "model": "CLS63 AMG C218",
+      "model": "CLS63 AMG W218",
       "power": 525 ,
-      "price": 100,
+      "price": 2100000,
       "weight": 1945
     },
     {
       "id": 228,
       "manufacturer": "Mercedes-Benz",
-      "model": "G63 AMG W463",
+      "model": "G63 AMG II W463",
       "power": 571,
-      "price": 100,
+      "price": 5850000,
       "weight": 2550
     },
     {
@@ -1845,15 +1829,15 @@
       "manufacturer": "Mercedes-Benz",
       "model": "G63 6x6 AMG",
       "power": 544,
-      "price": 100,
+      "price": 70000000,
       "weight": 3850
     },
     {
       "id": 230,
       "manufacturer": "Mercedes-Benz",
-      "model": "GL63 AMG X166",
+      "model": "GL63 AMG",
       "power": 557,
-      "price": 100,
+      "price": 2910000,
       "weight": 2580
     },
     {
@@ -1861,7 +1845,7 @@
       "manufacturer": "Mercedes-Benz",
       "model": "GLS63 AMG X166",
       "power": 585,
-      "price": 100,
+      "price": 6250000,
       "weight": 2505
     },
     {
@@ -1869,63 +1853,63 @@
       "manufacturer": "Mercedes-Benz",
       "model": "X-class",
       "power": 258 ,
-      "price": 100,
+      "price": 3150000,
       "weight": 2389
     },
     {
       "id": 233,
       "manufacturer": "Mercedes-Benz",
       "model": "S63 W222 AMG",
-      "power": 585 ,
-      "price": 100,
+      "power": 585,
+      "price": 5500000,
       "weight": 2070
     },
     {
       "id": 234,
       "manufacturer": "Mercedes-Benz",
-      "model": "SL65 AMG R230",
-      "power": 525 ,
-      "price": 100,
+      "model": "SL65 AMG R231",
+      "power": 525,
+      "price": 2900000,
       "weight": 2110
     },
     {
       "id": 235,
       "manufacturer": "Mercedes-Benz",
       "model": "Maybach S650",
-      "power": 650 ,
-      "price": 100,
+      "power": 650,
+      "price": 17500000,
       "weight": 2285
     },
     {
       "id": 236,
       "manufacturer": "Mercedes-Benz",
       "model": "SLR MacLaren C199",
-      "power": 626 ,
-      "price": 100,
+      "power": 626,
+      "price": 27800000,
       "weight": 1768
     },
     {
       "id": 237,
       "manufacturer": "Mitsubishi",
       "model": "Eclipse",
-      "power": 265,
-      "price": 100,
+      "power": 213,
+      "price": 490000,
       "weight": 1600
     },
     {
       "id": 238,
       "manufacturer": "Mitsubishi",
       "model": "Lancer Evolution IX",
-      "power": 280 ,
-      "price": 100,
+      "power": 280,
+      "price": 1090000,
       "weight": 1465
     },
     {
       "id": 239,
       "manufacturer": "Mitsubishi",
       "model": "Lancer Evolution X",
-      "power": 295 ,
-      "price": 100,
+      "power": 295,
+      "price": 1250000,
       "weight": 1590
     },
     {
@@ -1933,15 +1917,15 @@
       "manufacturer": "Mitsubishi",
       "model": "Pajero V90",
       "power": 250,
-      "price": 100,
+      "price": 850000,
       "weight": 2355
     },
     {
       "id": 241,
       "manufacturer": "Nissan",
       "model": "350Z",
-      "power": 301,
-      "price": 100,
+      "power": 300,
+      "price": 930000,
       "weight": 1525
     },
     {
@@ -1949,7 +1933,7 @@
       "manufacturer": "Nissan",
       "model": "370Z",
       "power": 328 ,
-      "price": 100,
+      "price": 1100000,
       "weight": 1525
     },
     {
@@ -1957,23 +1941,23 @@
       "manufacturer": "Nissan",
       "model": "GT-R 2017",
       "power": 555,
-      "price": 100,
+      "price": 5400000,
       "weight": 1769
     },
     {
       "id": 244,
       "manufacturer": "Nissan",
       "model": "Silvia S13",
-      "power": 205 ,
-      "price": 100,
+      "power": 175 ,
+      "price": 680000,
       "weight": 1210
     },
     {
       "id": 245,
       "manufacturer": "Nissan",
       "model": "Silvia S14",
-      "power": 220,
-      "price": 100,
+      "power": 200,
+      "price": 545000,
       "weight": 1280
     },
     {
@@ -1981,7 +1965,7 @@
       "manufacturer": "Nissan",
       "model": "Silvia S15",
       "power": 250,
-      "price": 100,
+      "price": 1350000,
       "weight": 1270
     },
     {
@@ -1989,7 +1973,7 @@
       "manufacturer": "Nissan",
       "model": "Skyline GT-R R32",
       "power": 280,
-      "price": 100,
+      "price": 990000,
       "weight": 1500
     },
     {
@@ -1997,7 +1981,7 @@
       "manufacturer": "Nissan",
       "model": "Skyline GT-R R33",
       "power": 280,
-      "price": 100,
+      "price": 2000000,
       "weight": 1540
     },
     {
@@ -2005,15 +1989,15 @@
       "manufacturer": "Nissan",
       "model": "Skyline GT-R R34",
       "power": 280 ,
-      "price": 100,
+      "price": 3950000,
       "weight": 1500
     },
     {
       "id": 250,
       "manufacturer": "Nissan",
       "model": "Titan A61",
-      "power": 390 ,
-      "price": 100,
+      "power": 317 ,
+      "price": 1190000,
       "weight": 2404
     },
     {
@@ -2021,7 +2005,7 @@
       "manufacturer": "Pagani",
       "model": "Huayra Roadster",
       "power": 764,
-      "price": 100,
+      "price": 157000000,
       "weight": 1360
     },
     {
@@ -2029,31 +2013,31 @@
       "manufacturer": "Pagani",
       "model": "Zonda HP Barchetta",
       "power": 800,
-      "price": 100,
+      "price": 790000000,
       "weight": 1250
     },
     {
       "id": 253,
       "manufacturer": "Pontiac",
       "model": "Solstice",
-      "power": 260,
-      "price": 100,
+      "power": 264,
+      "price": 913000,
       "weight": 1337
     },
     {
       "id": 254,
       "manufacturer": "Pontiac",
       "model": "Firebird",
-      "power": 330,
-      "price": 100,
+      "power": 230,
+      "price": 835000,
       "weight": 1710
     },
     {
       "id": 255,
       "manufacturer": "Pontiac",
       "model": "GTO",
-      "power": 405,
-      "price": 100,
+      "power": 400,
+      "price": 1100000,
       "weight": 1698
     },
     {
@@ -2061,7 +2045,7 @@
       "manufacturer": "Porsche",
       "model": "718 Boxster GTS",
       "power": 365,
-      "price": 100,
+      "price": 6100000,
       "weight": 1450
     },
     {
@@ -2069,7 +2053,7 @@
       "manufacturer": "Porsche",
       "model": "718 Cayman GT4",
       "power": 420 ,
-      "price": 100,
+      "price": 8200000,
       "weight": 1495
     },
     {
@@ -2077,7 +2061,7 @@
       "manufacturer": "Porsche",
       "model": "911 Carrera S",
       "power": 450 ,
-      "price": 100,
+      "price": 8200000,
       "weight": 1640
     },
     {
@@ -2085,7 +2069,7 @@
       "manufacturer": "Porsche",
       "model": "911 GT2 RS",
       "power": 700 ,
-      "price": 100,
+      "price": 22000000,
       "weight": 1545
     },
     {
@@ -2093,7 +2077,7 @@
       "manufacturer": "Porsche",
       "model": "Panamera Turbo Executive",
       "power": 550 ,
-      "price": 100,
+      "price": 13500000,
       "weight": 1935
     },
     {
@@ -2101,7 +2085,7 @@
       "manufacturer": "Porsche",
       "model": "Macan Turbo",
       "power": 440 ,
-      "price": 100,
+      "price": 7700000,
       "weight": 1925
     },
     {
@@ -2109,15 +2093,15 @@
       "manufacturer": "Porsche",
       "model": "Cayenne S",
       "power": 440 ,
-      "price": 100,
+      "price": 7250000,
       "weight": 2370
     },
     {
       "id": 263,
       "manufacturer": "Renault",
       "model": "Arkana",
-      "power": 149,
-      "price": 100,
+      "power": 150,
+      "price": 1190000,
       "weight": 1378
     },
     {
@@ -2125,7 +2109,7 @@
       "manufacturer": "Renault",
       "model": "Clio RS",
       "power": 200 ,
-      "price": 100,
+      "price": 475000,
       "weight": 1240
     },
     {
@@ -2133,15 +2117,15 @@
       "manufacturer": "Renault",
       "model": "Duster",
       "power": 143,
-      "price": 100,
+      "price": 935000,
       "weight": 1394
     },
     {
       "id": 266,
       "manufacturer": "Renault",
       "model": "Fluence",
-      "power": 137,
-      "price": 100,
+      "power": 139,
+      "price": 490000,
       "weight": 1380
     },
     {
@@ -2149,7 +2133,7 @@
       "manufacturer": "Renault",
       "model": "Kaptur",
       "power": 143,
-      "price": 100,
+      "price": 1090000,
       "weight": 1405
     },
     {
@@ -2157,55 +2141,55 @@
       "manufacturer": "Renault",
       "model": "Logan",
       "power": 113,
-      "price": 100,
+      "price": 735000,
       "weight": 1165
     },
     {
       "id": 269,
       "manufacturer": "Renault",
       "model": "Talisman",
-      "power": 225,
-      "price": 100,
+      "power": 130,
+      "price": 1350000,
       "weight": 1595
     },
     {
       "id": 270,
       "manufacturer": "Rolls-Royce",
       "model": "Dawn",
-      "power": 571 ,
-      "price": 100,
+      "power": 570,
+      "price": 19500000,
       "weight": 2560
     },
     {
       "id": 271,
       "manufacturer": "Rolls-Royce",
       "model": "Ghost",
-      "power": 563  ,
-      "price": 100,
+      "power": 570,
+      "price": 10300000,
       "weight": 2435
     },
     {
       "id": 272,
       "manufacturer": "Rolls-Royce",
       "model": "Phantom",
-      "power": 563  ,
-      "price": 100,
+      "power": 571,
+      "price": 43500000,
       "weight": 2630
     },
     {
       "id": 273,
       "manufacturer": "Rolls-Royce",
       "model": "Wraith",
-      "power": 624,
-      "price": 100,
+      "power": 632,
+      "price": 19850000,
       "weight": 2360
     },
     {
       "id": 274,
       "manufacturer": "Saab",
       "model": "9-3",
-      "power": 260,
-      "price": 100,
+      "power": 250,
+      "price": 495000,
       "weight": 1395
     },
     {
@@ -2213,15 +2197,15 @@
       "manufacturer": "Skoda",
       "model": "Rapid",
       "power": 125,
-      "price": 100,
+      "price": 1000000,
       "weight": 1227
     },
     {
       "id": 276,
       "manufacturer": "Skoda",
       "model": "Octavia",
-      "power": 230,
-      "price": 100,
+      "power": 220,
+      "price": 1190000,
       "weight": 1352
     },
     {
@@ -2229,7 +2213,7 @@
       "manufacturer": "Skoda",
       "model": "Suberb",
       "power": 280 ,
-      "price": 100,
+      "price": 1380000,
       "weight": 1635
     },
     {
@@ -2237,7 +2221,7 @@
       "manufacturer": "Skoda",
       "model": "Yeti",
       "power": 152 ,
-      "price": 100,
+      "price": 825000,
       "weight": 1560
     },
     {
@@ -2245,15 +2229,15 @@
       "manufacturer": "Subaru",
       "model": "BRZ",
       "power": 200,
-      "price": 100,
+      "price": 1170000,
       "weight": 1278
     },
     {
       "id": 280,
       "manufacturer": "Subaru",
-      "model": "Crosstrek GT",
+      "model": "XV",
       "power": 150,
-      "price": 100,
+      "price": 910000,
       "weight": 1690
     },
     {
@@ -2261,7 +2245,7 @@
       "manufacturer": "Subaru",
       "model": "Impreza WRX STI 2002",
       "power": 265,
-      "price": 100,
+      "price": 785000,
       "weight": 1430
     },
     {
@@ -2269,7 +2253,7 @@
       "manufacturer": "Subaru",
       "model": "Impreza WRX STI 2004",
       "power": 265,
-      "price": 100,
+      "price": 730000,
       "weight": 1450
     },
     {
@@ -2277,7 +2261,7 @@
       "manufacturer": "Subaru",
       "model": "Impreza WRX STI 2006",
       "power": 280 ,
-      "price": 100,
+      "price": 955000,
       "weight": 1495
     },
     {
@@ -2285,7 +2269,7 @@
       "manufacturer": "Subaru",
       "model": "Legacy",
       "power": 175 ,
-      "price": 100,
+      "price": 1750000,
       "weight": 1604
     },
     {
@@ -2293,15 +2277,15 @@
       "manufacturer": "Subaru",
       "model": "Forester",
       "power": 185 ,
-      "price": 100,
+      "price": 2250000,
       "weight": 1677
     },
     {
       "id": 286,
       "manufacturer": "Tesla",
-      "model": "Model 3",
-      "power": 450,
-      "price": 100,
+      "model": "Model 3 Performance",
+      "power": 462,
+      "price": 6650000,
       "weight": 1847
     },
     {
@@ -2309,15 +2293,15 @@
       "manufacturer": "Tesla",
       "model": "Model S",
       "power": 762,
-      "price": 100,
+      "price": 7450000,
       "weight": 2263
     },
     {
       "id": 288,
       "manufacturer": "Tesla",
       "model": "Model X",
-      "power": 773 ,
-      "price": 100,
+      "power": 762 ,
+      "price": 11900000,
       "weight": 2509
     },
     {
@@ -2325,31 +2309,31 @@
       "manufacturer": "Tesla",
       "model": "Model Y",
       "power": 450 ,
-      "price": 100,
+      "price": 7200000,
       "weight": 1850
     },
     {
       "id": 290,
       "manufacturer": "Tesla",
       "model": "Roadster",
-      "power": 248,
-      "price": 100,
+      "power": 717,
+      "price": 17000000,
       "weight": 1814
     },
     {
       "id": 291,
       "manufacturer": "Toyota",
-      "model": "GT 86",
+      "model": "GT86",
       "power": 200,
-      "price": 100,
+      "price": 1250000,
       "weight": 1230
     },
     {
       "id": 292,
       "manufacturer": "Toyota",
-      "model": "Mark II 100",
+      "model": "Mark II X100",
       "power": 280 ,
-      "price": 100,
+      "price": 985000,
       "weight": 1540
     },
     {
@@ -2357,15 +2341,15 @@
       "manufacturer": "Toyota",
       "model": "Camry XV40",
       "power": 277 ,
-      "price": 100,
+      "price": 785000,
       "weight": 1610
     },
     {
       "id": 294,
       "manufacturer": "Toyota",
-      "model": "Camry XV55",
+      "model": "Camry XV50",
       "power": 249 ,
-      "price": 100,
+      "price": 1350000,
       "weight": 1615
     },
     {
@@ -2373,15 +2357,15 @@
       "manufacturer": "Toyota",
       "model": "Chaser X100",
       "power": 280,
-      "price": 100,
+      "price": 710000,
       "weight": 1490
     },
     {
       "id": 296,
       "manufacturer": "Toyota",
-      "model": "Crown 2017",
-      "power": 299 ,
-      "price": 100,
+      "model": "Crown S210",
+      "power": 203,
+      "price": 2640000,
       "weight": 1890
     },
     {
@@ -2389,7 +2373,7 @@
       "manufacturer": "Toyota",
       "model": "Land Cruiser Prado J150",
       "power": 282 ,
-      "price": 100,
+      "price": 1980000,
       "weight": 2165
     },
     {
@@ -2397,23 +2381,23 @@
       "manufacturer": "Toyota",
       "model": "Supra A90",
       "power": 340 ,
-      "price": 100,
+      "price": 6150000,
       "weight": 1570
     },
     {
       "id": 298,
       "manufacturer": "Volkswagen",
-      "model": "Golf R",
-      "power": 700,
-      "price": 100,
+      "model": "Golf R VII",
+      "power": 300,
+      "price": 1850000,
       "weight": 1414
     },
     {
       "id": 299,
       "manufacturer": "Volkswagen",
-      "model": "Jetta NF",
+      "model": "Jetta",
       "power": 150 ,
-      "price": 100,
+      "price": 675000,
       "weight": 1473
     },
     {
@@ -2421,23 +2405,23 @@
       "manufacturer": "Volkswagen",
       "model": "Passat B8",
       "power": 180 ,
-      "price": 100,
+      "price": 1300000,
       "weight": 1505
     },
     {
       "id": 301,
       "manufacturer": "Volkswagen",
-      "model": "Polo Mk5",
+      "model": "Polo",
       "power": 125 ,
-      "price": 100,
+      "price": 800000,
       "weight": 1217
     },
     {
       "id": 302,
       "manufacturer": "Volkswagen",
-      "model": "Scirocco Mk3",
-      "power": 210 ,
-      "price": 100,
+      "model": "Scirocco",
+      "power": 211,
+      "price": 760000,
       "weight": 1393
     },
     {
@@ -2445,13 +2429,13 @@
       "manufacturer": "Volkswagen",
       "model": "Teramont",
       "power": 280 ,
-      "price": 100,
+      "price": 2600000,
       "weight": 2105
     },
     {
       "id": 304,
       "manufacturer": "Volkswagen",
-      "model": "Tiguan Mk 2",
+      "model": "Tiguan",
       "power": 220 ,
       "price": 100,
       "weight": 1696
@@ -2461,7 +2445,7 @@
       "manufacturer": "Volkswagen",
       "model": "Touareg",
       "power": 340 ,
-      "price": 100,
+      "price": 2150000,
       "weight": 2040
     },
     {
@@ -2469,7 +2453,7 @@
       "manufacturer": "Volvo",
       "model": "XC90",
       "power": 320,
-      "price": 100,
+      "price": 2835000,
       "weight": 2274
     },
     {
@@ -2477,7 +2461,7 @@
       "manufacturer": "Volvo",
       "model": "XC70",
       "power": 304,
-      "price": 100,
+      "price": 820000,
       "weight": 1977
     },
     {
@@ -2485,7 +2469,7 @@
       "manufacturer": "Volvo",
       "model": "S60",
       "power": 249 ,
-      "price": 100,
+      "price": 1120000,
       "weight": 1677
     },
     {
@@ -2493,7 +2477,7 @@
       "manufacturer": "Volvo",
       "model": "S90",
       "power": 320,
-      "price": 100,
+      "price": 3850000,
       "weight": 1953
     },
     {
@@ -2501,143 +2485,143 @@
       "manufacturer": "ВАЗ",
       "model": "2101",
       "power": 64,
-      "price": 100,
+      "price": 25000,
       "weight": 955
     },
     {
       "id": 311,
       "manufacturer": "ВАЗ",
       "model": "2102",
-      "power": 77 ,
-      "price": 100,
+      "power": 75,
+      "price": 35000,
       "weight": 1020
     },
     {
       "id": 312,
       "manufacturer": "ВАЗ",
-      "model": "2103 ",
-      "power": 71 ,
-      "price": 100,
+      "model": "2103",
+      "power": 75,
+      "price": 38500,
       "weight": 1030
     },
     {
       "id": 313,
       "manufacturer": "ВАЗ",
-      "model": "2104 ",
+      "model": "2104",
       "power": 74 ,
-      "price": 100,
+      "price": 48900,
       "weight": 1060
     },
     {
       "id": 314,
       "manufacturer": "ВАЗ",
-      "model": "2105 ",
-      "power": 71 ,
-      "price": 100,
+      "model": "2105",
+      "power": 73,
+      "price": 46200,
       "weight": 1020
     },
     {
       "id": 315,
       "manufacturer": "ВАЗ",
-      "model": "2106 ",
-      "power": 75 ,
-      "price": 100,
+      "model": "2106",
+      "power": 75,
+      "price": 46500,
       "weight": 1050
     },
     {
       "id": 316,
       "manufacturer": "ВАЗ",
-      "model": "2107 ",
-      "power": 73 ,
-      "price": 100,
+      "model": "2107",
+      "power": 75,
+      "price": 52000,
       "weight": 1060
     },
     {
       "id": 317,
       "manufacturer": "ВАЗ",
-      "model": "2108 ",
-      "power": 93 ,
-      "price": 100,
+      "model": "2108",
+      "power": 78,
+      "price": 48500,
       "weight": 920
     },
     {
       "id": 318,
       "manufacturer": "ВАЗ",
-      "model": "2109 ",
-      "power": 78 ,
-      "price": 100,
+      "model": "2109",
+      "power": 78,
+      "price": 53500,
       "weight": 945
     },
     {
       "id": 319,
       "manufacturer": "ВАЗ",
       "model": "21099",
-      "power": 140,
-      "price": 100,
+      "power": 78,
+      "price": 45900,
       "weight": 970
     },
     {
       "id": 320,
       "manufacturer": "ВАЗ",
       "model": "2110",
-      "power": 148,
-      "price": 100,
-      "weight": 1100
+      "power": 90,
+      "price": 60000,
+      "weight": 1040
     },
     {
       "id": 321,
       "manufacturer": "ВАЗ",
       "model": "2111",
-      "power": 91,
-      "price": 100,
-      "weight": 1040
+      "power": 90,
+      "price": 59500,
+      "weight": 1100
     },
     {
       "id": 322,
       "manufacturer": "ВАЗ",
       "model": "2112",
-      "power": 120 ,
-      "price": 100,
+      "power": 94,
+      "price": 66500,
       "weight": 1030
     },
     {
       "id": 323,
       "manufacturer": "ВАЗ",
-      "model": "2113 ",
-      "power": 98 ,
-      "price": 100,
+      "model": "2113",
+      "power": 98,
+      "price": 70000,
       "weight": 1050
     },
     {
       "id": 324,
       "manufacturer": "ВАЗ",
-      "model": "2114 ",
-      "power": 98   ,
-      "price": 100,
+      "model": "2114",
+      "power": 98,
+      "price": 67500,
       "weight": 1060
     },
     {
       "id": 325,
       "manufacturer": "ВАЗ",
-      "model": "2115 ",
-      "power": 82 ,
-      "price": 100,
+      "model": "2115",
+      "power": 98,
+      "price": 72000,
       "weight": 1000
     },
     {
       "id": 326,
       "manufacturer": "Лада",
       "model": "Калина Спорт",
-      "power": 136,
-      "price": 100,
+      "power": 118,
+      "price": 259000,
       "weight": 1215
     },
     {
       "id": 327,
       "manufacturer": "Лада",
-      "model": "Приора ",
+      "model": "Приора",
       "power": 106,
-      "price": 100,
+      "price": 330000,
       "weight": 1185
     },
     {
@@ -2645,7 +2629,7 @@
       "manufacturer": "Лада",
       "model": "Гранта Спорт",
       "power": 118 ,
-      "price": 100,
+      "price": 379000,
       "weight": 1140
     },
     {
@@ -2653,7 +2637,7 @@
       "manufacturer": "Лада",
       "model": "Ларгус",
       "power": 106 ,
-      "price": 100,
+      "price": 560000,
       "weight": 1260
     },
     {
@@ -2661,23 +2645,23 @@
       "manufacturer": "Лада",
       "model": "Веста Спорт",
       "power": 145,
-      "price": 100,
+      "price": 810000,
       "weight": 1322
     },
     {
       "id": 331,
       "manufacturer": "Лада",
-      "model": "X-Ray",
+      "model": "XRAY",
       "power": 122,
-      "price": 100,
+      "price": 595000,
       "weight": 1190
     },
     {
       "id": 332,
-      "manufacturer": "Нива",
-      "model": "4х4",
-      "power": 83 ,
-      "price": 100,
+      "manufacturer": "ВАЗ",
+      "model": "2121 4х4",
+      "power": 83,
+      "price": 295000,
       "weight": 1285
     },
     {
@@ -2685,55 +2669,55 @@
       "manufacturer": "ГАЗ",
       "model": "21",
       "power": 75,
-      "price": 100,
+      "price": 55000,
       "weight": 1450
     },
     {
       "id": 334,
       "manufacturer": "ГАЗ",
       "model": "24",
-      "power": 195 ,
-      "price": 100,
+      "power": 100,
+      "price": 95000,
       "weight": 1400
     },
     {
       "id": 335,
       "manufacturer": "ГАЗ",
       "model": "3110",
-      "power": 145 ,
-      "price": 100,
+      "power": 150,
+      "price": 100000,
       "weight": 1400
     },
     {
       "id": 336,
       "manufacturer": "Москвич",
       "model": "407",
-      "power": 45  ,
-      "price": 100,
+      "power": 45,
+      "price": 50000,
       "weight": 910
     },
     {
       "id": 337,
       "manufacturer": "Москвич",
       "model": "412",
-      "power": 75   ,
-      "price": 100,
+      "power": 75,
+      "price": 45500,
       "weight": 1045
     },
     {
       "id": 338,
       "manufacturer": "УАЗ",
       "model": "Хантер",
-      "power": 135 ,
-      "price": 100,
+      "power": 135,
+      "price": 300000,
       "weight": 1845
     },
     {
       "id": 339,
       "manufacturer": "УАЗ",
       "model": "Патриот",
-      "power": 150 ,
-      "price": 100,
+      "power": 150,
+      "price": 390000,
       "weight": 2125
     }
   ]
