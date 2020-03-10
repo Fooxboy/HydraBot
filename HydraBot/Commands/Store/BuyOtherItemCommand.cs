@@ -42,13 +42,13 @@ namespace HydraBot.Commands.Store
                     else
                     {
                         text = "✔ Вы купили телефон";
-                        api.Users.RemoveMoney(user.Id, 5000);
+                        api.Users.RemoveMoney(user.Id, 2500);
                         api.Garages.SetPhone(user.Id, true);
                     }
                 }
             }else if (item == 2)
             {
-                api.Users.RemoveMoney(user.Id, 1000);
+                api.Users.RemoveMoney(user.Id, 500);
                 
                 using (var db = new Database())
                 {
@@ -67,17 +67,21 @@ namespace HydraBot.Commands.Store
             var kb = new KeyboardBuilder(bot);
             kb.AddButton("↩ Назад в магазин", "otherstore");
             sender.Text(text, msg.ChatId, kb.Build());
-            //throw new NotImplementedException();
         }
 
         public static string CustomNumber(string number, User user)
         {
             if (number.Length != 6) return "❌ Длина номера телефона должна быть 6 цифр. Попробуйте еще раз!";
 
+            if (user.Money < 5000) return "❌ У Вас недостаточно денег.";
+            
+            Main.Api.Users.RemoveMoney(user.Id, 5000);
+            
             using (var db = new Database())
             {
                 if (db.Garages.Any(g => g.PhoneNumber == number)) return "❌ Данный номер телефона уже занят.";
                 var gar = db.Garages.Single(g => g.UserId == user.Id);
+                
                 
                 gar.PhoneNumber = number;
                 db.SaveChanges();

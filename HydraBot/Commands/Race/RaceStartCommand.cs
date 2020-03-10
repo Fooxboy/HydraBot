@@ -243,7 +243,7 @@ namespace HydraBot.Commands.Race
                             var winnerLocal = db.Users.Single(u => u.Id == winner.Id);
                             int factor = 1;
                             if (winnerLocal.Access >= 1) factor = 2;
-                            winnerLocal.Money += (1000 * factor);
+                            winnerLocal.Money += (winnerLocal.Level * factor *50);
                             winnerLocal.Score += (winnerLocal.Level * 50 * factor);
                         }
                         
@@ -274,7 +274,7 @@ namespace HydraBot.Commands.Race
                         kb1.AddButton("🏁 Назад в гонки", "race");
                         var t = isFriendStart
                             ? "🎉 Поздравляю с победой  над своим другом!"
-                            : $"🎉 Поздравляю с победой! Вы получили: 💵 {(winner.Access >=1? "2.000": "1.000")} рублей и ⭐ {(winner.Access >=1? $"{winner.Level * 50}": $"{winner.Level * 50* 2}")} опыта";
+                            : $"🎉 Поздравляю с победой! Вы получили: 💵 {(winner.Access >=1? $"{winner.Level *50 *2}": $"{winner.Level * 50}")} рублей и ⭐ {(winner.Access >=1? $"{winner.Level * 50}": $"{winner.Level * 50* 2}")} опыта";
                         sender.Text(
                             t,
                             winner.Id == userEnemy.Id ? enemyChatId : creatorChatId, kb1.Build());

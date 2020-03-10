@@ -62,6 +62,10 @@ namespace HydraBot.Commands.DrivingSchool
                 var backQuestion = Questions[q - 1];
                 if (response == backQuestion.Response) countTrueResponse += 1;
             }
+            else
+            {
+                api.Users.RemoveMoney(user.Id, 3500);
+            }
             var question = Questions[q];
             text += $"❗| Вопрос №{q + 1}";
             text += $"\n❓| {question.Question}";
