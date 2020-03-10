@@ -16,6 +16,8 @@ namespace HydraBot.Commands
     {
         public List<Container> Containers { get; set; }
         private IMessageSenderService _sender;
+        
+        private List<ItemsContainer> _items { get; set; }
         private long Time { get; set; }
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
@@ -83,10 +85,39 @@ namespace HydraBot.Commands
 
         public void Init(IBot bot, ILoggerService logger)
         {
+            _items = new List<ItemsContainer>();
+            _items.Add(new ItemsContainer(){ Item = "Недорогая одежда", Price = new Random().Next(1000, 3500), Weight = 12 });
+            _items.Add(new ItemsContainer(){ Item = "Дорогая одежда", Price = new Random().Next(50000 , 150000), Weight = 25 });
+            _items.Add(new ItemsContainer(){ Item = "Удочка", Price = new Random().Next(5000 , 10000), Weight = 2 });
+            _items.Add(new ItemsContainer(){ Item = "Телевизор", Price = new Random().Next(10000 , 35000), Weight = 5 });
+            _items.Add(new ItemsContainer(){ Item = "Холодильник", Price = new Random().Next(25000 , 50000), Weight = 30 });
+            _items.Add(new ItemsContainer(){ Item = "Картина", Price = new Random().Next(4000 , 5000), Weight = 1 });
+            _items.Add(new ItemsContainer(){ Item = "Пианино", Price = new Random().Next(50000  , 50002), Weight = 45 });
+            _items.Add(new ItemsContainer(){ Item = "Оружие", Price = new Random().Next( 20000  ,  35000 ), Weight = 10 });
+            _items.Add(new ItemsContainer(){ Item = "Компьютер", Price = new Random().Next( 20000  ,  40000 ), Weight = 5 });
+            _items.Add(new ItemsContainer(){ Item = "Телефон", Price = new Random().Next(  15000   ,  30000 ), Weight = 1 });
+            _items.Add(new ItemsContainer(){ Item = "Сейф с деньгами", Price = new Random().Next(  10000   ,  100000 ), Weight = 25 });
+            _items.Add(new ItemsContainer(){ Item = "Серебро", Price = new Random().Next(   35000   ,   35002 ), Weight = 1 });
+            _items.Add(new ItemsContainer(){ Item = "Золото", Price = new Random().Next( 250000, 2500000), Weight = 1 });
+            _items.Add(new ItemsContainer(){ Item = "Лодка", Price = new Random().Next( 20000, 20005), Weight = 10 });
+            _items.Add(new ItemsContainer(){ Item = "Двигатель", Price = new Random().Next( 70000, 200000), Weight = 200 });
+            _items.Add(new ItemsContainer(){ Item = "Колесо", Price = new Random().Next( 10000, 10005), Weight = 4 });
+            _items.Add(new ItemsContainer(){ Item = "Рояль", Price = new Random().Next( 700000, 1500000), Weight = 55 });
+            _items.Add(new ItemsContainer(){ Item = "Чемодан", Price = 3000, Weight = 2 });
+            _items.Add(new ItemsContainer(){ Item = "Шкаф", Price =  20000, Weight = 15 });
+            _items.Add(new ItemsContainer(){ Item = "Коллекция монет", Price =  34000, Weight = 5 });
+            _items.Add(new ItemsContainer(){ Item = "Золотые украшения", Price =  65000, Weight = 2 });
+            _items.Add(new ItemsContainer(){ Item = "Металлолом", Price =  1950, Weight =  15 });
+
+            
             Containers = new List<Container>();
-            Containers.Add(new Container() {Country = "Россия", LastNamePrice = "Новый", Name = "без имени", UserId = 0, Price = 1000});
-            Containers.Add(new Container() {Country = "Россия", LastNamePrice = "Новый", Name = "без имени", UserId = 0, Price = 1000});
-            Containers.Add(new Container() {Country = "Россия", LastNamePrice = "Новый", Name = "без имени", UserId = 0, Price = 1000});
+            var c1 = _items[Convert.ToInt32(new Random().Next(0, _items.Count()))];
+            var c2 = _items[Convert.ToInt32(new Random().Next(0, _items.Count()))];
+            var c3 = _items[Convert.ToInt32(new Random().Next(0, _items.Count()))];
+                
+            Containers.Add(new Container() {Country = "Россия", LastNamePrice = "Новый", Name = "без имени", Prize = c1.Price, Price = 1000, UserId = 0, Items =  c1.Item, Weight = c3.Weight});
+            Containers.Add(new Container() {Country = "Россия", LastNamePrice = "Новый", Name = "без имени", Prize = c2.Price,  Price = 1000, UserId = 0, Items =  c2.Item, Weight = c3.Weight});
+            Containers.Add(new Container() {Country = "Россия", LastNamePrice = "Новый", Name = "без имени", Prize = c3.Price,  Price = 1000, UserId = 0, Items = c3.Item, Weight = c3.Weight} );
             Time = 5;
             Task.Run((() =>
             {
@@ -113,8 +144,9 @@ namespace HydraBot.Commands
                                     }
                                     user.Money -= container.Price;
                                     text = "✔ Вы открыли контейнер! Вам выпало:";
-                                    text += "\n 📦 items";
-                                    kb.AddButton("💰 Продать все ", "sellContainer", new List<string>(){"5000"});
+                                    text += $"\n 📦 {container.Items} " +
+                                            $"\n 💸 На сумму {container.Prize}";
+                                    kb.AddButton("💰 Продать все ", "sellContainer", new List<string>(){container.Prize.ToString()});
                                     kb.AddLine();
                                     kb.AddButton(ButtonsHelper.ToHomeButton());
                                     

@@ -10,5 +10,7 @@ namespace HydraBot.Models
         public long Weight { get; set; }
         public string LastNamePrice { get; set; }
         public long UserId { get; set; }
+        public string Items { get; set; }
+        public long Prize { get; set; }
     }
 }
