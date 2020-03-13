@@ -34,7 +34,7 @@ namespace HydraBot.Commands
             if(user.Gang  == 0)
             {
                 text = "❌ Вы не являетесь участником команды. Но Вы можете создать свою!";
-                kb.AddButton("➕ Создать команду (100.000 руб.)", "creategang");
+                kb.AddButton("➕ Создать команду (500.000 руб.)", "creategang");
                 kb.AddLine();
                 kb.AddButton(ButtonsHelper.ToHomeButton());
                 sender.Text(text, msg.ChatId, kb.Build());

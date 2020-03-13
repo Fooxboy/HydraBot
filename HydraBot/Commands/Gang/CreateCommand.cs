@@ -25,7 +25,7 @@ namespace HydraBot.Commands.Gang
             }
             var api = Main.Api;
             var user = api.Users.GetUser(msg);
-            var price = 100000;
+            var price = 500000;
             var kb = new KeyboardBuilder(bot);
 
             if (user.Money < price)
@@ -52,6 +52,7 @@ namespace HydraBot.Commands.Gang
                 {
                     var user = db.Users.Single(u => u.Id == creator);
                     user.Gang = gang.Id;
+                    user.Money -= 500000;
                     db.SaveChanges();
                 }
 

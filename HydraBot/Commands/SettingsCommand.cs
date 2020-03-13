@@ -1,6 +1,7 @@
 ﻿using Fooxboy.NucleusBot;
 using Fooxboy.NucleusBot.Interfaces;
 using Fooxboy.NucleusBot.Models;
+using HydraBot.Helpers;
 using VkNet.Enums.SafetyEnums;
 
 namespace HydraBot.Commands
@@ -26,6 +27,9 @@ namespace HydraBot.Commands
             if (user.SubOnNews)
                 kb.AddButton("📰 Отписаться от рассылки", "unsubNewsLetter", color: KeyboardButtonColor.Negative);
             else kb.AddButton("📰 Подписаться на рассылку", "subOnNewsLetter", color: KeyboardButtonColor.Positive);
+
+            kb.AddLine();
+            kb.AddButton(ButtonsHelper.ToHomeButton());
             
             sender.Text(text, msg.ChatId, kb.Build());
         }

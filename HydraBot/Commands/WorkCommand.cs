@@ -27,8 +27,8 @@ namespace HydraBot.Commands
             kb.AddButton("🚌 Водитель автобуса", "busdriverwork");
             kb.AddButton("📦 Курьер", "courierwork");
             kb.AddLine();
-            kb.AddButton("🚂 Машинист поезда", "traindriverwork");
-            kb.AddLine();
+           // kb.AddButton("🚂 Машинист поезда", "traindriverwork");
+           // kb.AddLine();
             kb.AddButton(ButtonsHelper.ToHomeButton());
             sender.Text(text, msg.ChatId, kb.Build());
         }
