@@ -30,11 +30,11 @@ namespace HydraBot.Commands.Store
             var price = 0;
             if (id == 1)
             {
-                price = 100;
+                price = 1000000;
             }else if (id == 2)
             {
-                price = 200;
-            }else if (id == 3) price = 200;
+                price = 2500000;
+            }else if (id == 3) price = 4000000;
             else if (id == 4) price = 50;
             else if (id == 5) price = 199;
             else if (id == 6) price = 192;

@@ -27,9 +27,9 @@ namespace HydraBot.Services
                             var ids = user.BusinessIds.Split(",");
                             foreach (var id in ids)
                             {
-                                if (id == "1") Main.Api.Users.AddMoney(user.Id, 100);
-                                if (id == "2") Main.Api.Users.AddMoney(user.Id, 100);
-                                if (id == "3") Main.Api.Users.AddMoney(user.Id, 100);
+                                if (id == "1") Main.Api.Users.AddMoney(user.Id, 25000);
+                                if (id == "2") Main.Api.Users.AddMoney(user.Id, 65000);
+                                if (id == "3") Main.Api.Users.AddMoney(user.Id, 100000);
                                 if (id == "4") Main.Api.Users.AddMoney(user.Id, 100);
                                 if (id == "5") Main.Api.Users.AddMoney(user.Id, 100);
                                 if (id == "6") Main.Api.Users.AddMoney(user.Id, 100);
