@@ -27,7 +27,14 @@ namespace HydraBot.Commands
 
         public void Execute(Message msg, IMessageSenderService sender, IBot bot)
         {
-            if (Main.Api.Users.IsBanned(msg)) return;
+            try
+            {
+                if (Main.Api.Users.IsBanned(msg)) return;
+
+            }catch(Exception ex)
+            {
+                
+            }
 
             if (!Main.Api.Users.CheckUser(msg))
             {
@@ -199,7 +206,7 @@ namespace HydraBot.Commands
                 {
                     text = "❌ Произошла ошибка.";
                 }
-            }else if (command == "vipDonateBuy")
+            }else if (command == "expDonate")
             {
                 try
                 {
@@ -220,7 +227,7 @@ namespace HydraBot.Commands
                 {
                     text = "❌ Произошла ошибка.";
                 }
-            }else if (command == "expDonate")
+            }else if (command == "vipDonateBuy")
             {
                 try
                 {
@@ -229,7 +236,8 @@ namespace HydraBot.Commands
                     var weight = long.Parse(array[1]);
 
                     text = AcceptCustomCarCommand.SetParams(power, weight, user, sender);
-                }catch
+                }
+                catch
                 {
                     text = "❌ Произошла ошибка.";
                 }

@@ -2,7 +2,7 @@
   "profiles": {
     "HydraBot.ConsoleShell": {
       "commandName": "Project",
-      "workingDirectory": "D:\\Documents\\Projects\\HydraBot\\HydraBot.ConsoleShell"
+      "workingDirectory": "C:\\Projects\\hydrabot\\HydraBot.ConsoleShell"
     }
   }
 }

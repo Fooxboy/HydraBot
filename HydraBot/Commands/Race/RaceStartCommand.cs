@@ -38,7 +38,8 @@ namespace HydraBot.Commands.Race
             bool sendMessageToEnemy = true;
             bool isBot = false;
             bool isFriendStart = false;
-            if(msg.Payload.Arguments.Count == 0)
+
+            if(msg.Payload.Arguments.Count == 0 || msg.Payload.Arguments[0] == "222")
             {
                 if (msg.Payload.Arguments[0] == "222") isFriendStart = true;
                 userEnemy = Main.Api.Users.GetUser(msg);
@@ -226,6 +227,13 @@ namespace HydraBot.Commands.Race
 
                 scoreCreator += skillsCretor.Driving;
                 scoreEnemy += skillsEnemy.Driving;
+
+
+                var r1 = new Random().Next(100, 999);
+                var r2 = new Random().Next(100, 999);
+
+                scoreCreator += r1;
+                scoreEnemy += r2;
                 
                 var winner = scoreEnemy > scoreCreator ? userEnemy : userCreator;
 

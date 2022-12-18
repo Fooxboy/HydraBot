@@ -17,14 +17,14 @@ namespace HydraBot.Commands.Admin
             var customCarId = msg.Payload.Arguments[0].ToLong();
             var text = "Укажите мощность и массу двигателя через пробел." +
                        "\n Пример: 234 2000";
-            UsersCommandHelper.GetHelper().Add("expDonate", user.Id);
+            UsersCommandHelper.GetHelper().Add("vipDonateBuy", user.Id);
             TempCarAccepts.Add(new TempCarAccept() {UserId = user.Id, IsAccepted = false, CustomCarId = customCarId});
             sender.Text(text, msg.ChatId);
         }
 
         public static string SetParams(long power, long weight, User user, IMessageSenderService sender)
         {
-            var acceptInfo = TempCarAccepts.Single(t => t.UserId == user.Id && t.IsAccepted == false);
+            var acceptInfo = TempCarAccepts.FirstOrDefault(t => t.UserId == user.Id && t.IsAccepted == false);
             var customCarId = acceptInfo.CustomCarId;
             User ownerUser = null;
             using (var db = new Database())

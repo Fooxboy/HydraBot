@@ -115,7 +115,9 @@ namespace HydraBot.BotApi
 
         public User GetUser(Message msg)
         {
-            var user = _helper.CheckIsIdVk(msg) ? GetUserFromIdVk(_helper.GetUserIdVk(msg)) : GetUserFromIdTg(msg.MessageTG.From.Id);
+            var user = _helper.CheckIsIdVk(msg) ?
+                GetUserFromIdVk(_helper.GetUserIdVk(msg)) 
+                : GetUserFromIdTg(msg.MessageTG.From.Id);
             return user;
         }
 
@@ -141,7 +143,7 @@ namespace HydraBot.BotApi
         {
             using(var db = new Database())
             {
-                var user = db.Users.Single(u => u.VkId == vkId);
+                var user = db.Users.SingleOrDefault(u => u.VkId == vkId);
                 return user;
             }
         }
@@ -150,7 +152,7 @@ namespace HydraBot.BotApi
         {
             using(var db = new Database())
             {
-                var user = db.Users.Single(u => u.Id == userId);
+                var user = db.Users.SingleOrDefault(u => u.Id == userId);
                 user.DonateMoney -= count;
                 db.SaveChanges();
                 return user.DonateMoney;
@@ -161,7 +163,7 @@ namespace HydraBot.BotApi
         {
             using (var db = new Database())
             {
-                var user = db.Users.Single(u => u.Id == userId);
+                var user = db.Users.SingleOrDefault(u => u.Id == userId);
                 user.Money -= money;
                 db.SaveChanges();
 
@@ -173,7 +175,7 @@ namespace HydraBot.BotApi
         {
             using (var db = new Database())
             {
-                var user = db.Users.Single(u => u.Id == userId);
+                var user = db.Users.SingleOrDefault(u => u.Id == userId);
                 user.MoneyInBank -= money;
                 db.SaveChanges();
 
@@ -185,7 +187,7 @@ namespace HydraBot.BotApi
         {
             using(var db = new Database())
             {
-                var user = db.Users.Single(u => u.Id == userId);
+                var user = db.Users.SingleOrDefault(u => u.Id == userId);
                 user.Score -= count;
                 db.SaveChanges();
                 return user.Score;
@@ -288,7 +290,13 @@ namespace HydraBot.BotApi
             }
         }
 
-        public bool IsBanned(Message msg) => GetUser(msg).IsBanned;
+        public bool IsBanned(Message msg)
+        {
+            var user = GetUser(msg);
+            if (user is null) return false;
+
+            return user.IsBanned;
+        }
 
         public long SetTimeBonus(long userId, long count)
         {

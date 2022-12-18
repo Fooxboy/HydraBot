@@ -44,7 +44,7 @@ namespace HydraBot.Commands
 
         public static string Send(string text, User user, IMessageSenderService sender)
         {
-            var chatTemp = ChatsTemp.Single(u => u.UserId == user.Id);
+            var chatTemp = ChatsTemp.FirstOrDefault(u => u.UserId == user.Id);
 
             var usrSend = Main.Api.Users.GetUserFromId(chatTemp.ChatUserId);
             sender.Text($"✉ ({chatTemp.NumberUser}) {user.Name}: {text}" +

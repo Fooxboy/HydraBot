@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29326.143
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HydraBot", "HydraBot\HydraBot.csproj", "{9D36908A-E9CE-4095-A968-7850852268C8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HydraBot.ConsoleShell", "HydraBot.ConsoleShell\HydraBot.ConsoleShell.csproj", "{4C5E1D76-C5D9-4BC0-9DF8-25E0A65A78B5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fooxboy.NucleusBot", "..\nucbot\Fooxboy.NucleusBot\Fooxboy.NucleusBot.csproj", "{55C493A3-5F7A-4026-B80F-3B9E92888436}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{4C5E1D76-C5D9-4BC0-9DF8-25E0A65A78B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C5E1D76-C5D9-4BC0-9DF8-25E0A65A78B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C5E1D76-C5D9-4BC0-9DF8-25E0A65A78B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55C493A3-5F7A-4026-B80F-3B9E92888436}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55C493A3-5F7A-4026-B80F-3B9E92888436}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55C493A3-5F7A-4026-B80F-3B9E92888436}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55C493A3-5F7A-4026-B80F-3B9E92888436}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
